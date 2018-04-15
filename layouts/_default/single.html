@@ -1,13 +1,21 @@
 {{ define "title" }}{{ .Title }}{{ end }}
 {{ define "main" }}
 
-	<section class="banner style1 orient-center content-align-left image-position-center">
+	<section class="banner style2 content-align-center image-position-center">
 		<div class="content">
 			<h1>{{ .Title }}</h1>
-			{{ .Content }}
+			<p>Posted in <a href="#">Leadership</a> on April 28, 2018.</p>
+			<ul class="icons">
+				<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+			</ul>
 		</div>
 		<div class="image">
 			<a href="/"><img src="{{ .Params.image }}" /></a>
+		</div>
+	</section>
+	<section class="wrapper style1 align-left">
+		<div class="inner">
+			{{ .Content }}
 		</div>
 	</section>
 

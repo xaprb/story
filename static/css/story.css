@@ -2486,7 +2486,7 @@
 			width: 100%;
 		}
 
-			.image.fit img {
+			.image.fit img, .inner p img, .content p img {
 				width: 100%;
 			}
 
@@ -3782,6 +3782,10 @@
 
 		.banner.style3.content-align-center {
 			text-align: center;
+		}
+
+		.banner.style3.content-align-left {
+			text-align: left;
 		}
 
 		.banner.style3.content-align-right {
@@ -5238,6 +5242,10 @@
 
 		.spotlight.style3.content-align-right {
 			text-align: right;
+		}
+
+		.spotlight.style3.content-align-left {
+			text-align: left;
 		}
 
 		.spotlight.style3.image-position-left .image img {
