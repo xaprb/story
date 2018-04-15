@@ -8,7 +8,7 @@ description = "A beautifully simple yet customizable, responsive blog and homepa
 homepage = "http://example.com/"
 tags = ["blog"]
 features = []
-min_version = "0.37.1"
+min_version = "0.33"
 
 [author]
   name = "Baron Schwartz"
