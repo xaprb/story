@@ -1,0 +1,57 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+{{ define "main" }}
+
+	<section class="banner style2 content-align-center image-position-center">
+		<div class="content">
+			<h1>{{ .Title }}</h1>
+			<p class="major">Presentation at {{ .Params.event }} on {{ .Date.Format "Jan 2, 2006" }}</p>
+			<ul class="icons">
+				<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+			</ul>
+		</div>
+		<div class="image">
+			<a href="/"><img src="{{ .Params.image }}" /></a>
+		</div>
+	</section>
+	<section class="wrapper style1 align-left">
+		<div class="inner">
+			{{ .Content }}
+			<div class="index align-left">
+				<section>
+					<header>
+						<h3>More Details:</h3>
+						<ul class="actions vertical">
+							<li><a href="slides/" class="button icon fa-desktop fit">Slides</a></li>
+							{{ with .Params.video }}
+							<li><a href="{{ . }}" class="button icon fa-film fit">Recording</a></li>
+							{{ end }}
+							{{ with .Params.site }}
+							<li><a href="{{ . }}" class="button icon fa-globe fit">Website</a></li>
+							{{ end }}
+							{{ with .Params.location }}
+							<li><a href="https://www.google.com/maps/place/{{ . }}" class="button icon fa-map-marker fit">Location</a></li>
+							{{ end }}
+						</ul>
+					</header>
+					<div class="content">
+						<span class="image fit">
+							<a href="slides/"><img src="{{ .Params.thumbnail }}"
+										alt="Slides"></a></span>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+
+{{ end }}
+
+{{ define "social" }}
+		<meta name="og:title" content="{{ .Title }}" />
+		<meta name="og:type" content="article" />
+		<meta name="og:image" content="{{ .Params.image }}" />
+		<meta name="og:description" content="{{ .Description }}" />
+		<meta name="og:url" content="{{ .Permalink }}" />
+		<meta name="og:site_name" content="{{ .Title }}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@{{ .Site.Params.Twitter }}" />
+{{ end }}
