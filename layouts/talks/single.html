@@ -21,7 +21,7 @@
 					<header>
 						<h3>More Details:</h3>
 						<ul class="actions vertical">
-							<li><a href="slides/" class="button icon fa-desktop fit">Slides</a></li>
+							<li><a href="{{ .Params.slides }}" class="button icon fa-desktop fit">Slides</a></li>
 							{{ with .Params.video }}
 							<li><a href="{{ . }}" class="button icon fa-film fit">Recording</a></li>
 							{{ end }}
@@ -35,7 +35,7 @@
 					</header>
 					<div class="content">
 						<span class="image fit">
-							<a href="slides/"><img src="{{ .Params.thumbnail }}"
+							<a href="{{ .Params.slides }}"><img src="{{ .Params.thumbnail }}"
 										alt="Slides"></a></span>
 					</div>
 				</section>

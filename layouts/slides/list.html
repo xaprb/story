@@ -1,0 +1,20 @@
+{{ define "main" }}
+	{{ range .Paginator.Pages }}
+	<section class="spotlight style4 orient-left content-align-left image-position-center">
+		<div class="content">
+		<h2><a href="{{ .Permalink }}">{{ .Title }}</h2></a>
+		<p class="major">{{ .Date.Format "Jan 2, 2006" }}</p>
+		<ul class="actions">
+			<li><a href="{{ .Permalink }}" class="button icon fa-desktop">View Slides</a></li>
+		</ul>
+		</div>
+		<div class="image">
+			<a href="{{ .Permalink }}"><img src="{{ .Params.image }}" /></a>
+		</div>
+	</section>
+	{{ end }}
+{{ end }}
+
+{{ define "pagination" }}
+	{{ partial "paginator.html" . }}
+{{ end }}

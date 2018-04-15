@@ -1,0 +1,59 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+
+{{ define "layout" }}
+		<link rel="stylesheet" href="/css/{{ .Params.theme }}.css"></style>
+		<style type="text/css">
+		@page {
+			size: {{ if .Params.ratio }} 1216px 684px; {{ else }} 912px 684px; {{ end }}
+			margin: 0;
+		}
+		@media print {
+			.remark-slide-scaler {
+				width: 100% !important;
+				height: 100% !important;
+				transform: scale(1) !important;
+				top: 0 !important;
+				left: 0 !important;
+			}
+		}
+		</style>
+{{ end }}
+
+{{ define "main" }}
+    <textarea id="source">
+{{ .RawContent }}
+    </textarea>
+    <script type="text/javascript" src="/js/qrcode.js"></script>
+    <script src="/js/remark.min.js"></script>
+    <script>
+      var slideshow = remark.create({
+         {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}
+         navigation: {
+            scroll: false,
+            click: true
+         },
+         countIncrementalSlides: false,
+         slideNumberFormat: '%current%'
+      });
+      new QRCode(
+         document.getElementById("qrcode"),
+         {
+            "useSVG": true,
+            "text": window.location.href.replace(/#\d*$/, "")
+         }
+      );
+    </script>
+{{ end }}
+
+{{ define "social" }}
+		<meta name="og:title" content="{{ .Title }}" />
+		<meta name="og:type" content="article" />
+		<meta name="og:image" content="{{ .Params.image }}" />
+		<meta name="og:description" content="{{ .Description }}" />
+		<meta name="og:url" content="{{ .Permalink }}" />
+		<meta name="og:site_name" content="{{ .Title }}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@{{ .Site.Params.Twitter }}" />
+{{ end }}
+
+{{ define "footer" }}{{ end }}
