@@ -4,6 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+		<link rel="canonical" href="{{ .Permalink }}">
+		{{ with .Description }}<meta name="description" content="{{.}}">{{ end }}
+		{{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 		{{ .Hugo.Generator }}
 
 		{{ block "social" . }}
