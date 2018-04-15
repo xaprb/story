@@ -1,18 +1,5 @@
 {{ define "main" }}
   {{ range .Data.Pages }}
-
-  <section class="spotlight style2 orient-right content-align-left image-position-center">
-    <div class="content">
-      <h2>{{ .Title }}</h2>
-      {{ .Summary }}
-      <ul class="actions">
-        <li><a href="{{ .Permalink }}" class="button">Continue Reading</a></li>
-      </ul>
-    </div>
-    <div class="image">
-      <img src="{{ .Params.image }}" />
-    </div>
-  </section>
-
+    {{ partial "li.html" . }}
   {{ end }}
 {{ end }}

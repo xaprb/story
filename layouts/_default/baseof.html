@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+		{{ .Hugo.Generator }}
 
-    {{ block "layout" . }}
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="/css/story.css" />
-    {{ end }}
+		{{ block "layout" . }}
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<link rel="stylesheet" href="/css/story.css" />
+		{{ end }}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
-    <script src="/js/auto-render.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body);
-      });
-    </script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
+		<script src="/js/auto-render.min.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				renderMathInElement(document.body);
+			});
+		</script>
 
-  </head>
-  <body>
-    <div id="wrapper" class="divided">
-    {{ block "main" . }}
-    {{ end }}
-    {{ block "footer" . }}
-    {{ end }}
-    </div>
-  </body>
+	</head>
+	<body>
+		<div id="wrapper" class="divided">
+		{{ block "main" . }}
+		{{ end }}
+		{{ block "footer" . }}
+			<footer class="wrapper style1 align-center">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon style2 fa-github"><span class="label">Facebook</span></a></li>
+					</ul>
+					{{ with .Site.Params.author }}<p>&copy; {{ . }}<p>{{ end }}
+					<ul class="icons">
+						<li><a href="/search/" class="icon style2 fa-search"><span class="label">Search</span></a></li>
+						<li><a href="/index.xml" class="icon style2 fa-rss"><span class="label">RSS Feed</span></a></li>
+						<li><a href="https://html5up.net" class="icon style2 fa-paint-brush"><span class="label">Design by HTML5 UP</span></a></li>
+					</li>
+				</div>
+			</footer>
+		{{ end }}
+		</div>
+	</body>
 </html>

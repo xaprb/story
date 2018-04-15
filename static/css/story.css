@@ -3412,6 +3412,10 @@
 			text-align: center;
 		}
 
+		.banner.style1.content-align-left {
+			text-align: left;
+		}
+
 		.banner.style1.content-align-right {
 			text-align: right;
 		}

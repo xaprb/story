@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+	<section class="banner style1 orient-center content-align-left image-position-center">
+		<div class="content">
+			<h1>{{ .Title }}</h1>
+			{{ .Content }}
+		</div>
+		<div class="image">
+			<img src="{{ .Params.image }}" />
+		</div>
+	</section>
+
+{{ end }}

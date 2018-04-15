@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+	<section class="banner style2 orient-center content-align-center image-position-center">
+		<div class="content">
+			<h1>{{ .Title }}</h1>
+			<p class="major">
+			{{ .Content }}
+			</p>
+		</div>
+		<div class="image">
+			<img src="{{ .Params.image }}" />
+		</div>
+	</section>
+
+  {{ range .Data.Pages }}
+    {{ partial "li.html" . }}
+  {{ end }}
+{{ end }}
