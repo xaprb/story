@@ -1,5 +1,9 @@
 {{ define "main" }}
-  {{ range .Data.Pages }}
+  {{ range .Paginator.Pages }}
     {{ partial "li.html" . }}
   {{ end }}
+{{ end }}
+
+{{ define "pagination" }}
+	{{ partial "paginator.html" . }}
 {{ end }}
