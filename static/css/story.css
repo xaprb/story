@@ -2486,9 +2486,13 @@
 			width: 100%;
 		}
 
-			.image.fit img, .inner p img, .content p img {
+			.image.fit img {
 				width: 100%;
 			}
+
+		.inner p img, .content p img, .inner li img, .content li img {
+			max-width: 100%;
+		}
 
 		.image.main {
 			display: block;
