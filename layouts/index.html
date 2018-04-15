@@ -12,7 +12,7 @@
 		</div>
 	</section>
 
-  {{ range where .Paginator.Pages ".Params.layout" "ne" "slides" }}
+  {{ range where .Paginator.Pages ".Section" "ne" "slides" }}
     {{ partial "li.html" . }}
   {{ end }}
 {{ end }}
