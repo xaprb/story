@@ -8,8 +8,21 @@
 			<input id="search" type="text" placeholder="Search...">
 		</div>
  
-		<div id="results" class="items style1 medium">
+<section class="wrapper style1 align-center">
+	<div class="inner">
+		<div class="index align-left">
+		<section>
+			<header>
+				<h3>Search Results</h3>
+			</header>
+			<div class="content">
+				<ul id="results" class="alt"></ul>
+			</div>
+		</section>
 		</div>
+	</div>
+</section>
+
 
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script type="text/javascript">
@@ -98,12 +111,11 @@
 
         // Only show the first results
         results.slice(0, 20).forEach(function(result) {
-            var $result = $("<section>");
-            $result.append($('<h3>', { html: $("<a>", {
+            var $result = $("<li>");
+            $result.append($('<a>', {
                 href: result.uri,
                 text: result.title
-            })}));
-            $result.append(result.content.substring(0, 120));
+            }));
             $results.append($result);
         });
     }
