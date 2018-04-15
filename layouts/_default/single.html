@@ -21,6 +21,26 @@
 		</div>
 	</section>
 
+	{{ $related := .Site.Pages.Related . | first 3 }}
+	{{ with $related }}
+	<section class="wrapper style1 align-center">
+		<div class="inner">
+			<h2>Done! Now Read These:</h2>
+		</div>
+	</section>
+	{{ range . }}
+	<section class="spotlight style1 orient-right content-align-left image-position-center">
+		<div class="content">
+			<h3><a href="{{ .Permalink }}">{{ .Title }}</h3></a>
+			{{ .Description }}
+		</div>
+		<div class="image">
+			<a href="{{ .Permalink }}"><img src="{{ .Params.image }}" /></a>
+		</div>
+	</section>
+	{{ end }}
+	{{ end }}
+
 {{ end }}
 {{ define "social" }}
 		<meta name="og:title" content="{{ .Title }}" />
