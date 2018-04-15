@@ -12,7 +12,7 @@
 			</ul>
 		</div>
 		<div class="image">
-			<a href="/"><img src="{{ .Params.image }}" /></a>
+			<a href="/"><img src="{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{end}}" /></a>
 		</div>
 	</section>
 	<section class="wrapper style1 align-left">
