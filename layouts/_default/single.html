@@ -1,3 +1,4 @@
+{{ define "title" }}{{ .Title }}{{ end }}
 {{ define "main" }}
 
 	<section class="banner style1 orient-center content-align-left image-position-center">
@@ -10,4 +11,14 @@
 		</div>
 	</section>
 
+{{ end }}
+{{ define "social" }}
+		<meta name="og:title" content="{{ .Title }}" />
+		<meta name="og:type" content="article" />
+		<meta name="og:image" content="{{ .Params.image }}" />
+		<meta name="og:description" content="{{ .Description }}" />
+		<meta name="og:url" content="{{ .Permalink }}" />
+		<meta name="og:site_name" content="{{ .Title }}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@{{ .Site.Params.Twitter }}" />
 {{ end }}

@@ -5,9 +5,12 @@
 		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 		{{ .Hugo.Generator }}
 
+		{{ block "social" . }}
+		{{ end }}
+
 		{{ block "layout" . }}
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<link rel="stylesheet" href="/css/story.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/css/story.css" />
 		{{ end }}
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,8 +33,8 @@
 			<footer class="wrapper style1 align-center">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon style2 fa-github"><span class="label">Facebook</span></a></li>
+						{{ with .Site.Params.twitter }}<li><a href="https://twitter.com/{{ . }}" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>{{ end }}
+						{{ with .Site.Params.github }}<li><a href="https://github.com/{{ . }}" class="icon style2 fa-github"><span class="label">Facebook</span></a></li>{{ end }}
 					</ul>
 					{{ with .Site.Params.author }}<p>&copy; {{ . }}<p>{{ end }}
 					<ul class="icons">
