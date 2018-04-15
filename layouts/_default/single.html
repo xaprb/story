@@ -4,7 +4,9 @@
 	<section class="banner style2 content-align-center image-position-center">
 		<div class="content">
 			<h1>{{ .Title }}</h1>
-			<p>Posted in <a href="#">Leadership</a> on April 28, 2018.</p>
+			<p class="major">Posted in
+			{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}">{{ . | title }}</a>{{ end }}
+			on {{ .Date.Format "Jan 2, 2006" }}</p>
 			<ul class="icons">
 				<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
 			</ul>

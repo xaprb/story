@@ -1,6 +1,7 @@
 	<section class="spotlight style2 orient-right content-align-left image-position-center">
 		<div class="content">
 		<h2><a href="{{ .Permalink }}">{{ .Title }}</h2></a>
+		<p class="major">{{ .Date.Format "Jan 2, 2006" }}</p>
 		{{ .Summary }}
 		<ul class="actions">
 			<li><a href="{{ .Permalink }}" class="button">Continue Reading</a></li>
