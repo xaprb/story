@@ -46,6 +46,9 @@ img {
 	border-radius: 5px;
 	font-size: 20px !important;
 }
+.no-number .remark-slide-number {
+	display: none;
+}
 #qrcode {
   width: 384px;
   height: 384px;
