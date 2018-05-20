@@ -1,3 +1,4 @@
+{{ define "title" }}{{ .Section | title }} &bullet; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
   {{ range where .Paginator.Pages "Section" "ne" "slides" }}
     {{ partial "li.html" . }}
