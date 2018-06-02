@@ -29,8 +29,7 @@
       var slideshow = remark.create({
          {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}
          navigation: {
-            scroll: false,
-            click: true
+            scroll: false
          },
          countIncrementalSlides: false,
          slideNumberFormat: '%current%'
