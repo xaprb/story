@@ -1,28 +1,13 @@
 {{ define "title" }}Search{{ end }}
 {{ define "main" }}
-	<section class="wrapper style1 align-center">
-		<div class="inner">
-		<h2>{{ .Title }}</h2>
-		{{ .Content }}
 
-		<div class="field">
-			<input id="search" type="text" placeholder="Search...">
-		</div>
- 
-<section class="wrapper style1 align-center">
-	<div class="inner">
-		<div class="index align-left">
-		<section>
-			<header>
-				<h3>Search Results</h3>
-			</header>
-			<div class="content">
-				<ul id="results" class="alt"></ul>
-			</div>
-		</section>
-		</div>
-	</div>
-</section>
+<article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
+	<main class="nested-copy-line-height lh-copy f4 pv5">
+		<input id="search" type="text" placeholder="Search..." class="pa2 br3 ba bw1 b--gray">
+		<p>Type a search above to see results below:</p>
+		<ul id="results" class=""></ul>
+	</main>
+</article>
 
 
     <script src="https://unpkg.com/lunr/lunr.js"></script>
@@ -31,18 +16,18 @@
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split('&');
- 
+
         for (var i = 0; i < vars.length; i++) {
             var pair = vars[i].split('=');
- 
+
             if (pair[0] === variable) {
                 return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
             }
         }
     }
- 
+
     var searchTerm = getQueryVariable('query');
- 
+
     // Initialize lunrjs using our generated index file
     function initLunr() {
         // First retrieve the index file
@@ -56,7 +41,7 @@
                     this.field("keywords");
                     this.field("content");
                     this.ref("uri");
- 
+
                     pagesIndex.forEach(function (page) {
                         this.add(page)
                     }, this)
@@ -67,25 +52,25 @@
                 console.error("Error getting Hugo index flie:", err);
             });
     }
- 
+
     // Nothing crazy here, just hook up a listener on the input field
     function initUI() {
         $results = $("#results");
         $("#search").keyup(function() {
             $results.empty();
- 
+
             // Only trigger a search when 2 chars. at least have been provided
             var query = $(this).val();
             if (query.length < 2) {
                 return;
             }
- 
+
             var results = search(query);
- 
+
             renderResults(results);
         });
     }
- 
+
     /**
      * Trigger a search in lunr and transform the result
      *
@@ -99,7 +84,7 @@
                 })[0];
             });
     }
- 
+
     /**
      * Display the 10 first results
      *
@@ -120,10 +105,10 @@
             $results.append($result);
         });
     }
- 
+
     // Let's get started
     initLunr();
- 
+
     $(document).ready(function() {
         initUI();
     });

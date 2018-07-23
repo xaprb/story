@@ -19,9 +19,13 @@
 		</style>
 {{ end }}
 
+{{ define "header" }}
+<!-- simply override the "header" from baseof.html to make it empty -->
+{{ end }}
+
 {{ define "main" }}
     <textarea id="source">
-{{ .RawContent }}
+			{{- .RawContent -}}
     </textarea>
     <script type="text/javascript" src="/js/qrcode.js"></script>
     <script src="/js/remark.min.js"></script>

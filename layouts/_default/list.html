@@ -1,10 +1,21 @@
 {{ define "title" }}{{ .Section | title }} &bullet; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
-  {{ range where .Paginator.Pages "Section" "ne" "slides" }}
-    {{ partial "li.html" . }}
+<div class="pa3 pa4-ns w-100 w-70-ns center">
+  <section class="w-100 mw8">
+  <!-- if the section isn't "slides" then omit them; otherwise list slides -->
+  {{ if ne .Section "slides" }}
+    {{ range where .Paginator.Pages "Section" "ne" "slides" }}
+      {{ partial "li.html" . }}
+    {{ end }}
+  {{ else }}
+    {{ range .Paginator.Pages }}
+      {{ partial "li.html" . }}
+    {{ end }}
   {{ end }}
+  </section>
+</div>
 {{ end }}
 
 {{ define "pagination" }}
-	{{ partial "paginator.html" . }}
+	{{- template "_internal/pagination.html" . -}}
 {{ end }}

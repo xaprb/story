@@ -14,14 +14,17 @@
 		{{ end }}
 
 		{{ block "layout" . }}
+		<link rel="stylesheet" href="/css/tachyons.min.css" />
+		<link rel="stylesheet" href="/css/pagination.css" />
 		<link rel="stylesheet" href="/css/story.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 		{{ end }}
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
-		<script src="/js/auto-render.min.js"></script>
+		<script src="/js/auto-render.min.js"></script> <!-- for KaTeX -->
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				renderMathInElement(document.body);
@@ -29,29 +32,74 @@
 		</script>
 
 	</head>
-	<body>
-		<div id="wrapper" class="divided">
+	<body class="ma0 bg-white">
+		{{ block "header" . }}
+		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
+		<header class="cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}');">
+			<div class="bg-black-60">
+				<nav class="pv3 ph3 ph4-ns" role="navigation">
+					<div class="flex-l justify-between items-center center">
+						<a href="/" class="f3 fw2 hover-white no-underline white-90 dib sans-serif">Home</a>
+						<div class="flex-l items-center">
+							<ul class="pl0 mr3 sans-serif">
+								{{ if .Site.Menus.main }}
+					          {{ range .Site.Menus.main }}
+					          <li class="list f5 f4-ns fw4 dib pr3">
+					            <a class="hover-white no-underline white-90" href="{{ .URL }}">
+					              {{ .Name }}
+					            </a>
+					          </li>
+					          {{ end }}
+					      {{ end }}
+								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a></li>
+								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-search" href="/search/" title="Search"></a></li>
+								{{ with .Site.Params.twitter }}<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fab fa-twitter-square" href="https://twitter.com/{{ . }}"></a></li>{{ end }}
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<div class="tc-l pv4 pv5-l ph3 ph4-ns">
+					<h1 class="f2 f-subheadline-l fw3 white-90 mb0 lh-title">{{ .Title | markdownify }}</h1>
+					<h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+						<!-- You can put a subtitle here in _index.md parameters, or it'll get
+						filled in with date and categories if it's a post -->
+						{{ if .IsPage }}
+							{{ if eq .Section "talks" }}
+								Presented at {{ .Params.event }} on
+								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+									{{- .Date.Format "January 2, 2006" -}}
+								</time>
+							{{ else }}
+								Posted on
+								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+									{{- .Date.Format "Jan 2, 2006" -}}
+								</time>
+								in
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}" class="white-80 hover-white no-underline">{{ . | title }}</a>{{ end }}
+							{{ end }}
+						{{ else }}
+							{{ with .Params.subtitle }}{{ . | markdownify }}{{ end }}
+						{{ end }}
+					</h2>
+				</div>
+			</div>
+		</header>
+		{{ end }}
+		<main class="pb7" role="main">
 		{{ block "main" . }}
 		{{ end }}
+		</main>
 		{{ block "pagination" . }}
 		{{ end }}
 		{{ block "footer" . }}
-			<footer class="wrapper style1 align-center">
-				<div class="inner">
-					<ul class="icons">
-						{{ with .Site.Params.twitter }}<li><a href="https://twitter.com/{{ . }}" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>{{ end }}
-						{{ with .Site.Params.github }}<li><a href="https://github.com/{{ . }}" class="icon style2 fa-github"><span class="label">Facebook</span></a></li>{{ end }}
-					</ul>
-					{{ with .Site.Params.author }}<p>&copy; {{ . }}<p>{{ end }}
-					<ul class="icons">
-						<li><a href="/search/" class="icon style2 fa-search"><span class="label">Search</span></a></li>
-						<li><a href="/index.xml" class="icon style2 fa-rss"><span class="label">RSS Feed</span></a></li>
-						<li><a href="https://html5up.net" class="icon style2 fa-paint-brush"><span class="label">Design by HTML5 UP</span></a></li>
-					</ul>
-				</div>
-			</footer>
+		<footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+		  <div class="flex justify-between">
+		  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ .Site.BaseURL }}" >
+		    &copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
+		  </a>
+		  </div>
+		</footer>
 		{{ end }}
-		</div>
 	{{ template "_internal/google_analytics_async.html" . }}
 	</body>
 </html>

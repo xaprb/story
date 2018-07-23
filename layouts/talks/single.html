@@ -1,49 +1,20 @@
 {{ define "title" }}{{ .Title }} &bullet; {{ .Params.event }}{{ end }}
 {{ define "main" }}
-
-	<section class="banner style2 content-align-center image-position-center">
-		<div class="content">
-			<h1>{{ .Title }}</h1>
-			<p class="major">Presentation at {{ .Params.event }} on {{ .Date.Format "Jan 2, 2006" }}</p>
-			<ul class="icons">
-				<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-			</ul>
-		</div>
-		<div class="image">
-			<a href="/">{{ partial "header-img.html" . }}</a>
-		</div>
-	</section>
-	<section class="wrapper style1 align-left">
-		<div class="inner">
-			{{ .Content }}
-			<div class="index align-left">
-				<section>
-					<header>
-						<h3>More Details:</h3>
-						<ul class="actions vertical">
-							<li><a href="{{ .Params.slides }}" class="button icon fa-desktop fit">Slides</a></li>
-							{{ with .Params.video }}
-							<li><a href="{{ . }}" class="button icon fa-film fit">Video</a></li>
-							{{ end }}
-							{{ with .Params.site }}
-							<li><a href="{{ . }}" class="button icon fa-globe fit">Website</a></li>
-							{{ end }}
-							{{ with .Params.location }}
-							<li><a href="https://www.google.com/maps/place/{{ . }}" class="button icon fa-map-marker fit">Location</a></li>
-							{{ end }}
-							<li><a href="/talks/" class="button icon fa-folder-open fit">All Talks</a></li>
-						</ul>
-					</header>
-					<div class="content">
-						<span class="image fit">
-							<a href="{{ .Params.slides }}"><img src="{{ .Params.thumbnail }}"
-										alt="Slides"></a></span>
-					</div>
-				</section>
-			</div>
-		</div>
-	</section>
-
+<article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
+	<main class="nested-copy-line-height lh-copy f4 nested-links nested-img pr4-l measure-wide">
+		{{ .Content }}
+		<p><a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ .Params.slides }}">Slides</a>
+		{{ with .Params.video }}
+		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Video</a>
+		{{ end }}
+		{{ with .Params.site }}
+		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Website</a>
+		{{ end }}
+		{{ with .Params.location }}
+		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="https://www.google.com/maps/place/{{ . }}">Venue</a>
+		{{ end }}
+	</main>
+</article>
 {{ end }}
 
 {{ define "social" }}
