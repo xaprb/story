@@ -1,10 +1,8 @@
 {{ define "title" }}{{ .Title }}{{ end }}
 
 {{ define "main" }}
-<article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
-	<main class="nested-copy-line-height lh-copy f4 nested-links nested-img pr4-l measure-wide">
-		{{ .Content }}
-	</main>
+<article class="mw8 center ph3 nested-copy-line-height lh-copy f4 nested-links nested-img measure-wide">
+	{{ .Content }}
 </article>
 {{ end }}
 
