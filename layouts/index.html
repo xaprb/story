@@ -13,5 +13,9 @@
 {{ end }}
 
 {{ define "pagination" }}
-	{{- template "_internal/pagination.html" . -}}
+<footer class="w-100 sans-serif" role="contentinfo">
+	<nav class="w-third pb3 f6 center db" role="navigation">
+		{{- template "_internal/pagination.html" . -}}
+	</nav>
+</footer>
 {{ end }}
