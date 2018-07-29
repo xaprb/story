@@ -35,24 +35,24 @@
 	<body class="ma0 bg-white">
 		{{ block "header" . }}
 		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
-		<header class="cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}');">
-			<div class="bg-black-30">
-				<nav class="pv3 ph3 ph4-ns" role="navigation">
+		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}');">
+			<div class="bg-black-30 bb">
+				<nav class="pv3 ph3 ph4-ns" role="navigation" id="navmenu">
 					<div class="flex-l justify-between items-center center">
 						<a href="/" class="f3 fw2 hover-white no-underline white-90 dib sans-serif">Home</a>
 						<div class="flex-l items-center">
-							<ul class="pl0 mr3 sans-serif">
+							<ul class="pl0 mr3">
 								{{ if .Site.Menus.main }}
 					          {{ range .Site.Menus.main }}
 					          <li class="list f5 f4-ns fw4 dib pr3">
-					            <a class="hover-white no-underline white-90 sans-serif" href="{{ .URL }}">
+					            <a class="hover-white no-underline white-90" href="{{ .URL }}">
 					              {{ .Name }}
 					            </a>
 					          </li>
 					          {{ end }}
 					      {{ end }}
 								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a></li>
-								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-search" href="/search/" title="Search"></a></li>
+								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a></li>
 								{{ with .Site.Params.twitter }}<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fab fa-twitter-square" href="https://twitter.com/{{ . }}"></a></li>{{ end }}
 							</ul>
 						</div>
@@ -60,22 +60,25 @@
 				</nav>
 				<div class="tc-l pv4 pv5-l ph3 ph4-ns">
 					<h1 class="f2 fw3 white-90 mb0 lh-title">{{ .Title | markdownify }}</h1>
-					<h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+					<h2 class="fw1 f6 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
 						<!-- You can put a subtitle here in _index.md parameters, or it'll get
 						filled in with date and categories if it's a post -->
 						{{ if .IsPage }}
 							{{ if eq .Section "talks" }}
-								Presented at {{ .Params.event }} on
+								Presented
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "January 2, 2006" -}}
 								</time>
+								at {{ .Params.event }}
 							{{ else }}
-								Posted on
+								Posted
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
+								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
 								in
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}" class="white-80 hover-white no-underline">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}" class="category white-80 hover-white no-underline">{{ . | title }}</a>{{ end }}
+								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
 							{{ with .Params.subtitle }}{{ . | markdownify }}{{ end }}
@@ -92,12 +95,12 @@
 		{{ block "pagination" . }}
 		{{ end }}
 		{{ block "footer" . }}
-		<footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
-		  <div class="flex justify-between">
-		  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ .Site.BaseURL }}" >
+		<footer class="bg-black bottom-0 w-100 pa3 sans-serif" role="contentinfo">
+		  <p>
+				<a class="f5 fw4 hover-white no-underline white-90 dn dib-ns ph3" href="{{ .Site.BaseURL }}">
 		    &copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
-		  </a>
-		  </div>
+			  </a>
+			</p>
 		</footer>
 		{{ end }}
 	{{ template "_internal/google_analytics_async.html" . }}

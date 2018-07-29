@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Spectral:400,400i,700,700i&subset=latin-ext');
 
-h1, h2, h3, h1 a, h2 a, h3 a, .sans-serif {
+.sans-serif, h1, h2, h3 {
   font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
                'avenir next', avenir,
                'helvetica neue', helvetica,
@@ -9,6 +9,45 @@ h1, h2, h3, h1 a, h2 a, h3 a, .sans-serif {
                'segoe ui', arial,
                sans-serif;
 }
-*, .serif {
+.serif {
   font-family: 'Spectral', Georgia, Times, serif;
+}
+#byline {
+  display: none;
+}
+#citation {
+  display: none;
+}
+
+@media print {
+  * {
+    color: black !important;
+  }
+  .footnote-return {
+    display: none;
+  }
+  a, a:link, a:visited, a:hover {
+    text-decoration: underline black dotted;
+  }
+  .footnote-ref a, .category a {
+    text-decoration: none !important;
+  }
+  #navmenu {
+    display: none !important;
+  }
+  #byline {
+    display: inline !important;
+  }
+  #citation {
+    display: inline !important;
+  }
+  .f4 {
+    font-size: 1rem !important;
+  }
+  .measure-wide { /* increase line width to compensate for the decrease in font size */
+    max-width: 45em !important;
+  }
+  main { /* don't waste paper on extra blank pages */
+    padding-bottom: 0 !important;
+  }
 }
