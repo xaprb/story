@@ -34,7 +34,7 @@
 	<body class="ma0 bg-white">
 		{{ block "header" . }}
 		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
-		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}');">
+		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}'); background-position: center;">
 			<div class="bg-black-30 bb">
 				<nav class="pv3 ph3 ph4-ns" role="navigation" id="navmenu">
 					<div class="flex-l justify-between items-center center">
