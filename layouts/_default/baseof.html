@@ -41,15 +41,10 @@
 						<a href="/" class="f3 fw2 hover-white no-underline white-90 dib sans-serif">Home</a>
 						<div class="flex-l items-center">
 							<ul class="pl0 mr3">
-								{{ if .Site.Menus.main }}
-					          {{ range .Site.Menus.main }}
-					          <li class="list f5 f4-ns fw4 dib pr3">
-					            <a class="hover-white no-underline white-90" href="{{ .URL }}">
-					              {{ .Name }}
-					            </a>
-					          </li>
-					          {{ end }}
-					      {{ end }}
+								{{ range .Site.Menus.main }}
+								<li class="list f5 f4-ns fw4 dib pr3">
+									<a class="hover-white no-underline white-90" href="{{ .URL }}">{{ .Name }}</a>
+								</li>{{ end }}
 								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a></li>
 								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a></li>
 								{{ with .Site.Params.twitter }}<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fab fa-twitter-square" href="https://twitter.com/{{ . }}"></a></li>{{ end }}
