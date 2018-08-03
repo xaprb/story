@@ -40,6 +40,13 @@
   background-color: #ddd;
 }
 
+pre {
+	border: 1px solid silver;
+	border-radius: 5px;
+	padding: 10px;
+	background: lightgray;
+}
+
 @media print {
   * {
     color: black !important;
