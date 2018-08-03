@@ -36,22 +36,23 @@
 		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
 		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}'); background-position: center;">
 			<div class="bg-black-30 bb">
-				<nav class="pv3 ph3 ph4-ns" role="navigation" id="navmenu">
-					<div class="flex-l justify-between items-center center">
-						<a href="/" class="f3 fw2 hover-white no-underline white-90 dib sans-serif">Home</a>
-						<div class="flex-l items-center">
-							<ul class="pl0 mr3">
-								{{ range .Site.Menus.main }}
-								<li class="list f5 f4-ns fw4 dib pr3">
-									<a class="hover-white no-underline white-90" href="{{ .URL }}">{{ .Name }}</a>
-								</li>{{ end }}
-								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a></li>
-								<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a></li>
-								{{ with .Site.Params.twitter }}<li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90 fab fa-twitter-square" href="https://twitter.com/{{ . }}"></a></li>{{ end }}
-							</ul>
-						</div>
+
+				<nav class="db dt-l w-100 border-box pa3 ph5-l">
+					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
+						<img src="/img/logo.jpg" class="dib w2 h2 br-100" alt="{{ .Title }}">
+					</a>
+					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+						{{ range .Site.Menus.main }}
+							<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 sans-serif" href="{{ .URL }}">{{ .Name }}</a>
+						{{ end }}
+						{{ range .Site.Menus.social }}
+							<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 sans-serif" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
+						{{ end }}
+						<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
 					</div>
 				</nav>
+
 				<div class="tc-l pv4 pv5-l ph3 ph4-ns">
 					<h1 class="f2 fw3 white-90 mb0 lh-title">{{ .Title | markdownify }}</h1>
 					<h2 class="fw1 f6 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
