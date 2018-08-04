@@ -46,6 +46,9 @@ pre {
 	padding: 10px;
 	background: lightgray;
 }
+pre, code, kbd, samp {
+	font-size: 1rem;
+}
 
 @media print {
   * {
