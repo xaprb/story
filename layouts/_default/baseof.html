@@ -34,6 +34,7 @@
 	<body class="ma0 bg-white">
 		{{ block "header" . }}
 		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
+		<!-- for a post, you can set the header image with the "image" parameter in front matter -->
 		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}'); background-position: center;">
 			<div class="bg-black-30 bb">
 
@@ -80,6 +81,14 @@
 						{{ end }}
 					</h2>
 				</div>
+
+				<!-- if there's a "credits" parameter in front matter there'll be a camera icon here -->
+				{{ with .Params.credit }}
+				<div class="w-100 cf" id="photo-credit">
+					<a class="fr f6 ma0 pa2 link white-90 hover-white fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
+				</div>
+				{{ end }}
+
 			</div>
 		</header>
 		{{ end }}

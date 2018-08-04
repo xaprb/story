@@ -63,6 +63,9 @@ pre {
   #navmenu {
     display: none !important;
   }
+  #photo-credit {
+    display: none !important;
+  }
   #byline {
     display: inline !important;
   }
