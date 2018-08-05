@@ -46,6 +46,12 @@ pre {
 	background: #f6f8fa;
 	overflow: auto;
 }
+p>code, li>code, a>code {
+	background: #f6f8fa;
+	margin: 0;
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+}
 pre, code, kbd, samp {
 	font-size: 1rem;
 }
