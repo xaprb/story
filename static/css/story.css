@@ -41,10 +41,10 @@
 }
 
 pre {
-	border: 1px solid silver;
-	border-radius: 5px;
-	padding: 10px;
-	background: lightgray;
+	border-radius: 3px;
+	padding: 16px;
+	background: #f6f8fa;
+	overflow: auto;
 }
 pre, code, kbd, samp {
 	font-size: 1rem;
