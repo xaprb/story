@@ -56,6 +56,46 @@ pre, code, kbd, samp {
 	font-size: 1rem;
 }
 
+/* Classes that are hacked through the HTML title attribute on img elements,
+ * because Markdown only lets us set the src, alt, and title.
+ * nested-img makes images "zoom" to full width, which is ugly if it's a small
+ * image. The CSS unsets the width so the img will be its natural size or 100%
+ * width, whichever is smaller. If you want that, you can restore it with w-100.
+ * ![An Image](/img.jpg "w-100")
+ * These classes can be combined:
+ * ![An Image](/img.jpg "w-100 fr")
+ */
+.nested-img img {
+	width: initial;
+}
+.nested-img img[title~=w-100] {
+	width: 100%;
+}
+.nested-img img[title~=fr] {
+	float: right;
+}
+.nested-img img[title~=fl] {
+	float: left;
+}
+.nested-img img[title~=ph1] {
+	padding-left: .25rem;
+	padding-right: .25rem;
+}
+.nested-img img[title~=pv1] {
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+}
+.nested-img img[title~=pa1] {
+	padding: .25rem;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0 1rem;
+	color: #6a737d;
+	border-left: 0.25rem solid #dfe2e5;
+}
+
 @media print {
   * {
     color: black !important;
