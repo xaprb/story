@@ -88,6 +88,9 @@ pre, code, kbd, samp {
 .nested-img img[title~=pa1] {
 	padding: .25rem;
 }
+.nested-img img[title~=ba] {
+	border: 1px solid black;
+}
 
 blockquote {
 	margin: 0;
