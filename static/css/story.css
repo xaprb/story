@@ -19,6 +19,31 @@
   display: none;
 }
 
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	width: 100%;
+	overflow: auto;
+	font-size: 85%;
+   font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
+               'avenir next', avenir,
+               'helvetica neue', helvetica,
+               ubuntu,
+               roboto, noto,
+               'segoe ui', arial,
+               sans-serif;
+}
+table th, table td {
+	display: table-cell;
+	vertical-align: inherit;
+	padding: 5px 10px;
+	border: 1px solid #dfe2e5;
+}
+table th {
+	font-weight: 600;
+}
+
 /* pagination.html: https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
 .pagination li {
   display: inline-block;
@@ -107,7 +132,7 @@ blockquote {
     display: none;
   }
   a, a:link, a:visited, a:hover {
-    text-decoration: underline black dotted;
+    text-decoration: underline black;
   }
   .footnote-ref a, .category a {
     text-decoration: none !important;
