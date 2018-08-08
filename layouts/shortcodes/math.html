@@ -1,0 +1,8 @@
+{{ if or (hasPrefix .Inner "\n") (hasPrefix .Inner "<p>") }}
+<div class="math">\[
+    {{- $inner := replace .Inner "\\<br />\n" "\\\\" -}}
+    {{- $inner := replace $inner "<p>" "<p>\\[" -}}
+    {{- $inner := replace $inner "</p>" "\\]<p>" -}}
+    {{ trim $inner "\n" }}
+\]</div>
+{{- else -}}<span class="math">\( {{ trim .Inner "\n" }} \)</span>{{- end -}}
