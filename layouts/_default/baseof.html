@@ -36,7 +36,7 @@
 		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
 		<!-- for a post, you can set the header image with the "image" parameter in front matter -->
 		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}'); background-position: center;">
-			<div class="bg-black-30 bb">
+			<div class="bg-black-30 bb bt">
 
 				<nav id="navmenu" class="db dt-l w-100 border-box pa3 ph5-l">
 					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
@@ -54,7 +54,7 @@
 					</div>
 				</nav>
 
-				<div class="tc-l pv4 pv5-l ph3 ph4-ns">
+				<div id="hdr" class="tc-l pv4 pv5-l ph3 ph4-ns">
 					<h1 class="f2 fw3 white-90 mb0 lh-title">{{ .Title | markdownify }}</h1>
 					<h2 class="fw1 f6 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
 						<!-- You can put a subtitle here in _index.md parameters, or it'll get

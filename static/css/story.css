@@ -141,6 +141,14 @@ blockquote {
   .footnote-ref a, .category a {
     text-decoration: none !important;
   }
+  #hdr {
+	  padding-top: 0px !important;
+	  padding-bottom: 0px !important;
+  }
+  h2 {
+	  margin-top: 16px !important;
+	  margin-bottom: 16px !important;
+  }
   #navmenu {
     display: none !important;
   }
