@@ -19,6 +19,10 @@
   display: none;
 }
 
+.math {
+	font-size: 1rem;
+}
+
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -157,5 +161,8 @@ blockquote {
   }
   main { /* don't waste paper on extra blank pages */
     padding-bottom: 0 !important;
+  }
+  .math {
+	  font-size: .85rem !important;
   }
 }
