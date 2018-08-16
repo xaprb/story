@@ -117,6 +117,13 @@ img[src~=ba] {
 	border: 1px solid black;
 }
 
+/* pseudo-3d book covers should be 400x525px but displayed at half-size.
+ */
+img[src~=s200x262] {
+	width: 200px;
+	height: 262px;
+}
+
 blockquote {
 	margin: 0;
 	padding: 0 1rem;
