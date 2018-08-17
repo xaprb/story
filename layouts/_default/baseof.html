@@ -30,6 +30,8 @@
 				renderMathInElement(document.body);
 			});
 		</script>
+		{{ with .Site.Params.head }}{{ range . }}
+		{{ . | safeHTML }}{{ end }}{{ end }}
 
 	</head>
 	<body class="ma0 bg-white">
