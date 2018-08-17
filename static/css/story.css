@@ -117,11 +117,83 @@ img[src~=ba] {
 	border: 1px solid black;
 }
 
-/* pseudo-3d book covers should be 400x525px but displayed at half-size.
+/* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/
+ * The images should be 400x525px but displayed at half-size.
+ * Give the book images a 3dbook pseudo-class in the URL fragment.
+ * [![img](/img.jpg# s200x262 3dbook)](http://example.com/)
+ * There's some JS that runs from story.js that will find the img,
+ * and give its wrapper <a> the right classes, and the containing <p> still more
+ * classes:
+ * <p class="books"><a class="book"><img></a></p>
  */
 img[src~=s200x262] {
 	width: 200px;
 	height: 262px;
+}
+
+/* Fallback book cover styles */
+.book {
+  display: inline-block;
+  box-shadow: 5px 5px 20px #333;
+  margin: 10px;
+}
+
+.book img { vertical-align: middle; }
+
+/*
+ *  In order for this to work, you must use Modernizer
+ *  to detect 3D transform browser support. This will add
+ *  a "csstransforms3d" class to the HTML element.
+ *
+ *  Visit http://modernizr.com/ for installation instructions
+ */
+
+.csstransforms3d  .books {
+  -moz-perspective: 100px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  display: inline-block;
+  float: right;
+}
+
+.csstransforms3d  .book {
+  position: relative;
+  -moz-perspective: 100px;
+  -moz-transform: rotateY(-3deg);
+  -webkit-transform: perspective(100) rotateY(-3deg);
+  outline: 1px solid transparent; /* Helps smooth jagged edges in Firefox */
+  box-shadow: none;
+  margin: 0;
+}
+
+.csstransforms3d  .book img {
+  position: relative !important;
+  max-width: 100% !important;
+}
+
+.csstransforms3d  .book:before,
+.csstransforms3d  .book:after {
+  position: absolute;
+  top: 2%;
+  height: 96%;
+  content: ' ';
+  z-index: -1;
+}
+
+.csstransforms3d  .book:before {
+  width: 100%;
+  left: 7.5%;
+  background-color: #5a2d18;
+  box-shadow: 5px 5px 20px #333;
+}
+
+.csstransforms3d  .book:after {
+  width: 5%;
+  left: 100%;
+  background-color: #EFEFEF;
+  box-shadow: inset 0px 0px 5px #aaa;
+  -moz-transform: rotateY(20deg);
+  -webkit-transform: perspective(100) rotateY(20deg);
 }
 
 blockquote {
