@@ -70,7 +70,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ with .Params.categories }}in {{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}" class="category white-80 hover-white no-underline">{{ . | title }}</a>{{ end }} {{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="category white-80 hover-white no-underline">{{ . | title }}</a>{{ end }}
 								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
