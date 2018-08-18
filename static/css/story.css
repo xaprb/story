@@ -85,6 +85,18 @@ pre, code, kbd, samp {
 	font-size: 1rem;
 }
 
+/* Use front matter in the blog post to add CSS class names to the <body> tag.
+ */
+.h3-cl h3 {
+	clear: left;
+}
+.h3-cr h3 {
+	clear: right;
+}
+.h3-cb h3 {
+	clear: both;
+}
+
 /* Use the URL fragment of the img src after the # to set pseudo-css-classes.
  * ![An Image](/img.jpg# w-100)
  * These classes can be combined:
@@ -118,24 +130,24 @@ img[src~=ba] {
 }
 
 /* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/
- * The images should be 400x525px but displayed at half-size.
+ * The images should be 400x525px but displayed at smaller size.
  * Give the book images a 3dbook pseudo-class in the URL fragment.
- * [![img](/img.jpg# s200x262 3dbook)](http://example.com/)
+ * [![img](/img.jpg# 3dbook)](http://example.com/)
  * There's some JS that runs from story.js that will find the img,
  * and give its wrapper <a> the right classes, and the containing <p> still more
  * classes:
  * <p class="books"><a class="book"><img></a></p>
  */
-img[src~=s200x262] {
-	width: 200px;
-	height: 262px;
+img[src~="3dbook"] {
+	width: 160px;
+	height: 210px;
 }
 
 /* Fallback book cover styles */
 .book {
   display: inline-block;
   box-shadow: 5px 5px 20px #333;
-  margin: 10px;
+  margin: 16px;
 }
 
 .book img { vertical-align: middle; }
@@ -154,6 +166,7 @@ img[src~=s200x262] {
   -webkit-transform-style: preserve-3d;
   display: inline-block;
   float: right;
+  margin-left: 16px;
 }
 
 .csstransforms3d  .book {
@@ -182,9 +195,9 @@ img[src~=s200x262] {
 
 .csstransforms3d  .book:before {
   width: 100%;
-  left: 7.5%;
-  background-color: #5a2d18;
-  box-shadow: 5px 5px 20px #333;
+  left: 6.5%;
+  background-color: #484848;
+  box-shadow: 0px 3px 20px 2px #333;
 }
 
 .csstransforms3d  .book:after {

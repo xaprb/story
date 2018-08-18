@@ -1,16 +1,15 @@
 {{ define "title" }}Search{{ end }}
 {{ define "main" }}
 
-<article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
-	<main class="nested-copy-line-height lh-copy f4 pv5">
-		<input id="search" type="text" placeholder="Search..." class="pa2 br3 ba bw1 b--gray">
-		<p>Type a search above to see results below:</p>
-		<ul id="results" class=""></ul>
-	</main>
+<article class="center ph3 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide pt4 min-vh-100">
+   {{ .Content }}
+   <input id="search" type="text" placeholder="Search..." class="pa2 br3 ba bw1 b--gray lh-title f3 sans-serif w-100">
+   <p>Type a search above to see results below:</p>
+   <ul id="results" class=""></ul>
 </article>
 
 
-    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.2.1/lunr.min.js"></script>
     <script type="text/javascript">
     var lunrIndex, $results, pagesIndex;
     function getQueryVariable(variable) {
@@ -34,7 +33,7 @@
         $.getJSON("/index.json")
             .done(function(index) {
                 pagesIndex = index;
-                console.log("index:", pagesIndex);
+                // console.log("index:", pagesIndex);
                 lunrIndex = lunr(function() {
                     this.field("title", { boost: 10 });
                     this.field("categories", { boost: 5 });
@@ -107,10 +106,9 @@
     }
 
     // Let's get started
-    initLunr();
-
     $(document).ready(function() {
-        initUI();
+       initLunr();
+       initUI();
     });
     </script>
 {{ end }}
