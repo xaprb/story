@@ -65,13 +65,12 @@
 								</time>
 								at {{ .Params.event }}
 							{{ else }}
-								Posted
+								Published
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
-								in
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}" class="category white-80 hover-white no-underline">{{ . | title }}</a>{{ end }}
+								{{ with .Params.categories }}in {{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}<a href="/categories/{{ . | urlize }}" class="category white-80 hover-white no-underline">{{ . | title }}</a>{{ end }} {{ end }}
 								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}

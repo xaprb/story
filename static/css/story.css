@@ -46,7 +46,7 @@ table {
 table th, table td {
 	display: table-cell;
 	vertical-align: inherit;
-	padding: 5px 10px;
+	padding: .25rem .5rem;
 	border: 1px solid #dfe2e5;
 }
 table th {
@@ -76,7 +76,7 @@ table th {
 
 pre {
 	border-radius: 3px;
-	padding: 16px;
+	padding: 1rem;
 	background: #f6f8fa;
 	overflow: auto;
 }
@@ -135,8 +135,7 @@ img[src~=ba] {
 }
 
 img[src~="3dbook"] {
-	width: 160px;
-	height: 210px;
+	max-width: 160px;
 }
 
 @media screen {
@@ -154,7 +153,7 @@ img[src~="3dbook"] {
 	.book {
 	  display: inline-block;
 	  box-shadow: 5px 5px 20px #333;
-	  margin: 16px;
+	  margin: 1rem;
 	}
 
 	.book img { vertical-align: middle; }
@@ -173,7 +172,7 @@ img[src~="3dbook"] {
 	  -webkit-transform-style: preserve-3d;
 	  display: inline-block;
 	  float: right;
-	  margin-left: 16px;
+	  margin: 0px 0px 1rem 1rem;
 	}
 
 	.csstransforms3d  .book {
@@ -188,7 +187,6 @@ img[src~="3dbook"] {
 
 	.csstransforms3d  .book img {
 	  position: relative !important;
-	  max-width: 100% !important;
 	}
 
 	.csstransforms3d  .book:before,
@@ -228,10 +226,15 @@ blockquote {
   * {
     color: black !important;
   }
+  pre, code, kbd, samp {
+    font-size: .85rem;
+	 background: white !important;
+	 padding: 0px !important;
+  }
   img[src~="3dbook"] {
     border: 1px solid black;
 	 float: right;
-	 margin: 16px 0px 16px 16px;
+	 margin: 0px 0px 1rem 1rem;
   }
   .footnote-return {
     display: none;
@@ -247,8 +250,12 @@ blockquote {
 	  padding-bottom: 0px !important;
   }
   h2 {
-	  margin-top: 16px !important;
-	  margin-bottom: 16px !important;
+	  margin-top: 1rem !important;
+	  margin-bottom: 1rem !important;
+	  font-style: italic;
+  }
+  h3 a:link, h3 a:visited {
+	  text-decoration: none;
   }
   #navmenu {
     display: none !important;
@@ -273,5 +280,8 @@ blockquote {
   }
   .math {
 	  font-size: .85rem !important;
+  }
+  footer {
+	  display: none;
   }
 }
