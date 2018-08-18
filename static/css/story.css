@@ -27,6 +27,10 @@ article {
 	hyphens: auto;
 	text-align: justify;
 }
+.footnotes, pre, code, tt, kbd, samp {
+	hyphens: none;
+	text-align: left;
+}
 
 table {
 	border-spacing: 0;
@@ -86,7 +90,7 @@ p>code, li>code, a>code {
 	border-radius: 3px;
 	padding: 0.2em 0.4em;
 }
-pre, code, kbd, samp {
+pre, code, kbd, tt, samp {
 	font-size: 1rem;
 }
 
@@ -226,7 +230,7 @@ blockquote {
   * {
     color: black !important;
   }
-  pre, code, kbd, samp {
+  pre, code, kbd, tt, samp {
     font-size: .85rem;
 	 background: white !important;
 	 padding: 0px !important;
