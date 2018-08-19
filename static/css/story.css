@@ -23,13 +23,22 @@
    font-size: 1rem;
 }
 
-article {
+body.feature-hyphenate:not(.feature-nohyphenate) article {
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+	-ms-hyphens: auto;
    hyphens: auto;
+}
+body.feature-justify:not(.feature-nojustify) article {
    text-align: justify;
 }
 .footnotes, pre, code, tt, kbd, samp {
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+	-ms-hyphens: none;
    hyphens: none;
-   text-align: left;
 }
 
 table {
@@ -106,7 +115,7 @@ pre, code, kbd, tt, samp {
    clear: both;
 }
 .no-subtitle h2 {
-	display: none;
+   display: none;
 }
 
 /* Use the URL fragment of the img src after the # to set pseudo-css-classes.
@@ -221,16 +230,16 @@ img[src~="3dbook"] {
      -webkit-transform: perspective(100) rotateY(20deg);
    }
 
-	/* Image captions should only be "hidden" overlays on the images in screen
-	 * mode.  Even if feature-figcaption-hidden is defined, if
-	 * feature-figcaption-visible is set, this all should be disabled.
+   /* Image captions should only be "hidden" overlays on the images in screen
+    * mode.  Even if feature-figcaption-hidden is defined, if
+    * feature-figcaption-visible is set, this all should be disabled.
     */
    body.feature-figcaption-hidden:not(.feature-figcaption-visible) figure {
       position: relative;
    }
    body.feature-figcaption-hidden:not(.feature-figcaption-visible) figcaption {
       position: absolute;
-   	bottom: 0px;
+      bottom: 0px;
       display: block;
       width: 100%;
       color: white;
@@ -239,7 +248,7 @@ img[src~="3dbook"] {
       visibility: hidden;
    }
    body.feature-figcaption-hidden figure:hover figcaption {
-   	visibility: visible;
+      visibility: visible;
    }
 }
 
