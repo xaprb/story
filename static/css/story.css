@@ -20,25 +20,25 @@
 }
 
 .math {
-	font-size: 1rem;
+   font-size: 1rem;
 }
 
 article {
-	hyphens: auto;
-	text-align: justify;
+   hyphens: auto;
+   text-align: justify;
 }
 .footnotes, pre, code, tt, kbd, samp {
-	hyphens: none;
-	text-align: left;
+   hyphens: none;
+   text-align: left;
 }
 
 table {
-	border-spacing: 0;
-	border-collapse: collapse;
-	display: block;
-	width: 100%;
-	overflow: auto;
-	font-size: 85%;
+   border-spacing: 0;
+   border-collapse: collapse;
+   display: block;
+   width: 100%;
+   overflow: auto;
+   font-size: 85%;
    font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
                'avenir next', avenir,
                'helvetica neue', helvetica,
@@ -48,13 +48,13 @@ table {
                sans-serif;
 }
 table th, table td {
-	display: table-cell;
-	vertical-align: inherit;
-	padding: .25rem .5rem;
-	border: 1px solid #dfe2e5;
+   display: table-cell;
+   vertical-align: inherit;
+   padding: .25rem .5rem;
+   border: 1px solid #dfe2e5;
 }
 table th {
-	font-weight: 600;
+   font-weight: 600;
 }
 
 /* pagination.html: https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
@@ -79,31 +79,31 @@ table th {
 }
 
 pre {
-	border-radius: 3px;
-	padding: 1rem;
-	background: #f6f8fa;
-	overflow: auto;
+   border-radius: 3px;
+   padding: 1rem;
+   background: #f6f8fa;
+   overflow: auto;
 }
 p>code, li>code, a>code {
-	background: #f6f8fa;
-	margin: 0;
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
+   background: #f6f8fa;
+   margin: 0;
+   border-radius: 3px;
+   padding: 0.2em 0.4em;
 }
 pre, code, kbd, tt, samp {
-	font-size: 1rem;
+   font-size: 1rem;
 }
 
 /* Use front matter in the blog post to add CSS class names to the <body> tag.
  */
 .h3-cl h3 {
-	clear: left;
+   clear: left;
 }
 .h3-cr h3 {
-	clear: right;
+   clear: right;
 }
 .h3-cb h3 {
-	clear: both;
+   clear: both;
 }
 
 /* Use the URL fragment of the img src after the # to set pseudo-css-classes.
@@ -112,118 +112,131 @@ pre, code, kbd, tt, samp {
  * ![An Image](/img.jpg# w-100 fr)
  */
 .mw-100 img {
-	max-width: 100%;
+   max-width: 100%;
 }
 img[src~=w-100] {
-	width: 100%;
+   width: 100%;
 }
 img[src~=fr] {
-	float: right;
+   float: right;
 }
 img[src~=fl] {
-	float: left;
+   float: left;
 }
 img[src~=ph1] {
-	padding-left: .25rem;
-	padding-right: .25rem;
+   padding-left: .25rem;
+   padding-right: .25rem;
 }
 img[src~=pv1] {
-	padding-top: .25rem;
-	padding-bottom: .25rem;
+   padding-top: .25rem;
+   padding-bottom: .25rem;
 }
 img[src~=pa1] {
-	padding: .25rem;
+   padding: .25rem;
 }
 img[src~=ba] {
-	border: 1px solid black;
+   border: 1px solid black;
 }
 
 img[src~="3dbook"] {
-	max-width: 160px;
+   max-width: 160px;
 }
 
 @media screen {
-	/* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/
-	 * The images should be 400x525px but displayed at smaller size.
-	 * Give the book images a 3dbook pseudo-class in the URL fragment.
-	 * [![img](/img.jpg# 3dbook)](http://example.com/)
-	 * There's some JS that runs from story.js that will find the img,
-	 * and give its wrapper <a> the right classes, and the containing <p> still
-	 * more classes:
-	 * <p class="books"><a class="book"><img></a></p>
-	 */
+   /* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/
+    * The images should be 400x525px but displayed at smaller size.
+    * Give the book images a 3dbook pseudo-class in the URL fragment.
+    * [![img](/img.jpg# 3dbook)](http://example.com/)
+    * There's some JS that runs from story.js that will find the img,
+    * and give its wrapper <a> the right classes, and the containing <p> still
+    * more classes:
+    * <p class="books"><a class="book"><img></a></p>
+    */
 
-	/* Fallback book cover styles */
-	.book {
-	  display: inline-block;
-	  box-shadow: 5px 5px 20px #333;
-	  margin: 1rem;
-	}
+   /* Fallback book cover styles */
+   .book {
+     display: inline-block;
+     box-shadow: 5px 5px 20px #333;
+     margin: 1rem;
+   }
 
-	.book img { vertical-align: middle; }
+   .book img { vertical-align: middle; }
 
-	/*
-	 *  In order for this to work, you must use Modernizer
-	 *  to detect 3D transform browser support. This will add
-	 *  a "csstransforms3d" class to the HTML element.
-	 *
-	 *  Visit http://modernizr.com/ for installation instructions
-	 */
+   /*
+    *  In order for this to work, you must use Modernizer
+    *  to detect 3D transform browser support. This will add
+    *  a "csstransforms3d" class to the HTML element.
+    *
+    *  Visit http://modernizr.com/ for installation instructions
+    */
 
-	.csstransforms3d  .books {
-	  -moz-perspective: 100px;
-	  -moz-transform-style: preserve-3d;
-	  -webkit-transform-style: preserve-3d;
-	  display: inline-block;
-	  float: right;
-	  margin: 0px 0px 1rem 1rem;
-	}
+   .csstransforms3d  .books {
+     -moz-perspective: 100px;
+     -moz-transform-style: preserve-3d;
+     -webkit-transform-style: preserve-3d;
+     display: inline-block;
+     float: right;
+     margin: 0px 0px 1rem 1rem;
+   }
 
-	.csstransforms3d  .book {
-	  position: relative;
-	  -moz-perspective: 100px;
-	  -moz-transform: rotateY(-3deg);
-	  -webkit-transform: perspective(100) rotateY(-3deg);
-	  outline: 1px solid transparent; /* Helps smooth jagged edges in Firefox */
-	  box-shadow: none;
-	  margin: 0;
-	}
+   .csstransforms3d  .book {
+     position: relative;
+     -moz-perspective: 100px;
+     -moz-transform: rotateY(-3deg);
+     -webkit-transform: perspective(100) rotateY(-3deg);
+     outline: 1px solid transparent; /* Helps smooth jagged edges in Firefox */
+     box-shadow: none;
+     margin: 0;
+   }
 
-	.csstransforms3d  .book img {
-	  position: relative !important;
-	}
+   .csstransforms3d  .book img {
+     position: relative !important;
+   }
 
-	.csstransforms3d  .book:before,
-	.csstransforms3d  .book:after {
-	  position: absolute;
-	  top: 2%;
-	  height: 96%;
-	  content: ' ';
-	  z-index: -1;
-	}
+   .csstransforms3d  .book:before,
+   .csstransforms3d  .book:after {
+     position: absolute;
+     top: 2%;
+     height: 96%;
+     content: ' ';
+     z-index: -1;
+   }
 
-	.csstransforms3d  .book:before {
-	  width: 100%;
-	  left: 6.5%;
-	  background-color: #484848;
-	  box-shadow: 0px 3px 20px 2px #333;
-	}
+   .csstransforms3d  .book:before {
+     width: 100%;
+     left: 6.5%;
+     background-color: #484848;
+     box-shadow: 0px 3px 20px 2px #333;
+   }
 
-	.csstransforms3d  .book:after {
-	  width: 5%;
-	  left: 100%;
-	  background-color: #EFEFEF;
-	  box-shadow: inset 0px 0px 5px #aaa;
-	  -moz-transform: rotateY(20deg);
-	  -webkit-transform: perspective(100) rotateY(20deg);
-	}
+   .csstransforms3d  .book:after {
+     width: 5%;
+     left: 100%;
+     background-color: #EFEFEF;
+     box-shadow: inset 0px 0px 5px #aaa;
+     -moz-transform: rotateY(20deg);
+     -webkit-transform: perspective(100) rotateY(20deg);
+   }
 }
 
 blockquote {
-	margin: 0;
-	padding: 0 1rem;
-	color: #6a737d;
-	border-left: 0.25rem solid #dfe2e5;
+   margin: 0;
+   padding: 0 1rem;
+   color: #6a737d;
+   border-left: 0.25rem solid #dfe2e5;
+}
+
+figure {
+   margin: 0px;
+   padding: 0px;
+}
+
+body {
+   counter-reset: figcaption;
+}
+figcaption::before {
+   counter-increment: figcaption;
+   content: "Figure " counter(figcaption) ": ";
 }
 
 @media print {
@@ -232,13 +245,13 @@ blockquote {
   }
   pre, code, kbd, tt, samp {
     font-size: .85rem;
-	 background: white !important;
-	 padding: 0px !important;
+    background: white !important;
+    padding: 0px !important;
   }
   img[src~="3dbook"] {
     border: 1px solid black;
-	 float: right;
-	 margin: 0px 0px 1rem 1rem;
+    float: right;
+    margin: 0px 0px 1rem 1rem;
   }
   .footnote-return {
     display: none;
@@ -250,16 +263,16 @@ blockquote {
     text-decoration: none !important;
   }
   #hdr {
-	  padding-top: 0px !important;
-	  padding-bottom: 0px !important;
+     padding-top: 0px !important;
+     padding-bottom: 0px !important;
   }
   h2 {
-	  margin-top: 1rem !important;
-	  margin-bottom: 1rem !important;
-	  font-style: italic;
+     margin-top: 1rem !important;
+     margin-bottom: 1rem !important;
+     font-style: italic;
   }
   h3 a:link, h3 a:visited {
-	  text-decoration: none;
+     text-decoration: none;
   }
   #navmenu {
     display: none !important;
@@ -283,9 +296,9 @@ blockquote {
     padding-bottom: 0 !important;
   }
   .math {
-	  font-size: .85rem !important;
+     font-size: .85rem !important;
   }
   footer {
-	  display: none;
+     display: none;
   }
 }
