@@ -218,13 +218,14 @@ img[src~="3dbook"] {
      -webkit-transform: perspective(100) rotateY(20deg);
    }
 
-   /* Image captions should only be "hidden" overlays on the images in screen mode.
+	/* Image captions should only be "hidden" overlays on the images in screen
+	 * mode.  Even if feature-imgcaption-hidden is defined, if
+	 * feature-imgcaption-visible is set, this all should be disabled.
     */
-   body.feature-imgcaption-hidden figure {
+   body.feature-imgcaption-hidden:not(.feature-imgcaption-visible) figure {
       position: relative;
-      overflow: hidden;
    }
-   body.feature-imgcaption-hidden figcaption {
+   body.feature-imgcaption-hidden:not(.feature-imgcaption-visible) figcaption {
       position: absolute;
    	bottom: 0px;
       display: block;
@@ -237,8 +238,8 @@ img[src~="3dbook"] {
    body.feature-imgcaption-hidden figure:hover figcaption {
    	visibility: visible;
    }
-
 }
+
 
 blockquote {
    margin: 0;
