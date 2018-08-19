@@ -217,6 +217,27 @@ img[src~="3dbook"] {
      -moz-transform: rotateY(20deg);
      -webkit-transform: perspective(100) rotateY(20deg);
    }
+
+   /* Image captions should only be "hidden" overlays on the images in screen mode.
+    */
+   body.feature-imgcaption-hidden figure {
+      position: relative;
+      overflow: hidden;
+   }
+   body.feature-imgcaption-hidden figcaption {
+      position: absolute;
+   	bottom: 0px;
+      display: block;
+      width: 100%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 1rem;
+      visibility: hidden;
+   }
+   body.feature-imgcaption-hidden figure:hover figcaption {
+   	visibility: visible;
+   }
+
 }
 
 blockquote {
@@ -234,7 +255,7 @@ figure {
 body {
    counter-reset: figcaption;
 }
-figcaption::before {
+body.feature-fignum figcaption::before {
    counter-increment: figcaption;
    content: "Figure " counter(figcaption) ": ";
 }
