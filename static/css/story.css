@@ -41,7 +41,32 @@ body.feature-justify:not(.feature-nojustify) article {
    hyphens: none;
 }
 
-table {
+body.feature-tablefig table {
+   border-spacing: 0;
+   border-collapse: collapse;
+   overflow: auto;
+   font-size: 85%;
+   font-family: inherit;
+	border-top: 2px solid black;
+}
+body.feature-tablefig table thead, body.feature-tablefig table tbody {
+	border-bottom: 1px solid black;
+}
+body.feature-tablefig table th, body.feature-tablefig table td {
+   display: table-cell;
+   vertical-align: bottom;
+   padding: 0 .5rem;
+}
+body.feature-tablefig table th {
+   font-weight: 600;
+	padding-top: .5rem;
+}
+
+body.feature-tablefw:not(.feature-tablefig) td {
+	font-family: arial;
+}
+
+body:not(.feature-tablefig) table {
    border-spacing: 0;
    border-collapse: collapse;
    display: block;
@@ -56,13 +81,16 @@ table {
                'segoe ui', arial,
                sans-serif;
 }
-table th, table td {
+body:not(.feature-tablefig) table tr:nth-child(2n) {
+   background-color: #f6f8fa;
+}
+body:not(.feature-tablefig) table th, body:not(.feature-tablefig) table td {
    display: table-cell;
    vertical-align: inherit;
    padding: .25rem .5rem;
    border: 1px solid #dfe2e5;
 }
-table th {
+body:not(.feature-tablefig) table th {
    font-weight: 600;
 }
 
@@ -267,10 +295,23 @@ figure {
 
 body {
    counter-reset: figcaption;
+	counter-reset: tablecaption;
 }
 body.feature-fignum figcaption::before {
    counter-increment: figcaption;
    content: "Figure " counter(figcaption) ". ";
+}
+body.feature-fignum table {
+   counter-increment: tablecaption;
+}
+body.feature-fignum table caption::before {
+   content: "Table " counter(tablecaption) ". ";
+}
+table caption {
+   text-align: left;
+   font-family: 'Spectral', Georgia, Times, serif;
+	font-style: italic;
+	padding: 0px 0.5rem;
 }
 
 @media print {

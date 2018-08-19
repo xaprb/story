@@ -56,3 +56,36 @@ $( function() {
       });
    }
 });
+
+/* Add captions to tables.
+ * If the table is followed by a <p><em>, then transform the <em> into a caption.
+ * The following features have to be enabled:
+ * - feature-tablecaption has to be enabled or the whole thing is disabled
+ * - feature-fignum adds table numbering
+ * - feature-figlink adds automatic links of text like "Table 4"
+ */
+$( function() {
+   $("body.feature-tablecaption article table").each(function(i, e) {
+      var $this = $(this);
+      var $txt = false;
+      if ( $this.next().is("p") ) {
+			if ( $this.next().children().first().is("em:only-child") ) {
+				$txt = $this.next().children().first().html();
+				$this.next().remove();
+				console.log("removed p, " + $txt);
+			}
+      }
+      if ( $txt ) {
+         $this.prepend('<caption id="tbl-' + (i+1) + '">' + $txt + '</caption>');
+      }
+   });
+   if ( $("body.feature-figlink").length ) {
+      $("article p, article li").each(function(i, e) {
+         var $old = $(this).html();
+         var $new = $old.replace(/Table\s+(\d+)/g, '<a href="#tbl-$1">Table $1</a>');
+         if ( $old !== $new ) {
+            $(this).html($new);
+         }
+      });
+   }
+});
