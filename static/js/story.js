@@ -1,7 +1,7 @@
 // Render KaTeX math typesetting, but only if the <body> has the class
-// feature-katex
+// feature-math
 $( function() {
-   if ( $( "body.feature-katex" ).length ) {
+   if ( $( "body.feature-math:not(.feature-nomath)" ).length ) {
       renderMathInElement(document.body);
    }
 });
@@ -29,8 +29,8 @@ $( function() {
 $( function() {
    $("body.feature-figcaption article img").each(function(i, e) {
       var $this = $(this);
-      // Don't put captions on 3d book images
-      if ( $this.attr('src').match(/#.*3dbook/) ) return;
+      // Don't put captions on images that have URL fragment pseudo-classes.
+      if ( $this.attr('src').match(/#/) ) return;
       var $txt = false;
       if ( $this.next().is("em") ) {
          $txt = $this.next().html();
