@@ -21,13 +21,13 @@ $( function() {
  * If the img has a title, use that as the caption.
  * If the img has an alt, use that.
  * The following features have to be enabled:
- * - feature-imgcaption has to be enabled or the whole thing is disabled
- * - feature-imgcaption-hidden makes the captions invisible till you hover
+ * - feature-figcaption has to be enabled or the whole thing is disabled
+ * - feature-figcaption-hidden makes the captions invisible till you hover
  * - feature-fignum adds figure numbering
  * - feature-figlink adds automatic links of text like "Figure 4"
  */
 $( function() {
-   $("body.feature-imgcaption article img").each(function(i, e) {
+   $("body.feature-figcaption article img").each(function(i, e) {
       var $this = $(this);
       // Don't put captions on 3d book images
       if ( $this.attr('src').match(/#.*3dbook/) ) return;

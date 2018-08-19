@@ -219,13 +219,13 @@ img[src~="3dbook"] {
    }
 
 	/* Image captions should only be "hidden" overlays on the images in screen
-	 * mode.  Even if feature-imgcaption-hidden is defined, if
-	 * feature-imgcaption-visible is set, this all should be disabled.
+	 * mode.  Even if feature-figcaption-hidden is defined, if
+	 * feature-figcaption-visible is set, this all should be disabled.
     */
-   body.feature-imgcaption-hidden:not(.feature-imgcaption-visible) figure {
+   body.feature-figcaption-hidden:not(.feature-figcaption-visible) figure {
       position: relative;
    }
-   body.feature-imgcaption-hidden:not(.feature-imgcaption-visible) figcaption {
+   body.feature-figcaption-hidden:not(.feature-figcaption-visible) figcaption {
       position: absolute;
    	bottom: 0px;
       display: block;
@@ -235,7 +235,7 @@ img[src~="3dbook"] {
       padding: 1rem;
       visibility: hidden;
    }
-   body.feature-imgcaption-hidden figure:hover figcaption {
+   body.feature-figcaption-hidden figure:hover figcaption {
    	visibility: visible;
    }
 }
