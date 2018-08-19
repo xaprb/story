@@ -42,19 +42,19 @@
 					</a>
 					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
 						{{ range .Site.Menus.main }}
-							<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 sans-serif" href="{{ .URL }}">{{ .Name }}</a>
+							<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 sans-serif" href="{{ .URL }}">{{ .Name }}</a>
 						{{ end }}
 						{{ range .Site.Menus.social }}
-							<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 sans-serif" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
+							<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 sans-serif" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
 						{{ end }}
-						<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
-						<a class="link f4 f5-l dib mr3 hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
+						<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
 					</div>
 				</nav>
 
-				<div id="hdr" class="tc-l pv4 pv5-l ph3 ph4-ns">
-					<h1 class="f2 fw3 white-90 mb0 lh-title">{{ .Title | markdownify }}</h1>
-					<h2 class="fw1 f6 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
+					<h1 class="f2 fw3 white-90 mb0 mt0 mt1-ns lh-title">{{ .Title | markdownify }}</h1>
+					<h2 class="fw1 f6 f3-l white-80 measure-wide-l center lh-copy mt2 mt3-l mb3 mb4-l">
 						<!-- You can put a subtitle here in _index.md parameters, or it'll get
 						filled in with date and categories if it's a post -->
 						{{ if .IsPage }}

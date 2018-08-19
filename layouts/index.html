@@ -1,9 +1,7 @@
 
 {{ define "main" }}
-	<article class="cf ph3 ph5-l pv3 pv4-l f5 fw3 tc-l center measure-wide lh-copy">
-		{{ .Content }}
-	</article>
 	<div class="pa3 pa4-ns w-100 w-70-ns center">
+		{{ .Content }}
 		<section class="w-100 mw8">
 	  {{ range where .Paginator.Pages ".Section" "ne" "slides" }}
 	    {{ partial "li.html" . }}

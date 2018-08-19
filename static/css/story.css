@@ -105,6 +105,9 @@ pre, code, kbd, tt, samp {
 .h3-cb h3 {
    clear: both;
 }
+.no-subtitle h2 {
+	display: none;
+}
 
 /* Use the URL fragment of the img src after the # to set pseudo-css-classes.
  * ![An Image](/img.jpg# w-100)
@@ -258,7 +261,7 @@ body {
 }
 body.feature-fignum figcaption::before {
    counter-increment: figcaption;
-   content: "Figure " counter(figcaption) ": ";
+   content: "Figure " counter(figcaption) ". ";
 }
 
 @media print {
