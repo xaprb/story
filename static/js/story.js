@@ -27,7 +27,7 @@ $( function() {
  * - feature-figlink adds automatic links of text like "Figure 4"
  */
 $( function() {
-   $("body.feature-figcaption article img").each(function(i, e) {
+   $("body.feature-figcaption:not(.feature-nofigcaption) article img").each(function(i, e) {
       var $this = $(this);
       // Don't put captions on images that have URL fragment pseudo-classes.
       if ( $this.attr('src').match(/#/) ) return;
@@ -72,7 +72,6 @@ $( function() {
 			if ( $this.next().children().first().is("em:only-child") ) {
 				$txt = $this.next().children().first().html();
 				$this.next().remove();
-				console.log("removed p, " + $txt);
 			}
       }
       if ( $txt ) {
