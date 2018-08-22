@@ -293,6 +293,10 @@ figure {
    padding: 0px;
 }
 
+figure img {
+   display: block;
+}
+
 body {
    counter-reset: figcaption;
 	counter-reset: tablecaption;
