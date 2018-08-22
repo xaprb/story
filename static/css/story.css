@@ -23,7 +23,12 @@
    font-size: 1rem;
 }
 
-body.feature-hyphenate:not(.feature-nohyphenate) article {
+body.feature-hyphenate:not(.feature-nohyphenate) article p,
+   body.feature-hyphenate:not(.feature-nohyphenate) article li,
+   body.feature-hyphenate:not(.feature-nohyphenate) article td,
+   body.feature-hyphenate:not(.feature-nohyphenate) article caption,
+   body.feature-hyphenate:not(.feature-nohyphenate) article figcaption,
+   body.feature-hyphenate:not(.feature-nohyphenate) article th {
    word-wrap: break-word;
    overflow-wrap: break-word;
    -webkit-hyphens: auto;
@@ -31,10 +36,11 @@ body.feature-hyphenate:not(.feature-nohyphenate) article {
 	-ms-hyphens: auto;
    hyphens: auto;
 }
-body.feature-justify:not(.feature-nojustify) article {
+body.feature-justify:not(.feature-nojustify) article p,
+   body.feature-justify:not(.feature-nojustify) article li {
    text-align: justify;
 }
-.footnotes, pre, code, tt, kbd, samp {
+pre, code, tt, kbd, samp {
    -webkit-hyphens: none;
    -moz-hyphens: none;
 	-ms-hyphens: none;
