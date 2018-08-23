@@ -1,7 +1,7 @@
 {{ define "title" }}{{ .Section | title }} &bullet; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
 <div class="pa3 pa4-ns w-100 w-70-ns center">
-  <section class="w-100 mw8">
+  <section class="w-100 mw8 bt">
   <!-- if the section isn't "slides" then omit them; otherwise list slides -->
   {{ if ne .Section "slides" }}
     {{ range where .Paginator.Pages "Section" "ne" "slides" }}

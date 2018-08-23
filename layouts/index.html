@@ -2,7 +2,7 @@
 {{ define "main" }}
 	<div class="pa3 pa4-ns w-100 w-70-ns center">
 		{{ .Content }}
-		<section class="w-100 mw8">
+		<section class="w-100 mw8 bt">
 	  {{ range where .Paginator.Pages ".Section" "ne" "slides" }}
 	    {{ partial "li.html" . }}
 	  {{ end }}

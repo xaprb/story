@@ -31,30 +31,36 @@
 	</head>
 	<body class="ma0 bg-white serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
 		{{ block "header" . }}
-		<!-- you can set the title and header image in the "title/image" parameters of the _index.md for the section -->
-		<!-- for a post, you can set the header image with the "image" parameter in front matter -->
-		<header class="sans-serif cover bg-top" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}'); background-position: center;">
-			<div class="bg-black-30 bb bt">
+		<!--
+		You can set the title and header image in the "title/image" parameters of
+		the _index.md for the section.  For a post, you can set the header image
+		with the "image" parameter in front matter. You can disable these
+		behaviors with the feature-nohdr class in the site config file or front
+		matter of an individual post.
+		-->
+		{{- $hdr := cond (or (in .Site.Params.classes "feature-nohdr") (in .Params.classes "feature-nohdr")) false true -}}
+		<header class="sans-serif cover bg-top" {{ if $hdr }}style="background-image: url('{{ .Params.image | default "/img/default-header-img.jpg" }}'); background-position: center;"{{ end }}>
+			<div class="{{ cond $hdr "bg-black-30 bb bt" "" }}">
 
-				<nav id="navmenu" class="db dt-l w-100 border-box pa3 ph5-l">
+				<nav id="navmenu" class="{{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
 					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
 						<img src="/img/logo.jpg" class="dib w2 h2 br-100" alt="{{ .Title }}">
 					</a>
 					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
 						{{ range .Site.Menus.main }}
-							<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 sans-serif" href="{{ .URL }}">{{ .Name }}</a>
+						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90" href="{{ .URL }}">{{ .Name }}</a>
 						{{ end }}
 						{{ range .Site.Menus.social }}
-							<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 sans-serif" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
+						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
 						{{ end }}
-						<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
-						<a class="link f5 f4-l dib mr1 hover-white no-underline white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
+						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
 					</div>
 				</nav>
 
-				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
-					<h1 class="f2 fw3 white-90 mb0 mt0 mt1-ns lh-title">{{ .Title | markdownify }}</h1>
-					<h2 class="fw1 f6 f3-l white-80 measure-wide-l center lh-copy mt2 mt3-l mb3 mb4-l">
+				<div id="hdr" class="tc-l {{ cond $hdr "pv4-ns pv5-l" "" }} pv2 ph3 ph4-ns">
+					<h1 class="{{ cond $hdr "white-90 mt1-ns" "" }} f2 fw3 mb0 mt0 lh-title">{{ .Title | markdownify }}</h1>
+					<h2 class="{{ cond $hdr "white-80 mt3-l mb4-l" "" }} fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
 						<!-- You can put a subtitle here in _index.md parameters, or it'll get
 						filled in with date and categories if it's a post -->
 						{{ if .IsPage }}
@@ -70,7 +76,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="category white-80 hover-white no-underline">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 hover-white" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
@@ -80,10 +86,12 @@
 				</div>
 
 				<!-- if there's a "credits" parameter in front matter there'll be a camera icon here -->
+				{{ if $hdr }}
 				{{ with .Params.credit }}
 				<div class="w-100 cf" id="photo-credit">
 					<a class="fr f6 ma0 pa2 link white-90 hover-white fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
 				</div>
+				{{ end }}
 				{{ end }}
 
 			</div>

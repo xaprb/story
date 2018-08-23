@@ -1,10 +1,13 @@
-<div class="relative w-100 mb4">
+{{- $hdr := cond (or (in .Site.Params.classes "feature-nohdr") (in .Params.classes "feature-nohdr")) false true -}}
+<div class="relative w-100">
 	<article class="bb b--black-10">
-		<div class="db pv4 ph3 ph0-l no-underline dark-gray">
+		<div class="db pv4 {{ cond $hdr "ph3" "" }} ph0-l no-underline dark-gray">
 			<div class="flex flex-column flex-row-ns">
+				{{ if $hdr }}
 				<div class="pr3-ns mb4 mb0-ns w-100 h4 h4-m w4-m h5-ns w5-ns br3 cover" style="background-image: url('{{ if .Params.thumbnail }}{{ .Params.thumbnail }}{{ else if .Params.image }}{{ .Params.image }}{{ else }}/img/default-header-img.jpg{{ end }}'); background-position: center;">
 					<a href="{{ .Permalink }}" class="db w-100 h-100"></a>
 				</div>
+				{{ end }}
 				<div class="w-100 w6-ns pl3-ns">
 					<h1 class="f3 fw1 mt0 lh-title"><a href="{{ .Permalink }}" class="color-inherit dim link">{{ .Title | markdownify }}</a></h1>
 					<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
