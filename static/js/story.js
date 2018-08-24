@@ -15,6 +15,15 @@ $( function() {
    });
 });
 
+// Highlight code listings, if <body> has the class
+// -feature-highlight
+$( function() {
+   if ( $( "body.feature-highlight:not(.feature-nohighlight)" ).length ) {
+		hljs.initHighlightingOnLoad();
+   }
+});
+
+
 /* Turn images into figures with captions. Several scenarios are handled, in
  * order:
  * If the img is followed by an <em>, then transform the <em> into a caption.
