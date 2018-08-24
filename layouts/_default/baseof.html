@@ -48,13 +48,13 @@
 					</a>
 					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
 						{{ range .Site.Menus.main }}
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90" href="{{ .URL }}">{{ .Name }}</a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}">{{ .Name }}</a>
 						{{ end }}
 						{{ range .Site.Menus.social }}
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
 						{{ end }}
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
 					</div>
 				</nav>
 
@@ -76,7 +76,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 hover-white" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
@@ -89,7 +89,7 @@
 				{{ if $hdr }}
 				{{ with .Params.credit }}
 				<div class="w-100 cf" id="photo-credit">
-					<a class="fr f6 ma0 pa2 link white-90 hover-white fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
+					<a class="fr f6 ma0 pa2 link white-90 dim fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
 				</div>
 				{{ end }}
 				{{ end }}
@@ -104,11 +104,12 @@
 		{{ block "pagination" . }}
 		{{ end }}
 		{{ block "footer" . }}
-		<footer class="bg-black bottom-0 w-100 pa3 sans-serif" role="contentinfo">
-		  <p>
-				<a class="f5 fw4 hover-white no-underline white-90 dn dib-ns ph3" href="{{ .Site.BaseURL }}">
-		    &copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
-			  </a>
+		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3 sans-serif" role="contentinfo">
+			<p class="w-50 fr tr">
+				Made with <a class="no-underline white-90" href="https://gohugo.io">Hugo</a> and <a class="no-underline white-90" href="https://github.com/xaprb/story">Story</a>
+			</p>
+			<p class="w-50 white-90">
+				&copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
 			</p>
 		</footer>
 		{{ end }}
