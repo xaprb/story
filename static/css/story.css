@@ -47,6 +47,16 @@ pre, code, tt, kbd, samp {
    hyphens: none;
 }
 
+hr {
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: silver;
+}
+
+.footnotes {
+	font-size: 80%;
+}
+
 body.feature-tablefig table {
    border-spacing: 0;
    border-collapse: collapse;
