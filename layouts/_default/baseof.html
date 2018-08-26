@@ -6,6 +6,8 @@
 		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
 		<link rel="canonical" href="{{ .Permalink }}">
+		<!-- the Story logo is a square with rounded corners interlocked with a section symbol in Bodoni 72 Book font -->
+		<link rel="shortcut icon" type="image/png" href="/apple-touch-icon-precomposed.png">
 		{{ with .Description }}<meta name="description" content="{{.}}">{{ end }}
 		{{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 		{{ .Hugo.Generator }}
@@ -45,7 +47,7 @@
 
 				<nav id="navmenu" class="{{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
 					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
-						<img src="/img/logo.jpg" class="dib w2 h2 br-100" alt="{{ .Title }}">
+						<img src="/img/logo.jpg" class="dib w2 h2 br-100" alt="{{ .Title }}" />
 					</a>
 					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
 						{{ range .Site.Menus.main }}
@@ -107,7 +109,7 @@
 		{{ block "footer" . }}
 		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3 sans-serif" role="contentinfo">
 			<p class="w-50 fr tr">
-				Made with <a class="no-underline white-90" href="https://gohugo.io">Hugo</a> and <a class="no-underline white-90" href="https://github.com/xaprb/story">Story</a>
+			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="/img/story-logo-white.svg" style="width: 1.5rem; height: 1.5rem" /></a>
 			</p>
 			<p class="w-50 white-90">
 				&copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
