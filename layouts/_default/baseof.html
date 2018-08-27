@@ -100,12 +100,14 @@
 			</div>
 		</header>
 		{{ end }}
-		<main class="pb6" role="main">
+		<main role="main">
 		{{ block "main" . }}
 		{{ end }}
 		</main>
-		{{ block "pagination" . }}
+		{{ block "about" . }}
+			{{ partial "about.html" . }}
 		{{ end }}
+		{{ block "pagination" . }}{{ end }}
 		{{ block "footer" . }}
 		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3 sans-serif" role="contentinfo">
 			<p class="w-50 fr tr">
