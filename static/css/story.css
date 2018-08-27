@@ -57,6 +57,14 @@ hr {
 	font-size: 80%;
 }
 
+.about-the-author img:first-child {
+	float: left;
+	max-width: 100px;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 100%;
+	margin: 0 1rem 1rem 0;
+}
+
 body.feature-tablefig table {
    border-spacing: 0;
    border-collapse: collapse;

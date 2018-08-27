@@ -1,4 +1,5 @@
 	<div class="f6 f5-l ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+		<div class="about-the-author">
 		{{ if .IsPage }}
 			{{ with .Site.GetPage (printf "/authors/%s" (default .Params.author .Site.Params.author | urlize)) }}
 				{{ if gt .Content "" }}
@@ -12,10 +13,13 @@
 		{{ else }}
 			{{ with .Site.GetPage "/" }}{{ .Content }}{{ end }}
 		{{ end }}
+		</div>
+		<div class="subscribe-form">
 		{{ if isset .Site.Params "mailchimpurl" }}
 			<form action="{{ .Site.Params.mailchimpurl }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
 				<input type="email" placeholder="Subscribe for email updates!" name="EMAIL" id="mce-EMAIL">
 				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
 			</form>
 		{{ end }}
+		</div>
 	</div>
