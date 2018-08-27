@@ -1,4 +1,4 @@
-	<div class="f6 f5-l ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+	<div id="about" class="f6 f5-l ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
 		<div class="about-the-author">
 		{{ if .IsPage }}
 			{{ with .Site.GetPage (printf "/authors/%s" (default .Params.author .Site.Params.author | urlize)) }}
@@ -14,11 +14,11 @@
 			{{ with .Site.GetPage "/" }}{{ .Content }}{{ end }}
 		{{ end }}
 		</div>
-		<div class="subscribe-form">
-		{{ if isset .Site.Params "mailchimpurl" }}
-			<form action="{{ .Site.Params.mailchimpurl }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-				<input type="email" placeholder="Subscribe for email updates!" name="EMAIL" id="mce-EMAIL">
-				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+		<div class="subscribe-form cb w-100 pt3">
+		{{ if isset .Site.Params "mailchimp" }}
+			<form action="{{ .Site.Params.mailchimp }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+				<input class="w-50 dib ph3 pv2 ba b--silver br2 sans-serif f6 f5-l mr2" type="email" placeholder="Subscribe for email updates!" name="EMAIL" id="mce-EMAIL">
+				<input class="w-40 dib ph3 pv2 ba b--silver br2 sans-serif f6 f5-l white bg-mid-gray" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
 			</form>
 		{{ end }}
 		</div>

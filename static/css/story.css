@@ -377,16 +377,10 @@ table caption {
   h3 a:link, h3 a:visited {
      text-decoration: none;
   }
-  #navmenu {
+  #navmenu, #photo-credit, #about {
     display: none !important;
   }
-  #photo-credit {
-    display: none !important;
-  }
-  #byline {
-    display: inline !important;
-  }
-  #citation {
+  #byline, #citation {
     display: inline !important;
   }
   .f4 {
