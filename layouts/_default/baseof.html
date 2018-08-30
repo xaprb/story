@@ -32,7 +32,7 @@
 		<script src="/js/story.js"></script>
 
 	</head>
-	<body class="ma0 bg-white serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
+	<body class="ma0 bg-white sans-serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
 		{{ block "header" . }}
 		<!--
 		You can set the title and header image in the "title/image" parameters of
@@ -42,7 +42,7 @@
 		matter of an individual post.
 		-->
 		{{- $hdr := cond (or (in .Site.Params.classes "feature-nohdr") (in .Params.classes "feature-nohdr")) false true -}}
-		<header class="sans-serif cover bg-top" {{ if $hdr }}style="background-image: url('{{ .Params.image | default "/img/default-header-img.jpg" }}'); background-position: center;"{{ end }}>
+		<header class="cover bg-top" {{ if $hdr }}style="background-image: url('{{ .Params.image | default "/img/default-header-img.jpg" }}'); background-position: center;"{{ end }}>
 			<div class="{{ cond $hdr "bg-black-30 bb bt" "" }}">
 
 				<nav id="navmenu" class="{{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
@@ -109,7 +109,7 @@
 		{{ end }}
 		{{ block "pagination" . }}{{ end }}
 		{{ block "footer" . }}
-		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3 sans-serif" role="contentinfo">
+		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3" role="contentinfo">
 			<p class="w-50 fr tr">
 			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="/img/story-logo-white.svg" style="width: 1.5rem; height: 1.5rem" /></a>
 			</p>

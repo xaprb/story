@@ -12,6 +12,11 @@
 .serif {
   font-family: 'Spectral', Georgia, Times, serif;
 }
+@media screen and (min-width: 30em), print {
+  article {
+    font-family: 'Spectral', Georgia, Times, serif !important;
+  }
+}
 #byline {
   display: none;
 }
@@ -33,7 +38,7 @@ body.feature-hyphenate:not(.feature-nohyphenate) article p,
    overflow-wrap: break-word;
    -webkit-hyphens: auto;
    -moz-hyphens: auto;
-	-ms-hyphens: auto;
+   -ms-hyphens: auto;
    hyphens: auto;
 }
 body.feature-justify:not(.feature-nojustify) article p,
@@ -43,26 +48,37 @@ body.feature-justify:not(.feature-nojustify) article p,
 pre, code, tt, kbd, samp {
    -webkit-hyphens: none;
    -moz-hyphens: none;
-	-ms-hyphens: none;
+   -ms-hyphens: none;
    hyphens: none;
 }
 
-hr {
-	border-width: 1px 0px 0px 0px;
-	border-style: solid;
-	border-color: silver;
+body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr {
+	border-style: none;
+	width: 0px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 3rem;
+}
+body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr:before {
+	content: "\002766";
+}
+
+.footnotes hr {
+   border-width: 1px 0px 0px 0px;
+   border-style: solid;
+   border-color: silver;
 }
 
 .footnotes {
-	font-size: 80%;
+   font-size: 80%;
 }
 
 .about-the-author img:first-child {
-	float: left;
-	max-width: 100px;
-	border: 1px solid rgba(0,0,0,.3);
-	border-radius: 100%;
-	margin: 0 1rem 1rem 0;
+   float: left;
+   max-width: 100px;
+   border: 1px solid rgba(0,0,0,.3);
+   border-radius: 100%;
+   margin: 0 1rem 1rem 0;
 }
 
 body.feature-tablefig table {
@@ -71,10 +87,10 @@ body.feature-tablefig table {
    overflow: auto;
    font-size: 85%;
    font-family: inherit;
-	border-top: 2px solid black;
+   border-top: 2px solid black;
 }
 body.feature-tablefig table thead, body.feature-tablefig table tbody {
-	border-bottom: 1px solid black;
+   border-bottom: 1px solid black;
 }
 body.feature-tablefig table th, body.feature-tablefig table td {
    display: table-cell;
@@ -83,11 +99,11 @@ body.feature-tablefig table th, body.feature-tablefig table td {
 }
 body.feature-tablefig table th {
    font-weight: 600;
-	padding-top: .5rem;
+   padding-top: .5rem;
 }
 
 body.feature-tablefw:not(.feature-tablefig) td {
-	font-family: arial;
+   font-family: arial;
 }
 
 body:not(.feature-tablefig) table {
@@ -323,7 +339,7 @@ figure img {
 
 body {
    counter-reset: figcaption;
-	counter-reset: tablecaption;
+   counter-reset: tablecaption;
 }
 body.feature-fignum figcaption::before {
    counter-increment: figcaption;
@@ -338,8 +354,8 @@ body.feature-fignum table caption::before {
 table caption {
    text-align: left;
    font-family: 'Spectral', Georgia, Times, serif;
-	font-style: italic;
-	padding: 0px 0.5rem;
+   font-style: italic;
+   padding: 0px 0.5rem;
 }
 
 @media print {
@@ -397,6 +413,9 @@ table caption {
   }
   footer {
      display: none;
+  }
+  article {
+     border-bottom-style: none !important;
   }
 }
 
