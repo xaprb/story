@@ -63,6 +63,17 @@ body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr:before {
 	content: "\002766";
 }
 
+body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr {
+	border-style: none;
+	width: 0px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 3rem;
+}
+body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr:before {
+	content: "*\000A0\000A0*\000A0\000A0*";
+}
+
 .footnotes hr {
    border-width: 1px 0px 0px 0px;
    border-style: solid;
