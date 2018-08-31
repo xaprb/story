@@ -1,5 +1,5 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range .Site.Pages -}}
-{{- $.Scratch.Add "index" (dict "uri" .Permalink "title" .Title "categories" .Params.categories "keywords" .Params.keywords "content" .Summary) -}}
+{{- $.Scratch.Add "index" (dict "uri" .Permalink "title" (cond (eq .Site.Params.titlecase true) (.Title | title) (.Title | markdownify)) "categories" .Params.categories "keywords" .Params.keywords "content" .Summary) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
