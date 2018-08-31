@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }} &bullet; {{ .Params.event }}{{ end }}
+{{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }} &bullet; {{ .Params.event }}{{ end }}
 {{ define "main" }}
 <article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
 	<main class="nested-copy-line-height lh-copy f4 nested-links nested-img pr4-l measure-wide">

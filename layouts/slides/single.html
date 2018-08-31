@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }}{{ end }}
+{{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "layout" }}
 		<link rel="stylesheet" href="/css/{{ .Params.theme }}.css"></style>

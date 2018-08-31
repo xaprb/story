@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }}{{ end }}
+{{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "main" }}
 <article class="bb b--black-10 center ph3 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
