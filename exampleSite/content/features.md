@@ -11,11 +11,11 @@ categories:
 - Demo
 ---
 Feature flags, which are called _classes_ in the markup, control many of Story's features.
-You can enable and disable them in your site config _or_ in an individual post's front matter.
-This article documents Story's features.
+You can enable and disable them in your site config, or in an individual post's front matter.
+This article documents Story's feature flags.
 <!--more-->
 
-### Enabling Features
+### Enabling Feature Flags
 
 Feature flags can be enabled globally or locally, and the combination of these determines content behavior.
 This lets you enable them for the entire site, or for an individual post.
