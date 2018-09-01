@@ -2,6 +2,7 @@
 baseurl = "https://example.com/"
 title = "Hugo Story Theme"
 theme = "story"
+paginate = 3
 
 [[menu.main]]
   name = "Talks"
