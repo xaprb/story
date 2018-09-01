@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<div class="pa3 pa4-ns w-100 w-70-ns center">
 		<section class="w-100 mw8">
-		{{ range where .Paginator.Pages ".Section" "ne" "slides" }}
+		{{ range where (where .Paginator.Pages ".Section" "ne" "slides") ".Params.skip" "ne" "true" }}
 			{{ partial "li.html" . }}
 		{{ end }}
 		</section>

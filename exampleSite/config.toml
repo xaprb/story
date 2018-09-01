@@ -1,0 +1,25 @@
+# Site settings
+baseurl = "https://example.com/"
+title = "Hugo Story Theme"
+theme = "story"
+
+[[menu.main]]
+  name = "Talks"
+  title = "Talks"
+  url = "/talks/"
+
+[[menu.social]]
+  name = "GitHub"
+  title = "fab fa-github-square"
+  url = "https://github.com/xaprb/story/"
+
+[params]
+  author = "Baron Schwartz"
+  classes = []
+
+[outputs]
+  home = ["HTML", "JSON", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML", "RSS"]

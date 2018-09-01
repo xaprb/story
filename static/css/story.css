@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Spectral:400,400i,700,700i&subset=latin-ext');
 
-.sans-serif, h1, h2, h3 {
+.sans-serif, h1, h2, h3, h4 {
   font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
                'avenir next', avenir,
                'helvetica neue', helvetica,
@@ -184,16 +184,16 @@ pre, code, kbd, tt, samp {
 
 /* Use front matter in the blog post to add CSS class names to the <body> tag.
  */
-.h3-cl h3 {
+.feature-h3-cl h3 {
    clear: left;
 }
-.h3-cr h3 {
+.feature-h3-cr h3 {
    clear: right;
 }
-.h3-cb h3 {
+.feature-h3-cb h3 {
    clear: both;
 }
-.no-subtitle h2 {
+.feature-nosubtitle h2 {
    display: none;
 }
 
@@ -202,9 +202,6 @@ pre, code, kbd, tt, samp {
  * These classes can be combined:
  * ![An Image](/img.jpg# w-100 fr)
  */
-.mw-100 img {
-   max-width: 100%;
-}
 img[src~=w-100] {
    width: 100%;
 }
@@ -232,6 +229,13 @@ img[src~=ba] {
 img[src~="3dbook"] {
    max-width: 160px;
 }
+
+/* Fix image scaling from Tachyons. Its nested-img class stretches small
+images inappropriately. */
+.mw-100 img {
+   max-width: 100%;
+}
+.nested-img img { width: initial; }
 
 @media screen {
    /* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/

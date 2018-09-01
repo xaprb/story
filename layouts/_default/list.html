@@ -4,11 +4,11 @@
   <section class="w-100 mw8">
   <!-- if the section isn't "slides" then omit them; otherwise list slides -->
   {{ if ne .Section "slides" }}
-    {{ range where .Paginator.Pages "Section" "ne" "slides" }}
+    {{ range where (where .Paginator.Pages "Section" "ne" "slides") ".Params.skip" "ne" "true" }}
       {{ partial "li.html" . }}
     {{ end }}
   {{ else }}
-    {{ range .Paginator.Pages }}
+    {{ range where .Paginator.Pages ".Params.skip" "ne" "true" }}
       {{ partial "li.html" . }}
     {{ end }}
   {{ end }}
