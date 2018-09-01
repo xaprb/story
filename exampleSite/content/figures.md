@@ -15,17 +15,19 @@ classes:
 categories:
 - Demo
 ---
-This article is a demo of Story's features to create figures and tables with captions.
+Story can automatically transform images into figures with captions. 
+It can also add captions to tables.
+And it adds features and styling to both images and tables.
+This article is a demo of Story's features for figures, tables, and captions.
 <!--more-->
 
 ### Image Captions and Figures
 
-Story can automatically convert your images into figures with captions. 
-This is controlled by the `feature-figcaption` and `feature-nofigcaption`
-flags. There are several ways this can be done. In order of
-precedence, here is what Story tries to do:
+If the `feature-figcaption` flag is set (and not negated), Story will transform
+your images into figures, and add a caption. There are several ways this can be done. Story tries
+each method, in the following order.
 
-An image with an `<em>` _immediately following it in the same paragraph_ treats
+First, if an image is followed immediately by an `<em>` _in the same paragraph_, Story treats
 the content of the `<em>` as the image caption. To enable this, the image and
 the text must not have a blank line between them. Example:
 
