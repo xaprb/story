@@ -3,7 +3,7 @@
 Story is a beautiful [Hugo theme](https://gohugo.io) for showcasing your writing
 and presentations.
 
-![Story screenshot](images/screenshot.png)
+![Story screenshot](//raw.githubusercontent.com/xaprb/story/master/images/screenshot.png)
 
 Story is targeted to technical writers and
 speakers: people such as software engineers and open source developers, who want a
