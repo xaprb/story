@@ -93,6 +93,11 @@ This page doesn't supply its own header image, so Story is using the default.
 You can supply your own default header image by simply putting an image with the same name in your *site's* `/static/img` directory.
 If Hugo finds that you've added an image of your own, it will take precedence.
 
+You can also override section-specific header images in list
+(non-individual-page) views with parameters in the `_index.md` content file in
+that section.  (The `title` and `subtitle` parameters in those files can also
+override what's shown in list page headers.)
+
 ### Imageless Layout Options
 
 If you don't want header images or preview thumbnails in list views, you can set
@@ -106,3 +111,6 @@ Set globally for the whole site, it will make the site simply ignore all header
 and preview images:
 
 ![A site in Story, with and without header and preview images](/img/site-header-formatting.png)
+
+To illustrate this feature, the [search page](/search) has this feature set, so
+it has a plain, bannerless layout.

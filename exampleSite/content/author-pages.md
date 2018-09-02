@@ -1,7 +1,7 @@
 ---
 author: Elvis Presley
-title: Story Author Pages
-url: /author-pages
+title: Story Author Profiles
+url: /author-profiles
 date: "2018-08-29"
 description: "This is a feature demo for the Story Hugo theme."
 image: "/img/unsplash-photos-TzMi5Ov7QeM.jpg"
@@ -10,8 +10,7 @@ thumbnail: "/img/unsplash-photos-TzMi5Ov7QeM.tn-500x500.jpg"
 categories:
 - Demo
 ---
-Story supports author profiles, so you can highlight your bio and link to a page
-with full details.
+Story supports author profiles, so you can highlight your bio.
 It's possible to set this globally for the entire site, or individually for each
 piece of content. Or you can set a global default and override it on individual
 pieces of content.

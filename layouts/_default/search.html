@@ -39,6 +39,7 @@
                     this.field("categories", { boost: 5 });
                     this.field("keywords");
                     this.field("content");
+                    this.field("uri");
                     this.ref("uri");
 
                     pagesIndex.forEach(function (page) {

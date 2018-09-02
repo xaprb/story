@@ -15,7 +15,7 @@
 			{{ with .Site.GetPage "/" }}{{ .Content }}{{ end }}
 		{{ end }}
 		</div>
-		{{ with .Site.Params "mailchimp" }}
+		{{ with .Site.Params.mailchimp }}
 		<div class="subscribe-form cb w-100 pt3">
 			<form action="{{ . }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
 				<input class="w-50 dib ph3 pv2 ba b--silver br2 sans-serif f6 f5-l mr2" type="email" placeholder="Subscribe for email updates!" name="EMAIL" id="mce-EMAIL">
