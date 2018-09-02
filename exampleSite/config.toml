@@ -1,0 +1,27 @@
+# Site settings
+baseurl = "https://example.com/"
+title = "Hugo Story Theme"
+theme = "story"
+paginate = 5
+
+[[menu.social]]
+  name = "GitHub"
+  title = "fab fa-github-square"
+  url = "https://github.com/xaprb/story/"
+
+[[menu.main]]
+  name = "Slides"
+  title = "Slides"
+  url = "/slides/"
+
+[params]
+  author = "Baron Schwartz"
+  mailchimp = "your-mailchimp-form-url-here"
+  classes = []
+
+[outputs]
+  home = ["HTML", "JSON", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML", "RSS"]

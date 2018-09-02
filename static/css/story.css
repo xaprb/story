@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans|Spectral:400,400i,700,700i&subset=latin-ext');
 
-.sans-serif, h1, h2, h3 {
+.sans-serif, h1, h2, h3, h4 {
   font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
                'avenir next', avenir,
                'helvetica neue', helvetica,
@@ -11,6 +11,11 @@
 }
 .serif {
   font-family: 'Spectral', Georgia, Times, serif;
+}
+@media screen and (min-width: 30em), print {
+  article {
+    font-family: 'Spectral', Georgia, Times, serif !important;
+  }
 }
 #byline {
   display: none;
@@ -33,7 +38,7 @@ body.feature-hyphenate:not(.feature-nohyphenate) article p,
    overflow-wrap: break-word;
    -webkit-hyphens: auto;
    -moz-hyphens: auto;
-	-ms-hyphens: auto;
+   -ms-hyphens: auto;
    hyphens: auto;
 }
 body.feature-justify:not(.feature-nojustify) article p,
@@ -43,8 +48,48 @@ body.feature-justify:not(.feature-nojustify) article p,
 pre, code, tt, kbd, samp {
    -webkit-hyphens: none;
    -moz-hyphens: none;
-	-ms-hyphens: none;
+   -ms-hyphens: none;
    hyphens: none;
+}
+
+body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr {
+	border-style: none;
+	width: 0px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 3rem;
+}
+body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr:before {
+	content: "\002766";
+}
+
+body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr {
+	border-style: none;
+	width: 0px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 3rem;
+}
+body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr:before {
+	content: "*\000A0\000A0*\000A0\000A0*";
+}
+
+hr {
+   border-style: none none solid none;
+   height: 0px;
+   border-bottom-color: silver;
+}
+
+.footnotes {
+   font-size: 80%;
+}
+
+.about-the-author img:first-child {
+   float: left;
+   max-width: 100px;
+   border: 1px solid rgba(0,0,0,.3);
+   border-radius: 100%;
+   margin: 0 1rem 1rem 0;
 }
 
 body.feature-tablefig table {
@@ -53,10 +98,10 @@ body.feature-tablefig table {
    overflow: auto;
    font-size: 85%;
    font-family: inherit;
-	border-top: 2px solid black;
+   border-top: 2px solid black;
 }
 body.feature-tablefig table thead, body.feature-tablefig table tbody {
-	border-bottom: 1px solid black;
+   border-bottom: 1px solid black;
 }
 body.feature-tablefig table th, body.feature-tablefig table td {
    display: table-cell;
@@ -65,11 +110,11 @@ body.feature-tablefig table th, body.feature-tablefig table td {
 }
 body.feature-tablefig table th {
    font-weight: 600;
-	padding-top: .5rem;
+   padding-top: .5rem;
 }
 
 body.feature-tablefw:not(.feature-tablefig) td {
-	font-family: arial;
+   font-family: arial;
 }
 
 body:not(.feature-tablefig) table {
@@ -139,16 +184,16 @@ pre, code, kbd, tt, samp {
 
 /* Use front matter in the blog post to add CSS class names to the <body> tag.
  */
-.h3-cl h3 {
+.feature-h3-cl h3 {
    clear: left;
 }
-.h3-cr h3 {
+.feature-h3-cr h3 {
    clear: right;
 }
-.h3-cb h3 {
+.feature-h3-cb h3 {
    clear: both;
 }
-.no-subtitle h2 {
+.feature-nosubtitle h2 {
    display: none;
 }
 
@@ -157,9 +202,6 @@ pre, code, kbd, tt, samp {
  * These classes can be combined:
  * ![An Image](/img.jpg# w-100 fr)
  */
-.mw-100 img {
-   max-width: 100%;
-}
 img[src~=w-100] {
    width: 100%;
 }
@@ -187,6 +229,13 @@ img[src~=ba] {
 img[src~="3dbook"] {
    max-width: 160px;
 }
+
+/* Fix image scaling from Tachyons. Its nested-img class stretches small
+images inappropriately. */
+.mw-100 img {
+   max-width: 100%;
+}
+.nested-img img { width: initial; }
 
 @media screen {
    /* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/
@@ -305,7 +354,7 @@ figure img {
 
 body {
    counter-reset: figcaption;
-	counter-reset: tablecaption;
+   counter-reset: tablecaption;
 }
 body.feature-fignum figcaption::before {
    counter-increment: figcaption;
@@ -320,8 +369,8 @@ body.feature-fignum table caption::before {
 table caption {
    text-align: left;
    font-family: 'Spectral', Georgia, Times, serif;
-	font-style: italic;
-	padding: 0px 0.5rem;
+   font-style: italic;
+   padding: 0px 0.5rem;
 }
 
 @media print {
@@ -359,16 +408,10 @@ table caption {
   h3 a:link, h3 a:visited {
      text-decoration: none;
   }
-  #navmenu {
+  #navmenu, #photo-credit, #about {
     display: none !important;
   }
-  #photo-credit {
-    display: none !important;
-  }
-  #byline {
-    display: inline !important;
-  }
-  #citation {
+  #byline, #citation {
     display: inline !important;
   }
   .f4 {
@@ -386,4 +429,9 @@ table caption {
   footer {
      display: none;
   }
+  article {
+     border-bottom-style: none !important;
+  }
 }
+
+.hljs{display:block;color:#333333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-string,.hljs-variable,.hljs-template-variable,.hljs-strong,.hljs-emphasis,.hljs-quote{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-literal,.hljs-symbol,.hljs-bullet,.hljs-attribute{color:#0086b3}.hljs-section,.hljs-name{color:#63a35c}.hljs-tag{color:#333333}.hljs-title,.hljs-attr,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}

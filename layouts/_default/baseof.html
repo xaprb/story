@@ -6,6 +6,8 @@
 		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
 		<link rel="canonical" href="{{ .Permalink }}">
+		<!-- the Story logo is a square with rounded corners interlocked with a section symbol in Bodoni 72 Book font -->
+		<link rel="shortcut icon" type="image/png" href="/apple-touch-icon-precomposed.png">
 		{{ with .Description }}<meta name="description" content="{{.}}">{{ end }}
 		{{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 		{{ .Hugo.Generator }}
@@ -21,6 +23,7 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
 		<script src="/js/auto-render.min.js"></script> <!-- for KaTeX -->
@@ -29,7 +32,7 @@
 		<script src="/js/story.js"></script>
 
 	</head>
-	<body class="ma0 bg-white serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
+	<body class="ma0 bg-white sans-serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
 		{{ block "header" . }}
 		<!--
 		You can set the title and header image in the "title/image" parameters of
@@ -39,27 +42,27 @@
 		matter of an individual post.
 		-->
 		{{- $hdr := cond (or (in .Site.Params.classes "feature-nohdr") (in .Params.classes "feature-nohdr")) false true -}}
-		<header class="sans-serif cover bg-top" {{ if $hdr }}style="background-image: url('{{ .Params.image | default "/img/default-header-img.jpg" }}'); background-position: center;"{{ end }}>
+		<header class="cover bg-top" {{ if $hdr }}style="background-image: url('{{ .Params.image | default "/img/default-header-img.jpg" }}'); background-position: center;"{{ end }}>
 			<div class="{{ cond $hdr "bg-black-30 bb bt" "" }}">
 
 				<nav id="navmenu" class="{{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
 					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
-						<img src="/img/logo.jpg" class="dib w2 h2 br-100" alt="{{ .Title }}">
+						<img src="/img/logo.jpg" class="dib w2 h2 br-100" alt="{{ .Title }}" />
 					</a>
 					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
 						{{ range .Site.Menus.main }}
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90" href="{{ .URL }}">{{ .Name }}</a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}">{{ .Name }}</a>
 						{{ end }}
 						{{ range .Site.Menus.social }}
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
 						{{ end }}
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
-						<a class="link f5 f4-l dib mr1 no-underline hover-white white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-search" href="/search/" role="search" title="Search"></a>
 					</div>
 				</nav>
 
 				<div id="hdr" class="tc-l {{ cond $hdr "pv4-ns pv5-l" "" }} pv2 ph3 ph4-ns">
-					<h1 class="{{ cond $hdr "white-90 mt1-ns" "" }} f2 fw3 mb0 mt0 lh-title">{{ .Title | markdownify }}</h1>
+					<h1 class="{{ cond $hdr "white-90 mt1-ns" "" }} f2 fw3 mb0 mt0 lh-title">{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}</h1>
 					<h2 class="{{ cond $hdr "white-80 mt3-l mb4-l" "" }} fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
 						<!-- You can put a subtitle here in _index.md parameters, or it'll get
 						filled in with date and categories if it's a post -->
@@ -76,7 +79,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 hover-white" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="/categories/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
@@ -89,7 +92,7 @@
 				{{ if $hdr }}
 				{{ with .Params.credit }}
 				<div class="w-100 cf" id="photo-credit">
-					<a class="fr f6 ma0 pa2 link white-90 hover-white fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
+					<a class="fr f6 ma0 pa2 link white-90 dim fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
 				</div>
 				{{ end }}
 				{{ end }}
@@ -97,18 +100,21 @@
 			</div>
 		</header>
 		{{ end }}
-		<main class="pb6" role="main">
+		<main role="main">
 		{{ block "main" . }}
 		{{ end }}
 		</main>
-		{{ block "pagination" . }}
+		{{ block "about" . }}
+			{{ partial "about.html" . }}
 		{{ end }}
+		{{ block "pagination" . }}{{ end }}
 		{{ block "footer" . }}
-		<footer class="bg-black bottom-0 w-100 pa3 sans-serif" role="contentinfo">
-		  <p>
-				<a class="f5 fw4 hover-white no-underline white-90 dn dib-ns ph3" href="{{ .Site.BaseURL }}">
-		    &copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
-			  </a>
+		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3" role="contentinfo">
+			<p class="w-50 fr tr">
+			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="/img/story-logo-white.svg" style="width: 1.5rem; height: 1.5rem" /></a>
+			</p>
+			<p class="w-50 white-90">
+				&copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
 			</p>
 		</footer>
 		{{ end }}

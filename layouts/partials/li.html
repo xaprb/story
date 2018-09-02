@@ -9,14 +9,15 @@
 				</div>
 				{{ end }}
 				<div class="w-100 w6-ns pl3-ns">
-					<h1 class="f3 fw1 mt0 lh-title"><a href="{{ .Permalink }}" class="color-inherit dim link">{{ .Title | markdownify }}</a></h1>
+					<h1 class="f3 fw1 mt0 lh-title"><a href="{{ .Permalink }}" class="color-inherit dim link">{{ cond (eq .Site.Params.titlecase true) (.Title | title) (.Title | markdownify) }}</a></h1>
 					<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
 						{{ if ne .Section "slides" }}
 							{{ .Summary }}
+							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a></p>
 						{{ else }}
 							{{ .Description | markdownify }}
+							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">View Slideshow <i class="fas fa-chevron-circle-right"></i></a></p>
 						{{ end }}
-						<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a></p>
 					</div>
 				</div>
 			</div>

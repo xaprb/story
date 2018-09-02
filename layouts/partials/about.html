@@ -1,0 +1,30 @@
+	<div id="about" class="f6 f5-l mt5 ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+		<div class="about-the-author">
+		{{ if .IsPage }}
+			{{ $author := (printf "/authors/%s" (default .Site.Params.author (default "Unknown" .Params.author) | urlize)) }}
+			{{ with .Site.GetPage $author }}
+				{{ if gt .Content "" }}
+					{{ .Content }}
+				{{ end }}
+			{{ else }}
+				{{ with .Site.GetPage "/" }}
+					{{ .Content }}
+				{{ end }}
+			{{ end }}
+		{{ else if gt .Content "" }}
+			{{ .Content }}
+		{{ else }}
+			{{ with .Site.GetPage "/" }}
+				{{ .Content }}
+			{{ end }}
+		{{ end }}
+		</div>
+		{{ with .Site.Params.mailchimp }}
+		<div class="subscribe-form cb w-100 pt3">
+			<form action="{{ . }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+				<input class="w-50 dib ph3 pv2 ba b--silver br2 sans-serif f6 f5-l mr2" type="email" placeholder="Subscribe for email updates!" name="EMAIL" id="mce-EMAIL">
+				<input class="w-40 dib ph3 pv2 ba b--silver br2 sans-serif f6 f5-l white bg-mid-gray" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+			</form>
+		</div>
+		{{ end }}
+	</div>

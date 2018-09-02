@@ -39,6 +39,7 @@
                     this.field("categories", { boost: 5 });
                     this.field("keywords");
                     this.field("content");
+                    this.field("uri");
                     this.ref("uri");
 
                     pagesIndex.forEach(function (page) {
@@ -48,7 +49,7 @@
             })
             .fail(function(jqxhr, textStatus, error) {
                 var err = textStatus + ", " + error;
-                console.error("Error getting Hugo index flie:", err);
+                console.error("Error fetching Hugo search index JSON file:", err);
             });
     }
 
