@@ -3,7 +3,7 @@ title: 'A RemarkJS Demo Slideshow'
 date: "2018-04-25T09:50:00-07:00"
 url: "/slides/remarkjs-demo/"
 image: "/slides/remarkjs-demo/will-turner-508747-unsplash.jpg"
-description: "What is the best future we can create together, and how?"
+description: "This demo RemarkJS presentation shows how simple it can be to create stunning presentations with Hugo and RemarkJS!"
 ratio: "16:9"
 theme: "monobloc"
 classes:
