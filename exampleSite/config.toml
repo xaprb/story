@@ -9,6 +9,11 @@ paginate = 5
   title = "fab fa-github-square"
   url = "https://github.com/xaprb/story/"
 
+[[menu.main]]
+  name = "Slides"
+  title = "Slides"
+  url = "/slides/"
+
 [params]
   author = "Baron Schwartz"
   classes = []
