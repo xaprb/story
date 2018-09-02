@@ -1,4 +1,4 @@
-	<div id="about" class="f6 f5-l ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+	<div id="about" class="f6 f5-l mt5 ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
 		<div class="about-the-author">
 		{{ if .IsPage }}
 			{{ $author := (printf "/authors/%s" (default .Site.Params.author (default "Unknown" .Params.author) | urlize)) }}
@@ -7,12 +7,16 @@
 					{{ .Content }}
 				{{ end }}
 			{{ else }}
-				{{ with .Site.GetPage "/" }}{{ .Content }}{{ end }}
+				{{ with .Site.GetPage "/" }}
+					{{ .Content }}
+				{{ end }}
 			{{ end }}
 		{{ else if gt .Content "" }}
 			{{ .Content }}
 		{{ else }}
-			{{ with .Site.GetPage "/" }}{{ .Content }}{{ end }}
+			{{ with .Site.GetPage "/" }}
+				{{ .Content }}
+			{{ end }}
 		{{ end }}
 		</div>
 		{{ with .Site.Params.mailchimp }}

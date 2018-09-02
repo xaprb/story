@@ -74,10 +74,10 @@ body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr:before {
 	content: "*\000A0\000A0*\000A0\000A0*";
 }
 
-.footnotes hr {
-   border-width: 1px 0px 0px 0px;
-   border-style: solid;
-   border-color: silver;
+hr {
+   border-style: none none solid none;
+   height: 0px;
+   border-bottom-color: silver;
 }
 
 .footnotes {
