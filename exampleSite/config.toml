@@ -16,7 +16,7 @@ paginate = 5
 
 [params]
   author = "Baron Schwartz"
-  mailchimp = "foo"
+  mailchimp = "your-mailchimp-form-url-here"
   classes = []
 
 [outputs]
