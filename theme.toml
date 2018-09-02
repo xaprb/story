@@ -4,10 +4,10 @@
 name = "Story"
 license = "MIT"
 licenselink = "https://github.com/xaprb/story/blob/master/LICENSE.md"
-description = "A beautifully simple yet customizable, responsive blog and homepage theme with built-in support for many features such as search, LaTeX typesetting, and RemarkJS presentations."
+description = "A beautiful, responsive blog and homepage theme with support for features like search, math typesetting, and RemarkJS presentations."
 homepage = "http://example.com/"
 tags = ["blog"]
-features = []
+features = ["blog", "slides", "LaTeX", "search"]
 min_version = "0.47"
 
 [author]
