@@ -2,16 +2,16 @@
 title: 'The Apron RemarkJS Theme'
 date: "2018-04-25T09:50:00-07:00"
 url: "/slides/apron/"
-image: "/slides/apron/leo-serrat-533922-unsplash.jpg"
+image: "/slides/apron/tanya-nevidoma-632010-unsplash.jpg"
 description: "The Apron RemarkJS theme lets you create sophisticated presentations with simple, clean Markdown code. There are a variety of layouts to suit most presentation needs."
 ratio: "16:9"
 theme: "apron"
 ---
 class: title
-background-image: url(leo-serrat-533922-unsplash.jpg)
+background-image: url(tanya-nevidoma-632010-unsplash.jpg)
 
 # The Apron RemarkJS Theme
-## Baron Schwartz &bullet; SomeOpenSourceConf 2018
+## Baron Schwartz &bullet; 2018
 
 ---
 # The Apron Theme for RemarkJS
@@ -21,10 +21,14 @@ Apron is a _layout_ theme for RemarkJS.
 - It defines slide classes that set the position of content.
 - Some sizing is also set.
 - It does _not_ deal with typefaces or colors.
-- Its goal: _minimal_ special markup other than slide classes.
+- Its goal: _zero_ non-Markdown markup other than slide classes.
 
-This slide has only plain-vanilla Markdown content. It has no slide classes or
-special markup to create anything such as `<div>` or similar.
+This _entire slideshow_ uses only plain-vanilla RemarkJS Markdown. This
+illustrates the power of Apron's CSS!  There's no special markup such as
+raw HTML, or Markdown's extensions such as
+`.foo[...]` to create elements such as `<div>` or `<span>`.  (RemarkJS does
+support this markup, but it creates limitations, so this slideshow theme is
+designed not to need them.)
 
 Apron is minimal so that it can be composed with other themes that control
 colors, fonts, and the like.
@@ -35,8 +39,8 @@ with RemarkJS's own CSS rules.
 ---
 class: img-caption
 ![Image](will-turner-508747-unsplash.jpg)
-# Full-Bleed Image And H1 Caption
 
+### The img-caption class permits a full-bleed image and a caption. You can use any markup in this space. (This is an `<H3>`).
 ---
 # Apron's Image-Styling Functionality
 
@@ -93,6 +97,8 @@ to them, generally. X stands for a variable/placeholder:
 - of{c,v}: object-fit contain/cover
 - op{l,c,r}{t,c,b}: object-position left/center/right, plus combinations with
   top, center, bottom
+- w-X-12, h-X-12, t-X-12, r-X-12, b-X-12, l-X-12: width, height, top, right,
+  bottom, and left in units of 1/12th to 11/12th.
 
 ---
 # Two-Column Layout
@@ -130,11 +136,13 @@ If the text continues,
 
 as this does,
 
-it will go below the image
+it will go below
 
-and wrap back to the left-hand
+the image and wrap
 
-edge again. So the "column" ended too soon.
+back to the left-hand
+
+edge again. So the "column" ended too soon. This is a problem, and there's a fix for it.
 
 ---
 class: two-col-img-left
@@ -216,6 +224,9 @@ container is the opposite, so the other half of the image is shown.
 
 The next slide illustrates an image collage with three images, full-bleed.
 
+The one after that is more sophisticated and demonstrates Apron's system of
+12ths in units.
+
 ---
 class: fullbleed
 ![](kari-shea-272383-unsplash.jpg# w-two-thirds h-100 ofv absolute)
@@ -223,9 +234,112 @@ class: fullbleed
 ![](will-turner-508747-unsplash.jpg# w-third h-50 b-0 r-0 ofv absolute)
 
 ---
+class: fullbleed
+
+![](kari-shea-272383-unsplash.jpg# absolute ofv w-9-12 h-7-12)
+![](leo-serrat-533922-unsplash.jpg# absolute ofv w-3-12 h-3-12 t-0 l-9-12)
+![](nasa-53884-unsplash.jpg# absolute ofv w-2-12 h-9-12 t-3-12 l-9-12)
+![](tom-barrett-364228-unsplash.jpg# absolute ofv w-1-12 h-5-12 t-3-12 l-11-12)
+![](will-turner-508747-unsplash.jpg# absolute ofv w-1-12 h-4-12 t-8-12 l-11-12 opr)
+![](tanya-nevidoma-632010-unsplash.jpg# absolute ofv w-5-12 h-5-12 t-7-12 l-0)
+![](tom-barrett-364228-unsplash.jpg# absolute ofv w-4-12 h-3-12 t-7-12 l-5-12)
+![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12 h-2-12 t-10-12 l-5-12)
+
+---
+class: col, col-2
+
+# Apron's Columnar Layouts
+
+Apron supports multi-column layouts (2 and 3). This is a two-column layout.
+The first element (typically heading) spans all columns.
+
+Create a columnar layout with `class: col, col-X`.
+
+Images are supported too.
+
+![](kari-shea-272383-unsplash.jpg# mw-60)![](tanya-nevidoma-632010-unsplash.jpg# mw-40)
+
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+
+This slide has paragraphs, images, and lists.
+
+1. Here's a numbered list.
+1. Here's a numbered list.
+
+It's followed by a paragraph.
+
+---
+class: col, col-3
+
+# Apron's 3-Column Layout
+
+This is a three-column layout,
+created with `class: col, col-3`.
+
+Images are supported too.
+
+![](kari-shea-272383-unsplash.jpg# mw-60)![](tanya-nevidoma-632010-unsplash.jpg# mw-40)
+
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+- Lists are not supposed to break across columns.
+
+This slide has paragraphs, images, and lists.
+
+1. Here's a numbered list.
+1. Here's a numbered list.
+
+It's followed by a paragraph.
+
+---
 # Apron's Slide Classes
 
 Apron defines the following slide classes:
 
+- title: centers text in all directions, and sets background images to cover
+- img-caption: assumes the content is an image and a caption; makes the image
+  take up the top of the slide (fullbleed) and puts the rest below, centered
+- two-col-img-right: assumes you begin the content with an image, which takes up
+  the right-hand 50% of the slide
+- two-col-img-left: the same, but left-hand 50%
+- img-fullbleed-right and img-fullbleed-left: ditto, but the image is
+  full-height and full-bleed to the edge of the slide
+- col: use together with col-2 and col-3
+- col-2 and col-3: all but the first element in the slide is laid out in the
+  specified number of columns
+
+Additionally, there are the following utility classes:
+
+- fullbleed: removes margins and paddings from the slide container and from
+  `<p>` elements.
 - debug{,-white,-black}: outlines elements for debugging
 - debug-grid{,-16,-8-solid,-16-solid}: creates a grid background for layout
+
+---
+# Why Is It Named Apron?
+
+For some reason, I named these slideshow layouts after iconic types of chairs
+(monobloc, adirondack, etc).
+
+The apron is the part of the chair upon which everything rests, so this
+"supporting" set of CSS got the name "apron."
+
+![Chair parts](chair-parts.png)
+
+Credit: http://www.props.eric-hart.com/
