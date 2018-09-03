@@ -4,7 +4,6 @@ date: "2018-04-25T09:50:00-07:00"
 url: "/slides/apron/"
 image: "/slides/apron/tanya-nevidoma-632010-unsplash.jpg"
 description: "The Apron RemarkJS theme lets you create sophisticated presentations with simple, clean Markdown code. There are a variety of layouts to suit most presentation needs."
-ratio: "16:9"
 theme: "apron"
 ---
 class: title
@@ -20,14 +19,15 @@ Apron is a _layout_ theme for RemarkJS.
 
 - It defines slide classes that set the position of content.
 - Some sizing is also set.
-- It does _not_ deal with typefaces or colors.
-- Its goal: _zero_ non-Markdown markup other than slide classes.
+- It does _not_ deal with typefaces or colors. (Ignore the browser-default font
+  sizes in this presentation; they're not the point.)
+- Apron's goal: _zero_ non-Markdown markup other than slide classes.
 
 This _entire slideshow_ uses only plain-vanilla RemarkJS Markdown. This
 illustrates the power of Apron's CSS!  There's no special markup such as
 raw HTML, or Markdown's extensions such as
 `.foo[...]` to create elements such as `<div>` or `<span>`.  (RemarkJS does
-support this markup, but it creates limitations, so this slideshow theme is
+support this markup, but it creates limitations, so Apron is
 designed not to need them.)
 
 Apron is minimal so that it can be composed with other themes that control
@@ -45,16 +45,8 @@ class: img-caption
 # Apron's Image-Styling Functionality
 
 Apron provides composable, functional CSS pseudo-classes for control over images
-without sacrificing Markdown formatting.
-It uses the image's URL fragment, which is the part after the hash character,
-e.g.
-
-```
-![Image](tom-barrett-364228-unsplash.jpg# url fragment)
-```
-
-That image URL has two "words" in the fragment, delimited by whitespace. The
-whitespace is important!
+without sacrificing Markdown formatting.  It uses the image's URL fragment,
+which is the part after the hash character.
 
 Apron's image CSS classes are patterned after [Tachyons](http://tachyons.io/).
 For example, the following pseudo-classes will set the image's width to 33%,
@@ -64,18 +56,18 @@ display to `block`, and float to `left`.
 ![Image](tom-barrett-364228-unsplash.jpg# w-33 db fl)
 ```
 
-If the image's markup is repeated three
-times, three copies of it will stack up across the slide:
+That image URL has three "words" in the fragment, delimited by whitespace. The
+whitespace is important!  If the image's markup is repeated three times, three
+copies of it will float across the slide:
 
 ![Image](tom-barrett-364228-unsplash.jpg# w-33 db fl)
 ![Image](tom-barrett-364228-unsplash.jpg# w-33 db fl)
 ![Image](tom-barrett-364228-unsplash.jpg# w-33 db fl)
 
 ---
-# Apron's Image CSS Pseudo-Styles
+# Apron's Image Pseudo-Styles
 
-There are too many CSS pseudo-styles to list comprehensively, but here's a guide
-to them, generally. X stands for a variable/placeholder:
+Apron provides the following. X stands for a variable/placeholder:
 
 - b{a,t,r,b,l,n}: border styles, such as `ba` to set borders on all sides
 - brX: border radiuses, from 0 to 4, plus -100 for 100%
@@ -105,8 +97,11 @@ to them, generally. X stands for a variable/placeholder:
 
 ![](nasa-53884-unsplash.jpg# db fr w-50 ml4)
 
-This slide illustrates one way to create a two-column layout with an image in
-the right-hand side.
+This slide illustrates a simple way to create a two-column layout with an image
+in the right-hand side.
+
+(I'll show you a better way next, but this illustrates the utility of the CSS
+pseudo-image-classes in the URL fragments).
 
 Simply shrink the image to 50% width, float it right, set its display to block,
 and add margin to the lefthand side to prevent text from touching it.
@@ -225,16 +220,19 @@ container is the opposite, so the other half of the image is shown.
 The next slide illustrates an image collage with three images, full-bleed.
 
 The one after that is more sophisticated and demonstrates Apron's system of
-12ths in units.
+12ths in units. All of this works in both 16:9 and 4:3 aspect ratios.
 
 ---
 class: fullbleed
+background-color: black
+
 ![](kari-shea-272383-unsplash.jpg# w-two-thirds h-100 ofv absolute)
 ![](leo-serrat-533922-unsplash.jpg# w-third h-50 t-0 r-0 ofv absolute)
 ![](will-turner-508747-unsplash.jpg# w-third h-50 b-0 r-0 ofv absolute)
 
 ---
 class: fullbleed
+background-color: black
 
 ![](kari-shea-272383-unsplash.jpg# absolute ofv w-9-12 h-7-12)
 ![](leo-serrat-533922-unsplash.jpg# absolute ofv w-3-12 h-3-12 t-0 l-9-12)
