@@ -272,6 +272,8 @@ Images are supported too.
 This slide has paragraphs, images, and lists.
 
 1. Here's a numbered list.
+   - Nested bullet 1
+   - Nested bullet 2
 1. Here's a numbered list.
 
 It's followed by a paragraph.
