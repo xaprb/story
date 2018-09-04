@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i&subset=latin-ext');
+
+/* Type scale, drawn from Tachyons:
+ * 6rem (96px)		5rem (80px)		3rem (48px)	2.25rem (36px)
+ * 1.5rem (24px)	1.25rem (20px)	1rem (16px)	.875rem (14px)
+ * TODO: http://tachyons.io/docs/typography/line-height/
+*/
+
+.remark-slide-content * {
+	font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
+					'avenir next', avenir, 'helvetica neue', helvetica,
+					arial, sans-serif;
+	font-size: 1.75rem;
+	line-height: 1.25;
+}
+
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3 {
+	font-family: Quattrocento, serif;
+	font-weight: normal;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.remark-slide-content h1 {
+	font-size: 4rem;
+}
+.remark-slide-content h2 {
+	font-size: 3rem;
+}
+.remark-slide-content h3 {
+	font-size: 2.25rem;
+}
+
+/* title layout
+ */
+.remark-slide-content.title {
+	margin: 0;
+	padding: 0;
+}
+.remark-slide-content.title h1,
+.remark-slide-content.title h2,
+.remark-slide-content.title h3 {
+	color: white;
+	margin: 0;
+	padding: 1em 0;
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+.remark-slide-content.title *:first-child {
+	/* Create a "smokescreen" effect, and make the element large but with
+	 * negative bottom margin so it will extend downwards underneath others.
+	 * This is better than giving each element a background and nestling them
+	 * against each other, because that will create very thin lines between them
+	 * where the elements don't meet and the slide background shows through.
+	 */
+	background-color: rgba(0,0,0,.7);
+	padding-bottom: 2.5em;
+	margin-bottom: -2.5em;
+}
+
+/* .img-450h img {
+.img-300h img {
+*/
