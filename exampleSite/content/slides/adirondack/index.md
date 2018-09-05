@@ -114,6 +114,7 @@ lifetime anywhere else.
 ![](leo-serrat-533922-unsplash.jpg)
 
 This is a two-column layout, created with `class: col, col-2`.
+There's no column markup in the content.
 
 - A red flare silhouetted the jagged edge of a wing.
 - I watched the storm, so beautiful yet terrific.
@@ -165,6 +166,8 @@ Switching to a numbered list.
 
 ---
 # Code Typography Demo
+
+Code sample:
 
 ```javascript
 function $initHighlight(block, cls) {
