@@ -3,11 +3,6 @@
 .remark-slide-content * {
 	box-sizing: border-box;
 }
-.remark-slide-content p,
-.remark-slide-content ul,
-.remark-slide-content ol {
-	margin: 0 0 1rem 0;
-}
 .remark-slide-content img {
 	max-width: 100%;
 }
@@ -54,23 +49,33 @@
 /* two-col-img-right layout
  * Assumes you begin the content with an image.
  */
-.remark-slide-content.two-col-img-right p:first-of-type {
+.remark-slide-content.two-col-img-right>p:first-of-type {
 	float: right;
 	height: 100%;
 	width: 50%;
 	padding: 0px;
 	margin: 0px 0px 0px 32px;
 }
+.remark-slide-content.two-col-img-right>*:nth-child(3),
+.remark-slide-content.two-col-img-left>*:nth-child(3) {
+	margin-top: 0;
+}
 
 /* two-col-img-left layout
  * Assumes you begin the content with an image.
  */
-.remark-slide-content.two-col-img-left p:first-of-type {
+.remark-slide-content.two-col-img-left>p:first-of-type {
 	float: left;
 	height: 100%;
 	width: 50%;
 	padding: 0px;
 	margin: 0px 32px 0px 0px;
+}
+.remark-slide-content.two-col-img-left>ul,
+.remark-slide-content.two-col-img-left>ol,
+.remark-slide-content.img-fullbleed-left>ul,
+.remark-slide-content.img-fullbleed-left>ol {
+	overflow: auto; /* See https://stackoverflow.com/a/710264 */
 }
 
 /* img-fullbleed-right layout
@@ -126,7 +131,14 @@
 	max-height: calc(100% - 20px);
 }
 .remark-slide-content.col > *:first-child {
+	/* Apron assumes that there's a heading */
 	column-span: all;
+}
+.remark-slide-content.col p:first-of-type,
+.remark-slide-content.col ul:first-of-type,
+.remark-slide-content.col ol:first-of-type {
+	/* Margin-top messes up the vertical alignment of multi-column layouts */
+	margin-top: 0px;
 }
 .remark-slide-content.col > ul,
 .remark-slide-content.col > ol {

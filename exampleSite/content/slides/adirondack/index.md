@@ -21,221 +21,166 @@ background-image: url(leo-serrat-533922-unsplash.jpg)
 Adirondack is a beautiful typography theme for RemarkJS,
 built upon [Apron](/slides/apron) layouts.
 
-## This Slideshow's Purpose
+## This Slideshow’s Purpose
 
 * This slideshow is a demo.
 * It uses no RemarkJS syntax extensions. There's __no raw HTML__ or `<div>` elements, _just Markdown_.
 
-### Avondale-Upon-The-Sea
+### The Following Slides
 
-> I thought nostalgically, as I gazed at the lengthening shadows, that a day
-> lived in this paradise was worth a year anywhere else.
+* This slide illustrates H1 through H3.
+* The following slides demonstrate various layouts.
 
 ---
 class: img-caption
 ![Image](will-turner-508747-unsplash.jpg)
 
-## The Waves Broke Gently Upon The Soft Shore
+Waves wash from lovely turquoise tropical water onto a rust-colored beach.
+This slide's class is `img-caption`.
 
 ---
 class: two-col-img-left
 
-# Layout Class two-col-img-left
+# Pervasive Technology Is Our Future
 
 ![](nasa-53884-unsplash.jpg)
 
-In this convenience layout, the first paragraph in the content
-(which can be an image, as in this case)
-will form the left column.
+This is the `two-col-img-left` layout class. The content consists simply of a
+header, an image, and this text. 
 
-The paragraph is floated left and sized to 50%, and should
-prevent wrapping around underneath it.
+* The markup is very simple.
+* The layout is driven by convention, not configuration.
 
-Test.
-
-Test.
-
-Test.
-
-Test.
-
-Test.
-
-Test.
-
-Test.
-
-Test.
+The image's aspect ratio and cropping are not altered, and all content after
+the image will go in the right-hand column.
 
 ---
 class: two-col-img-right
 
-# Layout Class two-col-img-right
+# Sometimes Less Is More
 
 ![](nasa-53884-unsplash.jpg)
 
-In this convenience layout, the first paragraph 
-will form the right column.
+This is the `two-col-img-right` layout class. 
+The content's structure is exactly the same as in the prior slide.
+
+- These columns require no wrapper `<div>`.
+- This avoids interference with RemarkJS features.
 
 --
-
-The reason for these two-column image convenience slide classes is to avoid any
-wrapper div's or similar.
-
---
-
-This allows RemarkJS to do incremental slide builds, with the `--` separator
-between stages of slides.
+- Incremental builds with `--` work fine, for example.
 
 ---
 class: img-fullbleed-right
 
 ![](kari-shea-272383-unsplash.jpg)
 
-# Layout Class img-fullbleed-right
+# This Means Business
 
-This slide illustrates the img-fullbleed-right convenience class.
+This slide's class is `img-fullbleed-right`.
 
-The first image in the slide is set to 40% of the width of the slide and set
-full-bleed on the right-hand edge of the slide.
+The content is simply an image and text (including a header in this case).
 
-The image's position within the clipped container is set to `left`. This allows
-you to create images that are 2x as wide as the area that's displayed, and pair
-this layout with the next one.
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
 
 ---
 class: img-fullbleed-left
 
 ![](kari-shea-272383-unsplash.jpg)
 
-# Layout Class img-fullbleed-left
+# This Means Business
 
-This slide illustrates the img-fullbleed-left convenience class.
+This slide's class is `img-fullbleed-left`.
 
-The image is the same as on the previous slide, but the positioning within the
-container is the opposite, so the other half of the image is shown.
+The content is simply an image and text (including a header in this case).
 
-The next slide illustrates an image collage with three images, full-bleed.
-
-The one after that is more sophisticated and demonstrates Apron's system of
-12ths in units. All of this works in both 16:9 and 4:3 aspect ratios.
-
----
-class: fullbleed
-background-color: black
-
-![](kari-shea-272383-unsplash.jpg# w-two-thirds h-100 ofv absolute)
-![](leo-serrat-533922-unsplash.jpg# w-third h-50 t-0 r-0 ofv absolute)
-![](will-turner-508747-unsplash.jpg# w-third h-50 b-0 r-0 ofv absolute)
-
----
-class: fullbleed
-background-color: black
-
-![](kari-shea-272383-unsplash.jpg# absolute ofv w-9-12 h-7-12)
-![](leo-serrat-533922-unsplash.jpg# absolute ofv w-3-12 h-3-12 t-0 l-9-12)
-![](nasa-53884-unsplash.jpg# absolute ofv w-2-12 h-9-12 t-3-12 l-9-12)
-![](tom-barrett-364228-unsplash.jpg# absolute ofv w-1-12 h-5-12 t-3-12 l-11-12)
-![](will-turner-508747-unsplash.jpg# absolute ofv w-1-12 h-4-12 t-8-12 l-11-12 opr)
-![](tanya-nevidoma-632010-unsplash.jpg# absolute ofv w-5-12 h-5-12 t-7-12 l-0)
-![](tom-barrett-364228-unsplash.jpg# absolute ofv w-4-12 h-3-12 t-7-12 l-5-12)
-![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12 h-2-12 t-10-12 l-5-12)
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
 
 ---
 class: col, col-2
 
-# Apron's Columnar Layouts
+# Avonshire-By-The-Sea
 
-Apron supports multi-column layouts (2 and 3). This is a two-column layout.
-The first element (typically heading) spans all columns.
+Relaxing in the Adirondack chair, I felt the gathering dusk creep on kitten
+feet.  It came to me, then, that a day lived in this paradise was better than a
+lifetime anywhere else.
 
-Create a columnar layout with `class: col, col-X`.
+![](leo-serrat-533922-unsplash.jpg)
 
-Images are supported too.
+This is a two-column layout, created with `class: col, col-2`.
 
-![](kari-shea-272383-unsplash.jpg# mw-60)![](tanya-nevidoma-632010-unsplash.jpg# mw-40)
-
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-
-This slide has paragraphs, images, and lists.
-
-1. Here's a numbered list.
-1. Here's a numbered list.
-
-It's followed by a paragraph.
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
 
 ---
 class: col, col-3
 
-# Apron's 3-Column Layout
+# The Spectacle Before Us Was Indeed Sublime
 
 This is a three-column layout,
 created with `class: col, col-3`.
 
-Images are supported too.
+A shining crescent far beneath the flying vessel.
 
-![](kari-shea-272383-unsplash.jpg# mw-60)![](tanya-nevidoma-632010-unsplash.jpg# mw-40)
+![](tanya-nevidoma-632010-unsplash.jpg# mw-90)
 
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
-- Lists are not supposed to break across columns.
+- It was going to be a lonely trip back.
+- Mist enveloped the ship three hours out from port.
+- My two natures had memory in common.
+- Silver mist suffused the deck of the ship.
+- The face of the moon was in shadow.
 
-This slide has paragraphs, images, and lists.
-
-1. Here's a numbered list.
-1. Here's a numbered list.
-
-It's followed by a paragraph.
+Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
 
 ---
-# Apron's Slide Classes
+class: col, col-2
 
-Apron defines the following slide classes:
+# Bulleted Lists Demo
 
-- title: centers text in all directions, and sets background images to cover
-- img-caption: assumes the content is an image and a caption; makes the image
-  take up the top of the slide (fullbleed) and puts the rest below, centered
-- two-col-img-right: assumes you begin the content with an image, which takes up
-  the right-hand 50% of the slide
-- two-col-img-left: the same, but left-hand 50%
-- img-fullbleed-right and img-fullbleed-left: ditto, but the image is
-  full-height and full-bleed to the edge of the slide
-- col: use together with col-2 and col-3
-- col-2 and col-3: all but the first element in the slide is laid out in the
-  specified number of columns
+This slide illustrates bulleted lists.
 
-Additionally, there are the following utility classes:
+* A bulleted list.
+* Another bullet.
+  * Nested bullets.
+  * Another.
+     * Deeply nested.
+* Back to the top-level again.
 
-- fullbleed: removes margins and paddings from the slide container and from
-  `<p>` elements.
-- debug{,-white,-black}: outlines elements for debugging
-- debug-grid{,-16,-8-solid,-16-solid}: creates a grid background for layout
+Switching to a numbered list.
+
+2. Another bullet.
+3. The last bullet.
+  1. Nested numbered lists.
+  2. Another.
+      3. Deeper.
+1. Top-level again.
 
 ---
-# Why Is It Named Apron?
+# Code Typography Demo
 
-For some reason, I named these slideshow layouts after iconic types of chairs
-(monobloc, adirondack, etc).
+```javascript
+function $initHighlight(block, cls) {
+	if (cls.search(/\bno\-highlight\b/) != -1)
+		return process(block, true, 0x0F) + ` class="${cls}"`;
+	for (var i = 0 / 2; i < classes.length; i++) {
+		if (checkCondition(classes[i]) === undefined)
+			console.log('undefined');
+	}
+}
+```
 
-The apron is the part of the chair upon which everything rests, so this
-"supporting" set of CSS got the name "apron."
+---
+# Adirondack’s Slide Classes
 
-![Chair parts](chair-parts.png)
+This slideshow mostly uses Apron’s slide classes. Adirondack provides some
+of its own. This slide is a reference to them:
 
-Credit: http://www.props.eric-hart.com/
+- Compact
