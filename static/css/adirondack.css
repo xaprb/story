@@ -143,14 +143,29 @@ blockquote {
 .remark-slide-content.title h1,
 .remark-slide-content.title h2,
 .remark-slide-content.title h3 {
-	color: white;
 	margin: 0;
 	padding: 1em 0;
-	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 	font-weight: normal;
 }
-.remark-slide-content.title.smokescreen>h1 {
+.remark-slide-content.smokescreen>h1 {
 	background-color: rgba(0,0,0,.7);
+}
+.remark-slide-content.smokescreen>h1,
+.remark-slide-content.smokescreen>h2,
+.remark-slide-content.smokescreen>h3 {
+	color: white;
+	text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8),
+					 8px 8px 20px rgba(0, 0, 0, 0.9);
+}
+.remark-slide-content.fogscreen>h1 {
+	background-color: rgba(255,255,255,.7);
+}
+.remark-slide-content.fogscreen>h1,
+.remark-slide-content.fogscreen>h2,
+.remark-slide-content.fogscreen>h3 {
+	color: black;
+	text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6),
+					 8px 8px 20px rgba(0, 0, 0, 0.4);
 }
 .remark-slide-content.title.shelf>h1 {
 	/* Make the element large but with negative bottom margin so it will extend

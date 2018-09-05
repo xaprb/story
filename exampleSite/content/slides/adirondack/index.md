@@ -9,7 +9,7 @@ themes:
 - apron
 - adirondack
 ---
-class: title
+class: title, smokescreen, shelf
 background-image: url(leo-serrat-533922-unsplash.jpg)
 
 # The Adirondack RemarkJS Theme
@@ -101,6 +101,11 @@ The content is simply an image and text (including a header in this case).
 - I watched the storm, so beautiful yet terrific.
 - Almost before we knew it, we had left the ground.
 - All their equipment and instruments are alive.
+
+---
+class: title, fogscreen
+background-image: url(tanya-nevidoma-632010-unsplash.jpg)
+# A Section Divider
 
 ---
 class: col, col-2
@@ -203,6 +208,28 @@ function $initHighlight(block, cls) {
 	}
 }
 ```
+
+---
+class: compact, col, col-3
+
+# The Spectacle Before Us Was Indeed Sublime
+
+This is a three-column layout,
+created with `class: col, col-3, compact`.
+
+The `compact` class works well with the smaller space available in the columns.
+
+![](tanya-nevidoma-632010-unsplash.jpg# mw-90)
+
+A shining crescent far beneath the flying vessel.
+
+- It was going to be a lonely trip back.
+- Mist enveloped the ship three hours out from port.
+- My two natures had memory in common.
+- Silver mist suffused the deck of the ship.
+- The face of the moon was in shadow.
+
+Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
 
 ---
 class: roomy
