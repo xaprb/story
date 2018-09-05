@@ -94,6 +94,11 @@ Apron provides the following. X stands for a variable/placeholder:
   bottom, and left in units of 1/12th to 11/12th.
 
 ---
+# More Image Pseudo-Classes
+
+- center: horizontal centering
+
+---
 # Two-Column Layout
 
 ![](nasa-53884-unsplash.jpg# db fr w-50 ml4)

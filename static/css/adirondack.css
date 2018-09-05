@@ -14,6 +14,16 @@
 	font-size: 2rem;
 	line-height: 1.25;
 }
+.remark-slide-content.compact {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.remark-slide-content.compact * {
+	font-size: 1.75rem;
+}
+.remark-slide-content.roomy * {
+	font-size: 2.25rem;
+}
 
 .remark-slide-content h1,
 .remark-slide-content h2,
@@ -26,11 +36,29 @@
 .remark-slide-content h1 {
 	font-size: 3rem;
 }
+.remark-slide-content.compact h1 {
+	font-size: 2.75rem;
+}
+.remark-slide-content.roomy h1 {
+	font-size: 4rem;
+}
 .remark-slide-content h2 {
 	font-size: 2.75rem;
 }
+.remark-slide-content.compact h2 {
+	font-size: 2.5rem;
+}
+.remark-slide-content.roomy h2 {
+	font-size: 3rem;
+}
 .remark-slide-content h3 {
 	font-size: 2.5rem;
+}
+.remark-slide-content.compact h3 {
+	font-size: 2.25rem;
+}
+.remark-slide-content.roomy h3 {
+	font-size: 2.75rem;
 }
 
 /* Table Styling
@@ -87,6 +115,16 @@ blockquote {
    border-left: 0.25rem solid #dfe2e5;
 }
 
+.remark-slide-content .remark-slide-number {
+	background-color: white;
+	padding: 0 5px;
+	border-radius: 5px;
+	font-size: 1.25rem;
+}
+.remark-slide-content.no-number .remark-slide-number {
+	display: none;
+}
+
 /* title layout
  */
 .remark-slide-content.title {
@@ -111,14 +149,16 @@ blockquote {
 	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 	font-weight: normal;
 }
-.remark-slide-content.title *:first-child {
-	/* Create a "smokescreen" effect, and make the element large but with
-	 * negative bottom margin so it will extend downwards underneath others.
-	 * This is better than giving each element a background and nestling them
-	 * against each other, because that will create very thin lines between them
-	 * where the elements don't meet and the slide background shows through.
-	 */
+.remark-slide-content.title.smokescreen>h1 {
 	background-color: rgba(0,0,0,.7);
+}
+.remark-slide-content.title.shelf>h1 {
+	/* Make the element large but with negative bottom margin so it will extend
+	 * downwards underneath others.  This is better than giving each element a
+	 * background and nestling them against each other, because that will create
+	 * very thin lines between them where the elements don't meet and the slide
+	 * background shows through.
+	 */
 	padding-bottom: 2.5em;
 	margin-bottom: -2.5em;
 }

@@ -178,9 +178,48 @@ function $initHighlight(block, cls) {
 ```
 
 ---
+class: compact
+
+# A Compact Slide
+
+This slide's class is `compact`, which reduces font sizes, line heights, and
+slide padding.
+
+This makes it possible to fit more content on the slide, which can be useful.
+
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+
+```javascript
+function $initHighlight(block, cls) {
+	if (cls.search(/\bno\-highlight\b/) != -1)
+		return process(block, true, 0x0F) + ` class="${cls}"`;
+	for (var i = 0 / 2; i < classes.length; i++) {
+		if (checkCondition(classes[i]) === undefined)
+			console.log('undefined');
+	}
+}
+```
+
+---
+class: roomy
+# A Roomy Slide
+
+This slide doesn't have as much content, so I gave it the class `roomy` to let
+its content stretch out a bit for readability.
+
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
+
+---
 # Adirondack’s Slide Classes
 
 This slideshow mostly uses Apron’s slide classes. Adirondack provides some
 of its own. This slide is a reference to them:
 
-- Compact
+- compact: scales down font sizes and slide left/right padding
+- roomy: scales up font sizes (but doesn't change padding)
+- smokescreen: renders H1, H2, H3 with a partially transparent black background
+- shelf: renders H1 background so H2/H3 can sit on top of it
