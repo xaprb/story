@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i&subset=latin-ext');
+
+/* Type scale, drawn from Tachyons:
+ * 6rem (96px)		5rem (80px)		3rem (48px)	2.25rem (36px)
+ * 1.5rem (24px)	1.25rem (20px)	1rem (16px)	.875rem (14px)
+ * TODO: use font squirrel's web-safe font stacks as fallbacks
+ * TODO: compact layouts with smaller typescale
+*/
+
+.remark-slide-content * {
+	font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
+					'avenir next', avenir, 'helvetica neue', helvetica,
+					arial, sans-serif;
+	font-size: 2rem;
+	line-height: 1.25;
+}
+
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3 {
+	font-family: Quattrocento, serif;
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.remark-slide-content h1 {
+	font-size: 3rem;
+}
+.remark-slide-content h2 {
+	font-size: 2.75rem;
+}
+.remark-slide-content h3 {
+	font-size: 2.5rem;
+}
+
+/* Table Styling
+ */
+.remark-slide-content table {
+   border-spacing: 0;
+   border-collapse: collapse;
+   display: block;
+   width: 100%;
+   overflow: auto;
+   font-size: 85%;
+	font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
+					'avenir next', avenir, 'helvetica neue', helvetica,
+					arial, sans-serif;
+}
+.remark-slide-content table tr:nth-child(2n) {
+   background-color: #f6f8fa;
+}
+.remark-slide-content table th, .remark-slide-content table td {
+   display: table-cell;
+   vertical-align: inherit;
+   padding: .25rem .5rem;
+   border: 1px solid #dfe2e5;
+}
+.remark-slide-content table th {
+   font-weight: 600;
+}
+
+/* Code and Blockquote Styling
+ */
+pre {
+   border-radius: 3px;
+   padding: 1rem;
+   background: #f6f8fa;
+   overflow: auto;
+}
+p>code, li>code, a>code {
+   background: #f6f8fa;
+   margin: 0;
+   border-radius: 3px;
+   padding: 0.2em 0.3em;
+}
+pre, code, kbd, tt, samp,
+pre *, code *, kbd *, tt *, samp * {
+	font-family: Monaco, "Lucida Sans Typewriter", "Lucida Console", "Andale Mono", "Consolas", monospace !important;
+   font-size: 1.5rem !important;
+	line-height: 1.5 !important;
+}
+
+blockquote {
+   margin: 0;
+   padding: 0 1rem;
+   color: #6a737d;
+   border-left: 0.25rem solid #dfe2e5;
+}
+
+/* title layout
+ */
+.remark-slide-content.title {
+	margin: 0;
+	padding: 0;
+}
+.remark-slide-content.title h1 {
+	font-size: 4rem;
+}
+.remark-slide-content.title h2 {
+	font-size: 3rem;
+}
+.remark-slide-content.title h3 {
+	font-size: 2rem;
+}
+.remark-slide-content.title h1,
+.remark-slide-content.title h2,
+.remark-slide-content.title h3 {
+	color: white;
+	margin: 0;
+	padding: 1em 0;
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+	font-weight: normal;
+}
+.remark-slide-content.title *:first-child {
+	/* Create a "smokescreen" effect, and make the element large but with
+	 * negative bottom margin so it will extend downwards underneath others.
+	 * This is better than giving each element a background and nestling them
+	 * against each other, because that will create very thin lines between them
+	 * where the elements don't meet and the slide background shows through.
+	 */
+	background-color: rgba(0,0,0,.7);
+	padding-bottom: 2.5em;
+	margin-bottom: -2.5em;
+}

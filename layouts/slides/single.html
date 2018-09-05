@@ -1,7 +1,13 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "layout" }}
-		<link rel="stylesheet" href="/css/{{ .Params.theme }}.css"></style>
+		{{- with .Params.themes -}}
+			{{- range . }}
+				<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
+			{{- end -}}
+		{{- else }}
+		<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
+		{{- end }}
 		<style type="text/css">
 		@page {
 			size: {{ if .Params.ratio }} 1216px 684px; {{ else }} 912px 684px; {{ end }}
@@ -27,8 +33,8 @@
     <textarea id="source">
 			{{- .RawContent -}}
     </textarea>
-    <script type="text/javascript" src="/js/qrcode.js"></script>
-    <script src="/js/remark.min.js"></script>
+    <script type="text/javascript" src="{{ "/js/qrcode.js" | absURL }}"></script>
+    <script src="{{ "/js/remark.min.js" | absURL }}"></script>
     <script>
       var slideshow = remark.create({
          {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}
