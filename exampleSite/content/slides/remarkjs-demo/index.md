@@ -5,74 +5,47 @@ url: "/slides/remarkjs-demo/"
 image: "/slides/remarkjs-demo/will-turner-508747-unsplash.jpg"
 description: "This demo RemarkJS presentation shows how simple it can be to create stunning presentations with Hugo and RemarkJS!"
 ratio: "16:9"
-theme: "monobloc"
+themes:
+- apron
+- adirondack
 classes:
 - feature-math
 ---
-class: title, no-number
+class: title, smokescreen, shelf
 background-image: url(will-turner-508747-unsplash.jpg)
-background-size: cover
 
-.smokescreen[
 # A RemarkJS Demo Slideshow
 ## Baron Schwartz &bullet; SomeOpenSourceConf 2018
-]
 
 ---
-layout: true
-<div class="remark-slide-number" style="left: 20px; right: unset">@xaprb</div>
-
----
-class: title
+class: title, smokescreen
 background-image: url(leo-serrat-533922-unsplash.jpg)
-background-size: cover
-.smokescreen[
 # Environment shapes culture
-]
 
 ---
-class: two-column
+class: two-col-img-right
 # Math Typesetting Works!
+
+![Universal Scalability Law](linear3.svg)
+
+Represents crosstalk (coherence) penalty by coefficient \\(\\kappa\\).
 
 \\[
 X(N) = \frac{\\lambda N}{1+\\sigma(N-1)+\\kappa N(N-1)}
 \\]
 
-.col[
-Represents crosstalk (coherence) penalty by coefficient \\(\\kappa\\).
 The system completes _less_ work as the load increases!
-]
-
-.col[
-![Universal Scalability Law](linear3.svg)
-]
 
 ---
-class: title
+class: title, fogscreen
 background-image: url(tom-barrett-364228-unsplash.jpg)
-background-size: cover
-.smokescreen[
 # Open source is key to our future
-]
 
 ---
-class: title
-background-image: url(nasa-53884-unsplash.jpg)
-background-size: cover
-.smokescreen[
-# We share open source values
-]
+class: img-fullbleed-right
 
----
-class: img-right, center, middle
-.col[
-## A people that values its privileges above its principles soon loses both.
+![Eisenhower](dwight-d-eisenhower.jpg)
+
+# A people that values its privileges above its principles soon loses both.
 
 — Dwight D. Eisenhower
-]
-.rc[
-![Eisenhower](dwight-d-eisenhower.jpg)
-]
-
-???
-In conclusion, I’m going to return to President Eisenhower for another quote. Thank you very much and enjoy the rest of the conference.
