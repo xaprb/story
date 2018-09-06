@@ -134,6 +134,7 @@
 .remark-slide-content.col {
 	/* Relies on .remark-slide-content's default 20px padding-top */
 	max-height: calc(100% - 20px);
+	column-gap: 1.5em; /* Deliberately a relative measure */
 }
 .remark-slide-content.col > h1:first-of-type,
 .remark-slide-content.col > h2:first-of-type,
