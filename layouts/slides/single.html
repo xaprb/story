@@ -44,6 +44,21 @@
          countIncrementalSlides: false,
          slideNumberFormat: '%current%'
       });
+		// Shrink headers until they fit. (They have to be momentarily made
+		// visible first.)
+		$(".remark-slide-content.fit-h1 h1").each(function(i, e) {
+			var $e = $(e);
+			var $p = $e.closest('div.remark-slide-container');
+			var needsToggle = !$p.hasClass('remark-visible');
+			console.log(needsToggle);
+			if ( needsToggle ) $p.toggleClass('remark-visible');
+			while (e.scrollHeight > e.clientHeight + 1 && $e.css('font-size') != '1px') {
+				$e.css('font-size', (parseInt($e.css('font-size')) - 1) + "px");
+				console.log($e.css('font-size') + "sh:" + e.scrollHeight + "ch:" +
+					e.clientHeight);
+			}
+			if ( needsToggle ) $p.toggleClass('remark-visible');
+		});
       new QRCode(
          document.getElementById("qrcode"),
          {

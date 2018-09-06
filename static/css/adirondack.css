@@ -115,13 +115,29 @@ blockquote {
    border-left: 0.25rem solid #dfe2e5;
 }
 
-.remark-slide-content .remark-slide-number {
-	background-color: white;
-	padding: 0 5px;
+.remark-slide-content .remark-slide-number,
+.remark-slide-content .footer li {
+	background-color: rgba(255, 255, 255, .5);
+	opacity: .5;
+	padding: 2px 5px;
 	border-radius: 5px;
 	font-size: 1.25rem;
+	display: block;
+	position: absolute;
+	bottom: 12px;
+	list-style: none;
 }
-.remark-slide-content.no-number .remark-slide-number {
+.remark-slide-content .footer li:nth-child(1) {
+	left: 20px;
+}
+.remark-slide-content .footer li:nth-child(2) {
+	left: 45%;
+}
+.remark-slide-content .footer li img {
+	display: block;
+}
+.remark-slide-content.no-number .remark-slide-number,
+.remark-slide-content.no-number .footer {
 	display: none;
 }
 
@@ -176,4 +192,9 @@ blockquote {
 	 */
 	padding-bottom: 2.5em;
 	margin-bottom: -2.5em;
+}
+
+.remark-slide-content.fit-h1 h1 {
+	height: 1.25em;
+	overflow: hidden;
 }

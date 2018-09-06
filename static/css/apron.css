@@ -33,11 +33,11 @@
 .remark-slide-content.img-caption {
 	text-align: center;
 }
-.remark-slide-content.img-caption p:first-child {
+.remark-slide-content.img-caption>p:first-child {
 	height: 80%;
 	margin-top: 0;
 }
-.remark-slide-content.img-caption img:first-of-type {
+.remark-slide-content.img-caption>img:first-of-type {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -62,7 +62,8 @@
 }
 
 /* two-col-img-left layout
- * Assumes you begin the content with an image.
+ * Assumes you begin the content with an image inside a paragraph.
+ * If you have "layout" content, make sure there's no paragraphs in it.
  */
 .remark-slide-content.two-col-img-left>p:first-of-type {
 	float: left;
@@ -79,16 +80,17 @@
 }
 
 /* img-fullbleed-right layout
- * Assumes you begin the content with an image.
+ * Assumes you begin the content with an image inside a paragraph.
+ * If you have "layout" content, make sure there's no paragraphs in it.
  */
-.remark-slide-content.img-fullbleed-right p:first-of-type {
+.remark-slide-content.img-fullbleed-right>p:first-of-type {
 	float: right;
 	height: 100%;
 	width: 40%;
 	padding: 0px;
 	margin: 0px 0px 0px 32px;
 }
-.remark-slide-content.img-fullbleed-right img:first-of-type {
+.remark-slide-content.img-fullbleed-right>p:first-of-type>img:first-of-type {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -99,16 +101,18 @@
 }
 
 /* img-fullbleed-left layout
- * Assumes you begin the content with an image.
+ * Assumes you begin the content with an image inside a paragraph.
+ * If you have "layout" content, make sure there's no paragraphs in it.
+ * If your header overlaps the image, put the image first to fix that.
  */
-.remark-slide-content.img-fullbleed-left p:first-of-type {
+.remark-slide-content.img-fullbleed-left>p:first-of-type {
 	float: left;
 	height: 100%;
 	width: 40%;
 	padding: 0px;
 	margin: 0px 32px 0px 0px;
 }
-.remark-slide-content.img-fullbleed-left img:first-of-type {
+.remark-slide-content.img-fullbleed-left>p:first-of-type>img:first-of-type {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -322,7 +326,15 @@
 .remark-slide-content img[src~=absolute] { position: absolute; }
 .remark-slide-content img[src~=fixed] { position: fixed; }
 
+.remark-slide-content .static { position: static; }
+.remark-slide-content .relative { position: relative; }
+.remark-slide-content .absolute { position: absolute; }
+.remark-slide-content .fixed { position: fixed; }
+
 .remark-slide-content img[src~=center] { display: block; margin-left: auto; margin-right: auto; }
+/* https://www.sitepoint.com/css-center-position-absolute-div/
+ */
+.remark-slide-content img[src~=center][src~=w-10] { left: 50%; margin-left: -5%; }
 
 .remark-slide-content img[src~=t-0] { top: 0px; }
 .remark-slide-content img[src~=t-10] { top: 10%; }
@@ -341,6 +353,24 @@
 .remark-slide-content img[src~=t-100] { top: 100%; }
 .remark-slide-content img[src~=t-third] { top: calc(100%/3); }
 .remark-slide-content img[src~=t-two-thirds] { top: calc(200%/3); }
+
+.remark-slide-content img[src~=t-u] { top: unset; }
+.remark-slide-content img[src~=t-1] { top: .25rem; }
+.remark-slide-content img[src~=t-2] { top: .5rem; }
+.remark-slide-content img[src~=t-3] { top: 1rem; }
+.remark-slide-content img[src~=t-4] { top: 2rem; }
+.remark-slide-content img[src~=t-5] { top: 4rem; }
+.remark-slide-content img[src~=t-6] { top: 8rem; }
+.remark-slide-content img[src~=t-7] { top: 16rem; }
+
+.remark-slide-content .t-u { top: unset; }
+.remark-slide-content .t-1 { top: .25rem; }
+.remark-slide-content .t-2 { top: .5rem; }
+.remark-slide-content .t-3 { top: 1rem; }
+.remark-slide-content .t-4 { top: 2rem; }
+.remark-slide-content .t-5 { top: 4rem; }
+.remark-slide-content .t-6 { top: 8rem; }
+.remark-slide-content .t-7 { top: 16rem; }
 
 .remark-slide-content img[src~=t-1-12] { top: calc(100%/12); }
 .remark-slide-content img[src~=t-2-12] { top: calc(200%/12); }
@@ -372,6 +402,24 @@
 .remark-slide-content img[src~=r-third] { right: calc(100%/3); }
 .remark-slide-content img[src~=r-two-thirds] { right: calc(200%/3); }
 
+.remark-slide-content img[src~=r-u] { right: unset; }
+.remark-slide-content img[src~=r-1] { right: .25rem; }
+.remark-slide-content img[src~=r-2] { right: .5rem; }
+.remark-slide-content img[src~=r-3] { right: 1rem; }
+.remark-slide-content img[src~=r-4] { right: 2rem; }
+.remark-slide-content img[src~=r-5] { right: 4rem; }
+.remark-slide-content img[src~=r-6] { right: 8rem; }
+.remark-slide-content img[src~=r-7] { right: 16rem; }
+
+.remark-slide-content .r-u { right: unset; }
+.remark-slide-content .r-1 { right: .25rem; }
+.remark-slide-content .r-2 { right: .5rem; }
+.remark-slide-content .r-3 { right: 1rem; }
+.remark-slide-content .r-4 { right: 2rem; }
+.remark-slide-content .r-5 { right: 4rem; }
+.remark-slide-content .r-6 { right: 8rem; }
+.remark-slide-content .r-7 { right: 16rem; }
+
 .remark-slide-content img[src~=r-1-12] { right: calc(100%/12); }
 .remark-slide-content img[src~=r-2-12] { right: calc(200%/12); }
 .remark-slide-content img[src~=r-3-12] { right: calc(300%/12); }
@@ -402,6 +450,24 @@
 .remark-slide-content img[src~=b-third] { bottom: calc(100%/3); }
 .remark-slide-content img[src~=b-two-thirds] { bottom: calc(200%/3); }
 
+.remark-slide-content img[src~=b-u] { bottom: unset; }
+.remark-slide-content img[src~=b-1] { bottom: .25rem; }
+.remark-slide-content img[src~=b-2] { bottom: .5rem; }
+.remark-slide-content img[src~=b-3] { bottom: 1rem; }
+.remark-slide-content img[src~=b-4] { bottom: 2rem; }
+.remark-slide-content img[src~=b-5] { bottom: 4rem; }
+.remark-slide-content img[src~=b-6] { bottom: 8rem; }
+.remark-slide-content img[src~=b-7] { bottom: 16rem; }
+
+.remark-slide-content .b-u { bottom: unset; }
+.remark-slide-content .b-1 { bottom: .25rem; }
+.remark-slide-content .b-2 { bottom: .5rem; }
+.remark-slide-content .b-3 { bottom: 1rem; }
+.remark-slide-content .b-4 { bottom: 2rem; }
+.remark-slide-content .b-5 { bottom: 4rem; }
+.remark-slide-content .b-6 { bottom: 8rem; }
+.remark-slide-content .b-7 { bottom: 16rem; }
+
 .remark-slide-content img[src~=b-1-12] { bottom: calc(100%/12); }
 .remark-slide-content img[src~=b-2-12] { bottom: calc(200%/12); }
 .remark-slide-content img[src~=b-3-12] { bottom: calc(300%/12); }
@@ -431,6 +497,24 @@
 .remark-slide-content img[src~=l-100] { left: 100%; }
 .remark-slide-content img[src~=l-third] { left: calc(100%/3); }
 .remark-slide-content img[src~=l-two-thirds] { left: calc(200%/3); }
+
+.remark-slide-content img[src~=l-u] { left: unset; }
+.remark-slide-content img[src~=l-1] { left: .25rem; }
+.remark-slide-content img[src~=l-2] { left: .5rem; }
+.remark-slide-content img[src~=l-3] { left: 1rem; }
+.remark-slide-content img[src~=l-4] { left: 2rem; }
+.remark-slide-content img[src~=l-5] { left: 4rem; }
+.remark-slide-content img[src~=l-6] { left: 8rem; }
+.remark-slide-content img[src~=l-7] { left: 16rem; }
+
+.remark-slide-content .l-u { left: unset; }
+.remark-slide-content .l-1 { left: .25rem; }
+.remark-slide-content .l-2 { left: .5rem; }
+.remark-slide-content .l-3 { left: 1rem; }
+.remark-slide-content .l-4 { left: 2rem; }
+.remark-slide-content .l-5 { left: 4rem; }
+.remark-slide-content .l-6 { left: 8rem; }
+.remark-slide-content .l-7 { left: 16rem; }
 
 .remark-slide-content img[src~=l-1-12] { left: calc(100%/12); }
 .remark-slide-content img[src~=l-2-12] { left: calc(200%/12); }
