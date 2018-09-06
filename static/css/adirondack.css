@@ -163,7 +163,8 @@ blockquote {
 	padding: 1em 0;
 	font-weight: normal;
 }
-.remark-slide-content.smokescreen>h1 {
+.remark-slide-content.smokescreen>h1,
+.remark-slide-content img[src~=smokescreen] {
 	background-color: rgba(0,0,0,.7);
 }
 .remark-slide-content.smokescreen>h1,
