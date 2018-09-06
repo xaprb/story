@@ -37,7 +37,7 @@
 	height: 80%;
 	margin-top: 0;
 }
-.remark-slide-content.img-caption>img:first-of-type {
+.remark-slide-content.img-caption>p:first-child>img {
 	position: absolute;
 	top: 0px;
 	left: 0px;

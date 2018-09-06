@@ -41,7 +41,7 @@ with RemarkJS's own CSS rules.
 class: img-caption
 ![Image](will-turner-508747-unsplash.jpg)
 
-### The img-caption class permits a full-bleed image and a caption. You can use any markup in this space. (This is an `<H3>`).
+### The img-caption class creates a full-bleed image and a caption. You can use any markup in this space. (This is an `<H3>`).
 ---
 # Apron's Image-Styling Functionality
 
