@@ -253,6 +253,36 @@ fits on a single line.
 This doesn't work (yet?) on title slides with the `shelf` class.
 
 ---
+layout: true
+
+.footer[
+- @xaprb
+- <img src="vividcortex-horizontal-web.svg" height="25">
+]
+
+---
+class: compact
+# Footer Content
+
+This slide builds on content from the previous (hidden, layout) slide, whose
+content is:
+
+```
+---
+layout: true
+.footer[
+- @xaprb
+- <img src="vividcortex-horizontal-web.svg" height="25">
+]
+```
+
+This content uses Adirondack's built-in `footer` css styling to define footer
+elements. You can see them at the bottom of this slide.
+This is the only use of raw HTML or Remark's proprietary markup syntax in this
+slideshow, used here to illustrate an extra extension.
+
+---
+layout: false
 # Adirondack’s Slide Classes
 
 This slideshow mostly uses Apron’s slide classes. Adirondack provides some
