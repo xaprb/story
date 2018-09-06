@@ -244,6 +244,15 @@ its content stretch out a bit for readability.
 - All their equipment and instruments are alive.
 
 ---
+class: fit-h1
+# This Slide Has A Very Long Multi-Line Heading That Has Been Shrunk
+
+The `fit-h1` slide class will automatically shrink the first H1 heading until it
+fits on a single line.
+
+This doesn't work (yet?) on title slides with the `shelf` class.
+
+---
 # Adirondack’s Slide Classes
 
 This slideshow mostly uses Apron’s slide classes. Adirondack provides some
@@ -253,3 +262,4 @@ of its own. This slide is a reference to them:
 - roomy: scales up font sizes (but doesn't change padding)
 - smokescreen: renders H1, H2, H3 with a partially transparent black background
 - shelf: renders H1 background so H2/H3 can sit on top of it
+- fit-h1: shrink the H1 heading until it fits on a single line
