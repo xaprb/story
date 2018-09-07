@@ -1,5 +1,20 @@
-/* Globals, resets, and fixes 
+/* Globals, resets, and fixes. Remark sets display:table and display:table-cell,
+ * I think in order to make things like vertical centering easier. But those
+ * mess with a bunch of other things, and make them hard/impossible. An example
+ * is using column-count, which won't work except inside a display:block
+ * element. So I reset these things to undo what I consider Remark's hacks.
  */
+.remark-slide {
+	display: block;
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+.remark-slide-content {
+	display: block;
+	box-sizing: border-box;
+	height: 100%;
+}
 .remark-slide-content * {
 	box-sizing: border-box;
 }
@@ -32,10 +47,11 @@
  */
 .remark-slide-content.img-caption {
 	text-align: center;
+	padding-top: calc(681px * 0.8);
 }
 .remark-slide-content.img-caption>p:first-child {
-	height: 80%;
-	margin-top: 0;
+	padding: 0px;
+	margin: 0px;
 }
 .remark-slide-content.img-caption>p:first-child>img {
 	position: absolute;
@@ -47,48 +63,44 @@
 }
 
 /* two-col-img-right layout
- * Assumes you begin the content with an image.
+ * Assumes you begin the content with a header, then an image.
  */
 .remark-slide-content.two-col-img-right>p:first-of-type {
 	float: right;
-	height: 100%;
+	height: 681px;
 	width: 50%;
 	padding: 0px;
 	margin: 0px 0px 0px 32px;
 }
-.remark-slide-content.two-col-img-right>*:nth-child(3),
-.remark-slide-content.two-col-img-left>*:nth-child(3) {
-	margin-top: 0;
-}
 
 /* two-col-img-left layout
- * Assumes you begin the content with an image inside a paragraph.
- * If you have "layout" content, make sure there's no paragraphs in it.
+ * Assumes you begin the content with a header, then an image.
  */
 .remark-slide-content.two-col-img-left>p:first-of-type {
 	float: left;
-	height: 100%;
+	height: 681px;
 	width: 50%;
-	padding: 0px;
+	padding: ;
 	margin: 0px 32px 0px 0px;
 }
-.remark-slide-content.two-col-img-left>ul,
-.remark-slide-content.two-col-img-left>ol,
-.remark-slide-content.img-fullbleed-left>ul,
-.remark-slide-content.img-fullbleed-left>ol {
-	overflow: auto; /* See https://stackoverflow.com/a/710264 */
+
+/* Keep the tops of the columns aligned
+ */
+.remark-slide-content.two-col-img-right>*:nth-child(3),
+.remark-slide-content.two-col-img-left>*:nth-child(3) {
+	margin-top: 0;
 }
 
 /* img-fullbleed-right layout
  * Assumes you begin the content with an image inside a paragraph.
  * If you have "layout" content, make sure there's no paragraphs in it.
  */
+.remark-slide-content.img-fullbleed-right {
+	padding-right: calc(40% + 2rem);
+}
 .remark-slide-content.img-fullbleed-right>p:first-of-type {
-	float: right;
-	height: 100%;
-	width: 40%;
+	margin: 0px;
 	padding: 0px;
-	margin: 0px 0px 0px 32px;
 }
 .remark-slide-content.img-fullbleed-right>p:first-of-type>img:first-of-type {
 	position: absolute;
@@ -103,14 +115,13 @@
 /* img-fullbleed-left layout
  * Assumes you begin the content with an image inside a paragraph.
  * If you have "layout" content, make sure there's no paragraphs in it.
- * If your header overlaps the image, put the image first to fix that.
  */
+.remark-slide-content.img-fullbleed-left {
+	padding-left: calc(40% + 2rem);
+}
 .remark-slide-content.img-fullbleed-left>p:first-of-type {
-	float: left;
-	height: 100%;
-	width: 40%;
+	margin: 0px;
 	padding: 0px;
-	margin: 0px 32px 0px 0px;
 }
 .remark-slide-content.img-fullbleed-left>p:first-of-type>img:first-of-type {
 	position: absolute;
@@ -132,20 +143,26 @@
 	columns: 3;
 }
 .remark-slide-content.col {
-	/* Relies on .remark-slide-content's default 20px padding-top */
-	max-height: calc(100% - 20px);
 	column-gap: 1.5em; /* Deliberately a relative measure */
+	padding-top: 10rem; /* Just a guess; customize based on your H1:font-size */
 }
-.remark-slide-content.col > h1:first-of-type,
-.remark-slide-content.col > h2:first-of-type,
-.remark-slide-content.col > h3:first-of-type {
-	/* Apron assumes that there's a heading */
-	column-span: all;
+/* Apron assumes that there's an H1 heading. The right solution here is
+ * column-span: all, but unfortunately as of Sep 2018, Firefox doesn't support
+ * this. So instead, we set the H1 to position: absolute, and use the
+ * padding-top to push the other content down away from it.
+ */
+.remark-slide-content.col > h1:first-of-type {
+	/* column-span: all; */
+	position: absolute;
+	top: 20px;
+	left: 80px;
 }
+/* Margin-top messes up the vertical alignment of the first column
+ * in multi-column layouts.
+ */
 .remark-slide-content.col p:first-of-type,
 .remark-slide-content.col ul:first-of-type,
 .remark-slide-content.col ol:first-of-type {
-	/* Margin-top messes up the vertical alignment of multi-column layouts */
 	margin-top: 0px;
 }
 .remark-slide-content.col > ul,

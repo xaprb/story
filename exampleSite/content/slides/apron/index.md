@@ -207,6 +207,9 @@ This slide illustrates the img-fullbleed-right convenience class.
 The first image in the slide is set to 40% of the width of the slide and set
 full-bleed on the right-hand edge of the slide.
 
+- I gazed into the gathering storm.
+- All their instruments were alive.
+
 The image's position within the clipped container is set to `left`. This allows
 you to create images that are 2x as wide as the area that's displayed, and pair
 this layout with the next one.
@@ -219,6 +222,9 @@ class: img-fullbleed-left
 # Layout Class img-fullbleed-left
 
 This slide illustrates the img-fullbleed-left convenience class.
+
+- I gazed into the gathering storm.
+- All their instruments were alive.
 
 The image is the same as on the previous slide, but the positioning within the
 container is the opposite, so the other half of the image is shown.
