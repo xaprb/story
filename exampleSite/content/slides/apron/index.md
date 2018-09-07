@@ -155,22 +155,19 @@ This convenience layout illustrates a better way to do it. By adding the class
 column.
 
 An image in Markdown is wrapped in a paragraph, so you can simply begin a
-columnar layout with an image and the rest will work.
+columnar layout with an image and it will simply work.
 
-- Test.
-- Test.
-- Test.
-- Test.
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
 
-Test.
+A red flare silhouetted the jagged edge of a wing.
 
-Test.
+I watched the storm, so beautiful yet terrific.
 
-Test.
-
-Test.
-
-Test.
+Almost before we knew it, we had left the ground.
+All their equipment and instruments are alive.
 
 ---
 class: two-col-img-right
@@ -179,18 +176,28 @@ class: two-col-img-right
 
 ![](nasa-53884-unsplash.jpg)
 
-In this convenience layout, the first paragraph 
-will form the right column.
+The `two-col-img-right` layout uses the first paragraph 
+as the right column.
 
 --
 
 The reason for these two-column image convenience slide classes is to avoid any
-wrapper div's or similar.
+wrapper div's or similar, and place the column's content _last_ in the Markdown
+source.
 
 --
 
 This allows RemarkJS to do incremental slide builds, with the `--` separator
 between stages of slides.
+
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
+
+A red flare silhouetted the jagged edge of a wing.
+
+I watched the storm, so beautiful yet terrific.
 
 ---
 class: img-fullbleed-right

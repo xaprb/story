@@ -65,45 +65,28 @@
  * Assumes you begin the content with a header, then an image.
  */
 .remark-slide-content.two-col-img-right>p:first-of-type {
-	margin: 0px;
+	height: 100%;
+	float: right;
+	width: calc(50% - 1rem);
+	margin-left: 2rem;
+	margin-top: 0px;
 	padding: 0px;
-}
-.remark-slide-content.two-col-img-right>p:first-of-type>img {
-	position: absolute;
-	width: calc(50% - 80px);
-	left: 50%;
-	top: 156px;
-}
-.remark-slide-content.two-col-img-right>*:nth-child(n+3) {
-	padding-right: calc(50% + 2rem);
 }
 
 /* two-col-img-left layout
  * Assumes you begin the content with a header, then an image.
  */
 .remark-slide-content.two-col-img-left>p:first-of-type {
-	margin: 0px;
+	height: 100%;
+	float: left;
+	width: calc(50% - 1rem);
+	margin-right: 2rem;
+	margin-top: 0px;
 	padding: 0px;
 }
-.remark-slide-content.two-col-img-left>p:first-of-type>img {
-	position: absolute;
-	width: calc(50% - 80px);
-	left: 80px;
-	top: 156px;
-}
-.remark-slide-content.two-col-img-left>*:nth-child(n+3) {
-	padding-left: calc(50% + 2rem);
-}
-.remark-slide-content.two-col-img-left>ul:nth-child(n+3),
-.remark-slide-content.two-col-img-left>ol:nth-child(n+3) {
-	padding-left: calc(50% + 2rem + 40px);
-}
-
-/* Keep the tops of the columns aligned
- */
-.remark-slide-content.two-col-img-right>*:nth-child(3),
-.remark-slide-content.two-col-img-left>*:nth-child(3) {
-	margin-top: 0;
+.remark-slide-content.two-col-img-left>ul,
+.remark-slide-content.two-col-img-left>ol {
+	overflow: auto;
 }
 
 /* img-fullbleed-right layout
