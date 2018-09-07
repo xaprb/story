@@ -116,7 +116,7 @@ Relaxing in the Adirondack chair, I felt the gathering dusk creep on kitten
 feet.  It came to me, then, that a day lived in this paradise was better than a
 lifetime anywhere else.
 
-![](leo-serrat-533922-unsplash.jpg)
+![](leo-serrat-533922-unsplash.jpg# mw-90 center)
 
 This is a two-column layout, created with `class: col, col-2`.
 There's no column markup in the content.
@@ -191,9 +191,8 @@ class: compact
 # A Compact Slide
 
 This slide's class is `compact`, which reduces font sizes, line heights, and
-slide padding.
-
-This makes it possible to fit more content on the slide, which can be useful.
+slide padding.  This makes it possible to fit more content on the slide, which
+can be useful.
 
 - I watched the storm, so beautiful yet terrific.
 - Almost before we knew it, we had left the ground.
@@ -237,6 +236,17 @@ class: roomy
 
 This slide doesn't have as much content, so I gave it the class `roomy` to let
 its content stretch out a bit for readability.
+
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
+
+---
+class: roomy, col, col-2
+# Room For Two Columns
+
+This slide is roomy and has two columns.
 
 - A red flare silhouetted the jagged edge of a wing.
 - I watched the storm, so beautiful yet terrific.

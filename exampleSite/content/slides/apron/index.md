@@ -99,14 +99,14 @@ Apron provides the following. X stands for a variable/placeholder:
 - center: horizontal centering
 
 ---
-# Two-Column Layout
+# Simple Two-Column Layout
 
 ![](nasa-53884-unsplash.jpg# db fr w-50 ml4)
 
 This slide illustrates a simple way to create a two-column layout with an image
 in the right-hand side.
 
-(I'll show you a better way next, but this illustrates the utility of the CSS
+(I'll show you another way later, but this illustrates the utility of the CSS
 pseudo-image-classes in the URL fragments).
 
 Simply shrink the image to 50% width, float it right, set its display to block,
@@ -119,11 +119,12 @@ The image markup is:
 ```
 
 ---
-# Two-Column Layout Variation
+# Simple Two-Column Layout, Left
 
 ![](nasa-53884-unsplash.jpg# db fl w-50 mr4)
 
-This variation illustrates placing the image on the lefthand column.
+This variation illustrates placing the image on the lefthand column, and why
+this doesn't work great.
 
 The image markup is:
 
@@ -131,19 +132,16 @@ The image markup is:
 ![](nasa-53884-unsplash.jpg# db fl w-50 mr4)
 ```
 
-There's a small problem with doing this with floats.
+There are a few problems with using floats for this.
 
-If the text continues,
+- Bulleted lists don't indent correctly.
+- Their layout doesn't work well next to floated elements.
 
-as this does,
+Also, if the text continues,
 
-it will go below
+as this does, it will go below the image and wrap
 
-the image and wrap
-
-back to the left-hand
-
-edge again. So the "column" ended too soon. This is a problem, and there's a fix for it.
+back to the left-hand edge again. So the "column" ended too soon, revealing that it's not a real column.
 
 ---
 class: two-col-img-left
@@ -152,18 +150,17 @@ class: two-col-img-left
 
 ![](nasa-53884-unsplash.jpg)
 
-In this convenience layout, the first paragraph in the content
-(which can be an image, as in this case)
-will form the left column.
+This convenience layout illustrates a better way to do it. By adding the class
+`two-col-img-left`, the first paragraph in the content will become a lefthand
+column.
 
-The paragraph is floated left and sized to 50%, and should
-prevent wrapping around underneath it.
+An image in Markdown is wrapped in a paragraph, so you can simply begin a
+columnar layout with an image and the rest will work.
 
-Test.
-
-Test.
-
-Test.
+- Test.
+- Test.
+- Test.
+- Test.
 
 Test.
 

@@ -1,5 +1,5 @@
 /* Globals, resets, and fixes. Remark sets display:table and display:table-cell,
- * I think in order to make things like vertical centering easier. But those
+ * I think in order to make things like vertical-align:middle work. But those
  * mess with a bunch of other things, and make them hard/impossible. An example
  * is using column-count, which won't work except inside a display:block
  * element. So I reset these things to undo what I consider Remark's hacks.
@@ -37,7 +37,6 @@
 /* title layout
  */
 .remark-slide-content.title {
-	vertical-align: middle;
 	text-align: center;
 	background-size: cover;
 }
@@ -66,22 +65,38 @@
  * Assumes you begin the content with a header, then an image.
  */
 .remark-slide-content.two-col-img-right>p:first-of-type {
-	float: right;
-	height: 681px;
-	width: 50%;
+	margin: 0px;
 	padding: 0px;
-	margin: 0px 0px 0px 32px;
+}
+.remark-slide-content.two-col-img-right>p:first-of-type>img {
+	position: absolute;
+	width: calc(50% - 80px);
+	left: 50%;
+	top: 156px;
+}
+.remark-slide-content.two-col-img-right>*:nth-child(n+3) {
+	padding-right: calc(50% + 2rem);
 }
 
 /* two-col-img-left layout
  * Assumes you begin the content with a header, then an image.
  */
 .remark-slide-content.two-col-img-left>p:first-of-type {
-	float: left;
-	height: 681px;
-	width: 50%;
-	padding: ;
-	margin: 0px 32px 0px 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.remark-slide-content.two-col-img-left>p:first-of-type>img {
+	position: absolute;
+	width: calc(50% - 80px);
+	left: 80px;
+	top: 156px;
+}
+.remark-slide-content.two-col-img-left>*:nth-child(n+3) {
+	padding-left: calc(50% + 2rem);
+}
+.remark-slide-content.two-col-img-left>ul:nth-child(n+3),
+.remark-slide-content.two-col-img-left>ol:nth-child(n+3) {
+	padding-left: calc(50% + 2rem + 40px);
 }
 
 /* Keep the tops of the columns aligned

@@ -4,7 +4,6 @@
  * 6rem (96px)		5rem (80px)		3rem (48px)	2.25rem (36px)
  * 1.5rem (24px)	1.25rem (20px)	1rem (16px)	.875rem (14px)
  * TODO: use font squirrel's web-safe font stacks as fallbacks
- * TODO: compact layouts with smaller typescale
 */
 
 .remark-slide-content * {
@@ -142,23 +141,27 @@ blockquote {
 }
 
 /* title layout
+ * This layout assumes that you start the content with an H1. You can follow it
+ * with an H2 or H3, but you always start with H1.
  */
-.remark-slide-content.title {
-	margin: 0;
-	padding: 0;
-}
 .remark-slide-content.title h1 {
 	font-size: 4rem;
+	top: calc(50% - 2.25em);
 }
 .remark-slide-content.title h2 {
 	font-size: 3rem;
+	top: calc(50%);
 }
 .remark-slide-content.title h3 {
 	font-size: 2rem;
+	top: calc(50% + .25em);
 }
 .remark-slide-content.title h1,
 .remark-slide-content.title h2,
 .remark-slide-content.title h3 {
+	position: absolute;
+	width: 100%;
+	left: 0;
 	margin: 0;
 	padding: 1em 0;
 	font-weight: normal;
@@ -198,4 +201,21 @@ blockquote {
 .remark-slide-content.fit-h1 h1 {
 	height: 1.25em;
 	overflow: hidden;
+}
+
+.remark-slide-content.col {
+	padding-top: 136px;
+}
+
+.remark-slide-content.col.compact {
+	padding-top: 125px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.remark-slide-content.col.compact h1 {
+	left: 40px;
+}
+
+.remark-slide-content.col.roomy {
+	padding-top: 168px;
 }
