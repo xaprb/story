@@ -100,7 +100,7 @@
 	margin: 0px;
 	padding: 0px;
 }
-.remark-slide-content.img-fullbleed-right>p:first-of-type>img:first-of-type {
+.remark-slide-content.img-fullbleed-right>p:first-of-type>img {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -121,7 +121,7 @@
 	margin: 0px;
 	padding: 0px;
 }
-.remark-slide-content.img-fullbleed-left>p:first-of-type>img:first-of-type {
+.remark-slide-content.img-fullbleed-left>p:first-of-type>img {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -133,6 +133,7 @@
 
 /* col-2 and col-3 layouts
  * These must be combined with the "col" classes, they're not standalone.
+ * TODO: using less, mixin these
  */
 .remark-slide-content.col-2 {
 	columns: 2;
@@ -157,6 +158,8 @@
 }
 /* Margin-top messes up the vertical alignment of the first column
  * in multi-column layouts.
+ * TODO: make this less specific; blockquote/img/etc might need this styling
+ * too.
  */
 .remark-slide-content.col p:first-of-type,
 .remark-slide-content.col ul:first-of-type,
