@@ -1,13 +1,22 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "layout" }}
-		{{- with .Params.themes -}}
-			{{- range . }}
-				<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
-			{{- end -}}
-		{{- else }}
-		<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
-		{{- end }}
+		{{- with .Params.less -}}
+			{{- with .Params.themes -}}
+				{{- range . }}
+					<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.less"></style>
+				{{- end -}}
+				<script src="{{ "/js/less.min.js" | absURL }}"></script>
+			{{- end }}
+		{{ else }}
+			{{- with .Params.themes -}}
+				{{- range . }}
+					<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
+				{{- end -}}
+			{{- else }}
+			<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
+			{{- end }}
+		{{- end -}}
 		<style type="text/css">
 		@page {
 			size: {{ if .Params.ratio }} 1216px 684px; {{ else }} 912px 684px; {{ end }}
@@ -26,7 +35,7 @@
 {{ end }}
 
 {{ define "header" }}
-<!-- simply override the "header" from baseof.html to make it empty -->
+  <!-- simply override the "header" from baseof.html to make it empty -->
 {{ end }}
 
 {{ define "main" }}
@@ -59,13 +68,14 @@
 			}
 			if ( needsToggle ) $p.toggleClass('remark-visible');
 		});
-      new QRCode(
-         document.getElementById("qrcode"),
-         {
-            "useSVG": true,
-            "text": window.location.href.replace(/#\d*$/, "")
-         }
-      );
+		$( function() {
+			if ( $( "body.feature-qrcode:not(.feature-noqrcode)" ).length ) {
+				new QRCode($("#qrcode"), {
+					"useSVG": true,
+					"text": window.location.href.replace(/#\d*$/, "")
+				});
+			}
+		});
     </script>
 {{ end }}
 
@@ -81,8 +91,8 @@
 {{ end }}
 
 {{ define "about" }}
-   &nbsp;
+  <!-- simply override the "header" from baseof.html to make it empty -->
 {{ end }}
 {{ define "footer" }}
-   &nbsp;
+  <!-- simply override the "header" from baseof.html to make it empty -->
 {{ end }}
