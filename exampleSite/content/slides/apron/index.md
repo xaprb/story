@@ -9,7 +9,7 @@ less: true
 themes:
 - apron
 ---
-class: title, bottom
+class: title, middle
 background-image: url(tanya-nevidoma-632010-unsplash.jpg)
 
 # The Apron RemarkJS Theme
@@ -151,14 +151,14 @@ as this does, it will go below the image and wrap
 back to the left-hand edge again. So the "column" ended too soon, revealing that it's not a real column.
 
 ---
-class: two-col-img-left
+class: img-left
 
-# Layout Class two-col-img-left
+# Layout Class img-left
 
 ![](nasa-53884-unsplash.jpg)
 
 This convenience layout illustrates a better way to do it. By adding the class
-`two-col-img-left`, the first paragraph in the content will become a lefthand
+`img-left`, the first paragraph in the content will become a lefthand
 column.
 
 An image in Markdown is wrapped in a paragraph, so you can simply begin a
@@ -166,8 +166,9 @@ columnar layout with an image and it will simply work.
 
 - A red flare silhouetted the jagged edge of a wing.
 - I watched the storm, so beautiful yet terrific.
-- Almost before we knew it, we had left the ground.
-- All their equipment and instruments are alive.
+
+> Almost before we knew it, we had left the ground.
+> All their equipment and instruments are alive.
 
 A red flare silhouetted the jagged edge of a wing.
 
@@ -177,13 +178,13 @@ Almost before we knew it, we had left the ground.
 All their equipment and instruments are alive.
 
 ---
-class: two-col-img-right
+class: img-right
 
-# Layout Class two-col-img-right
+# Layout Class img-right
 
 ![](nasa-53884-unsplash.jpg)
 
-The `two-col-img-right` layout uses the first paragraph 
+The `img-right` layout uses the first paragraph 
 as the right column.
 
 --
@@ -207,13 +208,13 @@ A red flare silhouetted the jagged edge of a wing.
 I watched the storm, so beautiful yet terrific.
 
 ---
-class: img-fullbleed-right
+class: img-right-full
 
 ![](kari-shea-272383-unsplash.jpg)
 
-# Layout Class img-fullbleed-right
+# Layout Class img-right-full
 
-This slide illustrates the img-fullbleed-right convenience class.
+This slide illustrates the img-right-full convenience class.
 
 The first image in the slide is set to 40% of the width of the slide and set
 full-bleed on the right-hand edge of the slide.
@@ -226,13 +227,13 @@ you to create images that are 2x as wide as the area that's displayed, and pair
 this layout with the next one.
 
 ---
-class: img-fullbleed-left
+class: img-left-full
 
 ![](kari-shea-272383-unsplash.jpg)
 
-# Layout Class img-fullbleed-left
+# Layout Class img-left-full
 
-This slide illustrates the img-fullbleed-left convenience class.
+This slide illustrates the img-left-full convenience class.
 
 - I gazed into the gathering storm.
 - All their instruments were alive.
@@ -267,14 +268,14 @@ background-color: black
 ![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12 h-2-12 t-10-12 l-5-12)
 
 ---
-class: col, col-2
+class: col-2
 
 # Apron's Columnar Layouts
 
-Apron supports multi-column layouts (2 and 3). This is a two-column layout.
-The first element (typically heading) spans all columns.
+Apron supports multi-column layouts (2 and 3). This is a two-column layout.  The
+first H1 spans all columns.
 
-Create a columnar layout with `class: col, col-X`.
+Create this layout with `class: col-2`.
 
 Images are supported too.
 
@@ -343,7 +344,7 @@ Apron defines the following slide classes:
 - two-col-img-right: assumes you begin the content with an image, which takes up
   the right-hand 50% of the slide
 - two-col-img-left: the same, but left-hand 50%
-- img-fullbleed-right and img-fullbleed-left: ditto, but the image is
+- img-right-full and img-left-full: ditto, but the image is
   full-height and full-bleed to the edge of the slide
 - col: use together with col-2 and col-3
 - col-2 and col-3: all but the first element in the slide is laid out in the
