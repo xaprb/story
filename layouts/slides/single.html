@@ -1,7 +1,7 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "layout" }}
-		{{- with .Params.less -}}
+		{{- if .Params.less -}}
 			{{- with .Params.themes -}}
 				{{- range . }}
 					<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.less"></style>

@@ -5,7 +5,9 @@ url: "/slides/apron/"
 image: "/slides/apron/tanya-nevidoma-632010-unsplash.jpg"
 description: "The Apron RemarkJS theme lets you create sophisticated presentation layouts with simple, clean Markdown code. There are a variety of predefined layouts to suit most presentation needs, and a simple modular way to create custom layouts."
 ratio: "16:9"
-theme: "apron"
+less: true
+themes:
+- apron
 ---
 class: title, bottom
 background-image: url(tanya-nevidoma-632010-unsplash.jpg)
