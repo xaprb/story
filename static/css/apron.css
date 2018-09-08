@@ -40,6 +40,12 @@
 	text-align: center;
 	background-size: cover;
 }
+.remark-slide-content.title.middle {
+	padding-top: calc(681px / 3);
+}
+.remark-slide-content.title.bottom {
+	padding-top: calc(681px * 2/3);
+}
 
 /* img-caption layout
  * Assumes you begin the content with an image.

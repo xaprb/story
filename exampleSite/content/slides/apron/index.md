@@ -7,7 +7,7 @@ description: "The Apron RemarkJS theme lets you create sophisticated presentatio
 ratio: "16:9"
 theme: "apron"
 ---
-class: title
+class: title, bottom
 background-image: url(tanya-nevidoma-632010-unsplash.jpg)
 
 # The Apron RemarkJS Theme
@@ -16,10 +16,15 @@ background-image: url(tanya-nevidoma-632010-unsplash.jpg)
 ---
 # The Apron Theme for RemarkJS
 
-Apron is a _layout_ theme for RemarkJS.
+Apron is a CSS framework for RemarkJS. It defines slide classes that:
 
-- It defines slide classes that set the position of content.
-- Some sizing is also set.
+- Set the position of content.
+- Format and position images.
+- Create common slide layouts without special markup.
+- Establish a type scale for font sizes, line heights, etc.
+
+Apron's goals:
+
 - It does _not_ deal with typefaces or colors. (Ignore the browser-default font
   sizes in this presentation; they're not the point.)
 - Apron's goal: _zero_ non-Markdown markup other than slide classes.
@@ -328,7 +333,9 @@ It's followed by a paragraph.
 
 Apron defines the following slide classes:
 
-- title: centers text in all directions, and sets background images to cover
+- title: centers text horizontally, and sets background images to cover
+	- middle: centers title and subtitle vertically (approx.)
+	- bottom: places title and subtitle at the bottom of the slide
 - img-caption: assumes the content is an image and a caption; makes the image
   take up the top of the slide (fullbleed) and puts the rest below, centered
 - two-col-img-right: assumes you begin the content with an image, which takes up
