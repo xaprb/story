@@ -4,17 +4,17 @@
 		{{- if .Params.less -}}
 			{{- with .Params.themes -}}
 				{{- range . }}
-					<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.less"></style>
+					<link rel="stylesheet/less" type="text/css" href="{{ "/css/" | absURL }}{{ . }}.less"></style>
 				{{- end -}}
-				<script src="{{ "/js/less.min.js" | absURL }}"></script>
+				<script type="text/javascript" src="{{ "/js/less.min.js" | absURL }}"></script>
 			{{- end }}
 		{{ else }}
 			{{- with .Params.themes -}}
 				{{- range . }}
-					<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
+					<link rel="stylesheet" type="text/css" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
 				{{- end -}}
 			{{- else }}
-			<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
+			<link rel="stylesheet" type="text/css" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
 			{{- end }}
 		{{- end -}}
 		<style type="text/css">
