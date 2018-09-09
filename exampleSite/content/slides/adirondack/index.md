@@ -13,7 +13,7 @@ themes:
 classes:
 - feature-math
 ---
-class: title, smokescreen, shelf, no-number
+class: title, smokescreen, shelf, no-footer
 background-image: url(leo-serrat-533922-unsplash.jpg)
 
 # Creating Beautiful Presentations
