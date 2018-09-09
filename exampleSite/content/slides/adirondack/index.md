@@ -58,7 +58,7 @@ themes:
 
 You can create useful slide layouts simply, using RemarkJS slide classes.
 
-![Slide Layouts](slide-layouts.svg# mw-80 center)
+![Slide Layouts](slide-layouts.svg# maxw-70pct center)
 
 ---
 class: img-right
@@ -257,14 +257,15 @@ function $initHighlight(block, cls) {
 class: col-2
 # Math Typesetting
 
-Story supports math equation typesetting using the KaTeX library.
-You have to [set `feature-math`](/math/) to enable this.
+Story supports math equation typesetting using the KaTeX library,
+if [`feature-math`](/math/) is enabled.
 
 \\[
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \\]
 
-The crosstalk (coherence) penalty is the \\(\\kappa\\) coefficient.
+The crosstalk (coherence) penalty is the \\(\kappa\\) coefficient of \\(n^2\\),
+which is equivalent to \\(e^{i\pi}-1=0\\).
 
 ![Universal Scalability Law](linear3.svg)
 
@@ -297,14 +298,14 @@ function $initHighlight(block, cls) {
 ---
 class: compact, col-3
 
-# The Spectacle Before Us Was Indeed Sublime
+# Three-Column Layouts
 
 This is a three-column layout,
 created with `class: col-3, compact`.
 
 The `compact` class works well with the smaller space available in the columns.
 
-![](tanya-nevidoma-632010-unsplash.jpg# mw-90)
+![](tanya-nevidoma-632010-unsplash.jpg# maxw-90pct)
 
 A shining crescent far beneath the flying vessel.
 
@@ -402,43 +403,46 @@ background-image: url(will-turner-508747-unsplash.jpg)
 ---
 # Descarte's Image-Styling Functionality
 
-Descartes is an add-on that gives lots of power over image formatting with
+Descartes is an add-on that gives lots of power over image and element formatting with
 Markdown.  It uses composable, functional pseudo-classes in the image's URL
-fragment, which follows the hash character.  The classes are inspired by
-[Tachyons](http://tachyons.io/).  For example, this image will be 33% width,
+fragment (the part after the `#` character). For example, this image will be 33% width,
 display as block, 2rem right margin, and float left: 
 
 ```
-![Image](tom-barrett-364228-unsplash.jpg# w-33 db fl mr4)
+![Image](tom-barrett-364228-unsplash.jpg# w-33pct db fl mr-4)
 ```
 
-![Image](tom-barrett-364228-unsplash.jpg# w-33 db fl mr4)
+![Image](tom-barrett-364228-unsplash.jpg# w-33pct db fl mr-4)
 
-That URL has three "words" in the fragment, delimited by whitespace. The
+That URL has four "words" in the fragment, delimited by whitespace. The
 whitespace is important!
 
 ---
 class: center
 
-This image collage shows the power of Descartes. This slide has no "raw" markup
-or Remark `<div>` extensions. The next slide is another example.
+This image collage has no "raw" markup or Remark `<div>` extensions. The next
+slide illustrates Descartes's grid of 12ths.
 
-![](kari-shea-272383-unsplash.jpg# l-0 t-20 w-two-thirds h-80 ofv absolute)
-![](leo-serrat-533922-unsplash.jpg# w-third h-40 t-20 r-0 ofv absolute)
-![](will-turner-508747-unsplash.jpg# w-third h-40 t-60 r-0 ofv absolute)
+![](kari-shea-272383-unsplash.jpg# l-0 t-20pct w-two-thirds h-80pct ofv absolute)
+![](leo-serrat-533922-unsplash.jpg# w-third h-40pct t-20pct r-0 ofv absolute)
+![](will-turner-508747-unsplash.jpg# w-third h-40pct t-60pct r-0 ofv absolute)
 
 ---
 class: fullbleed
 background-color: black
 
-![](kari-shea-272383-unsplash.jpg# absolute ofv w-9-12 h-7-12)
-![](leo-serrat-533922-unsplash.jpg# absolute ofv w-3-12 h-3-12 t-0 l-9-12)
-![](nasa-53884-unsplash.jpg# absolute ofv w-2-12 h-9-12 t-3-12 l-9-12)
-![](tom-barrett-364228-unsplash.jpg# absolute ofv w-1-12 h-5-12 t-3-12 l-11-12)
-![](will-turner-508747-unsplash.jpg# absolute ofv w-1-12 h-4-12 t-8-12 l-11-12 opr)
-![](tanya-nevidoma-632010-unsplash.jpg# absolute ofv w-5-12 h-5-12 t-7-12 l-0)
-![](tom-barrett-364228-unsplash.jpg# absolute ofv w-4-12 h-3-12 t-7-12 l-5-12)
-![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12 h-2-12 t-10-12 l-5-12)
+![](kari-shea-272383-unsplash.jpg# absolute ofv w-9-12th h-7-12th)
+![](leo-serrat-533922-unsplash.jpg# absolute ofv w-3-12th h-3-12th t-0 l-9-12th)
+![](nasa-53884-unsplash.jpg# absolute ofv w-2-12th h-9-12th t-3-12th l-9-12th)
+![](tom-barrett-364228-unsplash.jpg# absolute ofv w-1-12th h-5-12th t-3-12th l-11-12th)
+![](will-turner-508747-unsplash.jpg# absolute ofv w-1-12th h-4-12th t-8-12th l-11-12th opr)
+![](tanya-nevidoma-632010-unsplash.jpg# absolute ofv w-5-12th h-5-12th t-7-12th l-0)
+![](tom-barrett-364228-unsplash.jpg# absolute ofv w-4-12th h-3-12th t-7-12th l-5-12th)
+![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12th h-2-12th t-10-12th l-5-12th)
+
+.absolute.w-50pct.center.t-6-12th.ba.bw-4.br-4[
+This `<div>` is absolutely positioned.
+]
 
 ---
 # Where Did The Names Come From?
@@ -446,10 +450,10 @@ background-color: black
 For some reason, I named my Remark slideshow layouts after iconic types of chairs
 (Monobloc, Adirondack, etc).
 
-![Chair parts](chair-parts.png# fr ml4)
+![Chair parts](chair-parts.png# fr ml-2)
 
-The apron is the part of the chair upon which everything rests, so the
-underlying "supporting" set of CSS got that name. Descartes was named after the
-famous inventor of the Cartesian coordinate system.
+The apron is the part of the chair upon which everything rests, so I gave the
+underlying "supporting" set of CSS that name. I named Descartes after the famous
+inventor of the Cartesian coordinate system.
 
 Credit: http://www.props.eric-hart.com/
