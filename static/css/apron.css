@@ -136,7 +136,7 @@
   top: 20px;
   left: 80px;
 }
-.remark-slide-content.col-2*:nth-child(2) {
+.remark-slide-content.col-2 *:nth-child(2) {
   margin-top: 0px;
 }
 .remark-slide-content.col-2 > ul,
@@ -154,7 +154,7 @@
   top: 20px;
   left: 80px;
 }
-.remark-slide-content.col-3*:nth-child(2) {
+.remark-slide-content.col-3 *:nth-child(2) {
   margin-top: 0px;
 }
 .remark-slide-content.col-3 > ul,
