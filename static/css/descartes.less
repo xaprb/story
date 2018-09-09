@@ -1,96 +1,123 @@
 @sides: {
-  t: -top;
-  r: -right;
-  b: -bottom;
-  l: -left;
+	t: -top;
+	r: -right;
+	b: -bottom;
+	l: -left;
 }
 
 @border-lengths: {
-  -0: 0;
-  -1: .125rem;
-  -2: .25rem;
-  -3: .5rem;
-  -4: 1rem;
-  -5: 2rem;
-  -100pct: 100%;
+	-0: 0;
+	-1: .125rem;
+	-2: .25rem;
+	-3: .5rem;
+	-4: 1rem;
+	-5: 2rem;
+	-100pct: 100%;
 }
 
-// Idle thought: combine with the inverse golden ratio, 2/(1+sqrt(5))
 @box-lengths: {
-  -0: 0;
-  -1: 1rem;
-  -2: 2rem;
-  -3: 4rem;
-  -4: 8rem;
-  -5: 16rem;
-  -6: 32rem;
-  -7: 48rem;
-  -8: 64rem;
-  -9: 96rem;
-  -10pct: 10%;
-  -20pct: 20%;
-  -30pct: 30%;
-  -33pct: 33%;
-  -34pct: 34%;
-  -40pct: 40%;
-  -50pct: 50%;
-  -60pct: 60%;
-  -70pct: 70%;
-  -75pct: 75%;
-  -80pct: 80%;
-  -90pct: 90%;
-  -100pct: 100%;
-  -1-12th: 100%/12;
-  -2-12th: 200%/12;
-  -3-12th: 300%/12;
-  -4-12th: 400%/12;
-  -5-12th: 500%/12;
-  -6-12th: 600%/12;
-  -7-12th: 700%/12;
-  -8-12th: 800%/12;
-  -9-12th: 900%/12;
-  -10-12th: 1000%/12;
-  -11-12th: 1100%/12;
-  -third: 100%/3;
-  -two-thirds: 200%/3;
+	-0: 0;
+	-1: 1rem;
+	-2: 2rem;
+	-3: 4rem;
+	-4: 8rem;
+	-5: 16rem;
+	-6: 32rem;
+	-7: 48rem;
+	-8: 64rem;
+	-9: 96rem;
+	-10pct: 10%;
+	-20pct: 20%;
+	-30pct: 30%;
+	-33pct: 33%;
+	-34pct: 34%;
+	-40pct: 40%;
+	-50pct: 50%;
+	-60pct: 60%;
+	-70pct: 70%;
+	-75pct: 75%;
+	-80pct: 80%;
+	-90pct: 90%;
+	-100pct: 100%;
+	-1-12th: 100%/12;
+	-2-12th: 200%/12;
+	-3-12th: 300%/12;
+	-4-12th: 400%/12;
+	-5-12th: 500%/12;
+	-6-12th: 600%/12;
+	-7-12th: 700%/12;
+	-8-12th: 800%/12;
+	-9-12th: 900%/12;
+	-10-12th: 1000%/12;
+	-11-12th: 1100%/12;
+	-third: 100%/3;
+	-two-thirds: 200%/3;
 }
 
 @spacing-lengths: {
-  -0: 0;
-  -1: .25rem;
-  -2: .5rem;
-  -3: 1rem;
-  -4: 2rem;
-  -5: 4rem;
-  -6: 8rem;
-  -7: 16rem;
-  -8: 32rem;
-  -9: 64rem;
+	-0: 0;
+	-1: .25rem;
+	-2: .5rem;
+	-3: 1rem;
+	-4: 2rem;
+	-5: 4rem;
+	-6: 8rem;
+	-7: 16rem;
+	-8: 32rem;
+	-9: 64rem;
 }
 
 // Border styles, widths, and radiuses
 .ba, img[src~=ba] { border: 1px solid; }
 .bn, img[src~=bn] { border: 0px none; }
 each(@sides, {
-  .b@{key}, img[src~="b@{key}"] {
-    border@{value}: 1px solid;
-  }
+	.b@{key}, img[src~="b@{key}"] { border@{value}: 1px solid; }
 });
 each(@border-lengths, {
-  .br@{key}, img[src~="br@{key}"] {
-    border-radius: @value;
-  }
-  .bw@{key}, img[src~="bw@{key}"] {
-    border-radius: @value;
-  }
+	.br@{key}, img[src~="br@{key}"] { border-radius: @value; }
+	.bw@{key}, img[src~="bw@{key}"] { border-radius: @value; }
 });
 
-.shadow-1, img[src~=shadow-1] { box-shadow: 0 0 4px 2px rgba( 0, 0, 0, .2 ); }
-.shadow-2, img[src~=shadow-2] { box-shadow: 0 0 8px 2px rgba( 0, 0, 0, .2 ); }
-.shadow-3, img[src~=shadow-3] { box-shadow: 2px 2px 4px 2px rgba( 0, 0, 0, .2 ); }
-.shadow-4, img[src~=shadow-4] { box-shadow: 2px 2px 8px 0 rgba( 0, 0, 0, .2 ); }
-.shadow-5, img[src~=shadow-5] { box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 ); }
+// Padding and margins
+each(@spacing-lengths, {
+	.pa@{key}, img[src~="pa@{key}"] { padding: @value; }
+	.pv@{key}, img[src~="pv@{key}"] { padding-top: @value; padding-bottom: @value; }
+	.ph@{key}, img[src~="ph@{key}"] { padding-left: @value; padding-right: @value; }
+	.ma@{key}, img[src~="ma@{key}"] { margin: @value; }
+	.mv@{key}, img[src~="mv@{key}"] { margin-top: @value; margin-bottom: @value; }
+	.mh@{key}, img[src~="mh@{key}"] { margin-left: @value; margin-right: @value; }
+});
+.spacing(@name, @side) {
+	each(@spacing-lengths, {
+		.p@{name}@{key}, img[src~="p@{name}@{key}"] { padding@{side}: @value; }
+		.m@{name}@{key}, img[src~="m@{name}@{key}"] { margin@{side}: @value; }
+	});
+}
+each(@sides, {
+	.spacing(@key, @value);
+});
 
+// Element widths, heights, and coordinates
+// Idle thought: combine with the inverse golden ratio, 2/(1+sqrt(5))
+each(@box-lengths, {
+	.w@{key}, img[src~="w@{key}"]       { width: @value; }
+	.maxw@{key}, img[src~="maxw@{key}"] { max-width: @value; }
+	.minw@{key}, img[src~="minw@{key}"] { min-width: @value; }
+	.h@{key}, img[src~="h@{key}"]       { height: @value; }
+	.maxh@{key}, img[src~="maxh@{key}"] { max-height: @value; }
+	.minh@{key}, img[src~="minh@{key}"] { min-height: @value; }
+	.t@{key}, img[src~="t@{key}"]       { top: @value; }
+	.r@{key}, img[src~="r@{key}"]       { right: @value; }
+	.b@{key}, img[src~="b@{key}"]       { bottom: @value; }
+	.l@{key}, img[src~="l@{key}"]       { left: @value; }
+	// https://www.sitepoint.com/css-center-position-absolute-div/
+	.w@{key}.center, img[src~="w@{key}"][src~=center] {
+		left: 50%;
+		margin-left: @value/-2;
+	}
+});
+
+// Element display styles, positioning, floating, etc
 .dn, img[src~=dn] { display: none; }
 .di, img[src~=di] { display: inline; }
 .db, img[src~=db] { display: block; }
@@ -112,66 +139,9 @@ img[src~=cf]:after { clear: both; }
 
 .center, img[src~=center] { display: block; margin-left: auto; margin-right: auto; }
 
-each(@box-lengths, {
-  .w@{key}, img[src~="w@{key}"] {
-    width: @value;
-  }
-  // https://www.sitepoint.com/css-center-position-absolute-div/
-  .w@{key}.center, img[src~="w@{key}"][src~=center] {
-    left: 50%;
-    margin-left: @value/-2;
-  }
-  .maxw@{key}, img[src~="maxw@{key}"] {
-    max-width: @value;
-  }
-  .minw@{key}, img[src~="minw@{key}"] {
-    min-width: @value;
-  }
-  .h@{key}, img[src~="h@{key}"] {
-    height: @value;
-  }
-  .maxh@{key}, img[src~="maxh@{key}"] {
-    max-height: @value;
-  }
-  .minh@{key}, img[src~="minh@{key}"] {
-    min-height: @value;
-  }
-  .t@{key}, img[src~="t@{key}"] {
-    top: @value;
-  }
-  .r@{key}, img[src~="r@{key}"] {
-    right: @value;
-  }
-  .b@{key}, img[src~="b@{key}"] {
-    bottom: @value;
-  }
-  .l@{key}, img[src~="l@{key}"] {
-    left: @value;
-  }
-});
-
-// Padding and margins
-each(@spacing-lengths, {
-  .pa@{key}, img[src~="pa@{key}"] { padding: @value; }
-  .pv@{key}, img[src~="pv@{key}"] { padding-top: @value; padding-bottom: @value; }
-  .ph@{key}, img[src~="ph@{key}"] { padding-left: @value; padding-right: @value; }
-  .ma@{key}, img[src~="ma@{key}"] { margin: @value; }
-  .mv@{key}, img[src~="mv@{key}"] { margin-top: @value; margin-bottom: @value; }
-  .mh@{key}, img[src~="mh@{key}"] { margin-left: @value; margin-right: @value; }
-});
-.spacing(@name, @side) {
-  each(@spacing-lengths, {
-    .p@{name}@{key}, img[src~="p@{name}@{key}"] { padding@{side}: @value; }
-    .m@{name}@{key}, img[src~="m@{name}@{key}"] { margin@{side}: @value; }
-  });
-}
-each(@sides, {
-  .spacing(@key, @value);
-});
-
+// Object-fitting and covering
 .ofc, img[src~=ofc] { object-fit: contain; }
 .ofv, img[src~=ofv] { object-fit: cover; }
-
 .opl, img[src~=opl] { object-position: left !important; }
 .opc, img[src~=opc] { object-position: center !important; }
 .opr, img[src~=opr] { object-position: right !important; }
@@ -186,3 +156,10 @@ each(@sides, {
 .oprt, img[src~=oprt] { object-position: right top !important; }
 .oprc, img[src~=oprc] { object-position: right center !important; }
 .oprb, img[src~=oprb] { object-position: right bottom !important; }
+
+// Box shadows
+.shadow-1, img[src~=shadow-1] { box-shadow: 0 0 4px 2px rgba( 0, 0, 0, .2 ); }
+.shadow-2, img[src~=shadow-2] { box-shadow: 0 0 8px 2px rgba( 0, 0, 0, .2 ); }
+.shadow-3, img[src~=shadow-3] { box-shadow: 2px 2px 4px 2px rgba( 0, 0, 0, .2 ); }
+.shadow-4, img[src~=shadow-4] { box-shadow: 2px 2px 8px 0 rgba( 0, 0, 0, .2 ); }
+.shadow-5, img[src~=shadow-5] { box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 ); }
