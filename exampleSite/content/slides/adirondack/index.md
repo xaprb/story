@@ -54,6 +54,8 @@ themes:
 ```
 
 ---
+class: compact
+
 # Apron's Slide Layouts
 
 You can create useful slide layouts simply, using RemarkJS slide classes.
