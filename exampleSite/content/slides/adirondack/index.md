@@ -3,7 +3,7 @@ title: 'Creating Beautiful Presentations with Story'
 date: "2018-04-25T09:50:00-07:00"
 url: "/slides/adirondack/"
 image: "/slides/adirondack/leo-serrat-533922-unsplash.jpg"
-description: "Story's RemarkJS frameworks let you create sophisticated presentation layouts with simple, clean Markdown code. There are a variety of predefined layouts to suit most presentation needs, and a simple modular way to create custom layouts. There's also beautiful typography and colors."
+description: "Story's RemarkJS frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
 ratio: "16:9"
 less: true
 themes:
@@ -23,8 +23,8 @@ background-image: url(leo-serrat-533922-unsplash.jpg)
 # The Story RemarkJS Themes
 
 [Story](https://github.com/xaprb/story) offers helper themes for creating
-beautiful presentations with RemarkJS, using simple markup to create slide
-layouts.
+beautiful presentations with [RemarkJS](https://remarkjs.com/), using simple
+markup to create slide layouts.
 
 - Apron defines the layouts' structure and size.
 - Adirondack adds typography, colors, and helpful features.
@@ -33,7 +33,7 @@ layouts.
 Story has a design goal of clean, simple Markdown content. Avoiding "raw" HTML
 and Remark's Markdown extensions makes things easier.
 
-These characteristics make it easy to build gorgeous presentations. They're also
+These characteristics make it easy to build gorgeous slideshows. They're also
 a great foundation for creating your own themes.
 
 ---
