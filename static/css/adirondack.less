@@ -1,221 +1,90 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i&subset=latin-ext');
 
-/* Type scale, drawn from Tachyons:
- * 6rem (96px)		5rem (80px)		3rem (48px)	2.25rem (36px)
- * 1.5rem (24px)	1.25rem (20px)	1rem (16px)	.875rem (14px)
- * TODO: use font squirrel's web-safe font stacks as fallbacks
-*/
+@colors: {
+	muted-text: #6a737d;
+	shaded-bg: #f6f8fa;
+	border: #dfe2e5;
+}
 
-.remark-slide-content * {
+.remark-slide-content {
 	font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
-					'avenir next', avenir, 'helvetica neue', helvetica,
-					arial, sans-serif;
-	font-size: 2rem;
-	line-height: 1.25;
-}
-.remark-slide-content.compact {
-	padding-left: 40px;
-	padding-right: 40px;
-}
-.remark-slide-content.compact * {
-	font-size: 1.75rem;
-}
-.remark-slide-content.roomy * {
-	font-size: 2.25rem;
-}
+		'avenir next', avenir, 'helvetica neue', helvetica,
+		arial, sans-serif;
+	pre, code, kbd, tt, samp {
+		font-family: Monaco, "Lucida Sans Typewriter", "Lucida Console",
+			"Andale Mono", "Consolas", monospace;
+	}
+	h1, h2, h3 {
+		font-family: Quattrocento, "Goudy Old Style", "Big Caslon", Palatino, serif;
+		font-weight: bold;
+	}
 
-.remark-slide-content h1,
-.remark-slide-content h2,
-.remark-slide-content h3 {
-	font-family: Quattrocento, serif;
-	font-weight: bold;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-.remark-slide-content h1 {
-	font-size: 3rem;
-}
-.remark-slide-content.compact h1 {
-	font-size: 2.75rem;
-}
-.remark-slide-content.roomy h1 {
-	font-size: 4rem;
-}
-.remark-slide-content h2 {
-	font-size: 2.75rem;
-}
-.remark-slide-content.compact h2 {
-	font-size: 2.5rem;
-}
-.remark-slide-content.roomy h2 {
-	font-size: 3rem;
-}
-.remark-slide-content h3 {
-	font-size: 2.5rem;
-}
-.remark-slide-content.compact h3 {
-	font-size: 2.25rem;
-}
-.remark-slide-content.roomy h3 {
-	font-size: 2.75rem;
-}
+	table {
+		border-spacing: 0;
+		border-collapse: collapse;
+		display: block;
+		width: 100%;
+		overflow: auto;
+	}
+	table tr:nth-child(2n) {
+		background-color: @colors[shaded-bg];
+	}
+	table th, table td {
+		display: table-cell;
+		vertical-align: inherit;
+		padding: 0.15em 0.30em;
+		border: 1px solid @colors[border];
+	}
+	table th {
+		font-weight: bold;
+	}
+	pre {
+		border-radius: 0.4em;
+		padding: 0.5em;
+		background-color: @colors[shaded-bg];
+		overflow: auto;
+	}
+	p>code, li>code, a>code {
+		background-color: @colors[shaded-bg];
+		margin: 0;
+		border-radius: 0.2em;
+		padding: 0.15em 0.25em;
+	}
+	blockquote {
+		margin: 0;
+		padding: 0 0.5em;
+		color: @colors[muted-text];
+		border-left: 0.125em solid @colors[border];
+	}
 
-/* Table Styling
- */
-.remark-slide-content table {
-   border-spacing: 0;
-   border-collapse: collapse;
-   display: block;
-   width: 100%;
-   overflow: auto;
-   font-size: 85%;
-	font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
-					'avenir next', avenir, 'helvetica neue', helvetica,
-					arial, sans-serif;
-}
-.remark-slide-content table tr:nth-child(2n) {
-   background-color: #f6f8fa;
-}
-.remark-slide-content table th, .remark-slide-content table td {
-   display: table-cell;
-   vertical-align: inherit;
-   padding: .25rem .5rem;
-   border: 1px solid #dfe2e5;
-}
-.remark-slide-content table th {
-   font-weight: 600;
-}
-
-/* Code and Blockquote Styling
- */
-pre {
-   border-radius: 3px;
-   padding: 1rem;
-   background: #f6f8fa;
-   overflow: auto;
-}
-p>code, li>code, a>code {
-   background: #f6f8fa;
-   margin: 0;
-   border-radius: 3px;
-   padding: 0.2em 0.3em;
-}
-pre, code, kbd, tt, samp,
-pre *, code *, kbd *, tt *, samp * {
-	font-family: Monaco, "Lucida Sans Typewriter", "Lucida Console", "Andale Mono", "Consolas", monospace !important;
-   font-size: 1.5rem !important;
-	line-height: 1.5 !important;
-}
-
-blockquote {
-   margin: 0;
-   padding: 0 1rem;
-   color: #6a737d;
-   border-left: 0.25rem solid #dfe2e5;
-}
-
-.remark-slide-content .remark-slide-number,
-.remark-slide-content .footer li {
-	background-color: rgba(255, 255, 255, .5);
-	opacity: .5;
-	padding: 2px 5px;
-	border-radius: 5px;
-	font-size: 1.25rem;
-	display: block;
-	position: absolute;
-	bottom: 12px;
-	list-style: none;
-}
-.remark-slide-content .footer li:nth-child(1) {
-	left: 20px;
-}
-.remark-slide-content .footer li:nth-child(2) {
-	left: 45%;
-}
-.remark-slide-content .footer li img {
-	display: block;
-}
-.remark-slide-content.no-number .remark-slide-number,
-.remark-slide-content.no-number .footer {
-	display: none;
-}
-
-/* title layout
- * This layout assumes that you start the content with an H1. You can follow it
- * with an H2 or H3, but you always start with H1.
- */
-.remark-slide-content.title h1 {
-	font-size: 4rem;
-	top: calc(50% - 2.25em);
-}
-.remark-slide-content.title h2 {
-	font-size: 3rem;
-	top: calc(50%);
-}
-.remark-slide-content.title h3 {
-	font-size: 2rem;
-	top: calc(50% + .25em);
-}
-.remark-slide-content.title h1,
-.remark-slide-content.title h2,
-.remark-slide-content.title h3 {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	margin: 0;
-	padding: 1em 0;
-	font-weight: normal;
-}
-.remark-slide-content.smokescreen>h1,
-.remark-slide-content img[src~=smokescreen] {
-	background-color: rgba(0,0,0,.7);
-}
-.remark-slide-content.smokescreen>h1,
-.remark-slide-content.smokescreen>h2,
-.remark-slide-content.smokescreen>h3 {
-	color: white;
-	text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8),
-					 8px 8px 20px rgba(0, 0, 0, 0.9);
-}
-.remark-slide-content.fogscreen>h1 {
-	background-color: rgba(255,255,255,.7);
-}
-.remark-slide-content.fogscreen>h1,
-.remark-slide-content.fogscreen>h2,
-.remark-slide-content.fogscreen>h3 {
-	color: black;
-	text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6),
-					 8px 8px 20px rgba(0, 0, 0, 0.4);
-}
-.remark-slide-content.title.shelf>h1 {
-	/* Make the element large but with negative bottom margin so it will extend
-	 * downwards underneath others.  This is better than giving each element a
-	 * background and nestling them against each other, because that will create
-	 * very thin lines between them where the elements don't meet and the slide
-	 * background shows through.
-	 */
-	padding-bottom: 2.5em;
-	margin-bottom: -2.5em;
-}
-
-.remark-slide-content.fit-h1 h1 {
-	height: 1.25em;
-	overflow: hidden;
-}
-
-.remark-slide-content.col {
-	padding-top: 136px;
-}
-
-.remark-slide-content.col.compact {
-	padding-top: 125px;
-	padding-left: 40px;
-	padding-right: 40px;
-}
-.remark-slide-content.col.compact h1 {
-	left: 40px;
-}
-
-.remark-slide-content.col.roomy {
-	padding-top: 168px;
+	.remark-slide-number, .footer li {
+		background-color: rgba(255, 255, 255, .5);
+		opacity: .5;
+	}
+	
+	// Smokescreen and fogscreen for the title layout
+	&.smokescreen>h1, img[src~=smokescreen] {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	&.smokescreen {
+		>h1, >h2, >h3 {
+			color: white;
+			text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8),
+						8px 8px 20px rgba(0, 0, 0, 0.9);
+		}
+	}
+	&.fogscreen {
+		>h1 {
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+		>h1, >h2, >h3 {
+			color: black;
+			text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6),
+					8px 8px 20px rgba(0, 0, 0, 0.4);
+		}
+	}
+	&.fit-h1 h1 {
+		height: 1.25em;
+		overflow: hidden;
+	}
 }

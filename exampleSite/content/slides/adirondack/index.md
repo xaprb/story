@@ -13,11 +13,11 @@ themes:
 classes:
 - feature-math
 ---
-class: title, middle, smokescreen, shelf, no-number
+class: title, smokescreen, shelf, no-number
 background-image: url(leo-serrat-533922-unsplash.jpg)
 
 # Creating Beautiful Presentations
-## With RemarkJS, Adirondack, Apron, and Descartes
+### With RemarkJS, Apron, Adirondack, and Descartes
 
 ---
 # The Story RemarkJS Themes
@@ -28,21 +28,37 @@ layouts.
 
 - Apron defines the layouts' structure and size.
 - Adirondack adds typography, colors, and helpful features.
-- Descartes provides precise element and image positioning (think: Cartesian
-  coordinates).
+- Descartes provides precise element and image positioning.
 
-Clean, simple Markdown content is a design goal for Story. Avoiding "raw" HTML
+Story has a design goal of clean, simple Markdown content. Avoiding "raw" HTML
 and Remark's Markdown extensions makes things easier.
 
-These characteristics make it easy to build gorgeous presentations. They're also a great
-foundation for creating your own themes.
+These characteristics make it easy to build gorgeous presentations. They're also
+a great foundation for creating your own themes.
+
+---
+# Getting Started
+
+To get started, use `hugo new slides/my-presentation.md` and ensure that the
+following `themes` are in the front matter, for example:
+
+```yaml
+---
+title: 'Creating Beautiful Presentations with Story'
+date: "2018-04-25T09:50:00-07:00"
+url: "/slides/adirondack/"
+themes:
+- apron
+- descartes
+- adirondack
+```
 
 ---
 # Apron's Slide Layouts
 
 You can create useful slide layouts simply, using RemarkJS slide classes.
 
-![Slide Layouts](slide-layouts.svg# mw-80)
+![Slide Layouts](slide-layouts.svg# mw-80 center)
 
 ---
 class: img-right
@@ -161,8 +177,8 @@ I would sail about a little and see the watery part of the world.
 
 Apron defines the following slide classes:
 
-- title: centers text horizontally, and sets background images to cover
-	- middle: centers title and subtitle vertically (approx.)
+- title: centers text horizontally and vertically (approx), and sets background images to cover
+	- top: places title and subtitle at the top of the slide
 	- bottom: places title and subtitle at the bottom of the slide
 - img-caption: assumes the content is an image and a caption; makes the image
   take up the top of the slide (fullbleed) and puts the rest below, centered
@@ -174,6 +190,11 @@ Apron defines the following slide classes:
 - col: use together with col-2 and col-3
 - col-2 and col-3: all but the first element in the slide is laid out in the
   specified number of columns
+- compact: scales down font sizes and slide left/right padding
+- roomy: scales up font sizes (but doesn't change padding)
+- shelf: renders H1 background so H2/H3 can sit on top of it
+- no-footer: don't display footer content such as slide numbers
+
 
 Additionally, there are the following utility classes:
 
@@ -237,16 +258,18 @@ class: col-2
 # Math Typesetting
 
 Story supports math equation typesetting using the KaTeX library.
-
-The Universal Scalability Law represents crosstalk (coherence) penalty with the \\(\\kappa\\) coefficient.
+You have to [set `feature-math`](/math/) to enable this.
 
 \\[
-X(N) = \frac{\\lambda N}{1+\\sigma(N-1)+\\kappa N(N-1)}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \\]
+
+The crosstalk (coherence) penalty is the \\(\\kappa\\) coefficient.
 
 ![Universal Scalability Law](linear3.svg)
 
-The system completes _less_ work as the load increases!
+You can also display equations inline, such as the quadratic equation, which is
+\\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\)
 
 ---
 class: compact
@@ -355,21 +378,22 @@ elements. You can see them at the bottom of this slide.
 This is the only use of raw HTML or Remark's proprietary markup syntax in this
 slideshow, used here to illustrate an extra extension.
 
+You can hide both the standard and custom footer on any slide with `class: no-footer`.
+
 ---
 layout: false
 # Adirondack’s Slide Classes
 
-Here is a reference to all of Adirondack's slide classes:
+Here are Adirondack's slide classes:
 
-- compact: scales down font sizes and slide left/right padding
-- roomy: scales up font sizes (but doesn't change padding)
-- smokescreen: renders H1, H2, H3 with a partially transparent black background
-- shelf: renders H1 background so H2/H3 can sit on top of it
-- fit-h1: shrink the H1 heading until it fits on a single line
-- no-number: don't display footer content such as slide numbers
+| Class         | Notes                                                                |
+|---------------|----------------------------------------------------------------------|
+| `smokescreen` | Creates a dark shaded semi-transparent background on `title` slides. |
+| `fogscreen`   | Similar to `smokescreen`, but uses a white shading.                  |
+| `fit-h1`      | Shrinks the H1 heading's font-size to fit on a single line.          |
 
 ---
-class: title, middle smokescreen, shelf
+class: title, smokescreen, shelf
 background-image: url(will-turner-508747-unsplash.jpg)
 
 # Positioning Images And Elements
