@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i&subset=latin-ext');
+@import (css) url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i&subset=latin-ext');
 
-@colors: {
+@adirondack-colors: {
 	muted-text: #6a737d;
 	shaded-bg: #f6f8fa;
 	border: #dfe2e5;
@@ -27,25 +27,27 @@
 		overflow: auto;
 	}
 	table tr:nth-child(2n) {
-		background-color: @colors[shaded-bg];
+		background-color: @adirondack-colors[shaded-bg];
 	}
 	table th, table td {
 		display: table-cell;
 		vertical-align: inherit;
 		padding: 0.15em 0.30em;
-		border: 1px solid @colors[border];
+		border: 1px solid @adirondack-colors[border];
 	}
 	table th {
 		font-weight: bold;
 	}
 	pre {
-		border-radius: 0.4em;
-		padding: 0.5em;
-		background-color: @colors[shaded-bg];
 		overflow: auto;
 	}
+	pre > code {
+		border-radius: 0.4em;
+		padding: 0.5em;
+		background-color: @adirondack-colors[shaded-bg];
+	}
 	p>code, li>code, a>code {
-		background-color: @colors[shaded-bg];
+		background-color: @adirondack-colors[shaded-bg];
 		margin: 0;
 		border-radius: 0.2em;
 		padding: 0.15em 0.25em;
@@ -53,15 +55,15 @@
 	blockquote {
 		margin: 0;
 		padding: 0 0.5em;
-		color: @colors[muted-text];
-		border-left: 0.125em solid @colors[border];
+		color: @adirondack-colors[muted-text];
+		border-left: 0.125em solid @adirondack-colors[border];
 	}
 
 	.remark-slide-number, .footer li {
 		background-color: rgba(255, 255, 255, .5);
 		opacity: .5;
 	}
-	
+
 	// Smokescreen and fogscreen for the title layout
 	&.smokescreen>h1, img[src~=smokescreen] {
 		background-color: rgba(0, 0, 0, 0.7);

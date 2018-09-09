@@ -5,13 +5,13 @@ url: "/slides/adirondack/"
 image: "/slides/adirondack/leo-serrat-533922-unsplash.jpg"
 description: "Story's RemarkJS frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
 ratio: "16:9"
-less: true
 themes:
 - apron
 - descartes
 - adirondack
 classes:
 - feature-math
+- feature-nohighlight
 ---
 class: title, smokescreen, shelf, no-footer
 background-image: url(leo-serrat-533922-unsplash.jpg)
@@ -58,7 +58,7 @@ class: compact
 
 # Apron's Slide Layouts
 
-You can create useful slide layouts simply, using RemarkJS slide classes.
+You can create common slide layouts simply with RemarkJS slide classes.
 
 ![Slide Layouts](slide-layouts.svg# maxw-70pct center)
 
@@ -156,12 +156,11 @@ lifetime anywhere else.
 ---
 class: col-3
 
-# The Spectacle Before Us Was Indeed Sublime
+# Three-Column Layouts
 
-This is a three-column layout,
-created with `class: col-3`.
+This is a three-column layout, created with `class: col-3`.
 
-A shining crescent far beneath the flying vessel.
+As with `col-2`, Apron assumes the slide begins with an H1 header.
 
 Mist enveloped the ship three hours out from port.
 
@@ -175,35 +174,35 @@ no money in my purse, and nothing particular to interest me on shore, I thought
 I would sail about a little and see the watery part of the world. 
 
 ---
-# Apron's Slide Classes
+# Apron's Layout Classes
 
-Apron defines the following slide classes:
+Here are the Apron slide layouts classes and how to use them:
 
-- title: centers text horizontally and vertically (approx), and sets background images to cover
-	- top: places title and subtitle at the top of the slide
-	- bottom: places title and subtitle at the bottom of the slide
-- img-caption: assumes the content is an image and a caption; makes the image
-  take up the top of the slide (fullbleed) and puts the rest below, centered
-- two-col-img-right: assumes you begin the content with an image, which takes up
-  the right-hand 50% of the slide
-- two-col-img-left: the same, but left-hand 50%
-- img-right-full and img-left-full: ditto, but the image is
-  full-height and full-bleed to the edge of the slide
-- col: use together with col-2 and col-3
-- col-2 and col-3: all but the first element in the slide is laid out in the
-  specified number of columns
-- compact: scales down font sizes and slide left/right padding
-- roomy: scales up font sizes (but doesn't change padding)
-- shelf: renders H1 background so H2/H3 can sit on top of it
-- no-footer: don't display footer content such as slide numbers
+| Class                         | Content structuring guidelines                  |
+|-------------------------------|-------------------------------------------------|
+| title                         | Add a background-image, H1, and optional H2/H3. |
+| img-caption                   | Add an image and optional caption text.         |
+| img-right, img-left           | Add a header, image, and content.               |
+| img-right-full, img-left-full | Add an image, _then_ headers and content.       |
+| col-2, col-3                  | Add a header, then any content desired.         |
 
+---
+class: compact
+# Apron's Auxiliary Classes
 
-Additionally, there are the following utility classes:
+Apron offers the following additional slide classes:
 
-- fullbleed: removes margins and paddings from the slide container and from
-  `<p>` elements.
-- debug{,-white,-black}: outlines elements for debugging
-- debug-grid{,-16,-8-solid,-16-solid}: creates a grid background for layout
+| Class      | Applies To | Content structuring guidelines                                                     |
+|------------|------------|------------------------------------------------------------------------------------|
+| top        | title      | Moves the title and subtitle to the top of the slide.                              |
+| bottom     | title      | Moves the title and subtitle to the bottom.                                        |
+| shelf      | title      | Extends the title's background and locates the subtitle above it.                  |
+| compact    | (all)      | Reduces text size and margins to fit more content.                                 |
+| roomy      | (all)      | Increases text size to fill more space.                                            |
+| fullbleed  | (all)      | Removes margins from the slide and its text.                                       |
+| no-footer  | (all)      | Hides the footer (including slide number).                                         |
+| debug      | (all)      | Outlines elements in gold to make formatting visible. Variants: -white and -black. |
+| debug-grid | (all)      | Displays a layout grid. Variants: -8, -16, -solid, and combinations of these.      |
 
 ---
 class: title, fogscreen
@@ -215,6 +214,13 @@ background-image: url(tanya-nevidoma-632010-unsplash.jpg)
 
 Adirondack is built on top of Apron, and adds beautiful typography, colors, and
 extra features. This section is a demo and documentation of those features.
+
+# Heading Level 1
+## Heading Level 2
+### Heading Level 3
+
+Text with _italics_, __bold__, ~~strikethrough~~, `<code>`,
+[link](https://www.wikipedia.org/).
 
 ---
 class: col-2
@@ -242,7 +248,8 @@ This column has numbered lists.
 ---
 # Code Typography Demo
 
-Code sample:
+Remark offers [HighlightJS](https://highlightjs.org/) code syntax highlighting.
+Story enables/disables this with [feature flags](/features/).
 
 ```javascript
 function $initHighlight(block, cls) {
@@ -403,7 +410,7 @@ background-image: url(will-turner-508747-unsplash.jpg)
 ## Using Descartes To Create Intricate Layouts
 
 ---
-# Descarte's Image-Styling Functionality
+# Descartes' Image-Styling Functionality
 
 Descartes is an add-on that gives lots of power over image and element formatting with
 Markdown.  It uses composable, functional pseudo-classes in the image's URL
@@ -442,14 +449,14 @@ background-color: black
 ![](tom-barrett-364228-unsplash.jpg# absolute ofv w-4-12th h-3-12th t-7-12th l-5-12th)
 ![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12th h-2-12th t-10-12th l-5-12th)
 
-.absolute.w-50pct.center.t-6-12th.ba.bw-4.br-4[
+.absolute.w-50pct.center.t-6-12th.ba.bw-4.br-4.bg-white-60pct[
 This `<div>` is absolutely positioned.
 ]
 
 ---
 # Where Did The Names Come From?
 
-For some reason, I named my Remark slideshow layouts after iconic types of chairs
+For some reason, I named my Remark slideshow layouts after iconic chair designs
 (Monobloc, Adirondack, etc).
 
 ![Chair parts](chair-parts.png# fr ml-2)
