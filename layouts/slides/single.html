@@ -71,7 +71,7 @@
 		});
 		$( function() {
 			if ( $( "body.feature-qrcode:not(.feature-noqrcode)" ).length ) {
-				new QRCode($("#qrcode"), {
+				new QRCode($(".qrcode")[0], {
 					"useSVG": true,
 					"text": window.location.href.replace(/#\d*$/, "")
 				});

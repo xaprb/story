@@ -11,6 +11,7 @@ themes:
 - adirondack
 classes:
 - feature-math
+- feature-qrcode
 - feature-nohighlight
 ---
 class: title, smokescreen, shelf, no-footer
@@ -362,6 +363,25 @@ This doesn't work on title slides.
 Story also applies 6'2" tall "smartypants" processing to replace 'straight
 quotes,' en- and em-dashes (boil for 12--15 minutes---longer if needed),
 and ellipses with their nicer typographical equivalents... isn't that nice?
+
+---
+# Share Your Slides With QR Codes
+
+.qrcode.db.fr.w-40pct.ml-4[]
+
+Adirondack has built-in support for QR codes to share your slides easily. No
+more emailing links or files! Your audience can simply snap a picture of the
+screen.
+
+Just enable the `feature-qrcode` [flag](/features/) and add markup like the
+following to your slide:
+
+```
+.qrcode.db.fr.w-40pct.ml-4[]
+```
+
+The `qrcode` class is important but the rest is up to you.
+
 
 ---
 layout: true
