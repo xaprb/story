@@ -43,7 +43,7 @@
 			{{- .RawContent -}}
     </textarea>
     <script type="text/javascript" src="{{ "/js/qrcode.js" | absURL }}"></script>
-    <script src="{{ "/js/remark.min.js" | absURL }}"></script>
+    <script src="{{ "/js/remark.js" | absURL }}"></script>
     <script>
       var slideshow = remark.create({
          {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}

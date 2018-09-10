@@ -169,7 +169,7 @@ Mist enveloped the ship three hours out from port.
 - My two natures had memory in common.
 - The face of the moon was in shadow.
 
-Call me Ishmael. Some years ago—never mind how long precisely—having little or
+Call me Ishmael. Some years ago---never mind how long precisely---having little or
 no money in my purse, and nothing particular to interest me on shore, I thought
 I would sail about a little and see the watery part of the world. 
 
@@ -229,7 +229,7 @@ A shining crescent far beneath the flying vessel.
 - Silver mist suffused the deck of the ship.
 - The face of the moon was in shadow.
 
-Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
+Call me Ishmael. Some years ago---never mind how long precisely---having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
 
 ---
 class: roomy
@@ -358,6 +358,10 @@ The `fit-h1` slide class will automatically shrink the first H1 heading until it
 fits on a single line.
 
 This doesn't work on title slides.
+
+Story also applies 6'2" tall "smartypants" processing to replace 'straight
+quotes,' en- and em-dashes (boil for 12--15 minutes---longer if needed),
+and ellipses with their nicer typographical equivalents... isn't that nice?
 
 ---
 layout: true
