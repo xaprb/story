@@ -27,8 +27,8 @@ beautiful presentations with [RemarkJS](https://remarkjs.com/), using simple
 markup to create slide layouts.
 
 - Apron defines the layouts' structure and size.
-- Adirondack adds typography, colors, and helpful features.
-- Descartes provides precise element and image positioning.
+- Adirondack adds typography, theme colors, and helpful features.
+- Descartes provides element and image positioning and colors.
 
 Story has a design goal of clean, simple Markdown content. Avoiding "raw" HTML
 and Remark's Markdown extensions makes things easier.
@@ -58,7 +58,7 @@ class: compact
 
 # Apron's Slide Layouts
 
-You can create common slide layouts simply with RemarkJS slide classes.
+It's easy to create common slide layouts with RemarkJS slide classes.
 
 ![Slide Layouts](slide-layouts.svg# maxw-70pct center)
 
@@ -188,6 +188,75 @@ Here are the Apron slide layouts classes and how to use them:
 
 ---
 class: compact
+
+# A Compact Slide
+
+This slide's class is `compact`, which reduces font sizes, line heights, and
+slide padding.  This makes it possible to fit more content on the slide, which
+can be useful.
+
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+
+```javascript
+function $initHighlight(block, cls) {
+	if (cls.search(/\bno\-highlight\b/) != -1)
+		return process(block, true, 0x0F) + ` class="${cls}"`;
+	for (var i = 0 / 2; i < classes.length; i++) {
+		if (checkCondition(classes[i]) === undefined)
+			console.log('undefined');
+	}
+}
+```
+
+---
+class: compact, col-3
+
+# Compact Three-Column Layout
+
+This is a three-column layout,
+created with `class: col-3, compact`.
+
+The `compact` class works well three columns, which have less room.
+
+![](tanya-nevidoma-632010-unsplash.jpg# maxw-90pct)
+
+A shining crescent far beneath the flying vessel.
+
+- It was going to be a lonely trip back.
+- Mist enveloped the ship three hours out from port.
+- My two natures had memory in common.
+- Silver mist suffused the deck of the ship.
+- The face of the moon was in shadow.
+
+Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
+
+---
+class: roomy
+# A Roomy Slide
+
+This slide doesn't have as much content, so I gave it the class `roomy` to let
+its content stretch out a bit for readability.
+
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
+
+---
+class: roomy, col-2
+# Room For Two Columns
+
+This roomy slide has two columns: `class: roomy, col-2`. Bulleted lists
+shouldn't break across columns.
+
+- A red flare silhouetted the jagged edge of a wing.
+- I watched the storm, so beautiful yet terrific.
+- Almost before we knew it, we had left the ground.
+- All their equipment and instruments are alive.
+
+---
+class: compact
 # Apron's Auxiliary Classes
 
 Apron offers the following additional slide classes:
@@ -282,75 +351,6 @@ You can also display equations inline, such as the quadratic equation, which is
 \\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\)
 
 ---
-class: compact
-
-# A Compact Slide
-
-This slide's class is `compact`, which reduces font sizes, line heights, and
-slide padding.  This makes it possible to fit more content on the slide, which
-can be useful.
-
-- I watched the storm, so beautiful yet terrific.
-- Almost before we knew it, we had left the ground.
-
-```javascript
-function $initHighlight(block, cls) {
-	if (cls.search(/\bno\-highlight\b/) != -1)
-		return process(block, true, 0x0F) + ` class="${cls}"`;
-	for (var i = 0 / 2; i < classes.length; i++) {
-		if (checkCondition(classes[i]) === undefined)
-			console.log('undefined');
-	}
-}
-```
-
----
-class: compact, col-3
-
-# Three-Column Layouts
-
-This is a three-column layout,
-created with `class: col-3, compact`.
-
-The `compact` class works well with the smaller space available in the columns.
-
-![](tanya-nevidoma-632010-unsplash.jpg# maxw-90pct)
-
-A shining crescent far beneath the flying vessel.
-
-- It was going to be a lonely trip back.
-- Mist enveloped the ship three hours out from port.
-- My two natures had memory in common.
-- Silver mist suffused the deck of the ship.
-- The face of the moon was in shadow.
-
-Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
-
----
-class: roomy
-# A Roomy Slide
-
-This slide doesn't have as much content, so I gave it the class `roomy` to let
-its content stretch out a bit for readability.
-
-- A red flare silhouetted the jagged edge of a wing.
-- I watched the storm, so beautiful yet terrific.
-- Almost before we knew it, we had left the ground.
-- All their equipment and instruments are alive.
-
----
-class: roomy, col-2
-# Room For Two Columns
-
-This roomy slide has two columns: `class: roomy, col-2`. Bulleted lists
-shouldn't break across columns.
-
-- A red flare silhouetted the jagged edge of a wing.
-- I watched the storm, so beautiful yet terrific.
-- Almost before we knew it, we had left the ground.
-- All their equipment and instruments are alive.
-
----
 class: fit-h1, roomy
 # This Slide Has A Very Long Multi-Line Heading That Has Been Shrunk
 
@@ -385,8 +385,6 @@ layout: true
 
 This content uses Adirondack's built-in `footer` css styling to define footer
 elements. You can see them at the bottom of this slide.
-This is the only use of raw HTML or Remark's proprietary markup syntax in this
-slideshow, used here to illustrate an extra extension.
 
 You can hide both the standard and custom footer on any slide with `class: no-footer`.
 
@@ -410,7 +408,7 @@ background-image: url(will-turner-508747-unsplash.jpg)
 ## Using Descartes To Create Intricate Layouts
 
 ---
-# Descartes' Image-Styling Functionality
+# Descartes' Styling Functionality
 
 Descartes is an add-on that gives lots of power over image and element formatting with
 Markdown.  It uses composable, functional pseudo-classes in the image's URL
@@ -425,6 +423,8 @@ display as block, 2rem right margin, and float left:
 
 That URL has four "words" in the fragment, delimited by whitespace. The
 whitespace is important!
+
+Image classes are also available for `<div>`s.
 
 ---
 class: center
@@ -452,6 +452,62 @@ background-color: black
 .absolute.w-50pct.center.t-6-12th.ba.bw-4.br-4.bg-white-60pct[
 This `<div>` is absolutely positioned.
 ]
+
+---
+# Using Descartes' Coordinate Grids
+
+Descartes offers several length scales for element sizes and positions. For
+each, a class naming convention selects the value:
+
+- rems, from 1 rem (-1) to 96rem (-9)
+- tenths, in 10% increments from -10pct to -100pct, plus -33pct, -34pct, and -75pct
+- twelfths, in 1/12th increments from -1-12th to -11-12th
+- thirds, as -third and -two-thirds
+
+There's always a prefix that specifies what the item is, and a suffix that
+selects the units.  So for example, if you want an element to have a width of
+50%, you can give it a class of `w-50pct`, and if you want it to be 25% width
+you can use `w-3-12th`.
+
+---
+class: col-2
+# Descartes' Coordinate Selectors
+
+You can apply the length scales from the previous slide to a variety of element
+properties (see right). The X can be any of the suffixes discussed on the
+previous slide.
+
+These can be applied as classes to a DIV, or image pseudo-classes:
+
+```
+.w-50pct.h-1-12th.t-0.l-50pct[....]
+![img](pic.jpg# w-50pct h-1-12th t-0 l-50pct)
+```
+
+- w-X: width
+- maxw-X: max-width
+- minw-X: min-width
+- h-X: height
+- maxh-X: max-height
+- minh-X: min-height
+- t-X: top
+- r-X: right
+- b-X: bottom
+- l-X: left
+
+---
+# Descartes' Other Features
+
+Descartes also has classes to control color (text, border, background,
+transparency), opacity, borders (sides, width, radius), spacing (padding,
+margin), centering, display types, floats, clearfix, position types, background
+image fitting and positioning, and box shadows.
+
+For many of these, there's a set of units and sizing scales.
+
+These cannot be documented fully in this slideshow, but hopefully it gives you a
+sense of what's possible. You should read the `.less` files; they are short and
+easy to understand.
 
 ---
 # Where Did The Names Come From?
