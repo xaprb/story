@@ -265,7 +265,7 @@ each(@sides, {
 });
 each(@border-lengths, {
 	.br@{key}, img[src~="br@{key}"] { border-radius: @value; }
-	.bw@{key}, img[src~="bw@{key}"] { border-radius: @value; }
+	.bw@{key}, img[src~="bw@{key}"] { border-width: @value; }
 });
 
 // Padding and margins

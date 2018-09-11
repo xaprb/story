@@ -8936,7 +8936,7 @@ img[src~="br-0"] {
 }
 .bw-0,
 img[src~="bw-0"] {
-  border-radius: 0;
+  border-width: 0;
 }
 .br-1,
 img[src~="br-1"] {
@@ -8944,7 +8944,7 @@ img[src~="br-1"] {
 }
 .bw-1,
 img[src~="bw-1"] {
-  border-radius: 0.125rem;
+  border-width: 0.125rem;
 }
 .br-2,
 img[src~="br-2"] {
@@ -8952,7 +8952,7 @@ img[src~="br-2"] {
 }
 .bw-2,
 img[src~="bw-2"] {
-  border-radius: 0.25rem;
+  border-width: 0.25rem;
 }
 .br-3,
 img[src~="br-3"] {
@@ -8960,7 +8960,7 @@ img[src~="br-3"] {
 }
 .bw-3,
 img[src~="bw-3"] {
-  border-radius: 0.5rem;
+  border-width: 0.5rem;
 }
 .br-4,
 img[src~="br-4"] {
@@ -8968,7 +8968,7 @@ img[src~="br-4"] {
 }
 .bw-4,
 img[src~="bw-4"] {
-  border-radius: 1rem;
+  border-width: 1rem;
 }
 .br-5,
 img[src~="br-5"] {
@@ -8976,7 +8976,7 @@ img[src~="br-5"] {
 }
 .bw-5,
 img[src~="bw-5"] {
-  border-radius: 2rem;
+  border-width: 2rem;
 }
 .br-100pct,
 img[src~="br-100pct"] {
@@ -8984,7 +8984,7 @@ img[src~="br-100pct"] {
 }
 .bw-100pct,
 img[src~="bw-100pct"] {
-  border-radius: 100%;
+  border-width: 100%;
 }
 .pa-0,
 img[src~="pa-0"] {

@@ -408,9 +408,11 @@ layout: true
 ```
 
 This content uses Adirondack's built-in `footer` css styling to define footer
-elements. You can see them at the bottom of this slide.
+elements. You can see them at the bottom of this slide. In the next section,
+you'll learn Descartes classes you can add
+to the div to style it, e.g. `.footer.bt.bc-cornflower[...]`.
 
-You can hide both the standard and custom footer on any slide with `class: no-footer`.
+You can hide both the RemarkJS and custom footer on any slide with `class: no-footer`.
 
 ---
 layout: false
