@@ -169,11 +169,11 @@
   text-align: center;
   padding-top: 544.8px;
 }
-.remark-slide-content.img-caption > p:first-child {
+.remark-slide-content.img-caption > p:first-of-type {
   padding: 0px;
   margin: 0px;
 }
-.remark-slide-content.img-caption > p:first-child > img {
+.remark-slide-content.img-caption > p:first-of-type > img {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -299,6 +299,16 @@
 .remark-slide-content.col-3 > ol {
   break-inside: avoid;
   page-break-inside: avoid;
+}
+.remark-slide-content .footer,
+.remark-slide-content .footer ul {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
 }
 .remark-slide-content .remark-slide-number,
 .remark-slide-content .footer li {

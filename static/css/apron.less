@@ -194,7 +194,7 @@
 	&.img-caption {
 		text-align: center;
 		padding-top: @slide-height * 0.8;
-		&>p:first-child {
+		&>p:first-of-type {
 			padding: 0px;
 			margin: 0px;
 			&>img {
@@ -331,6 +331,15 @@
 		border: 1px solid rgba(0, 0, 0, 0);
 	}
 	.footer {
+		&, & ul {
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			left: 0px;
+			height: 50px;
+			margin: 0px;
+			padding: 0px;
+		}
 		li:nth-child(1) {
 			left: 20px;
 		}
