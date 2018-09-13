@@ -1,7 +1,6 @@
 # Site settings
 baseurl = "https://example.com/"
 title = "Hugo Story Theme"
-theme = "story"
 paginate = 5
 
 [[menu.social]]
