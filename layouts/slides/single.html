@@ -88,7 +88,7 @@
 		<meta name="og:url" content="{{ .Permalink }}" />
 		<meta name="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@{{ .Site.Params.Twitter }}" />
+		<meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
 {{ end }}
 
 {{ define "about" }}
