@@ -76,7 +76,7 @@
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "January 2, 2006" -}}
 								</time>
-								at {{ .Params.event }}
+								at <a class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}" href="{{ .Params.site }}">{{ .Params.event }}</a>
 							{{ else }}
 								Published
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">

@@ -1,7 +1,6 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }} &bullet; {{ .Params.event }}{{ end }}
 {{ define "main" }}
-<article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
-	<main class="nested-copy-line-height lh-copy f4 nested-links nested-img pr4-l measure-wide">
+<article class="center ph3 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
 		{{ .Content }}
 		<p><a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ .Params.slides }}">Slides</a>
 		{{ with .Params.video }}
@@ -13,7 +12,6 @@
 		{{ with .Params.location }}
 		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="https://www.google.com/maps/place/{{ . }}">Venue</a>
 		{{ end }}
-	</main>
 </article>
 {{ end }}
 
