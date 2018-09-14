@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+set -x
+hugo -c exampleSite/content --config exampleSite/config.toml server
