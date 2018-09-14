@@ -4,6 +4,7 @@ date: "{{ .Date }}"
 url: "/{{ .Dir }}{{ .Name }}"
 description: ""
 image: ""
+thumbnail: ""
 categories:
 - Uncategorized
 ---
