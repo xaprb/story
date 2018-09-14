@@ -1,7 +1,8 @@
 # Story
 
 Story is a beautiful [Hugo theme](https://gohugo.io) for showcasing your writing
-and presentations.
+and presentations. There's a [demo site](https://story.xaprb.com/) where you can see its
+features in action and learn more. You can also see it in use on a real site by [Baron Schwartz](https://www.xaprb.com/).
 
 ![Story screenshot](https://raw.githubusercontent.com/xaprb/story/master/images/screenshot.png)
 
@@ -17,5 +18,5 @@ It has a lot of features for people who invest effort in their websites and blog
 - LaTeX math typesetting with [KaTeX](https://github.com/Khan/KaTeX)
 - A built-in search page with [LunrJS](https://github.com/olivernn/lunr.js).
 
-This is just a fraction of Story's feature set, see the demo site for much more
+This is just a fraction of Story's feature set, see the [demo site](https://story.xaprb.com/) for much more
 documentation and screenshots.
