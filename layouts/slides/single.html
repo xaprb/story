@@ -1,13 +1,22 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "layout" }}
-		{{- with .Params.themes -}}
-			{{- range . }}
-				<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
-			{{- end -}}
-		{{- else }}
-		<link rel="stylesheet" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
-		{{- end }}
+		{{- if .Params.less -}}
+			{{- with .Params.themes -}}
+				{{- range . }}
+					<link rel="stylesheet/less" type="text/css" href="{{ "/css/" | absURL }}{{ . }}.less"></style>
+				{{- end -}}
+				<script type="text/javascript" src="{{ "/js/less.min.js" | absURL }}"></script>
+			{{- end }}
+		{{ else }}
+			{{- with .Params.themes -}}
+				{{- range . }}
+					<link rel="stylesheet" type="text/css" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
+				{{- end -}}
+			{{- else }}
+			<link rel="stylesheet" type="text/css" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
+			{{- end }}
+		{{- end -}}
 		<style type="text/css">
 		@page {
 			size: {{ if .Params.ratio }} 1216px 684px; {{ else }} 912px 684px; {{ end }}
@@ -26,7 +35,7 @@
 {{ end }}
 
 {{ define "header" }}
-<!-- simply override the "header" from baseof.html to make it empty -->
+  <!-- simply override the "header" from baseof.html to make it empty -->
 {{ end }}
 
 {{ define "main" }}
@@ -34,7 +43,7 @@
 			{{- .RawContent -}}
     </textarea>
     <script type="text/javascript" src="{{ "/js/qrcode.js" | absURL }}"></script>
-    <script src="{{ "/js/remark.min.js" | absURL }}"></script>
+    <script src="{{ "/js/remark.js" | absURL }}"></script>
     <script>
       var slideshow = remark.create({
          {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}
@@ -42,27 +51,49 @@
             scroll: false
          },
          countIncrementalSlides: false,
-         slideNumberFormat: '%current%'
+         slideNumberFormat: '%current%',
+			highlightLanguage: "xaprb",
+			placeholder: "dummy value to end the list without a comma"
       });
-      new QRCode(
-         document.getElementById("qrcode"),
-         {
-            "useSVG": true,
-            "text": window.location.href.replace(/#\d*$/, "")
-         }
-      );
+		// Shrink headers until they fit. (They have to be momentarily made
+		// visible first.)
+		$(".remark-slide-content.fit-h1 h1").each(function(i, e) {
+			var $e = $(e);
+			var $p = $e.closest('div.remark-slide-container');
+			var needsToggle = !$p.hasClass('remark-visible');
+			if ( needsToggle ) $p.toggleClass('remark-visible');
+			while (e.scrollHeight > e.clientHeight + 1 && $e.css('font-size') != '1px') {
+				$e.css('font-size', (parseInt($e.css('font-size')) - 1) + "px");
+				// console.log($e.css('font-size') + "sh:" + e.scrollHeight + "ch:" +
+				// 	e.clientHeight);
+			}
+			if ( needsToggle ) $p.toggleClass('remark-visible');
+		});
+		$( function() {
+			if ( $( "body.feature-qrcode:not(.feature-noqrcode)" ).length ) {
+				new QRCode($(".qrcode")[0], {
+					"useSVG": true,
+					"text": window.location.href.replace(/#\d*$/, "")
+				});
+			}
+		});
     </script>
 {{ end }}
 
 {{ define "social" }}
 		<meta name="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="og:type" content="article" />
-		<meta name="og:image" content="{{ .Params.image }}" />
+		<meta name="og:image" content="{{ default .Params.image .Params.thumbnail }}" />
 		<meta name="og:description" content="{{ .Description }}" />
 		<meta name="og:url" content="{{ .Permalink }}" />
 		<meta name="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@{{ .Site.Params.Twitter }}" />
+		<meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
 {{ end }}
 
-{{ define "footer" }}{{ end }}
+{{ define "about" }}
+  <!-- simply override the "header" from baseof.html to make it empty -->
+{{ end }}
+{{ define "footer" }}
+  <!-- simply override the "header" from baseof.html to make it empty -->
+{{ end }}

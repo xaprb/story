@@ -9,6 +9,11 @@ paginate = 5
   url = "https://github.com/xaprb/story/"
 
 [[menu.main]]
+  name = "Talks"
+  title = "Talks"
+  url = "/talks/"
+
+[[menu.main]]
   name = "Slides"
   title = "Slides"
   url = "/slides/"
@@ -16,6 +21,7 @@ paginate = 5
 [params]
   author = "Baron Schwartz"
   mailchimp = "your-mailchimp-form-url-here"
+  twitter = "xaprb"
   classes = []
 
 [outputs]

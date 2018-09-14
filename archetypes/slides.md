@@ -5,20 +5,16 @@ url: "/{{ .Dir }}"
 image: "/slides/{{ .Name }}/cover.jpg"
 description: ""
 ratio: "16:9"
-theme: "monobloc"
----
-layout: true
-<div class="remark-slide-number" style="left: 20px; right: unset">@handle</div>
-
+themes:
+- apron
+- adirondack
+- descartes
 ---
 class: title
 background-image: url(cover.jpg)
-background-size: cover
 
-.smokescreen[
 # {{ replaceRE "[/-]" " " .Dir | title }}
 ## Subtitle
-]
 
 ---
 # About Me
@@ -27,16 +23,11 @@ background-size: cover
 - Ask questions anytime
 
 ---
-class: two-column
+class: col-2
 # Slides and Contact Information
 
-.col[
 Slides are at {{ .Site.BaseURL }}talks/ or you can scan the QR code.
 
 Contact:
 
-]
-
-.col[
 <div id="qrcode"></div>
-]

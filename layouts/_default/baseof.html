@@ -23,7 +23,11 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+		{{ if or (in .Site.Params.classes "feature-highlight") (in .Params.classes "feature-highlight") -}}
+			{{- if not (or (in .Site.Params.classes "feature-nohighlight") (in .Params.classes "feature-nohighlight") ) -}}
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+			{{- end -}}
+		{{- end -}}
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
 		<script src="{{ "/js/auto-render.min.js" | absURL }}"></script> <!-- for KaTeX -->
@@ -72,7 +76,7 @@
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "January 2, 2006" -}}
 								</time>
-								at {{ .Params.event }}
+								at <a class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}" href="{{ .Params.site }}">{{ .Params.event }}</a>
 							{{ else }}
 								Published
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
