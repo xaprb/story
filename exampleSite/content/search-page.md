@@ -3,9 +3,9 @@ title: Story JavaScript Search
 date: "2018-08-21"
 url: "/search-page"
 description: "This is a feature demo for the Story Hugo theme."
-image: "/img/unsplash-photos-4zxSWESyZio.jpg"
+image: "img/unsplash-photos-4zxSWESyZio.jpg"
 credit: "https://unsplash.com/photos/4zxSWESyZio"
-thumbnail: "/img/unsplash-photos-4zxSWESyZio.tn-500x500.jpg"
+thumbnail: "img/unsplash-photos-4zxSWESyZio.tn-500x500.jpg"
 categories:
 - Demo
 ---

@@ -2,7 +2,7 @@
 {{ define "main" }}
 <article class="center ph3 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
 		{{ .Content }}
-		<p><a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ .Params.slides }}">Slides</a>
+		<p><a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ .Params.slides | absURL }}">Slides</a>
 		{{ with .Params.video }}
 		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Video</a>
 		{{ end }}
@@ -18,7 +18,7 @@
 {{ define "social" }}
 		<meta name="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="og:type" content="article" />
-		<meta name="og:image" content="{{ default .Params.image .Params.thumbnail }}" />
+		<meta name="og:image" content="{{ default .Params.image .Params.thumbnail | absURL }}" />
 		<meta name="og:description" content="{{ .Description }}" />
 		<meta name="og:url" content="{{ .Permalink }}" />
 		<meta name="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />

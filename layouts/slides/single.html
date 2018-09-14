@@ -4,17 +4,17 @@
 		{{- if .Params.less -}}
 			{{- with .Params.themes -}}
 				{{- range . }}
-					<link rel="stylesheet/less" type="text/css" href="{{ "/css/" | absURL }}{{ . }}.less"></style>
+					<link rel="stylesheet/less" type="text/css" href="{{ "css/" | absURL }}{{ . }}.less"></style>
 				{{- end -}}
-				<script type="text/javascript" src="{{ "/js/less.min.js" | absURL }}"></script>
+				<script type="text/javascript" src="{{ "js/less.min.js" | absURL }}"></script>
 			{{- end }}
 		{{ else }}
 			{{- with .Params.themes -}}
 				{{- range . }}
-					<link rel="stylesheet" type="text/css" href="{{ "/css/" | absURL }}{{ . }}.css"></style>
+					<link rel="stylesheet" type="text/css" href="{{ "css/" | absURL }}{{ . }}.css"></style>
 				{{- end -}}
 			{{- else }}
-			<link rel="stylesheet" type="text/css" href="{{ "/css/" | absURL }}{{ .Params.theme }}.css"></style>
+			<link rel="stylesheet" type="text/css" href="{{ "css/" | absURL }}{{ .Params.theme }}.css"></style>
 			{{- end }}
 		{{- end -}}
 		<style type="text/css">
@@ -42,8 +42,8 @@
     <textarea id="source">
 			{{- .RawContent -}}
     </textarea>
-    <script type="text/javascript" src="{{ "/js/qrcode.js" | absURL }}"></script>
-    <script src="{{ "/js/remark.js" | absURL }}"></script>
+    <script type="text/javascript" src="{{ "js/qrcode.js" | absURL }}"></script>
+    <script src="{{ "js/remark.js" | absURL }}"></script>
     <script>
       var slideshow = remark.create({
          {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}
@@ -83,7 +83,7 @@
 {{ define "social" }}
 		<meta name="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="og:type" content="article" />
-		<meta name="og:image" content="{{ default .Params.image .Params.thumbnail }}" />
+		<meta name="og:image" content="{{ default .Params.image .Params.thumbnail | absURL }}" />
 		<meta name="og:description" content="{{ .Description }}" />
 		<meta name="og:url" content="{{ .Permalink }}" />
 		<meta name="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />

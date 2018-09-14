@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "/index.xml" | absURL }}">
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "index.xml" | absURL }}">
 		<link rel="canonical" href="{{ .Permalink }}">
 		<!-- the Story logo is a square with rounded corners interlocked with a section symbol in Bodoni 72 Book font -->
-		<link rel="shortcut icon" type="image/png" href="{{ "/apple-touch-icon-precomposed.png" | absURL }}">
+		<link rel="shortcut icon" type="image/png" href="{{ "apple-touch-icon-precomposed.png" | absURL }}">
 		{{ with .Description }}<meta name="description" content="{{.}}">{{ end }}
 		{{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 		{{ .Hugo.Generator }}
@@ -16,8 +16,8 @@
 		{{ end }}
 
 		{{ block "layout" . }}
-		<link rel="stylesheet" href="{{ "/css/tachyons.min.css" | absURL }}" />
-		<link rel="stylesheet" href="{{ "/css/story.css" | absURL }}" />
+		<link rel="stylesheet" href="{{ "css/tachyons.min.css" | absURL }}" />
+		<link rel="stylesheet" href="{{ "css/story.css" | absURL }}" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 		{{ end }}
 
@@ -30,10 +30,10 @@
 		{{- end -}}
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>
-		<script src="{{ "/js/auto-render.min.js" | absURL }}"></script> <!-- for KaTeX -->
+		<script src="{{ "js/auto-render.min.js" | absURL }}"></script> <!-- for KaTeX -->
 		{{ with .Site.Params.head }}{{ range . }}
 		{{ . | safeHTML }}{{ end }}{{ end }}
-		<script src="{{ "/js/story.js" | absURL }}"></script>
+		<script src="{{ "js/story.js" | absURL }}"></script>
 
 	</head>
 	<body class="ma0 bg-white sans-serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
@@ -46,12 +46,12 @@
 		matter of an individual post.
 		-->
 		{{- $hdr := cond (or (in .Site.Params.classes "feature-nohdr") (in .Params.classes "feature-nohdr")) false true -}}
-		<header class="cover bg-top" {{ if $hdr }}style="background-image: url('{{ .Params.image | default ("/img/default-header-img.jpg" | absURL) }}'); background-position: center;"{{ end }}>
+		<header class="cover bg-top" {{ if $hdr }}style="background-image: url('{{ absURL (default "img/default-header-img.jpg" .Params.image) }}'); background-position: center;"{{ end }}>
 			<div class="{{ cond $hdr "bg-black-30 bb bt" "" }}">
 
 				<nav id="navmenu" class="{{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
 					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
-						<img src="{{ "/img/logo.jpg" | absURL }}" class="dib w2 h2 br-100" alt="{{ .Title }}" />
+						<img src="{{ "img/logo.jpg" | absURL }}" class="dib w2 h2 br-100" alt="{{ .Title }}" />
 					</a>
 					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
 						{{ range .Site.Menus.main }}
@@ -60,8 +60,8 @@
 						{{ range .Site.Menus.social }}
 						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
 						{{ end }}
-						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-rss-square" href="{{ "/index.xml" | absURL }}" title="RSS Feed"></a>
-						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-search" href="{{ "/search/" | absURL }}" role="search" title="Search"></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-rss-square" href="{{ "index.xml" | absURL }}" title="RSS Feed"></a>
+						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-search" href="{{ "search/" | absURL }}" role="search" title="Search"></a>
 					</div>
 				</nav>
 
@@ -83,7 +83,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "/categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span id="citation">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
@@ -115,7 +115,7 @@
 		{{ block "footer" . }}
 		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3" role="contentinfo">
 			<p class="w-50 fr tr">
-			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="{{ "/img/story-logo-white.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
+			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="{{ "img/story-logo-white.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
 			</p>
 			<p class="w-50 white-90">
 				&copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}

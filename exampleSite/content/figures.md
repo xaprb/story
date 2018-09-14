@@ -4,8 +4,8 @@ date: "2018-08-22"
 url: "/figures"
 description: "This is a feature demo for the Story Hugo theme."
 credit: "https://unsplash.com/photos/vHnVtLK8rCc"
-image: "/img/unsplash-photos-vHnVtLK8rCc.jpg"
-thumbnail: /img/unsplash-photos-vHnVtLK8rCc.tn-500x500.jpg
+image: "img/unsplash-photos-vHnVtLK8rCc.jpg"
+thumbnail: img/unsplash-photos-vHnVtLK8rCc.tn-500x500.jpg
 classes:
 - feature-figcaption
 - feature-figcaption-hidden

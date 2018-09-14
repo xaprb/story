@@ -1,8 +1,9 @@
 ---
 title: 'Creating Beautiful Presentations with Story'
 date: "2018-04-25T09:50:00-07:00"
-url: "/slides/adirondack/"
-image: "/slides/adirondack/leo-serrat-533922-unsplash.jpg"
+url: "slides/adirondack/"
+image: "slides/adirondack/leo-serrat-533922-unsplash.jpg"
+thumbnail: slides/adirondack/thumbnail.jpg
 description: "Story's RemarkJS frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
 ratio: "16:9"
 themes:

@@ -4,8 +4,8 @@ date: "2018-08-20"
 url: "/math"
 description: "This is a feature demo for the Story Hugo theme."
 credit: "https://unsplash.com/photos/5mZ_M06Fc9g/download"
-image: "/img/unsplash-photos-5mZ_M06Fc9g.jpg"
-thumbnail: /img/unsplash-photos-5mZ_M06Fc9g.tn-500x500.jpg
+image: "img/unsplash-photos-5mZ_M06Fc9g.jpg"
+thumbnail: img/unsplash-photos-5mZ_M06Fc9g.tn-500x500.jpg
 classes:
 - feature-math
 categories:

@@ -4,9 +4,9 @@ title: Story Author Profiles
 url: /author-profiles
 date: "2018-08-29"
 description: "This is a feature demo for the Story Hugo theme."
-image: "/img/unsplash-photos-TzMi5Ov7QeM.jpg"
+image: "img/unsplash-photos-TzMi5Ov7QeM.jpg"
 credit: "https://unsplash.com/photos/TzMi5Ov7QeM"
-thumbnail: "/img/unsplash-photos-TzMi5Ov7QeM.tn-500x500.jpg"
+thumbnail: "img/unsplash-photos-TzMi5Ov7QeM.tn-500x500.jpg"
 categories:
 - Demo
 ---

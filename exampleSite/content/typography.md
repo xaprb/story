@@ -4,8 +4,8 @@ date: "2018-08-19"
 url: "/typography"
 description: "This is a feature demo for the Story Hugo theme."
 credit: "https://unsplash.com/photos/h-M3O25tyvI"
-image: "/img/unsplash-photos-h-M3O25tyvI.jpg"
-thumbnail: /img/unsplash-photos-h-M3O25tyvI.tn-500x500.jpg
+image: "img/unsplash-photos-h-M3O25tyvI.jpg"
+thumbnail: img/unsplash-photos-h-M3O25tyvI.tn-500x500.jpg
 classes:
 - feature-hyphenate
 - feature-justify
