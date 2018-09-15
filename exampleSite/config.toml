@@ -20,7 +20,6 @@ paginate = 5
 
 [params]
   author = "Baron Schwartz"
-  mailchimp = "your-mailchimp-form-url-here"
   twitter = "xaprb"
   classes = []
 

@@ -2,7 +2,7 @@
 title: Story Typography
 date: "2018-08-19"
 url: "/typography"
-description: "This is a feature demo for the Story Hugo theme."
+description: "Story uses gorgeous typefaces and is optimized for a pleasant reading experience on any device."
 credit: "https://unsplash.com/photos/h-M3O25tyvI"
 image: "img/unsplash-photos-h-M3O25tyvI.jpg"
 thumbnail: img/unsplash-photos-h-M3O25tyvI.tn-500x500.jpg
@@ -103,4 +103,4 @@ $( "#dinkus" ).click(function() {
 });
 </script>
 
-Read next: [Story's 'talks' feature for presentations](/talks/adirondack/).
+Read next: [Story's MailChimp subscribe forms and RSS feeds](/mailchimp-features).

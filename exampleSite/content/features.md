@@ -2,7 +2,7 @@
 title: Story Feature Flags
 date: "2018-08-30"
 url: "/features"
-description: "This is a feature demo for the Story Hugo theme."
+description: "Story comes with a lot of power, but it's all configurable: almost every extra feature is optional."
 credit: "https://unsplash.com/photos/QRkew0KwXSM"
 image: "img/unsplash-photos-QRkew0KwXSM.jpg"
 thumbnail: img/unsplash-photos-QRkew0KwXSM.tn-500x500.jpg

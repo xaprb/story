@@ -2,7 +2,7 @@
 title: Story Image Formatting Controls
 date: "2018-08-21"
 url: "/images"
-description: "This is a feature demo for the Story Hugo theme."
+description: "Story gives you extra control over image formatting using only Markdown syntax."
 classes:
 - feature-figcaption
 - feature-figcaption-hidden

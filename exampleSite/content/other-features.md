@@ -2,7 +2,7 @@
 title: Story Theme Features
 url: /theme-features
 date: "2018-09-01"
-description: "This is a feature demo for the Story Hugo theme."
+description: "This page is a tour of Story's features, so you can take full advantage of its power."
 image: "img/unsplash-photos-nehfi_SfqtU.jpg"
 credit: "https://unsplash.com/photos/nehfi_SfqtU"
 thumbnail: "img/unsplash-photos-nehfi_SfqtU.tn-500x500.jpg"
@@ -25,11 +25,11 @@ a separate documentation page, or just don't have full documentation yet.
 - [Advanced image styling features](/images)
 - [Mathematical equation typesetting](/math)
 - [Built-in search](/search-page)
+- [MailChimp subscribe forms and RSS feeds](/mailchimp-features)
 
 Story also has support for the following, which aren't extensively documented:
 
 - Code syntax highlighting
-- Mailchimp subscribe forms
 - Google Analytics
 - Categories
 - All types of blogs; Story isn't opinionated about what you call them (you

@@ -2,7 +2,7 @@
 title: Story Figures, Captions, and Tables
 date: "2018-08-22"
 url: "/figures"
-description: "This is a feature demo for the Story Hugo theme."
+description: "This article shows you how to enhance your images and tables with features such as captions and alternative stylings."
 credit: "https://unsplash.com/photos/vHnVtLK8rCc"
 image: "img/unsplash-photos-vHnVtLK8rCc.jpg"
 thumbnail: img/unsplash-photos-vHnVtLK8rCc.tn-500x500.jpg

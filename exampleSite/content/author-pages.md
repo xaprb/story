@@ -3,7 +3,7 @@ author: Elvis Presley
 title: Story Author Profiles
 url: /author-profiles
 date: "2018-08-29"
-description: "This is a feature demo for the Story Hugo theme."
+description: "With Story, you can define global and per-item author profiles/biographies."
 image: "img/unsplash-photos-TzMi5Ov7QeM.jpg"
 credit: "https://unsplash.com/photos/TzMi5Ov7QeM"
 thumbnail: "img/unsplash-photos-TzMi5Ov7QeM.tn-500x500.jpg"
