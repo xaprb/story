@@ -24,3 +24,5 @@ Story has a lot of features for people who invest effort in their websites and b
 
 Story has many more features than this.
 Explore Story and learn all the ways it can help you showcase your work!
+
+Read next: [Story's features](/theme-features).

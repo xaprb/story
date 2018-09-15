@@ -26,7 +26,7 @@ background-image: url(leo-serrat-533922-unsplash.jpg)
 
 [Story](https://github.com/xaprb/story) offers helper themes for creating
 beautiful presentations with [RemarkJS](https://remarkjs.com/), using simple
-markup to create slide layouts.
+Markdown to create slide layouts.
 
 - Apron defines the layouts' structure and size.
 - Adirondack adds typography, theme colors, and helpful features.
@@ -34,9 +34,10 @@ markup to create slide layouts.
 
 Story has a design goal of clean, simple Markdown content. Avoiding "raw" HTML
 and Remark's Markdown extensions makes things easier.
+View the source of this page to see the Markdown that creates it.
 
 These characteristics make it easy to build gorgeous slideshows. They're also
-a great foundation for creating your own themes.
+a great foundation for creating your own themes. 
 
 ---
 # Getting Started
@@ -341,11 +342,15 @@ Story supports math equation typesetting using the KaTeX library,
 if [`feature-math`](/math/) is enabled.
 
 \\[
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\left( \beta mc^2 + c \left ( \sum_{n=1}^3 \alpha_n p\_n \right ) \right) \psi(x,t) = i \hbar \frac{\partial \psi(x,t) }{\partial t}
 \\]
 
-The crosstalk (coherence) penalty is the \\(\kappa\\) coefficient of \\(n^2\\),
-which is equivalent to \\(e^{i\pi}-1=0\\).
+The coherence is the \\(\kappa\\) coefficient of \\(n^2\\),
+which is \\(e^{i\pi}-1=0\\).
+
+\\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\\]
 
 ![Universal Scalability Law](linear3.svg)
 
@@ -476,8 +481,8 @@ background-color: black
 ![](tom-barrett-364228-unsplash.jpg# absolute ofv w-4-12th h-3-12th t-7-12th l-5-12th)
 ![](will-turner-508747-unsplash.jpg# absolute ofv w-4-12th h-2-12th t-10-12th l-5-12th)
 
-.absolute.w-50pct.center.t-6-12th.ba.bw-4.br-4.bg-white-60pct[
-This `<div>` is absolutely positioned.
+.absolute.w-7-12th.pa-3.l-1-12th.t-20pct.ba.bw-4.br-4.bg-white-60pct[
+This slide is composed only of simple Markdown markup, no raw HTML.
 ]
 
 ---

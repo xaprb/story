@@ -102,3 +102,5 @@ $( "#dinkus" ).click(function() {
    $("body").toggleClass("feature-hrdinkus");
 });
 </script>
+
+Read next: [Story's 'talks' feature for presentations](/talks/adirondack/).

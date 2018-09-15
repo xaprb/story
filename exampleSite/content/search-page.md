@@ -78,3 +78,5 @@ classes:
 This illustrates a couple of additional features in Story: skipping the content
 in lists and RSS feeds; displaying it without a subtitle; displaying it without
 a header image.
+
+Read next: [Story's mathematical equation typesetting features](/math/).

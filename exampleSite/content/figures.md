@@ -145,3 +145,5 @@ $( "#tablefw" ).click(function() {
    $("body").toggleClass("feature-tablefw");
 });
 </script>
+
+Read next: [Story's image formatting features](/images/).

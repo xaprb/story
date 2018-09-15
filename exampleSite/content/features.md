@@ -103,3 +103,5 @@ For brevity, the `feature-` prefix is omitted, but all of Story's classes have t
 | [tablefig](/figures)           | Styles tables similar to scientific papers                                                | JS + CSS       |
 | [tablefw](/figures)            | Sets table cells in a font with fixed-width numerals                                        | CSS            |
 | titlecase                      | Not enabled by default; Transforms All Content Titles to Titlecase                                                  | Hugo           |
+
+Read next: [Story's author biographies](/author-profiles/).

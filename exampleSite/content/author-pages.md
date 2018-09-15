@@ -107,3 +107,5 @@ Baron](https://www.xaprb.com/).
 
 This content is a (non-author-specific) fallback for the entire site.
 You can see it on all the other pages of this site.
+
+Read next: [Story's figures, captions, and tables](/figures/).

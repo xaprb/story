@@ -114,3 +114,5 @@ and preview images:
 
 To illustrate this feature, the [search page](/search) has this feature set, so
 it has a plain, bannerless layout.
+
+Read next: [Story's built-in search features](/search-page/).

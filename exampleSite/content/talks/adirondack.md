@@ -49,3 +49,6 @@ thumbnail: "<usually something like /path/to/slides/thumbnail.jpg/>"
 video: "a youtube or other video link"
 ---
 ```
+
+Read next: [Story's amazing Markdown-based presentation
+engine](/slides/adirondack/).
