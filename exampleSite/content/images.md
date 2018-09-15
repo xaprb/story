@@ -87,7 +87,7 @@ credit: "https://unsplash.com/photos/QRkew0KwXSM"
 ```
 
 If there's no thumbnail, Story falls back to the full-size image.
-If there's no article-specific image, Story uses its default, `/img/default-header-img.jpg`.
+If there's no article-specific image, Story uses its default, `/img/default-header-img.jpg`, or the thumbnail equivalent, `/img/default-header-img.tn-500x500.jpg`.
 This page doesn't supply its own header image, so Story is using the default.
 
 You can supply your own default header image by simply putting an image with the same name in your *site's* `/static/img` directory.

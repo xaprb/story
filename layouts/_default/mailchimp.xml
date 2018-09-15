@@ -14,7 +14,7 @@
 			<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</pubDate>
 			<author>{{ .Site.Params.Author }}</author>
 			<guid>{{ .Permalink }}</guid>
-			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="{{ (absURL (default (default "img/default-header-img.jpg" .Params.image) .Params.thumbnail)) }}" medium="image" type="image/jpg" width="100" height="100" />
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="{{ (absURL (default (default "img/default-header-img.tn-500x500.jpg" .Params.image) .Params.thumbnail)) }}" medium="image" type="image/jpg" width="100" height="100" />
 			<description>{{ (printf "%s<br>%s" .Params.description .Summary) | html }}</description>
 		</item>
 		{{ end }}
