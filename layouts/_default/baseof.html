@@ -60,25 +60,25 @@
 		<header class="cover bg-top" {{ if $hdr }}style="background-image: url('{{ absURL (default "img/default-header-img.jpg" .Params.image) }}'); background-position: center;"{{ end }}>
 			<div class="{{ cond $hdr "bg-black-30 bb bt" "" }}">
 
-				<nav class="hide-print sans-serif fw2 {{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
-					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
-						<img src="{{ "img/logo.jpg" | absURL }}" class="dib w2 h2 br-100" alt="{{ .Title }}" />
+				<nav class="hide-print sans-serif {{ cond $hdr "" "bg-black" }} border-box pa3 ph5-l">
+					<a href="{{ .Site.BaseURL }}" title="Home">
+						<img src="{{ "img/logo.jpg" | absURL }}" class="w2 h2 br-100" alt="{{ .Site.Title }}" />
 					</a>
-					<div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-						{{ range .Site.Menus.main }}
-						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}">{{ .Name }}</a>
-						{{ end }}
-						{{ range .Site.Menus.social }}
-						<a class="link f5 f4-l dib mr1 no-underline dim white-90" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
-						{{ end }}
-						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-rss-square" href="{{ "index.xml" | absURL }}" title="RSS Feed"></a>
-						<a class="link f5 f4-l dib mr1 no-underline dim white-90 fas fa-search" href="{{ "search/" | absURL }}" role="search" title="Search"></a>
+					<div class="fr h2 pv2 tr">
+						{{- range .Site.Menus.main }}
+						<a class="link f5 ml2 dim near-white" href="{{ .URL }}">{{ .Name }}</a>
+						{{- end }}
+						{{- range .Site.Menus.social }}
+						<a class="link f5 ml2 dim near-white" href="{{ .URL }}"><i class="{{ .Title }}"></i></a>
+						{{- end }}
+						<a class="link f5 ml2 dim near-white fas fa-rss-square" href="{{ "index.xml" | absURL }}" title="RSS Feed"></a>
+						<a class="link f5 ml2 dim near-white fas fa-search" href="{{ "search/" | absURL }}" role="search" title="Search"></a>
 					</div>
 				</nav>
 
 				<div id="hdr" class="tc-l {{ cond $hdr "pv4-ns pv5-l" "" }} pv2 ph3 ph4-ns">
-					<h1 class="{{ cond $hdr "white-90 mt1-ns" "" }} f2 fw3 mb0 mt0 lh-title">{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}</h1>
-					<h2 class="{{ cond $hdr "white-80 mt3-l mb4-l" "" }} fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
+					<h1 class="{{ cond $hdr "near-white mt1-ns" "" }} f2 fw3 mb0 mt0 lh-title">{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}</h1>
+					<h2 class="{{ cond $hdr "near-white mt3-l mb4-l" "" }} fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
 						<!-- You can put a subtitle here in _index.md parameters, or it'll get
 						filled in with date and categories if it's a post -->
 						{{ if .IsPage }}
@@ -87,14 +87,14 @@
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "January 2, 2006" -}}
 								</time>
-								at <a class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}" href="{{ .Params.site }}">{{ .Params.event }}</a>
+								at <a class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}" href="{{ .Params.site }}">{{ .Params.event }}</a>
 							{{ else }}
 								Published
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span class="display-print">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span class="display-print">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
@@ -107,7 +107,7 @@
 				{{ if $hdr }}
 				{{ with .Params.credit }}
 				<div class="w-100 cf hide-print">
-					<a class="fr f6 ma0 pa2 link white-90 dim fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
+					<a class="fr f6 ma0 pa2 link white-50 dim fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
 				</div>
 				{{ end }}
 				{{ end }}
@@ -124,11 +124,11 @@
 		{{ end }}
 		{{ block "pagination" . }}{{ end }}
 		{{ block "footer" . }}
-		<footer class="hide-print sans-serif f6 fw1 bg-black white-90 bottom-0 w-100 pa3" role="contentinfo">
+		<footer class="hide-print sans-serif f6 fw1 bg-black near-white bottom-0 w-100 pa3" role="contentinfo">
 			<p class="w-50 fr tr">
-			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="{{ "img/story-logo-white.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
+			<a class="no-underline near-white" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="{{ "img/story-logo-white.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
 			</p>
-			<p class="w-50 white-90">
+			<p class="w-50 near-white">
 				&copy; {{ now.Format "2006" }} {{ with .Site.Params.author }}{{ . }}{{ end }}
 			</p>
 		</footer>

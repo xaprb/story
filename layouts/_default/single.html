@@ -9,7 +9,7 @@
 {{ define "social" }}
 		<meta name="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="og:type" content="article" />
-		<meta name="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}" />
+		<meta name="og:image" content="{{ default "img/default-header-img.jpg" .Params.image | absURL }}" />
 		<meta name="og:description" content="{{ .Description }}" />
 		<meta name="og:url" content="{{ .Permalink }}" />
 		<meta name="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
