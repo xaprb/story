@@ -165,19 +165,20 @@ body:not(.feature-tablefig) table th {
 }
 
 pre {
+	border: 1px solid silver;
    border-radius: 3px;
-   padding: 1rem;
+   font-size: 0.85rem;
+	line-height: 1.4;
+   padding: 1em;
    background: #f6f8fa;
    overflow: auto;
 }
 p>code, li>code, a>code {
+	font-size: 85%;
    background: #f6f8fa;
    margin: 0;
    border-radius: 3px;
-   padding: 0.2em 0.4em;
-}
-pre, code, kbd, tt, samp {
-   font-size: 1rem;
+   padding: 0.15em 0.25em;
 }
 
 /* Use front matter in the blog post to add CSS class names to the <body> tag.
