@@ -23,7 +23,6 @@
 		{{ end }}
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 		{{ if or (in .Site.Params.classes "feature-highlight") (in .Params.classes "feature-highlight") -}}
 			{{- if not (or (in .Site.Params.classes "feature-nohighlight") (in .Params.classes "feature-nohighlight") ) -}}
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -41,7 +40,7 @@
 		<script src="{{ "js/story.js" | absURL }}"></script>
 
 	</head>
-	<body class="ma0 bg-white sans-serif {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
+	<body class="ma0 bg-white sans-serif {{ with .Section }}section-{{ . }}{{ end }} page-kind-{{ .Kind }} {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
 		{{ block "header" . }}
 		<!--
 		You can set the title and header image in the "title/image" parameters of

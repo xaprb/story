@@ -255,15 +255,7 @@ images inappropriately. */
 
    .book img { vertical-align: middle; }
 
-   /*
-    *  In order for this to work, you must use Modernizer
-    *  to detect 3D transform browser support. This will add
-    *  a "csstransforms3d" class to the HTML element.
-    *
-    *  Visit http://modernizr.com/ for installation instructions
-    */
-
-   .csstransforms3d  .books {
+   .books {
      -moz-perspective: 100px;
      -moz-transform-style: preserve-3d;
      -webkit-transform-style: preserve-3d;
@@ -272,7 +264,7 @@ images inappropriately. */
      margin: 0px 0px 1rem 1rem;
    }
 
-   .csstransforms3d  .book {
+   .book {
      position: relative;
      -moz-perspective: 100px;
      -moz-transform: rotateY(-3deg);
@@ -282,12 +274,12 @@ images inappropriately. */
      margin: 0;
    }
 
-   .csstransforms3d  .book img {
+   .book img {
      position: relative !important;
    }
 
-   .csstransforms3d  .book:before,
-   .csstransforms3d  .book:after {
+   .book:before,
+   .book:after {
      position: absolute;
      top: 2%;
      height: 96%;
@@ -295,14 +287,14 @@ images inappropriately. */
      z-index: -1;
    }
 
-   .csstransforms3d  .book:before {
+   .book:before {
      width: 100%;
      left: 6.5%;
      background-color: #484848;
      box-shadow: 0px 3px 20px 2px #333;
    }
 
-   .csstransforms3d  .book:after {
+   .book:after {
      width: 5%;
      left: 100%;
      background-color: #EFEFEF;
