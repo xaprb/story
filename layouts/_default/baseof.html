@@ -17,7 +17,14 @@
 
 		{{ block "layout" . }}
 		<link rel="stylesheet" href="{{ "css/tachyons.min.css" | absURL }}" />
+		{{- if .Site.Params.less -}}
+		<link rel="stylesheet/less" type="text/css" href="{{ "css/story.less" | absURL }}" />
+		<link rel="stylesheet/less" type="text/css" href="{{ "css/descartes.less" | absURL }}" />
+		<script type="text/javascript" src="{{ "js/less.min.js" | absURL }}"></script>
+		{{ else }}
 		<link rel="stylesheet" href="{{ "css/story.css" | absURL }}" />
+		<link rel="stylesheet" href="{{ "css/descartes.css" | absURL }}" />
+		{{ end }}
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
 		{{ end }}
@@ -40,7 +47,7 @@
 		<script src="{{ "js/story.js" | absURL }}"></script>
 
 	</head>
-	<body class="ma0 bg-white sans-serif {{ with .Section }}section-{{ . }}{{ end }} page-kind-{{ .Kind }} {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
+	<body class="ma0 bg-white {{ with .Section }}section-{{ . }}{{ end }} page-kind-{{ .Kind }} {{ with .Site.Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}{{ with .Params.classes }}{{ range . }} {{ . }}{{ end }}{{ end }}">
 		{{ block "header" . }}
 		<!--
 		You can set the title and header image in the "title/image" parameters of
@@ -53,7 +60,7 @@
 		<header class="cover bg-top" {{ if $hdr }}style="background-image: url('{{ absURL (default "img/default-header-img.jpg" .Params.image) }}'); background-position: center;"{{ end }}>
 			<div class="{{ cond $hdr "bg-black-30 bb bt" "" }}">
 
-				<nav id="navmenu" class="{{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
+				<nav class="hide-print sans-serif fw2 {{ cond $hdr "" "bg-black" }} db dt-l w-100 border-box pa3 ph5-l">
 					<a class="db dtc-l v-mid link w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ .Site.BaseURL }}" title="Home">
 						<img src="{{ "img/logo.jpg" | absURL }}" class="dib w2 h2 br-100" alt="{{ .Title }}" />
 					</a>
@@ -86,9 +93,9 @@
 								<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
-								<span id="byline">by {{ .Params.author | default .Site.Params.author }}</span>
+								<span class="display-print">by {{ .Params.author | default .Site.Params.author }}</span>
 								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "white-80 dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
-								<span id="citation">at {{ .Permalink }}</span>
+								<span class="display-print">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
 							{{ with .Params.subtitle }}{{ . | markdownify }}{{ end }}
@@ -99,7 +106,7 @@
 				<!-- if there's a "credits" parameter in front matter there'll be a camera icon here -->
 				{{ if $hdr }}
 				{{ with .Params.credit }}
-				<div class="w-100 cf" id="photo-credit">
+				<div class="w-100 cf hide-print">
 					<a class="fr f6 ma0 pa2 link white-90 dim fas fa-camera" href="{{ . }}" title="Photo Credit"></a>
 				</div>
 				{{ end }}
@@ -117,7 +124,7 @@
 		{{ end }}
 		{{ block "pagination" . }}{{ end }}
 		{{ block "footer" . }}
-		<footer class="f5 fw4 bg-black white-90 bottom-0 w-100 pa3" role="contentinfo">
+		<footer class="hide-print sans-serif f6 fw1 bg-black white-90 bottom-0 w-100 pa3" role="contentinfo">
 			<p class="w-50 fr tr">
 			<a class="no-underline white-90" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="{{ "img/story-logo-white.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
 			</p>

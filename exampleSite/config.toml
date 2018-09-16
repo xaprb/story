@@ -21,6 +21,7 @@ paginate = 5
 [params]
   author = "Baron Schwartz"
   twitter = "xaprb"
+  less = "true"
   classes = []
 
 [outputs]

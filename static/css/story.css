@@ -1,154 +1,215 @@
-.sans-serif, h1, h2, h3, h4 {
-  font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
-               'avenir next', avenir,
-               'helvetica neue', helvetica,
-               ubuntu,
-               roboto, noto,
-               'segoe ui', arial,
-               sans-serif;
+h1,
+h2,
+h3,
+h4,
+.sans-serif {
+  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 }
-.serif {
+article {
   font-family: 'Spectral', Georgia, Times, serif;
 }
-@media screen and (min-width: 30em), print {
-  article {
-    font-family: 'Spectral', Georgia, Times, serif !important;
+@media only screen and (max-width: 500px) {
+  article p,
+  article li {
+    font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
   }
 }
-#byline {
-  display: none;
+blockquote {
+  margin: 0;
+  padding: 0 1rem;
+  color: #6a737d;
+  border-left: 0.25rem solid #dfe2e5;
 }
-#citation {
-  display: none;
+pre {
+  border: 1px solid #dfe2e5;
+  border-radius: 3px;
+  font-size: 75%;
+  line-height: 1.4;
+  padding: 1em;
+  background: #f6f8fa;
+  overflow: auto;
 }
-
-.math {
-   font-size: 1rem;
+p > code,
+li > code,
+a > code,
+td > code {
+  font-size: 80%;
+  background: #f6f8fa;
+  margin: 0;
+  border-radius: 3px;
+  padding: 0.15em 0.25em;
 }
-
+article img {
+  max-width: 100%;
+}
+hr {
+  height: 0px;
+  border-style: none none solid none;
+  border-bottom-color: #dfe2e5;
+}
+table caption {
+  text-align: left;
+  font-family: 'Spectral', Georgia, Times, serif;
+  font-style: italic;
+  padding: 0px 0.5rem;
+}
 body.feature-hyphenate:not(.feature-nohyphenate) article p,
-   body.feature-hyphenate:not(.feature-nohyphenate) article li,
-   body.feature-hyphenate:not(.feature-nohyphenate) article td,
-   body.feature-hyphenate:not(.feature-nohyphenate) article caption,
-   body.feature-hyphenate:not(.feature-nohyphenate) article figcaption,
-   body.feature-hyphenate:not(.feature-nohyphenate) article th {
-   word-wrap: break-word;
-   overflow-wrap: break-word;
-   -webkit-hyphens: auto;
-   -moz-hyphens: auto;
-   -ms-hyphens: auto;
-   hyphens: auto;
+body.feature-hyphenate:not(.feature-nohyphenate) article li,
+body.feature-hyphenate:not(.feature-nohyphenate) article td,
+body.feature-hyphenate:not(.feature-nohyphenate) article caption,
+body.feature-hyphenate:not(.feature-nohyphenate) article figcaption,
+body.feature-hyphenate:not(.feature-nohyphenate) article th {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+body.feature-hyphenate:not(.feature-nohyphenate) article pre,
+body.feature-hyphenate:not(.feature-nohyphenate) article code {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 body.feature-justify:not(.feature-nojustify) article p,
-   body.feature-justify:not(.feature-nojustify) article li {
-   text-align: justify;
+body.feature-justify:not(.feature-nojustify) article li {
+  text-align: justify;
 }
-pre, code, tt, kbd, samp {
-   -webkit-hyphens: none;
-   -moz-hyphens: none;
-   -ms-hyphens: none;
-   hyphens: none;
-}
-
 body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr {
-	border-style: none;
-	width: 0px;
-	text-align: center;
-	margin-top: 0px;
-	margin-bottom: 3rem;
+  border-style: none;
+  width: 0px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 3rem;
 }
 body.feature-hrfleuron:not(.feature-nohrfleuron) article > hr:before {
-	content: "\002766";
+  content: "\002766";
 }
-
 body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr {
-	border-style: none;
-	width: 0px;
-	text-align: center;
-	margin-top: 0px;
-	margin-bottom: 3rem;
+  border-style: none;
+  width: 0px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 3rem;
 }
 body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr:before {
-	content: "*\000A0\000A0*\000A0\000A0*";
+  content: "*\000A0\000A0*\000A0\000A0*";
 }
-
-hr {
-   border-style: none none solid none;
-   height: 0px;
-   border-bottom-color: silver;
+figure {
+  margin: 0px;
+  padding: 0px;
 }
-
-.footnotes {
-   font-size: 80%;
+figure img {
+  display: block;
 }
-
-.about-the-author img:first-child {
-   float: left;
-   max-width: 100px;
-   border: 1px solid rgba(0,0,0,.3);
-   border-radius: 100%;
-   margin: 0 1rem 1rem 0;
+@media screen {
+  body.feature-figcaption-hidden:not(.feature-figcaption-visible) figure {
+    position: relative;
+  }
+  body.feature-figcaption-hidden:not(.feature-figcaption-visible) figcaption {
+    position: absolute;
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1rem;
+    visibility: hidden;
+  }
+  body.feature-figcaption-hidden figure:hover figcaption {
+    visibility: visible;
+  }
 }
-
-body.feature-tablefig table {
-   border-spacing: 0;
-   border-collapse: collapse;
-   overflow: auto;
-   font-size: 85%;
-   font-family: inherit;
-   border-top: 2px solid black;
-}
-body.feature-tablefig table thead, body.feature-tablefig table tbody {
-   border-bottom: 1px solid black;
-}
-body.feature-tablefig table th, body.feature-tablefig table td {
-   display: table-cell;
-   vertical-align: bottom;
-   padding: 0 .5rem;
-}
-body.feature-tablefig table th {
-   font-weight: 600;
-   padding-top: .5rem;
-}
-
-body.feature-tablefw:not(.feature-tablefig) td {
-   font-family: arial;
-}
-
 body:not(.feature-tablefig) table {
-   border-spacing: 0;
-   border-collapse: collapse;
-   display: block;
-   width: 100%;
-   overflow: auto;
-   font-size: 85%;
-   font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
-               'avenir next', avenir,
-               'helvetica neue', helvetica,
-               ubuntu,
-               roboto, noto,
-               'segoe ui', arial,
-               sans-serif;
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  overflow: auto;
+  font-size: 85%;
+  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 }
 body:not(.feature-tablefig) table tr:nth-child(2n) {
-   background-color: #f6f8fa;
+  background-color: #f6f8fa;
 }
-body:not(.feature-tablefig) table th, body:not(.feature-tablefig) table td {
-   display: table-cell;
-   vertical-align: inherit;
-   padding: .25rem .5rem;
-   border: 1px solid #dfe2e5;
+body:not(.feature-tablefig) table th,
+body:not(.feature-tablefig) table td {
+  display: table-cell;
+  vertical-align: inherit;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #dfe2e5;
 }
 body:not(.feature-tablefig) table th {
-   font-weight: 600;
+  font-weight: 600;
 }
-
-/* pagination.html: https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
+body.feature-tablefw:not(.feature-tablefig) td {
+  font-family: arial;
+}
+body.feature-tablefig:not(.feature-notablefig) table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow: auto;
+  font-size: 85%;
+  font-family: inherit;
+  border-top: 2px solid black;
+}
+body.feature-tablefig:not(.feature-notablefig) table thead,
+body.feature-tablefig:not(.feature-notablefig) table tbody {
+  border-bottom: 1px solid black;
+}
+body.feature-tablefig:not(.feature-notablefig) table th,
+body.feature-tablefig:not(.feature-notablefig) table td {
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 0 0.5rem;
+}
+body.feature-tablefig:not(.feature-notablefig) table th {
+  font-weight: 600;
+  padding-top: 0.5rem;
+}
+body {
+  counter-reset: figure-counter table-counter;
+}
+body.feature-fignum figure figcaption::before {
+  counter-increment: figure-counter;
+  content: "Figure " counter(figure-counter) ". ";
+}
+body.feature-fignum table caption::before {
+  counter-increment: table-counter;
+  content: "Table " counter(table-counter) ". ";
+}
+.feature-h3-cl h3 {
+  clear: left;
+}
+.feature-h3-cr h3 {
+  clear: right;
+}
+.feature-h3-cb h3 {
+  clear: both;
+}
+.feature-nosubtitle h2 {
+  display: none;
+}
+.footnotes {
+  font-size: 80%;
+}
+.math {
+  font-size: 1rem;
+}
+.about-the-author img {
+  float: left;
+  max-width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  margin: 0 1rem 1rem 0;
+}
 .pagination li {
   display: inline-block;
 }
 .pagination li a {
-  padding: .5rem .625rem;
+  padding: 0.5rem 0.625rem;
   background-color: white;
   color: #333;
   border: 1px solid #ddd;
@@ -163,215 +224,73 @@ body:not(.feature-tablefig) table th {
 .pagination li.active a:visited {
   background-color: #ddd;
 }
-
-pre {
-	border: 1px solid silver;
-   border-radius: 3px;
-   font-size: 0.85rem;
-	line-height: 1.4;
-   padding: 1em;
-   background: #f6f8fa;
-   overflow: auto;
-}
-p>code, li>code, a>code {
-	font-size: 85%;
-   background: #f6f8fa;
-   margin: 0;
-   border-radius: 3px;
-   padding: 0.15em 0.25em;
-}
-
-/* Use front matter in the blog post to add CSS class names to the <body> tag.
- */
-.feature-h3-cl h3 {
-   clear: left;
-}
-.feature-h3-cr h3 {
-   clear: right;
-}
-.feature-h3-cb h3 {
-   clear: both;
-}
-.feature-nosubtitle h2 {
-   display: none;
-}
-
-/* Use the URL fragment of the img src after the # to set pseudo-css-classes.
- * ![An Image](/img.jpg# w-100)
- * These classes can be combined:
- * ![An Image](/img.jpg# w-100 fr)
- */
-img[src~=w-100] {
-   width: 100%;
-}
-img[src~=fr] {
-   float: right;
-}
-img[src~=fl] {
-   float: left;
-}
-img[src~=ph1] {
-   padding-left: .25rem;
-   padding-right: .25rem;
-}
-img[src~=pv1] {
-   padding-top: .25rem;
-   padding-bottom: .25rem;
-}
-img[src~=pa1] {
-   padding: .25rem;
-}
-img[src~=ba] {
-   border: 1px solid black;
-}
-
 img[src~="3dbook"] {
-   max-width: 160px;
+  max-width: 160px;
 }
-
-/* Fix image scaling from Tachyons. Its nested-img class stretches small
-images inappropriately. */
-.mw-100 img {
-   max-width: 100%;
-}
-.nested-img img { width: initial; }
-
 @media screen {
-   /* Pseudo-3d book covers via http://srobbin.com/blog/3d-css-book-covers/
-    * The images should be 400x525px but displayed at smaller size.
-    * Give the book images a 3dbook pseudo-class in the URL fragment.
-    * [![img](/img.jpg# 3dbook)](http://example.com/)
-    * There's some JS that runs from story.js that will find the img,
-    * and give its wrapper <a> the right classes, and the containing <p> still
-    * more classes:
-    * <p class="books"><a class="book"><img></a></p>
-    */
-
-   /* Fallback book cover styles */
-   .book {
-     display: inline-block;
-     box-shadow: 5px 5px 20px #333;
-     margin: 1rem;
-   }
-
-   .book img { vertical-align: middle; }
-
-   .books {
-     -moz-perspective: 100px;
-     -moz-transform-style: preserve-3d;
-     -webkit-transform-style: preserve-3d;
-     display: inline-block;
-     float: right;
-     margin: 0px 0px 1rem 1rem;
-   }
-
-   .book {
-     position: relative;
-     -moz-perspective: 100px;
-     -moz-transform: rotateY(-3deg);
-     -webkit-transform: perspective(100) rotateY(-3deg);
-     outline: 1px solid transparent; /* Helps smooth jagged edges in Firefox */
-     box-shadow: none;
-     margin: 0;
-   }
-
-   .book img {
-     position: relative !important;
-   }
-
-   .book:before,
-   .book:after {
-     position: absolute;
-     top: 2%;
-     height: 96%;
-     content: ' ';
-     z-index: -1;
-   }
-
-   .book:before {
-     width: 100%;
-     left: 6.5%;
-     background-color: #484848;
-     box-shadow: 0px 3px 20px 2px #333;
-   }
-
-   .book:after {
-     width: 5%;
-     left: 100%;
-     background-color: #EFEFEF;
-     box-shadow: inset 0px 0px 5px #aaa;
-     -moz-transform: rotateY(20deg);
-     -webkit-transform: perspective(100) rotateY(20deg);
-   }
-
-   /* Image captions should only be "hidden" overlays on the images in screen
-    * mode.  Even if feature-figcaption-hidden is defined, if
-    * feature-figcaption-visible is set, this all should be disabled.
-    */
-   body.feature-figcaption-hidden:not(.feature-figcaption-visible) figure {
-      position: relative;
-   }
-   body.feature-figcaption-hidden:not(.feature-figcaption-visible) figcaption {
-      position: absolute;
-      bottom: 0px;
-      display: block;
-      width: 100%;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 1rem;
-      visibility: hidden;
-   }
-   body.feature-figcaption-hidden figure:hover figcaption {
-      visibility: visible;
-   }
+  .book {
+    display: inline-block;
+    box-shadow: 5px 5px 20px #333;
+    margin: 1rem;
+  }
+  .book img {
+    vertical-align: middle;
+  }
+  .books {
+    -moz-perspective: 100px;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    display: inline-block;
+    float: right;
+    margin: 0px 0px 1rem 1rem;
+  }
+  .book {
+    position: relative;
+    -moz-perspective: 100px;
+    -moz-transform: rotateY(-3deg);
+    -webkit-transform: perspective(100) rotateY(-3deg);
+    outline: 1px solid transparent;
+    box-shadow: none;
+    margin: 0;
+  }
+  .book img {
+    position: relative !important;
+  }
+  .book:before,
+  .book:after {
+    position: absolute;
+    top: 2%;
+    height: 96%;
+    content: ' ';
+    z-index: -1;
+  }
+  .book:before {
+    width: 100%;
+    left: 6.5%;
+    background-color: #484848;
+    box-shadow: 0px 3px 20px 2px #333;
+  }
+  .book:after {
+    width: 5%;
+    left: 100%;
+    background-color: #EFEFEF;
+    box-shadow: inset 0px 0px 5px #aaa;
+    -moz-transform: rotateY(20deg);
+    -webkit-transform: perspective(100) rotateY(20deg);
+  }
 }
-
-
-blockquote {
-   margin: 0;
-   padding: 0 1rem;
-   color: #6a737d;
-   border-left: 0.25rem solid #dfe2e5;
+.display-print {
+  display: none;
 }
-
-figure {
-   margin: 0px;
-   padding: 0px;
-}
-
-figure img {
-   display: block;
-}
-
-body {
-   counter-reset: figcaption;
-   counter-reset: tablecaption;
-}
-body.feature-fignum figcaption::before {
-   counter-increment: figcaption;
-   content: "Figure " counter(figcaption) ". ";
-}
-body.feature-fignum table {
-   counter-increment: tablecaption;
-}
-body.feature-fignum table caption::before {
-   content: "Table " counter(tablecaption) ". ";
-}
-table caption {
-   text-align: left;
-   font-family: 'Spectral', Georgia, Times, serif;
-   font-style: italic;
-   padding: 0px 0.5rem;
-}
-
 @media print {
   * {
     color: black !important;
   }
-  pre, code, kbd, tt, samp {
-    font-size: .85rem;
+  pre,
+  code {
+    font-size: 0.85rem;
     background: white !important;
-    padding: 0px !important;
+    padding: 3px !important;
   }
   img[src~="3dbook"] {
     border: 1px solid black;
@@ -381,48 +300,102 @@ table caption {
   .footnote-return {
     display: none;
   }
-  a, a:link, a:visited, a:hover {
+  a,
+  a:link,
+  a:visited,
+  a:hover {
     text-decoration: underline black;
   }
-  .footnote-ref a, .category a {
+  .footnote-ref a,
+  .category a {
     text-decoration: none !important;
   }
   #hdr {
-     padding-top: 0px !important;
-     padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
   }
   h2 {
-     margin-top: 1rem !important;
-     margin-bottom: 1rem !important;
-     font-style: italic;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    font-style: italic;
   }
-  h3 a:link, h3 a:visited {
-     text-decoration: none;
+  h3 a:link,
+  h3 a:visited {
+    text-decoration: none;
   }
-  #navmenu, #photo-credit, #about {
+  .hide-print {
     display: none !important;
   }
-  #byline, #citation {
+  .display-print {
     display: inline !important;
   }
   .f4 {
     font-size: 1rem !important;
   }
-  .measure-wide { /* increase line width to compensate for the decrease in font size */
+  .measure-wide {
     max-width: 45em !important;
   }
-  main { /* don't waste paper on extra blank pages */
+  main {
     padding-bottom: 0 !important;
   }
   .math {
-     font-size: .85rem !important;
-  }
-  footer {
-     display: none;
+    font-size: 0.85rem !important;
   }
   article {
-     border-bottom-style: none !important;
+    border-bottom-style: none !important;
   }
 }
-
-.hljs{display:block;color:#333333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-string,.hljs-variable,.hljs-template-variable,.hljs-strong,.hljs-emphasis,.hljs-quote{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-literal,.hljs-symbol,.hljs-bullet,.hljs-attribute{color:#0086b3}.hljs-section,.hljs-name{color:#63a35c}.hljs-tag{color:#333333}.hljs-title,.hljs-attr,.hljs-selector-id,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}
+.hljs {
+  display: block;
+  color: #333333;
+  overflow-x: auto;
+}
+.hljs-comment,
+.hljs-meta {
+  color: #969896;
+}
+.hljs-string,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+  color: #df5000;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #a71d5d;
+}
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute {
+  color: #0086b3;
+}
+.hljs-section,
+.hljs-name {
+  color: #63a35c;
+}
+.hljs-tag {
+  color: #333333;
+}
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #795da3;
+}
+.hljs-addition {
+  color: #55a532;
+  background-color: #eaffea;
+}
+.hljs-deletion {
+  color: #bd2c00;
+  background-color: #ffecec;
+}
+.hljs-link {
+  text-decoration: underline;
+}

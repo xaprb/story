@@ -29,7 +29,7 @@ The image above is much wider than the content region, but it's sized to fit.
 
 Story uses [URL fragment
 techniques](https://www.xaprb.com/blog/how-to-style-images-with-markdown/) to
-give you control over image styling.  The names of the url-fragment pseudo-classes are inspired by Tachyons.
+give you control over image styling.
 Images that use this technique don't get converted into [figures with captions](/figures).
 
 ![Small Lily](/img/lily.jpg# fr)
@@ -40,23 +40,9 @@ For example, you can float an image right with the `fr` URL fragment:
 ![Small Lily](/img/lily.jpg# fr)
 ```
 
-There's a selection of these pseudo-classes built into Story.
-The names are similar to the [Tachyons](http://tachyons.io/docs/) CSS library, which Story uses.
-
-Table 1 shows the CSS pseudo-classes that you can use in the image's `src` URL fragment:
-
- Class | Meaning 
--------|----------
-w-100 | Set the image's width to 100% of its container's width
-fr | Float the image right
-fl | Float the image left
-ph1 | Set 0.25rem horizontal padding to the left and right of the image
-pv1 | Set 0.25rem vertical padding above and below the image
-pa1 | Set 0.25rem padding on all sides of the image
-ba | Give the image a 1px solid black border
-3dbook | Set the book cover image to a max-width of 160px and format it specially (see below)
-
-_CSS pseudo-classes supported in the image's URL fragment_
+There's a selection of these pseudo-classes built into Story via the Descartes
+CSS file; inspect the CSS or LESS source to see what styles you can attach to
+images.
 
 If floated images interfere with headings, you can use [heading clear feature flags](/features) to fix this.
 
