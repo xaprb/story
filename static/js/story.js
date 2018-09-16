@@ -7,7 +7,7 @@ $( function() {
 });
 
 // Render perspective book images, if <body> has the class
-// -feature-3dbook-covers
+// feature-3dbook-covers
 $( function() {
    $( "body.feature-3dbook-covers article a" ).has( "img[src~='3dbook']" ).each(function(i, e) {
       $( this ).addClass("book");
@@ -16,7 +16,7 @@ $( function() {
 });
 
 // Highlight code listings, if <body> has the class
-// -feature-highlight
+// feature-highlight
 $( function() {
    if ( $( "body.feature-highlight:not(.feature-nohighlight)" ).length ) {
 		hljs.initHighlightingOnLoad();
