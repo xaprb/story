@@ -40,6 +40,7 @@ These characteristics make it easy to build gorgeous slideshows. They're also
 a great foundation for creating your own themes. 
 
 ---
+name: getting-started
 # Getting Started
 
 To get started, use `hugo new slides/my-presentation.md` and ensure that the
@@ -50,6 +51,7 @@ following `themes` are in the front matter, for example:
 title: 'Creating Beautiful Presentations with Story'
 date: "2018-04-25T09:50:00-07:00"
 url: "/slides/adirondack/"
+ratio: "16:9"
 themes:
 - apron
 - descartes
@@ -388,6 +390,20 @@ following to your slide:
 
 The `qrcode` class is important but the rest is up to you.
 
+---
+# Export Your Slides To PDFs
+
+RemarkJS has support for printing slides to a PDF, using Google Chrome's print
+dialog (not the native system dialog).
+
+There are some bugs in it... but Story implements workarounds so you don't even
+need to think about it.
+
+Just print with Chrome and save to a PDF file.
+
+This works for both 16:9 and 4:3 ratio slides. Speaking of which, you select
+that with the `ratio` in the front matter, as shown on the [getting
+started](#getting-started) slide.
 
 ---
 layout: true

@@ -23,7 +23,6 @@ $( function() {
    }
 });
 
-
 /* Turn images into figures with captions. Several scenarios are handled, in
  * order:
  * If the img is followed by an <em>, then transform the <em> into a caption.

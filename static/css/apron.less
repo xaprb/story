@@ -61,6 +61,17 @@
 	padding: 0px;
 }
 
+// This fixes a RemarkJS print-to-pdf bug
+@media print {
+	.remark-slide-scaler {
+		width: 100% !important;
+		height: 100% !important;
+		transform: scale(1) !important;
+		top: 0 !important;
+		left: 0 !important;
+	}
+}
+
 .remark-slide-content {
 	display: block;
 	box-sizing: border-box;
@@ -68,7 +79,7 @@
 	* {
 		box-sizing: border-box;
 	}
-	
+
 	// Debug and debug grid, for help figuring out layouts and bugs.
 	&.debug * {
 		outline: 1px solid gold;
@@ -91,7 +102,7 @@
 	&.debug-grid-16-solid {
 		background: white url( data:image/gif;base64,R0lGODdhEAAQAPEAAADw/wDx/xXy/////ywAAAAAEAAQAAACIZyPKckYDQFsb6ZqD85jZ2+BkwiRFKehhqQCQgDHcgwEBQA7 ) repeat top left;
 	}
-	
+
 	// Type scale (font-size, line-height, etc) and slide sizing.
 	line-height: 1.25;
 	padding: @abs-offsets[@default][top] @abs-offsets[@default][left] 0 @abs-offsets[@default][left];
@@ -103,7 +114,7 @@
 		font-size: @type-scale[@default][code];
 		line-height: 1.5;
 	}
-	
+
 	&.compact {
 		padding: @abs-offsets[@compact][top] @abs-offsets[@compact][left] 0 @abs-offsets[@compact][left];
 		font-size: @type-scale[@compact][default];
@@ -114,7 +125,7 @@
 			font-size: @type-scale[@compact][code];
 		}
 	}
-	
+
 	&.roomy {
 		padding: @abs-offsets[@roomy][top] @abs-offsets[@roomy][left] 0 @abs-offsets[@roomy][left];
 		font-size: @type-scale[@roomy][default];
@@ -125,35 +136,35 @@
 			font-size: @type-scale[@roomy][code];
 		}
 	}
-	
+
 	&.title {
 		h1 { font-size: @type-scale[@title][h1]; }
 		h2 { font-size: @type-scale[@title][h2]; }
 		h3 { font-size: @type-scale[@title][h3]; }
 	}
-	
+
 	// Element styling
 	img {
 		max-width: 100%; // Images should never be bigger than their container.
 	}
-	
+
 	h1, h2, h3 {
 		margin-top: 0.5em;
 		margin-bottom: 0.5em;
 	}
-	
+
 	table, .katex {
 		font-size: 85%;
 	}
 
 	// Layout Classes
-	
+
 	// Layout: fullbleed. Simply removes Remark's built-in padding and margins.
 	&.fullbleed, &.fullbleed>p {
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	// Layout: title, plus top/bottom variations, and shelf sizing.
 	// Designed for H1, plus optional H2 or H3 (but not both).
 	&.title {
@@ -189,7 +200,7 @@
 			margin-bottom: -1.75em;
 		}
 	}
-	
+
 	// Layout: img-caption. Content must begin with an image.
 	&.img-caption {
 		text-align: center;
@@ -217,7 +228,7 @@
 		margin-top: 0px;
 		padding: 0px;
 	}
-	
+
 	// Layout: img-left. The first image begins "columns."
 	&.img-left {
 		&>p:first-of-type {
@@ -233,7 +244,7 @@
 			overflow: auto;
 		}
 	}
-	
+
 	// Layout: img-right-full. The first p>img fills the side of the slide.
 	// If you have "layout" content, ensure it has no <p> elements.
 	&.img-right-full {
@@ -271,7 +282,7 @@
 			}
 		}
 	}
-	
+
 	// Layout: col-2 and col-3. Designed for use with an H1 heading.
 	.col() {
 		// If Firefox supported column-span: all I'd use that for the heading H1.
@@ -315,7 +326,7 @@
 		columns: 3;
 		.col();
 	}
-	
+
 	// Footer layout and positioning. TODO make the UL full width so it can have border.
 	// TODO make the UL possible to place at the top of the slide.
 	.remark-slide-number, .footer li {

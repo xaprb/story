@@ -18,20 +18,14 @@
 			{{- end }}
 		{{- end -}}
 		<style type="text/css">
+		/* Fixes a RemarkJS print-to-PDF bug; assumes 16:9 or 4:3 ratio */
 		@page {
-			size: {{ if .Params.ratio }} 1216px 684px; {{ else }} 912px 684px; {{ end }}
-			margin: 0;
-		}
-		@media print {
-			.remark-slide-scaler {
-				width: 100% !important;
-				height: 100% !important;
-				transform: scale(1) !important;
-				top: 0 !important;
-				left: 0 !important;
-			}
+				  size: {{ if eq "16:9" .Params.ratio }} 1216px 684px; {{ else }} 912px 684px; {{ end }}
+				  margin: 0;
 		}
 		</style>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
 {{ end }}
 
 {{ define "header" }}
@@ -46,7 +40,7 @@
     <script src="{{ "js/remark.js" | absURL }}"></script>
     <script>
       var slideshow = remark.create({
-         {{ if .Params.ratio }} ratio: "{{ .Params.ratio }}", {{ end }}
+         {{ with .Params.ratio }} ratio: "{{ . }}", {{ end }}
          navigation: {
             scroll: false
          },
@@ -55,6 +49,7 @@
 			highlightLanguage: "xaprb",
 			placeholder: "dummy value to end the list without a comma"
       });
+
 		// Shrink headers until they fit. (They have to be momentarily made
 		// visible first.)
 		$(".remark-slide-content.fit-h1 h1").each(function(i, e) {
@@ -69,14 +64,18 @@
 			}
 			if ( needsToggle ) $p.toggleClass('remark-visible');
 		});
+
 		$( function() {
 			if ( $( "body.feature-qrcode:not(.feature-noqrcode)" ).length ) {
-				new QRCode($(".qrcode")[0], {
-					"useSVG": true,
-					"text": window.location.href.replace(/#\d*$/, "")
-				});
+				if ( $( ".qrcode" ).length ) {
+					new QRCode($(".qrcode")[0], {
+						"useSVG": true,
+						"text": window.location.href.replace(/#\d*$/, "")
+					});
+				}
 			}
 		});
+
     </script>
 {{ end }}
 
