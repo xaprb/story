@@ -41,10 +41,15 @@ summary content is either delimited explicitly by the `<!--more-->` comment in
 your Markdown source, or generated automatically by Hugo. (Read more
 [here](https://gohugo.io/content-management/summaries/).)
 
-To enable this, you need to create a special `.md` file that won't appear as
-regular content, but will render an extra RSS feed file. Its content is ignored,
-and only its front matter is important. For example, you could create it as
-`content/mailchimp.md` with the following contents, using YAML front matter:
+The default content of the RSS feed entries is generated from the page's
+`description` front matter and `.Summary` content, but you can provide your own
+to override this.  Simply add an excerpt in the `tldr` front matter property.
+
+To enable the RSS feed, you need to create a special `.md` file that won't
+appear as regular content, but will render an extra RSS feed file. Its content
+is ignored, and only its front matter is important. For example, you could
+create it as `content/mailchimp.md` with the following contents, using YAML
+front matter:
 
 ```yaml
 ---
@@ -55,8 +60,9 @@ outputs:
 ---
 ```
 
-Now Hugo will build an extra feed at `/mailchimp/index.xml` and you can use it
-to create [RSS campaigns in
+Now Hugo will build an extra feed at
+[`/mailchimp/index.xml`](/mailchimp/index.xml), and you can use it to create
+[RSS campaigns in
 MailChimp](https://mailchimp.com/help/share-your-blog-posts-with-mailchimp/). Of
 course, you can also use your normal RSS feed, but Story's default is to put
 full content into that, so it might be more than you want.
