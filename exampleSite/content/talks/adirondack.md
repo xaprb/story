@@ -17,17 +17,23 @@ your speaking history.
 <!--more-->
 
 Talks are designed to go together with slides. I (Baron, the author of Story)
-create a talk page for every speaking appearance. Sometimes I reuse slides
-between talks, so multiple talks pages link to the same slides. I also feature
-the cover image from the slides as my talks page's featured image. I put the
-speaking proposal / abstract into the body of the talks page's content, where
-this text you're reading right now is stored.
+create a talk page for every speaking appearance.
+
+You can reuse slides between talks, so multiple talks pages link to the same
+slides. You also can feature the cover image from the slides as the talks page's
+featured image.
+
+I normally put the speaking proposal / abstract into the body of the talks
+page's content, where this text you're reading right now is stored.
+
+> In case you missed that, this page normally wouldn't have an article.
+> It'd have a talk abstract.
 
 Talks are included in RSS feeds and in the homepage listing of the site, but
-slides aren't. This way people find out about my speaking, but they see no
+slides aren't. This way people find out about your speaking, but they see no
 duplicate content.
 
-Sometimes I create a screenshot of the first slide (title and all) and store it
+You can create a screenshot of the first slide (title and all) and store it
 in the slides directory, and use it as the `thumbnail` of the talks page. That's
 what I've done on this page; its preview image on the [talks listing
 page](/talks/) is different from the banner at the top of this page.
@@ -49,6 +55,19 @@ thumbnail: "<usually something like /path/to/slides/thumbnail.jpg/>"
 video: "a youtube or other video link"
 ---
 ```
+
+Because talks and slides are designed to link so tightly together, their
+archetypes (Hugo template files) work in lockstep, so you can create a pair of
+talks and slides content items by running the `hugo new` command once, then
+editing it and running again:
+
+```sh
+$ hugo new talks/my-exciting-talk.md
+$ hugo new slides/my-exciting-talk/index.md
+```
+
+If you look at the content that results from those commands, most of the
+defaults are basically prepopulated for you, such as links between them.
 
 Read next: [Story's amazing Markdown-based presentation
 engine](/slides/adirondack/).
