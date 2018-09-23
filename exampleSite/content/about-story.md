@@ -19,7 +19,7 @@ It's a great way to share your writing and speaking with the world.
 Story has a lot of features for people who invest effort in their websites and blogs!
 
 - Beautiful, responsive typography for long-form content on screen and in print, including blogs and single pages.
-- Support for RemarkJS slides, written in simple Markdown.
+- Support for Remark in-browser slideshows, written in simple Markdown.
 - LaTeX math equation typesetting.
 - Built-in site search.
 

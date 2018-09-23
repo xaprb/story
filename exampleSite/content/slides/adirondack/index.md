@@ -4,7 +4,7 @@ date: "2018-04-25T09:50:00-07:00"
 url: "slides/adirondack/"
 image: "slides/adirondack/leo-serrat-533922-unsplash.jpg"
 thumbnail: slides/adirondack/thumbnail.jpg
-description: "Story's RemarkJS frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
+description: "Story's Remark frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
 ratio: "16:9"
 themes:
 - apron
@@ -19,13 +19,13 @@ class: title, smokescreen, shelf, no-footer
 background-image: url(leo-serrat-533922-unsplash.jpg)
 
 # Creating Beautiful Presentations
-### With RemarkJS, Apron, Adirondack, and Descartes
+### With Remark, Apron, Adirondack, and Descartes
 
 ---
-# The Story RemarkJS Themes
+# The Story Remark Themes
 
 [Story](https://github.com/xaprb/story) offers helper themes for creating
-beautiful presentations with [RemarkJS](https://remarkjs.com/), using simple
+beautiful presentations with [Remark](https://remarkjs.com/), using simple
 Markdown to create slide layouts.
 
 - Apron defines the layouts' structure and size.
@@ -38,6 +38,23 @@ View the source of this page to see the Markdown that creates it.
 
 These characteristics make it easy to build gorgeous slideshows. They're also
 a great foundation for creating your own themes. 
+
+---
+# What is Remark?
+
+Remark (sometimes called RemarkJS) is a browser-based slideshow system. It's
+simple but surprisingly powerful:
+
+- You write slides in simple Markdown
+- It supports a presenter mode, slide notes, and dual monitors
+- It supports slide layouts, templates, and incremental slides
+- It's easy to extend and customize with simple CSS
+
+Story integrates Remark into Hugo, creating a live-reload editing experience,
+and a permanent home for your slides on your own website!
+
+View this page's source to see how easily you can compose slideshows
+with Remark.
 
 ---
 name: getting-started
@@ -63,7 +80,7 @@ class: compact
 
 # Apron's Slide Layouts
 
-It's easy to create common slide layouts with RemarkJS slide classes.
+It's easy to create common slide layouts with Remark's slide classes.
 
 ![Slide Layouts](slide-layouts.svg# maxw-70pct center)
 
@@ -97,7 +114,7 @@ way as the `img-right` slide class.
 
 --
 - These columns require no wrapper `<div>`, just plain Markdown.
-- This avoids interference with RemarkJS features.
+- This avoids interference with Remark features.
 
 --
 - Incremental builds with `--` work fine, for example.
@@ -393,7 +410,7 @@ The `qrcode` class is important but the rest is up to you.
 ---
 # Export Your Slides To PDFs
 
-RemarkJS has support for printing slides to a PDF, using Google Chrome's print
+Remark has support for printing slides to a PDF, using Google Chrome's print
 dialog (not the native system dialog).
 
 There are some bugs in it... but Story implements workarounds so you don't even
@@ -434,7 +451,7 @@ elements. You can see them at the bottom of this slide. In the next section,
 you'll learn Descartes classes you can add
 to the div to style it, e.g. `.footer.bt.bc-cornflower[...]`.
 
-You can hide both the RemarkJS and custom footer on any slide with `class: no-footer`.
+You can hide both the Remark and custom footer on any slide with `class: no-footer`.
 
 ---
 layout: false

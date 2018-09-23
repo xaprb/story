@@ -6,7 +6,7 @@ location: "Mount Remarkable, 6346+F7 Wilmington, South Australia, Australia"
 site: "https://www.environment.sa.gov.au/parks/find-a-park/Browse_by_region/flinders-ranges-outback/mount-remarkable-national-park"
 slides: slides/adirondack/
 image: "slides/adirondack/leo-serrat-533922-unsplash.jpg"
-description: "Story's RemarkJS frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
+description: "Story's Remark frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
 thumbnail: slides/adirondack/thumbnail.jpg
 ---
 This is a "talk" page in Story, which is the permanent homepage for a talk

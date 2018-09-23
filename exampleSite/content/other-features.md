@@ -20,7 +20,7 @@ a separate documentation page, or just don't have full documentation yet.
 - [Multiple layouts](/images/)
 - [Flexibility via feature toggles](/features)
 - [Author profile pages](/author-profiles)
-- [RemarkJS presentation support](/slides/), including CSS themes and multiple aspect ratios
+- [Remark browser-based presentation support](/slides/), including CSS themes and multiple aspect ratios
 - [Automatic table and image enhancements](/figures)
 - [Advanced image styling features](/images)
 - [Mathematical equation typesetting](/math)
