@@ -1,5 +1,5 @@
 ---
-title: '{{ replaceRE "[/-]" " " .Dir | title }}'
+title: {{ .Name | humanize | title }}
 date: "{{ .Date }}"
 url: "{{ .Dir }}"
 image: "slides/{{ .Name }}/cover.jpg"
@@ -13,13 +13,13 @@ themes:
 class: title
 background-image: url(cover.jpg)
 
-# {{ replaceRE "[/-]" " " .Dir | title }}
+# {{ .Name | humanize | title }}
 ## Subtitle
 
 ---
 # About Me
 
-- Slides are at {{ .Site.BaseURL }}talks/
+- Slides are at {{ "talks/" | absURL }}
 - Ask questions anytime
 
 ---
@@ -30,4 +30,4 @@ Slides are at {{ .Site.BaseURL }}talks/ or you can scan the QR code.
 
 Contact:
 
-<div id="qrcode"></div>
+.qrcode.db.fr.w-40pct.ml-4[]
