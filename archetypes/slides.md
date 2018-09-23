@@ -23,11 +23,11 @@ background-image: url(cover.jpg)
 - Ask questions anytime
 
 ---
-class: col-2
 # Slides and Contact Information
+
+.qrcode.db.fr.w-40pct.ml-4[]
 
 Slides are at {{ .Site.BaseURL }}talks/ or you can scan the QR code.
 
 Contact:
 
-.qrcode.db.fr.w-40pct.ml-4[]
