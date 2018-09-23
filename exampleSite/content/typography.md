@@ -1,5 +1,5 @@
 ---
-title: Story Typography
+title: Story's Typography
 date: "2018-08-19"
 url: "/typography"
 description: "Story uses gorgeous typefaces and is optimized for a pleasant reading experience on any device."

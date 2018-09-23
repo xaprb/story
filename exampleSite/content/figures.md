@@ -1,5 +1,5 @@
 ---
-title: Story Figures, Captions, and Tables
+title: Story's Figures, Captions, and Tables
 date: "2018-08-22"
 url: "/figures"
 description: "This article shows you how to enhance your images and tables with features such as captions and alternative stylings."

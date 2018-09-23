@@ -1,6 +1,6 @@
 ---
 author: Elvis Presley
-title: Story Author Profiles
+title: Story's Author Profiles
 url: /author-profiles
 date: "2018-08-29"
 description: "With Story, you can define global and per-item author profiles/biographies."

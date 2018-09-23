@@ -1,5 +1,5 @@
 ---
-title: Story Image Formatting Controls
+title: Story's Image Formatting Controls
 date: "2018-08-21"
 url: "/images"
 description: "Story gives you extra control over image formatting using only Markdown syntax."

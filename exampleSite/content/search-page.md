@@ -1,5 +1,5 @@
 ---
-title: Story JavaScript Search
+title: Story's JavaScript Search
 date: "2018-08-21"
 url: "/search-page"
 description: "With Story, your site will have built-in search with no external dependencies."

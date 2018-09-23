@@ -1,5 +1,5 @@
 ---
-title: Story Mathematical Equation Typesetting
+title: Story's Mathematical Equation Typesetting
 date: "2018-08-20"
 url: "/math"
 description: "If you ever write equations or mathematical formulas, Story has the features you need."

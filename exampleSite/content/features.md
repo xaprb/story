@@ -1,5 +1,5 @@
 ---
-title: Story Feature Flags
+title: Story's Feature Flags
 date: "2018-08-30"
 url: "/features"
 description: "Story comes with a lot of power, but it's all configurable: almost every extra feature is optional."
