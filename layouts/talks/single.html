@@ -1,6 +1,6 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }} &bullet; {{ .Params.event }}{{ end }}
 {{ define "main" }}
-<article class="center ph3 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
+<article class="center bg-white br-3 pv1 ph4 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
 		{{ .Content }}
 		<p><a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ .Params.slides | absURL }}">Slides</a>
 		{{ with .Params.video }}

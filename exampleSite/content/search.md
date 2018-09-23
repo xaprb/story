@@ -6,4 +6,5 @@ skip: true
 classes:
 - feature-nosubtitle
 - feature-nohdr
+- feature-depth
 ---

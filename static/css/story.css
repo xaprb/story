@@ -5,18 +5,26 @@ h4,
 .sans-serif {
   font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 }
-article {
+body article {
   font-family: 'Spectral', Georgia, Times, serif;
 }
-@media only screen and (max-width: 500px) {
-  article p,
-  article li {
+@media only screen and (max-width: 30em) {
+  body article p,
+  body article li {
     font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
   }
 }
-header h1,
-header h2 {
-	text-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+@media only screen and (min-width: 50em) {
+  body.is-page-true.feature-depth:not(.feature-nodepth):not(.feature-nohdr) article {
+    margin-top: -2em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.5em 0.125em;
+  }
+}
+@media screen only {
+  header h1,
+  header h2 {
+    text-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  }
 }
 blockquote {
   margin: 0;

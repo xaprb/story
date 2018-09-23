@@ -8,6 +8,7 @@ classes:
 - feature-figcaption-hidden
 - feature-3dbook-covers
 - feature-tablecaption
+- feature-depth
 categories:
 - Demo
 ---
@@ -100,5 +101,15 @@ and preview images:
 
 To illustrate this feature, the [search page](/search) has this feature set, so
 it has a plain, bannerless layout.
+
+### Adding Depth To Headers
+
+Articles (but not list pages) can be given a bit of extra depth with the
+`feature-depth` class, which is negatable with `feature-nodepth`. This article
+is an example: notice how the content is shifted up slightly to overlap the
+header image a bit, with rounded corners and a shadow around it.
+
+The `feature-depth` class can be set globally in your `config.yaml` or similar,
+and overridden as you wish on individual pages.
 
 Read next: [Story's built-in search features](/search-page/).

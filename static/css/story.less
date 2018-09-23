@@ -10,18 +10,29 @@
 h1, h2, h3, h4, .sans-serif {
 	font-family: @font-sans;
 }
-article {
-	font-family: @font-serif;
-	@media only screen and (max-width: 500px) {
-		p, li {
-			font-family: @font-sans;
+
+body {
+	article {
+		font-family: @font-serif;
+		@media only screen and (max-width: 30em) {
+			p, li {
+				font-family: @font-sans;
+			}
+		}
+	}
+	@media only screen and (min-width: 50em) {
+		&.is-page-true.feature-depth:not(.feature-nodepth):not(.feature-nohdr) article {
+			margin-top: -2em;
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.5em 0.125em;
 		}
 	}
 }
 
 header {
 	h1, h2 {
-		text-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+		@media screen only {
+			text-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+		}
 	}
 }
 
