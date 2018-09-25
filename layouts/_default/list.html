@@ -2,13 +2,18 @@
 {{ define "main" }}
 <div class="pa3 pa4-ns w-100 w-70-ns center">
   <section class="w-100 mw8">
-  <!-- if the section isn't "slides" then omit them; otherwise list slides -->
-  {{ if ne .Section "slides" }}
-    {{ range where (where .Paginator.Pages "Section" "ne" "slides") ".Params.skip" "ne" "true" }}
+  <!-- list all talks; list non-future slides; else list things that are not future and not slides -->
+  {{ $pages := where .Paginator.Pages ".Params.skip" "ne" "true" }}
+  {{ if eq .Section "talks" }}
+    {{ range $pages }}
+      {{ partial "li.html" . }}
+    {{ end }}
+  {{ else if eq .Section "slides" }}
+    {{ range where $pages ".Date.Unix" "<" now.Unix }}
       {{ partial "li.html" . }}
     {{ end }}
   {{ else }}
-    {{ range where .Paginator.Pages ".Params.skip" "ne" "true" }}
+    {{ range where (where $pages ".Date.Unix" "<" now.Unix) "Section" "ne" "slides" }}
       {{ partial "li.html" . }}
     {{ end }}
   {{ end }}

@@ -7,7 +7,7 @@
 		<author>{{ .Site.Params.Author }}</author>
 		<rights>Copyright (c) {{ .Site.LastChange.Year }}</rights>
 		<updated>{{ .Date }}</updated>
-		{{ range where (where .Data.Pages "Section" "ne" "slides") ".Params.skip" "ne" "true" }}
+		{{ range where (where (where .Data.Pages "Section" "ne" "slides") ".Params.skip" "ne" "true") ".Date.Unix" "<" now.Unix }}
 		<item>
 			<title>{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}</title>
 			<link>{{ .Permalink }}</link>
