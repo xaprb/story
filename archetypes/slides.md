@@ -1,8 +1,8 @@
 ---
 title: {{ .Name | humanize | title }}
 date: "{{ .Date }}"
-url: "{{ .Dir }}"
-image: "slides/{{ .Name }}/cover.jpg"
+url: "/{{ .Dir }}"
+image: "/slides/{{ .Name }}/cover.jpg"
 description: ""
 ratio: "16:9"
 themes:
