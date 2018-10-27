@@ -9,7 +9,7 @@
 		<updated>{{ .Date }}</updated>
 		{{ range where (where (where .Data.Pages "Section" "ne" "slides") ".Params.skip" "ne" "true") ".Date.Unix" "<" now.Unix }}
 		<item>
-			<title>{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify | html) }}</title>
+			<title>{{ cond (eq .Site.Params.titlecase true) (.Title | title) (.Title) }}</title>
 			<link>{{ .Permalink }}</link>
 			<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</pubDate>
 			<author>{{ .Site.Params.Author }}</author>
