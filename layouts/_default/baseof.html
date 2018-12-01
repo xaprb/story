@@ -94,7 +94,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span class="display-print">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span class="display-print">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
