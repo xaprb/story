@@ -95,6 +95,9 @@
 								</time>
 								<span class="display-print">by {{ .Params.author | default .Site.Params.author }}</span>
 								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								<div>
+									{{ range $idx, $tag := .Params.tags }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }}Tags: {{ end }}<a href="{{ "tags/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								</div>
 								<span class="display-print">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}
