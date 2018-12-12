@@ -1,5 +1,6 @@
 # Site settings
 baseurl = "https://example.com/"
+theme = "story"
 title = "Hugo Story Theme"
 paginate = 5
 buildFuture = true
