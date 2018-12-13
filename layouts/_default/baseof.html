@@ -42,6 +42,12 @@
 		<script src="{{ "js/auto-render.min.js" | absURL }}"></script> <!-- for KaTeX -->
 			{{- end -}}
 		{{- end -}}
+		{{ if or (in .Site.Params.classes "feature-flexslider") (in .Params.classes "feature-flexslider") -}}
+			{{- if not (or (in .Site.Params.classes "feature-noflexslider") (in .Params.classes "feature-noflexslider") ) -}}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flexslider@2.7.1/flexslider.css" integrity="sha384-6x9094HaKSiypiSXhELm7+qV55kl4KG+tBesN+FPHESRzzYSsP1rB/w1EnuhvJtv" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/flexslider@2.7.1/jquery.flexslider-min.js" integrity="sha384-732cRBez6UeG8rzfCTBVviNnDqeZtoM0Kj1sj7XmqRvXu5lfgQpNB61vPrv//yJy" crossorigin="anonymous"></script>
+			{{- end -}}
+		{{- end -}}
 		{{ with .Site.Params.head }}{{ range . }}
 		{{ . | safeHTML }}{{ end }}{{ end }}
 		<script src="{{ "js/story.js" | absURL }}"></script>
