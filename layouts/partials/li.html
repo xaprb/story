@@ -15,6 +15,11 @@
 					{{- if eq .Section "talks" }}{{ .Params.event }}: {{ end -}}
 					{{- cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) -}}
 					</a></h1>
+					
+					<div>
+						{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
+					</div>
+					
 					<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
 						{{ if eq .Section "slides" }}
 							{{ .Description | markdownify }}
