@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of what the bug is. **Please state this in the form of a problem, such as "[BUG] The door will not unlock without the key."**
 
 **To Reproduce**
 Steps to reproduce the behavior:
