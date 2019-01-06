@@ -24,6 +24,7 @@ a separate documentation page, or just don't have full documentation yet.
 - [Automatic table and image enhancements](/figures)
 - [Advanced image styling features](/images)
 - [Mathematical equation typesetting](/math)
+- [Formatting ABC music notation as sheet music](/music)
 - [Built-in search](/search-page)
 - [MailChimp subscribe forms and RSS feeds](/mailchimp-features)
 

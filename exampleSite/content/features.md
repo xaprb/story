@@ -98,6 +98,7 @@ For brevity, the `feature-` prefix is omitted, but all of Story's classes have t
 | [hyphenate](/typography)       | Enables line-breaks and hyphenation of text via the browser                                 | CSS            |
 | [justify](/typography)         | Aligns text with full-justification                                                         | CSS            |
 | [math](/math)                  | Enables LaTeX math typesetting using KaTeX                                                  | JS             |
+| [music](/music)                | Enables rendering abc notation as sheet music with abcjs                                    | JS             |
 | [nohdr](/images/)              | Disables header images locally; when applied globally, disables preview thumbnails in lists | Hugo           |
 | [subtitle](/typography)        | Enabled by default; disable to hide page subtitles | CSS
 | [tablefig](/figures)           | Styles tables similar to scientific papers                                                | JS + CSS       |

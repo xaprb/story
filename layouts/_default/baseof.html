@@ -42,6 +42,11 @@
 		<script src="{{ "js/auto-render.min.js" | absURL }}"></script> <!-- for KaTeX -->
 			{{- end -}}
 		{{- end -}}
+		{{ if or (in .Site.Params.classes "feature-music") (in .Params.classes "feature-music") -}}
+			{{- if not (or (in .Site.Params.classes "feature-nomusic") (in .Params.classes "feature-nomusic") ) -}}
+		<script src="{{ "js/abcjs_basic_5.6.1-min.js" | absURL }}"></script>
+			{{- end -}}
+		{{- end -}}
 		{{ with .Site.Params.head }}{{ range . }}
 		{{ . | safeHTML }}{{ end }}{{ end }}
 		<script src="{{ "js/story.js" | absURL }}"></script>
