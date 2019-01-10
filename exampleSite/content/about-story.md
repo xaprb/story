@@ -21,6 +21,7 @@ Story has a lot of features for people who invest effort in their websites and b
 - Beautiful, responsive typography for long-form content on screen and in print, including blogs and single pages.
 - Support for Remark in-browser slideshows, written in simple Markdown.
 - LaTeX math equation typesetting.
+- Sheet music rendering from ABC music notation.
 - Built-in site search.
 
 Story has many more features than this.

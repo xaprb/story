@@ -14,6 +14,7 @@ classes:
 - feature-math
 - feature-qrcode
 - feature-nohighlight
+- feature-music
 ---
 class: title, smokescreen, shelf, no-footer
 background-image: url(leo-serrat-533922-unsplash.jpg)
@@ -375,6 +376,23 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 
 You can also display equations inline, such as the quadratic equation, which is
 \\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\)
+
+---
+# Music Notation and Sheet Music
+
+Story supports [formatting sheet music from ABC](/music), but we haven't gotten it working on slides yet. Can you help?
+
+```abc
+X: 1
+T: Cooley's
+M: 4/4
+L: 1/8
+K: Emin
+|:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|
+EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
+|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|
+eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
+```
 
 ---
 class: fit-h1, roomy

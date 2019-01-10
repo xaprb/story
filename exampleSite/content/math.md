@@ -55,4 +55,4 @@ a_3x+b_3y+c_3z=d_3
 
 Math typesetting is controlled with the `feature-[no]math` flag.
 
-Read next: [Story's beautiful typography](/typography/).
+Read next: [Story's music notation](/music/).

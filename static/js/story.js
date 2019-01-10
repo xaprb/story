@@ -6,6 +6,28 @@ $( function() {
    }
 });
 
+// Render abcjs sheet music, but only if the <body> has the class
+// feature-music. Do this by removing the <pre><code class="language-abc">
+// and replacing it with a <p id="music-X"> which will be used to hold the
+// generated sheet music.
+$( function() {
+   if ( $( "body.feature-music:not(.feature-nomusic)" ).length ) {
+      $( "code.language-abc, code.abc" ).each(function(i, e){
+         var $this = $(this);
+         var abc = $this.text();
+         var p = $this.parent().before('<p id="music-' + (i+1) + '">');
+         $this.parent().remove();
+         ABCJS.renderAbc("music-" + (i+1), abc, {
+            paddingtop: 0,
+            paddingbottom: 0,
+            paddingright: 0,
+            paddingleft: 0,
+            responsive: "resize"
+         });
+      });
+   }
+});
+
 // Render perspective book images, if <body> has the class
 // feature-3dbook-covers
 $( function() {
