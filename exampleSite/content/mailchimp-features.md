@@ -48,12 +48,11 @@ to override this.  Simply add an excerpt in the `tldr` front matter property.
 To enable the RSS feed, you need to create a special `.md` file that won't
 appear as regular content, but will render an extra RSS feed file. Its content
 is ignored, and only its front matter is important. For example, you could
-create it as `content/mailchimp.md` with the following contents, using YAML
+create it as `content/mailchimp/_index.md` with the following contents, using YAML
 front matter:
 
 ```yaml
 ---
-skip: true
 layout: mailchimp
 outputs:
 - rss

@@ -19,7 +19,7 @@ To get Story's search to work, you need to take a couple of steps:
 
 1. Create a piece of content with the URL you want. Story assumes you want
 	`/search/` and adds an icon for that in the top menu automatically. So you
-	can simply create `content/search.md` and that should work.
+	can simply create `content/search/_index.md` and that should work.
 2. Give this content the `search` layout, and a title.
 
 There doesn't need to be any Markdown content; the `search` layout ignores it.
@@ -61,22 +61,20 @@ If you use TOML, use this:
   taxonomyTerm = ["HTML", "RSS"]
 ```
 
-There's more you can do. If you want to create a full-featured search page easily, just paste the following code into `content/search.md`
+There's more you can do. If you want to create a full-featured search page easily, just paste the following code into `content/search/_index.md`
 
 ```
 ---
 layout: search
 url: /search/
 title: Search
-skip: true
 classes:
 - feature-nosubtitle
 - feature-nohdr
 ---
 ```
 
-This illustrates a couple of additional features in Story: skipping the content
-in lists and RSS feeds; displaying it without a subtitle; displaying it without
-a header image.
+This illustrates an additional layout feature in Story:
+displaying it without a header image.
 
 Read next: [Story's mathematical equation typesetting features](/math/).
