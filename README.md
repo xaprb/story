@@ -17,6 +17,8 @@ It has a lot of features for people who invest effort in their websites and blog
 - Support for [RemarkJS slides](https://remarkjs.com/).
 - LaTeX math typesetting with [KaTeX](https://github.com/Khan/KaTeX)
 - A built-in search page with [LunrJS](https://github.com/olivernn/lunr.js).
+- Music notation typesetting with [abcjs](https://abcjs.net/).
+- Easy-to-use, unobtrusive CSS enhancements such as float-left images.
 
 This is just a fraction of Story's feature set, see the [demo site](https://story.xaprb.com/) for much more
 documentation and screenshots.
