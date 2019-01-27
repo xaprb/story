@@ -1,0 +1,24 @@
+{{ define "title" }}Archives &bullet; {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="center bg-white br-3 pv1 ph4 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
+  {{- range $i, $p := .Site.RegularPages -}}
+  {{- $thisYear := $p.Date.Format "2006" }}
+  {{- $lastPage := $i | add -1 | index .Site.RegularPages }}
+  {{- if or (eq $i 0) ( ne ($lastPage.Date.Format "2006") $thisYear ) }}
+    <h3 class="archive-year">{{ $thisYear }}</h3>
+  {{- end }}
+  
+  <div>
+    {{ $p.Date.Format "01-02" }}
+    <a href="{{ $p.Permalink }}" class="no-underline dim link">
+      {{- cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) -}}
+    </a>
+  </div>
+  {{- end -}}
+</section>
+{{ end }}
+
+{{ define "pagination" }}
+<br>
+{{ end }}
