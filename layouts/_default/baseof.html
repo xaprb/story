@@ -44,7 +44,7 @@
 		{{- end -}}
 		{{ if or (in .Site.Params.classes "feature-music") (in .Params.classes "feature-music") -}}
 			{{- if not (or (in .Site.Params.classes "feature-nomusic") (in .Params.classes "feature-nomusic") ) -}}
-		<script src="{{ "js/abcjs_basic_5.6.2-min.js" | absURL }}"></script>
+		<script src="{{ "js/abcjs_basic_5.6.3-min.js" | absURL }}"></script>
 			{{- end -}}
 		{{- end -}}
 		{{ with .Site.Params.head }}{{ range . }}
