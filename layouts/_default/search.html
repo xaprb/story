@@ -9,7 +9,7 @@
 </article>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.2.1/lunr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.5/lunr.min.js"></script>
     <script type="text/javascript">
     var lunrIndex, $results, pagesIndex;
     function getQueryVariable(variable) {
@@ -27,30 +27,42 @@
 
     var searchTerm = getQueryVariable('query');
 
-    // Initialize lunrjs using our generated index file
+    // Init lunr with load prebuilt index or build one
     function initLunr() {
-        // First retrieve the index file
-			 $.getJSON("{{ "index.json" | absURL }}")
-            .done(function(index) {
-                pagesIndex = index;
-                // console.log("index:", pagesIndex);
-                lunrIndex = lunr(function() {
-                    this.field("title", { boost: 10 });
-                    this.field("categories", { boost: 5 });
-                    this.field("keywords");
-                    this.field("content");
-                    this.field("uri");
-                    this.ref("uri");
-
-                    pagesIndex.forEach(function (page) {
-                        this.add(page)
-                    }, this)
-                });
+       // try to get prebuilt index file
+       $.getJSON("http://story.test/prebuilt.json")
+            .done(function(data) {
+                lunrIndex = lunr.Index.load(data);
             })
             .fail(function(jqxhr, textStatus, error) {
-                var err = textStatus + ", " + error;
-                console.error("Error fetching Hugo search index JSON file:", err);
-            });
+                var status = jqxhr.status
+                if (status == 404) {
+                  // fall back getting json objects and build index
+                  $.getJSON("http://story.test/index.json")
+                        .done(function(index) {
+                  
+                            lunrIndex = lunr(function() {
+                                this.field("title", { boost: 10 });
+                                this.field("categories", { boost: 5 });
+                                this.field("keywords");
+                                this.field("content");
+                                this.field("uri");
+                                this.ref("uri");
+                  
+                                index.forEach(function (page) {
+                                    this.add(page)
+                                }, this)
+                            });
+                        })
+                        .fail(function(jqxhr, textStatus, error) {
+                            var err = textStatus + ", " + error;
+                            console.error("Error fetching Hugo search index JSON file:", err);
+                        });
+                } else {
+                  var err = textStatus + ", " + error;
+                  console.error("Error fetching Hugo prebuilt search index JSON file:", err);     
+                }
+            })
     }
 
     // Nothing crazy here, just hook up a listener on the input field
@@ -78,11 +90,7 @@
      * @return {Array}  results
      */
     function search(query) {
-        return lunrIndex.search(query).map(function(result) {
-                return pagesIndex.filter(function(page) {
-                    return page.uri === result.ref;
-                })[0];
-            });
+         return lunrIndex.search(query)
     }
 
     /**
@@ -95,12 +103,14 @@
             return;
         }
 
-        // Only show the first results
         results.slice(0, 20).forEach(function(result) {
             var $result = $("<li>");
+            var $parts = result.ref.split("?", 2);
+            var $title = "";
+            ($parts.length == 2) ? $title = $parts[1] : $title = $parts[0];
             $result.append($('<a>', {
-                href: result.uri,
-                text: result.title
+                href: $parts[0],
+                text: $title
             }));
             $results.append($result);
         });
