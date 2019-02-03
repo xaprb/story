@@ -3,3 +3,5 @@
  X-XSS-Protection: 1; mode=block
  Referrer-Policy: no-referrer
  X-Content-Type-Options: nosniff
+ Content-Security-Policy: default-src 'none'; object-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; font-src 'self';
+ Feature-Policy: vibrate 'none'; geolocation 'none'
