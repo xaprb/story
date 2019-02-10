@@ -218,12 +218,10 @@ body.feature-fignum table caption::before {
   margin: 0 1rem 1rem 0;
 }
 blockquote.tweet {
-	border: 1px solid #e1e8ed;
+	border: 1px solid #dfe2e5;
 	border-radius: 5px;
   padding: 4px 20px;
-}
-blockquote.tweet p:last-child {
-	text-align: right !important;
+  color: black;
 }
 .pagination li {
   display: inline-block;

@@ -42,10 +42,14 @@ $( function() {
 // with a twitter permalink URL.
 $( function() {
    if ( $( "body.feature-tweetquote:not(.feature-notweetquote)" ).length ) {
-      $("blockquote p:last-child a[href*='twitter.com']").each(function(i, e){
+      $("blockquote p:first-child a[href*='twitter.com']").each(function(i, e){
          $(this.parentElement.parentElement).addClass("tweet sans-serif mw6");
-         $(this).addClass("no-underline link dim");
-         $(this).append(' <i class="fab fa-twitter fa-lg">');
+         $(this).addClass("no-underline link dim b dib v-top");
+         $(this).prepend('<i class="fl mr2 v-top fab fa-twitter-square fa-3x">');
+         var m = $(this).attr('href').match(/twitter.com\/([^\/]*)\//);
+         if (m.length > 1) {
+            $(this).append('<br><span class="normal gray">@' + m[1] + '</span>');
+         }
       });
    }
 });
