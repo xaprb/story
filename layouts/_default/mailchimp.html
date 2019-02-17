@@ -20,7 +20,7 @@
                       {{- cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) -}}
                       </a></h1>
                       <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-                              {{ with .Params.tldr }}{{ . | markdownify | html }}{{ else }}{{ (printf "%s<br>%s" .Params.description .Summary) | markdownify | html }}{{ end }}
+                              {{ with .Params.tldr }}{{ . | markdownify }}{{ else }}{{ (printf "%s<br>%s" (.Params.description | markdownify) .Summary) }}{{ end }}
                       </div>
                   </div>
               </div>

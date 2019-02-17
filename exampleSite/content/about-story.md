@@ -3,7 +3,7 @@ title: The Story Hugo Theme
 date: "2018-09-03"
 url: "/about-story"
 description: "Story is a beautiful responsive Hugo blog theme with many extra features including presentations, math typesetting, and search."
-tldr: "Story is a beautiful responsive Hugo blog theme with powerful extra features out-of-the-box. It is targeted to people who want to showcase their technical work online."
+tldr: "Story is a beautiful responsive Hugo blog theme with powerful extra features out-of-the-box. It's targeted to people who want to showcase their technical work online."
 credit: "https://unsplash.com/photos/o-ubWHV29Uk"
 image: "img/unsplash-photos-o-ubWHV29Uk.jpg"
 thumbnail: img/unsplash-photos-o-ubWHV29Uk.tn-500x500.jpg
