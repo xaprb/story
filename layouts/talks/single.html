@@ -18,12 +18,12 @@
 {{ end }}
 
 {{ define "social" }}
-		<meta name="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
-		<meta name="og:type" content="article" />
-		<meta name="og:image" content="{{ default (default "img/default-header-img.jpg" .Params.image) .Params.thumbnail | absURL }}" />
-		<meta name="og:description" content="{{ .Description | markdownify }}" />
-		<meta name="og:url" content="{{ .Permalink }}" />
-		<meta name="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
+		<meta property="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="{{ default (default "img/default-header-img.jpg" .Params.image) .Params.thumbnail | absURL }}" />
+		<meta property="og:description" content="{{ .Description | markdownify }}" />
+		<meta property="og:url" content="{{ .Permalink }}" />
+		<meta property="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
 {{ end }}
