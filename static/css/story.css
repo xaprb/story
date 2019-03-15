@@ -243,7 +243,7 @@ blockquote.tweet {
   background-color: #ddd;
 }
 img[src~="3dbook"] {
-  max-width: 160px;
+  max-width: 120px;
 }
 @media screen {
   .book {
