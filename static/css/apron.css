@@ -7,14 +7,6 @@ html {
   margin: 0px;
   padding: 0px;
 }
-@page {
-  margin: 0;
-  size: 1216px 684px;
-}
-@page {
-  margin: 0;
-  size: 912px 684px;
-}
 @media print {
   .remark-slide-scaler {
     width: 100% !important;
