@@ -1,7 +1,7 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}{{ end }}
 
 {{ define "main" }}
-<article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
+<article class="center bg-white br-3 pv1 ph4 lh-copy f4 nested-links measure-wide">
 	{{ .Content }}
 </article>
 {{ end }}
