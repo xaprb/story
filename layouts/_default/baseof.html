@@ -71,10 +71,10 @@
 					</a>
 					<div class="fr h2 pv2 tr">
 						{{- range .Site.Menus.main }}
-						<a class="link f5 ml2 dim near-white" href="{{ .RelPermalink }}">{{ .Name }}</a>
+						<a class="link f5 ml2 dim near-white" href="{{ $.RelPermalink }}">{{ .Name }}</a>
 						{{- end }}
 						{{- range .Site.Menus.social }}
-						<a class="link f5 ml2 dim near-white" href="{{ .RelPermalink }}"><i class="{{ .Title }}"></i></a>
+						<a class="link f5 ml2 dim near-white" href="{{ $.RelPermalink }}"><i class="{{ .Title }}"></i></a>
 						{{- end }}
 						<a class="link f5 ml2 dim near-white fas fa-rss-square" href="{{ "index.xml" | absURL }}" title="RSS Feed"></a>
 						<a class="link f5 ml2 dim near-white fas fa-search" href="{{ "search/" | absURL }}" role="search" title="Search"></a>
