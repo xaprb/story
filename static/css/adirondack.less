@@ -72,6 +72,10 @@
 			text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8),
 						8px 8px 20px rgba(0, 0, 0, 0.9);
 		}
+		@media print {
+			-webkit-print-color-adjust: exact;
+			-webkit-filter: opacity(1);
+		}
 	}
 	&.fogscreen {
 		>h1 {
@@ -81,6 +85,10 @@
 			color: black;
 			text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5),
 					8px 8px 20px rgba(0, 0, 0, 0.2);
+		}
+		@media print {
+			-webkit-print-color-adjust: exact;
+			-webkit-filter: opacity(1);
 		}
 	}
 	&.fit-h1 h1 {
