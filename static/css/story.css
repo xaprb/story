@@ -109,9 +109,6 @@ body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr {
 body.feature-hrdinkus:not(.feature-nohrdinkus) article > hr:before {
   content: "*\000A0\000A0*\000A0\000A0*";
 }
-body.feature-flexslider:not(.feature-noflexslider) .flexslider * {
-  line-height: 1;
-}
 figure {
   margin: 0px;
   padding: 0px;
