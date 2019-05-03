@@ -39,10 +39,11 @@ Story also has support for the following, which aren't extensively documented:
   place to put information about your presentations, including links to videos,
   the location, slides, and so on. `/talks/` and `/slides/` are the only two
   content types for which Story has special formatting and archetypes.
+- An archive listing page, which uses the `archives` layout analogously to the [search](/search-page) feature
 - 404 error page
 - Social-media meta tags to make your content look great when shared on social
   media sites
-- Hiding content from default lists, but generating HTML pages for it
+- Using `skip` to hide content from default lists, but generating HTML pages for it
 - Meta keywords
 - Font Awesome icon fonts
 - Custom header meta tags with any content you want

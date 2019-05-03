@@ -19,6 +19,11 @@ buildFuture = true
   title = "Slides"
   url = "/slides/"
 
+[[menu.main]]
+  name = "Archives"
+  title = "Archives"
+  url = "/archives/"
+
 [params]
   author = "Baron Schwartz"
   twitter = "xaprb"

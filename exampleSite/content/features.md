@@ -83,26 +83,27 @@ For brevity, the `feature-` prefix is omitted, but all of Story's classes have t
 
 | Feature            | Explanation                                                                                 | Implementation |
 |--------------------|---------------------------------------------------------------------------------------------|----------------|
-| [3dbook-covers](/images)       | Styles images to resemble a hardcover book                                                | JS + CSS       |
+| [3dbook-covers](/images)       | Styles images to resemble a hardcover book                                                  | JS + CSS       |
 | [figcaption](/figures)         | Transforms images into captioned figures                                                    | JS + CSS       |
 | [figcaption-hidden](/figures)  | Hides figure captions, revealing them on mouseover                                          | CSS            |
 | [figcaption-visible](/figures) | Formats figure captions visibly                                                             | CSS            |
 | [figlink](/figures)            | Links text like "Figure/Table 3" to the corresponding figure or table                       | JS             |
 | [fignum](/figures)             | Auto-numbers figures and tables                                                             | CSS            |
-| [h3-cl](/typography)           | Adds CSS `clear: left` to all `<h3>` tags | CSS |
-| [h3-cr](/typography)           | Adds CSS `clear: right` to all `<h3>` tags | CSS |
-| [h3-cb](/typography)           | Adds CSS `clear: both` to all `<h3>` tags | CSS |
+| [h3-cl](/typography)           | Adds CSS `clear: left` to all `<h3>` tags                                                   | CSS            |
+| [h3-cr](/typography)           | Adds CSS `clear: right` to all `<h3>` tags                                                  | CSS            |
+| [h3-cb](/typography)           | Adds CSS `clear: both` to all `<h3>` tags                                                   | CSS            |
 | [highlight](/typography)       | Applies syntax highlighting to code blocks, using HighlightJS                               | JS + CSS       |
-| [hrdinkus](/typography)        | Styles `<hr>` elements as a dinkus (three asterisks)                                      | CSS            |
-| [hrfleuron](/typography)       | Styles `<hr>` elements as a fleuron (&#10086;)                                            | CSS            |
+| [hrdinkus](/typography)        | Styles `<hr>` elements as a dinkus (three asterisks)                                        | CSS            |
+| [hrfleuron](/typography)       | Styles `<hr>` elements as a fleuron (&#10086;)                                              | CSS            |
 | [hyphenate](/typography)       | Enables line-breaks and hyphenation of text via the browser                                 | CSS            |
 | [justify](/typography)         | Aligns text with full-justification                                                         | CSS            |
 | [math](/math)                  | Enables LaTeX math typesetting using KaTeX                                                  | JS             |
 | [music](/music)                | Enables rendering abc notation as sheet music with abcjs                                    | JS             |
 | [nohdr](/images/)              | Disables header images locally; when applied globally, disables preview thumbnails in lists | Hugo           |
-| [subtitle](/typography)        | Enabled by default; disable to hide page subtitles | CSS
-| [tablefig](/figures)           | Styles tables similar to scientific papers                                                | JS + CSS       |
+| [subtitle](/typography)        | Enabled by default; disable to hide page subtitles                                          | CSS            |
+| [tablefig](/figures)           | Styles tables similar to scientific papers                                                  | JS + CSS       |
 | [tablefw](/figures)            | Sets table cells in a font with fixed-width numerals                                        | CSS            |
-| titlecase                      | Not enabled by default; Transforms All Content Titles to Titlecase                                                  | Hugo           |
+| titlecase                      | Not enabled by default; Transforms All Content Titles to Titlecase                          | Hugo           |
+| [tweetquote](/typography)      | Renders a blockquote in a simplistic tweet style, if it follows conventions                 | JS + CSS       |
 
 Read next: [Story's author biographies](/author-profiles/).

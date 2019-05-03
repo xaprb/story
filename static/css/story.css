@@ -153,7 +153,7 @@ body:not(.feature-tablefig) table th,
 body:not(.feature-tablefig) table td {
   display: table-cell;
   vertical-align: inherit;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border: 1px solid #dfe2e5;
 }
 body:not(.feature-tablefig) table th {
@@ -178,11 +178,11 @@ body.feature-tablefig:not(.feature-notablefig) table th,
 body.feature-tablefig:not(.feature-notablefig) table td {
   display: table-cell;
   vertical-align: bottom;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 body.feature-tablefig:not(.feature-notablefig) table th {
   font-weight: 600;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 body {
   counter-reset: figure-counter table-counter;
@@ -220,11 +220,17 @@ body.feature-fignum table caption::before {
   border-radius: 100%;
   margin: 0 1rem 1rem 0;
 }
+blockquote.tweet {
+	border: 1px solid #dfe2e5;
+	border-radius: 5px;
+  padding: 4px 20px;
+  color: black;
+}
 .pagination li {
   display: inline-block;
 }
 .pagination li a {
-  padding: .5rem .625rem;
+  padding: 0.5rem 0.625rem;
   background-color: white;
   color: #333;
   border: 1px solid #ddd;
@@ -303,7 +309,7 @@ img[src~="3dbook"] {
   }
   pre,
   code {
-    font-size: .85rem;
+    font-size: 0.85rem;
     background: white !important;
     padding: 3px !important;
   }
@@ -354,7 +360,7 @@ img[src~="3dbook"] {
     padding-bottom: 0 !important;
   }
   .math {
-    font-size: .85rem !important;
+    font-size: 0.85rem !important;
   }
   article {
     border-bottom-style: none !important;

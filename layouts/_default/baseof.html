@@ -50,7 +50,7 @@
 		{{- end -}}
 		{{ if or (in .Site.Params.classes "feature-music") (in .Params.classes "feature-music") -}}
 			{{- if not (or (in .Site.Params.classes "feature-nomusic") (in .Params.classes "feature-nomusic") ) -}}
-		<script src="{{ "js/abcjs_basic_5.6.1-min.js" | absURL }}"></script>
+		<script src="{{ "js/abcjs_basic_5.6.3-min.js" | absURL }}"></script>
 			{{- end -}}
 		{{- end -}}
 		{{ with .Site.Params.head }}{{ range . }}
@@ -105,7 +105,7 @@
 									{{- .Date.Format "Jan 2, 2006" -}}
 								</time>
 								<span class="display-print">by {{ .Params.author | default .Site.Params.author }}</span>
-								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories/" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
+								{{ range $idx, $cat := .Params.categories }}{{ if gt $idx 0 }}, {{ end }}{{ if eq $idx 0 }} in {{ end }}<a href="{{ "categories" | absURL }}/{{ . | urlize }}" class="no-underline category {{ cond $hdr "near-white dim" "black hover-gray" }}">{{ . | title }}</a>{{ end }}
 								<span class="display-print">at {{ .Permalink }}</span>
 							{{ end }}
 						{{ else }}

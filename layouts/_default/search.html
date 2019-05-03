@@ -98,7 +98,8 @@
         // Only show the first results
         results.slice(0, 20).forEach(function(result) {
             var $result = $("<li>");
-            $result.append($('<a>', {
+                $result.append($('<a>', {
+                class: 'no-underline dim link',
                 href: result.uri,
                 text: result.title
             }));
