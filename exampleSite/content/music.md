@@ -43,7 +43,7 @@ V: LH1 clef=bass
 V: LH2 clef=bass
 %
 [V: RH1] (!p!LD | E/>D/ [^^CGB][^C^^FA] | G2-) (G/A/ | B/c/ d {/f}e | (d/g//)) z// (Ld2 |
-[V: RH2] x  | x      x      x      | z [B,D] z  | x    x     x | x            z [G-B-]| 
+[V: RH2] x  | x      x      x      | z [B,D] z  | x    x     x | x            z [G-B-]|
 [V: LH1] x  | x      x      x      | z [D,G,] x | x3           | x3 |
 [V: LH2] z  | z      z      (D,,   | G,,2)   z  | z3           | z            z [G,-D-]|
 %

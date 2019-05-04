@@ -52,7 +52,7 @@ If floated images interfere with headings, you can use [heading clear feature fl
 [![Small Lily](/img/lily.jpg# 3dbook)](https://unsplash.com/photos/vHnVtLK8rCc)
 
 A book cover image that's inside an `<a>` link can be floated right and given
-a 3d look with the `3dbook` URL fragment pseudo-class. 
+a 3d look with the `3dbook` URL fragment pseudo-class.
 
 ```
 [![Small Lily](/img/lily.jpg# 3dbook)](https://unsplash.com/photos/vHnVtLK8rCc)

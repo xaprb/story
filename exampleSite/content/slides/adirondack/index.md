@@ -38,7 +38,7 @@ and Remark's Markdown extensions makes things easier.
 View the source of this page to see the Markdown that creates it.
 
 These characteristics make it easy to build gorgeous slideshows. They're also
-a great foundation for creating your own themes. 
+a great foundation for creating your own themes.
 
 ---
 # What is Remark?
@@ -93,7 +93,7 @@ class: img-right
 ![Yosemite](leo-serrat-533922-unsplash.jpg)
 
 This is the `img-right` slide class. The content consists simply of a
-header, an image, and this text. 
+header, an image, and this text.
 
 * The image's aspect ratio and cropping are not altered.
 * All content after the image goes in the lefthand column.
@@ -194,7 +194,7 @@ Mist enveloped the ship three hours out from port.
 
 Call me Ishmael. Some years ago---never mind how long precisely---having little or
 no money in my purse, and nothing particular to interest me on shore, I thought
-I would sail about a little and see the watery part of the world. 
+I would sail about a little and see the watery part of the world.
 
 ---
 # Apron's Layout Classes
@@ -252,7 +252,7 @@ A shining crescent far beneath the flying vessel.
 - Silver mist suffused the deck of the ship.
 - The face of the moon was in shadow.
 
-Call me Ishmael. Some years ago---never mind how long precisely---having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. 
+Call me Ishmael. Some years ago---never mind how long precisely---having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.
 
 ---
 class: roomy
@@ -495,7 +495,7 @@ background-image: url(will-turner-508747-unsplash.jpg)
 Descartes is an add-on that gives lots of power over image and element formatting with
 Markdown.  It uses composable, functional pseudo-classes in the image's URL
 fragment (the part after the `#` character). For example, this image will be 33% width,
-display as block, 2rem right margin, and float left: 
+display as block, 2rem right margin, and float left:
 
 ```
 ![Image](tom-barrett-364228-unsplash.jpg# w-33pct db fl mr-4)
