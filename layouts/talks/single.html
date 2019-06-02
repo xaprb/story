@@ -3,10 +3,10 @@
 <article class="center bg-white br-3 pv1 ph4 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
 		{{ .Content }}
 		{{ with .Params.slides }}
-		<p><a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . | absURL }}">Slides</a>
+		<p><a id="slides_link" class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . | absURL }}">Slides</a>
 		{{ end }}
 		{{ with .Params.video }}
-		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Video</a>
+		<a id="video_link" class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Video</a>
 		{{ end }}
 		{{ with .Params.site }}
 		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Website</a>
@@ -15,6 +15,34 @@
 		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="https://www.google.com/maps/place/{{ . }}">Venue</a>
 		{{ end }}
 </article>
+<script type="text/javascript">
+// Add event handlers to slide and video links, to open them in an iframe popup.
+$( function() {
+	if ( $( "#slides_link" ).length ) {
+		$("#slides_link").click(function(eventObject) {
+			eventObject.preventDefault();
+			var elem = $( this );
+			elem.parent().after($("<iframe class='h5 w-100 bn' src='" + elem.attr("href") + "'></iframe>"));
+		});
+	}
+	if ( $( "#video_link" ).length ) {
+		$("#video_link").click(function(eventObject) {
+			var elem = $( this );
+			var href = elem.attr("href");
+			switch(true) {
+				case /youtube.com/.test(href):
+					eventObject.preventDefault();
+					href = href.replace("watch?v=", "embed/");
+					elem.parent().after($("<iframe class='h5 w-100 bn' src='" + href + "' allow='accelerometer; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
+				// default is just to follow the link.
+				// TODO: add a vimeo embedder here? If you're reading this source code, please submit a PR
+				// for other video sources you want to be supported here.
+			}
+		});
+	}
+});
+
+</script>
 {{ end }}
 
 {{ define "social" }}

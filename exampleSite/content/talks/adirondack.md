@@ -5,6 +5,7 @@ event: "RemarkConf 2018"
 location: "Mount Remarkable, 6346+F7 Wilmington, South Australia, Australia"
 site: "https://www.environment.sa.gov.au/parks/find-a-park/Browse_by_region/flinders-ranges-outback/mount-remarkable-national-park"
 slides: slides/adirondack/
+video: "https://www.youtube.com/watch?v=aVS4W7GZSq0"
 image: "slides/adirondack/leo-serrat-533922-unsplash.jpg"
 description: "Story's Remark frameworks help you create sophisticated slides with simple, clean Markdown. There are predefined layouts for most presentation needs, beautiful typography and colors, precise image control, and a simple modular way to create custom layouts."
 thumbnail: slides/adirondack/thumbnail.jpg
