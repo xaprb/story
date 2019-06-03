@@ -1,7 +1,6 @@
 {{ define "title" }}{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }} &bullet; {{ .Params.event }}{{ end }}
 {{ define "main" }}
 <article class="center bg-white br-3 pv1 ph4 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
-		{{ .Content }}
 		{{ with .Params.slides }}
 		<p><a id="slides_link" class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . | absURL }}">Slides</a>
 		{{ end }}
@@ -14,7 +13,8 @@
 		{{ with .Params.location }}
 		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="https://www.google.com/maps/place/{{ . }}">Venue</a>
 		{{ end }}
-</article>
+		{{ .Content }}
+	</article>
 <script type="text/javascript">
 // Add event handlers to slide and video links, to open them in an iframe popup.
 $( function() {
@@ -22,12 +22,14 @@ $( function() {
 		$("#slides_link").click(function(eventObject) {
 			eventObject.preventDefault();
 			var elem = $( this );
+			elem.parent().next("iframe").remove();
 			elem.parent().after($("<iframe class='h5 w-100 bn' src='" + elem.attr("href") + "'></iframe>"));
 		});
 	}
 	if ( $( "#video_link" ).length ) {
 		$("#video_link").click(function(eventObject) {
 			var elem = $( this );
+			elem.parent().next("iframe").remove();
 			var href = elem.attr("href");
 			switch(true) {
 				case /youtube.com/.test(href):
