@@ -23,7 +23,15 @@ $( function() {
 			eventObject.preventDefault();
 			var elem = $( this );
 			elem.parent().next("iframe").remove();
-			elem.parent().after($("<iframe class='h5 w-100 bn' src='" + elem.attr("href") + "'></iframe>"));
+			var href = elem.attr("href");
+			switch(true) {
+			case /\.pdf$/.test(href):
+				elem.parent().after($("<iframe class='h5 w-100 bn' src='/js/pdfjs/web/viewer.html?file=" + href + "'></iframe>"));
+				break;
+			default:
+				elem.parent().after($("<iframe class='h5 w-100 bn' src='" + elem.attr("href") + "'></iframe>"));
+				// default is just to iframe in the slides page.
+			}
 		});
 	}
 	if ( $( "#video_link" ).length ) {
@@ -32,10 +40,12 @@ $( function() {
 			elem.parent().next("iframe").remove();
 			var href = elem.attr("href");
 			switch(true) {
-				case /youtube.com/.test(href):
-					eventObject.preventDefault();
-					href = href.replace("watch?v=", "embed/");
-					elem.parent().after($("<iframe class='h5 w-100 bn' src='" + href + "' allow='accelerometer; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
+			case /youtube.com/.test(href):
+				eventObject.preventDefault();
+				href = href.replace("watch?v=", "embed/");
+				elem.parent().after($("<iframe class='h5 w-100 bn' src='" + href + "' allow='accelerometer; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
+				break;
+			default:
 				// default is just to follow the link.
 				// TODO: add a vimeo embedder here? If you're reading this source code, please submit a PR
 				// for other video sources you want to be supported here.
