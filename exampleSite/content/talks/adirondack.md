@@ -71,7 +71,8 @@ If you look at the content that results from those commands, most of the
 defaults are basically prepopulated for you, such as links between them.
 
 Story supports "future talks," meaning that you can post a talk with a future
-date, and it'll appear only in the right places at the right times. See [future
-talks](/talks/a-future-talk/) for more on that.
+date, and it'll appear only in the right places at the right times. Story also
+supports PDF slides; you can host your own PDFs embedded with PDF.js. See [future
+talks](/talks/a-future-talk/) for more on these topics.
 
 Read next: [Story's amazing Markdown-based presentation engine](/slides/adirondack/).

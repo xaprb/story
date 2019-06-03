@@ -14,4 +14,7 @@ You'll have to add `buildFuture: true` to your site's `config.yaml` to enable
 this setting.  Talks pages that are in the future won't appear on the homepage
 or in your RSS feeds; they'll only appear in the `/talks/` list page of your
 site.
+
+This page also illustrates that you can use PDF slides. Story uses PDF.js to embed a slide viewer.
+So you don't have to build slides in RemarkJS, you can host them yourself, like Slideshare (but better).
 <!--more-->
