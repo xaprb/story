@@ -2,16 +2,16 @@
 {{ define "main" }}
 <article class="center bg-white br-3 pv1 ph4 nested-copy-line-height lh-copy f4 nested-links mw-100 measure-wide">
 		{{ with .Params.slides }}
-		<p><a id="slides_link" class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . | absURL }}">Slides</a>
+		<p><a id="slides_link" class="ba black br-3 bw1 dib no-underline ph2 pv1" href="{{ . | absURL }}">Slides</a>
 		{{ end }}
 		{{ with .Params.video }}
-		<a id="video_link" class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Video</a>
+		<a id="video_link" class="ba black br-3 bw1 dib no-underline ph2 pv1" href="{{ . }}">Video</a>
 		{{ end }}
 		{{ with .Params.site }}
-		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="{{ . }}">Website</a>
+		<a class="ba black br-3 bw1 dib no-underline ph2 pv1" href="{{ . }}">Website</a>
 		{{ end }}
 		{{ with .Params.location }}
-		<a class="mb3 pv2 ph3 ba bw1 black br-pill dib" href="https://www.google.com/maps/place/{{ . }}">Venue</a>
+		<a class="ba black br-3 bw1 dib no-underline ph2 pv1" href="https://www.google.com/maps/place/{{ . }}">Venue</a>
 		{{ end }}
 		{{ .Content }}
 	</article>
@@ -26,12 +26,15 @@ $( function() {
 			var href = elem.attr("href");
 			switch(true) {
 			case /\.pdf$/.test(href):
-				elem.parent().after($("<iframe class='h5 w-100 bn' src='/js/pdfjs/web/viewer.html?file=" + href + "'></iframe>"));
+				elem.parent().after($("<iframe frameborder=0 class='ba h5 w-100' src='/js/pdfjs/web/viewer.html?file=" + href + "'></iframe>"));
 				break;
 			default:
-				elem.parent().after($("<iframe class='h5 w-100 bn' src='" + elem.attr("href") + "'></iframe>"));
+				elem.parent().after($("<iframe frameborder=0 class='ba h5 w-100' src='" + elem.attr("href") + "'></iframe>"));
 				// default is just to iframe in the slides page.
 			}
+			var width = elem.parent().next("iframe").width();
+			var height = Math.round(width * 9 / 16);
+			elem.parent().next("iframe").height(height);
 		});
 	}
 	if ( $( "#video_link" ).length ) {
@@ -43,13 +46,16 @@ $( function() {
 			case /youtube.com/.test(href):
 				eventObject.preventDefault();
 				href = href.replace("watch?v=", "embed/");
-				elem.parent().after($("<iframe class='h5 w-100 bn' src='" + href + "' allow='accelerometer; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
+				elem.parent().after($("<iframe frameborder=0 class='ba h5 w-100' src='" + href + "' allow='accelerometer; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"));
 				break;
 			default:
 				// default is just to follow the link.
 				// TODO: add a vimeo embedder here? If you're reading this source code, please submit a PR
 				// for other video sources you want to be supported here.
 			}
+			var width = elem.parent().next("iframe").width();
+			var height = Math.round(width * 9 / 16);
+			elem.parent().next("iframe").height(height);
 		});
 	}
 });
