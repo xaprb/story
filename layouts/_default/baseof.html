@@ -42,6 +42,12 @@
 		<script src="{{ "js/auto-render.min.js" | absURL }}"></script> <!-- for KaTeX -->
 			{{- end -}}
 		{{- end -}}
+		{{ if or (in .Site.Params.classes "feature-mermaid") (in .Params.classes "feature-mermaid") -}}
+			{{- if not (or (in .Site.Params.classes "feature-nomermaid") (in .Params.classes "feature-nomermaid") ) -}}
+		<script src="{{ "js/mermaid-8.0.0.min.js" | absURL }}"></script>
+		<script>mermaid.initialize({startOnLoad:true});</script>
+			{{- end -}}
+		{{- end -}}
 		{{ if or (in .Site.Params.classes "feature-music") (in .Params.classes "feature-music") -}}
 			{{- if not (or (in .Site.Params.classes "feature-nomusic") (in .Params.classes "feature-nomusic") ) -}}
 		<script src="{{ "js/abcjs_basic_5.6.3-min.js" | absURL }}"></script>

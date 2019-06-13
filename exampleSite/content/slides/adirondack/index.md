@@ -15,6 +15,7 @@ classes:
 - feature-qrcode
 - feature-nohighlight
 - feature-music
+- feature-mermaid
 ---
 class: title, smokescreen, shelf, no-footer
 background-image: url(leo-serrat-533922-unsplash.jpg)
@@ -392,6 +393,19 @@ K: Emin
 |:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|
 EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
 ```
+
+---
+# Diagrams
+
+Story supports [Mermaid](https://mermaidjs.github.io/), which offers a variety of diagrams.
+
+<div class="mermaid">
+sequenceDiagram
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!
+</div>
 
 ---
 class: fit-h1, roomy
