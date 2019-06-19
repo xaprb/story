@@ -112,4 +112,4 @@ header image a bit, with rounded corners and a shadow around it.
 The `feature-depth` class can be set globally in your `config.yaml` or similar,
 and overridden as you wish on individual pages.
 
-Read next: [Story's images slideshow feature](/flexslider/).
+Read next: [Story's images carousel feature](/flexslider/).
