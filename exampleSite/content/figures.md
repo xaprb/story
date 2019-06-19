@@ -15,7 +15,7 @@ classes:
 categories:
 - Demo
 ---
-Story can automatically transform images into figures with captions. 
+Story can automatically transform images into figures with captions.
 It can also add captions to tables.
 And it adds features and styling to both images and tables.
 This article is a demo of Story's features for figures, tables, and captions.
@@ -102,7 +102,7 @@ Sept.&nbsp;25 |            7.0052 |                     48.494 |          0.3870
 Nov.&nbsp;4   |            7.0052 |                     48.495 |          0.387099 |      0.205635 |               61.2628 |
 Dec.&nbsp;14  |            7.0052 |                     48.497 |          0.387099 |      0.205635 |              224.9579 |
 Dec.&nbsp;54  |            7.0052 |                     48.498 |          0.387098 |      0.205633 |               28.6524 |
-    
+
 _Mercury's Heliocentric Osculating Orbital Elements Referred to the Mean Equinox and Ecliptic of Date for 2013_
 
 ### Caption Styling And Linking

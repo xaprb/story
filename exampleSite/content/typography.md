@@ -18,7 +18,7 @@ This article is a demo of Story's beautiful typography.
 
 Story is designed to showcase long-form content such as essays and technical
 blog posts.  It is built for readability and grace in both screen and print
-media at all sizes.  
+media at all sizes.
 <!--more-->
 
 Try opening your print dialog and saving this page as a
