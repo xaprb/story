@@ -80,15 +80,10 @@
 {{ end }}
 
 {{ define "social" }}
-		<meta property="og:title" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
-		<meta property="og:type" content="article" />
-		<meta property="og:image" content="{{ default .Params.image .Params.thumbnail | absURL }}" />
-		<meta property="og:description" content="{{ .Description | markdownify }}" />
-		<meta property="og:url" content="{{ .Permalink }}" />
-		<meta property="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
 {{ end }}
+
 
 {{ define "about" }}
   <!-- simply override the "header" from baseof.html to make it empty -->
