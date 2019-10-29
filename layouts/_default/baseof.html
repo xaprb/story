@@ -26,7 +26,10 @@
 		<link rel="stylesheet" href="{{ "css/descartes.css" | absURL }}" />
 		{{ end }}
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+		{{- with .Site.Params.fonts }}
+		{{- $fonts := print (default "Quattrocento Sans" .sansserif.family) ":" (default "400,400i,700,700i" .sansserif.weights) "|" (default "Spectral" .serif.family) ":" (default "400,400i,700,700i" .serif.weights) }}
+		<link href="https://fonts.googleapis.com/css?family={{ $fonts }}&amp;subset=latin-ext" rel="stylesheet">
+		{{- end }}
 		{{ end }}
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
