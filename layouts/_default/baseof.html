@@ -12,8 +12,8 @@
 		{{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 		{{ .Hugo.Generator }}
 
-		{{ block "social" . }}
-		{{ end }}
+		{{- template "_internal/opengraph.html" . -}}
+		{{- template "_internal/twitter_cards.html" . -}}
 
 		{{ block "layout" . }}
 		<link rel="stylesheet" href="{{ "css/tachyons.min.css" | absURL }}" />
