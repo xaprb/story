@@ -1,5 +1,6 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.Pages ".Params.skip" "ne" "true" -}}
-{{- $.Scratch.Add "index" (dict "uri" .Permalink "title" (cond (eq .Site.Params.titlecase true) (.Title | title | markdownify | htmlUnescape) (.Title | markdownify | htmlUnescape)) "categories" .Params.categories "keywords" .Params.keywords "content"  (.Summary | plainify | htmlUnescape )) -}}
+{{- $.Scratch.Set "uri_title" (printf "%s?%s" .Permalink (cond (eq .Site.Params.titlecase true) (.Title | title | markdownify | htmlUnescape) (.Title | markdownify | htmlUnescape))) -}}
+{{- $.Scratch.Add "index" (dict "uri_title" ($.Scratch.Get "uri_title") "uri" .Permalink "title" (cond (eq .Site.Params.titlecase true) (.Title | title | markdownify | htmlUnescape) (.Title | markdownify | htmlUnescape)) "categories" .Params.categories "keywords" .Params.keywords "content"  (.Summary | plainify | htmlUnescape )) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
