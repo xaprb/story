@@ -18,6 +18,12 @@
 		{{ block "layout" . }}
 		<link rel="stylesheet" href="{{ "css/tachyons.min.css" | absURL }}" />
 		{{- if .Site.Params.less -}}
+		{{- with .Site.Params.fonts }}
+		<style type="text/less">
+			@config-font-sans: '{{ print (default "Quattrocento Sans" .sansserif.family) }}';
+			@config-font-serif: '{{ print (default "Spectral" .serif.family) }}';
+		</style>
+		{{- end }}
 		<link rel="stylesheet/less" type="text/css" href="{{ "css/story.less" | absURL }}" />
 		<link rel="stylesheet/less" type="text/css" href="{{ "css/descartes.less" | absURL }}" />
 		<script type="text/javascript" src="{{ "js/less.min.js" | absURL }}"></script>
