@@ -3,15 +3,15 @@ h2,
 h3,
 h4,
 .sans-serif {
-  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  font-family: var(--FONT-SANS);
 }
 body article {
-  font-family: 'Spectral', Georgia, Times, serif;
+  font-family: var(--FONT-SERIF);
 }
 @media only screen and (max-width: 30em) {
   body article p,
   body article li {
-    font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    font-family: var(--FONT-SANS);
   }
 }
 @media only screen and (min-width: 50em) {
@@ -61,7 +61,7 @@ hr {
 }
 table caption {
   text-align: left;
-  font-family: 'Spectral', Georgia, Times, serif;
+  font-family: var(--FONT-SERIF);
   font-style: italic;
   padding: 0px 0.5rem;
 }
@@ -141,7 +141,7 @@ body:not(.feature-tablefig) table {
   width: 100%;
   overflow: auto;
   font-size: 85%;
-  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  font-family: var(--FONT-SERIF);
 }
 body:not(.feature-tablefig) table tr:nth-child(2n) {
   background-color: #f6f8fa;
