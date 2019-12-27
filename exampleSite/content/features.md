@@ -7,8 +7,12 @@ credit: "https://unsplash.com/photos/QRkew0KwXSM"
 image: "img/unsplash-photos-QRkew0KwXSM.jpg"
 thumbnail: img/unsplash-photos-QRkew0KwXSM.tn-500x500.jpg
 classes:
+- feature-rendertags
 categories:
 - Demo
+tags:
+- demo
+- features
 ---
 Feature flags, which are called _classes_ in the markup, control many of Story's features.
 You can enable and disable them in your site config, or in an individual post's front matter.
@@ -105,5 +109,6 @@ For brevity, the `feature-` prefix is omitted, but all of Story's classes have t
 | [tablefw](/figures)            | Sets table cells in a font with fixed-width numerals                                        | CSS            |
 | titlecase                      | Not enabled by default; Transforms All Content Titles to Titlecase                          | Hugo           |
 | [tweetquote](/typography)      | Renders a blockquote in a simplistic tweet style, if it follows conventions                 | JS + CSS       |
+| rendertags                     | Renders a clickable list of tags at the bottom of the article (see below)                   | Hugo           |
 
 Read next: [Story's author biographies](/author-profiles/).
