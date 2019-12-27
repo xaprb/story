@@ -3,6 +3,11 @@
 {{ define "main" }}
 <article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
 	{{ .Content }}
+	{{- if or (in .Site.Params.classes "feature-rendertags") (in .Params.classes "feature-rendertags") -}}
+		{{- if not (or (in .Site.Params.classes "feature-norendertags") (in .Params.classes "feature-norendertags") ) -}}
+			{{ block "tags" . }}{{ end }}
+		{{- end -}}
+	{{- end -}}
 </article>
 {{ end }}
 
@@ -15,4 +20,19 @@
 		<meta property="og:site_name" content="{{ cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) }}" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
+{{ end }}
+
+{{ define "tags" }}
+	{{ $taxo := "tags" -}}
+	{{- with .Param $taxo -}}
+	<div>
+		<strong>Tag{{ if gt (len .) 1 }}s{{ end }}:</strong>
+		{{ range $index, $tag := . }}
+		{{- if gt $index 0 }}, {{ end -}}
+		{{- with $.Site.GetPage (printf "/%s/%s" $taxo $tag) -}}
+		<a href="{{ .Permalink }}">{{ $tag }}</a>
+		{{- end -}}
+		{{- end -}}
+	</div>
+	{{- end }}
 {{ end }}
