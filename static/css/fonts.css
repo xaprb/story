@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Spectral:400,400i,700,700i&subset=latin-ext');
+
+:root{
+    --FONT-SANS: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    --FONT-SERIF: 'Spectral', Georgia, Times, serif;
+}

@@ -1,3 +1,5 @@
+@import "adirondack-fonts.less";
+
 @adirondack-colors: {
 	muted-text: #6a737d;
 	shaded-bg: #f6f8fa;
@@ -5,15 +7,12 @@
 }
 
 .remark-slide-content {
-	font-family: 'Quattrocento Sans',-apple-system, BlinkMacSystemFont,
-		'avenir next', avenir, 'helvetica neue', helvetica,
-		arial, sans-serif;
+	font-family: @font-sans;
 	pre, code, kbd, tt, samp {
-		font-family: Monaco, "Lucida Sans Typewriter", "Lucida Console",
-			"Andale Mono", "Consolas", monospace;
+		font-family: @font-mono;
 	}
 	h1, h2, h3 {
-		font-family: Quattrocento, "Goudy Old Style", "Big Caslon", Palatino, serif;
+		font-family: @font-serif;
 		font-weight: bold;
 	}
 
