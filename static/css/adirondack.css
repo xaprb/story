@@ -1,17 +1,19 @@
+@import url('adirondack-fonts.css');
+
 .remark-slide-content {
-  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: var(--FONT-SANS);
 }
 .remark-slide-content pre,
 .remark-slide-content code,
 .remark-slide-content kbd,
 .remark-slide-content tt,
 .remark-slide-content samp {
-  font-family: Monaco, "Lucida Sans Typewriter", "Lucida Console", "Andale Mono", "Consolas", monospace;
+  font-family: var(--FONT-MONO);
 }
 .remark-slide-content h1,
 .remark-slide-content h2,
 .remark-slide-content h3 {
-  font-family: Quattrocento, "Goudy Old Style", "Big Caslon", Palatino, serif;
+  font-family: var(--FONT-SERIF);
   font-weight: bold;
 }
 .remark-slide-content table {
