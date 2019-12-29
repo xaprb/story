@@ -10,7 +10,7 @@
 		<link rel="shortcut icon" type="image/png" href="{{ "apple-touch-icon-precomposed.png" | absURL }}">
 		{{ with .Description }}<meta name="description" content="{{. | markdownify }}">{{ end }}
 		{{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
-		{{ .Hugo.Generator }}
+		{{ hugo.Generator }}
 
 		{{ block "social" . }}
 		{{ end }}
