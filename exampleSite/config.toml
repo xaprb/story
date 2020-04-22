@@ -3,6 +3,7 @@ baseurl = "https://example.com/"
 title = "Hugo Story Theme"
 paginate = 5
 buildFuture = true
+theme = "story"
 
 [[menu.social]]
   name = "GitHub"
