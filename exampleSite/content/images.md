@@ -28,8 +28,7 @@ The image above is much wider than the content region, but it's sized to fit.
 
 ### Control Over Image Formatting
 
-Story uses [URL fragment
-techniques](https://www.xaprb.com/blog/how-to-style-images-with-markdown/) to
+Story uses URL fragment techniques to
 give you control over image styling.
 Images that use this technique don't get converted into [figures with captions](/figures).
 

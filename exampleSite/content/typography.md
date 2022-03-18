@@ -93,9 +93,9 @@ And an ordered list:
 
 If you don't like embedding tweets, Story has a cleaner way to quote and link to a tweet. Just blockquote the content and begin it with a link containing the author's name and the tweet's permalink, and enable the `feature-tweetquote` flag. Story will transform the quote to resemble a simplistic tweet styling. If the flag isn't enabled, normal blockquote styling applies.
 
-> [Baron Sc​hwartz](https://twitter.com/xaprb/status/921004656402321408)
+> [Jane Sm​mith](https://twitter.com/username/status/0123456789)
 >
-> Monitoring tells you whether the system works. Observability lets you ask why it's not working.
+> Text of quoted tweet goes here.
 
 <script type="text/javascript">
 $( "#hyph" ).click(function() {

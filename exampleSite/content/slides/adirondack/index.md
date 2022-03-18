@@ -443,8 +443,8 @@ started](#getting-started) slide.
 layout: true
 
 .footer[
-- @xaprb
-- ![logo](vividcortex-horizontal-web.svg)
+- @exampletwittername
+- ![logo](company-logo-web.svg)
 ]
 
 ---
@@ -458,8 +458,8 @@ content is:
 ---
 layout: true
 .footer[
-- @xaprb
-- ![logo](vividcortex-horizontal-web.svg)
+- @exampletwittername
+- ![logo](company-logo-web.svg)
 ]
 ```
 

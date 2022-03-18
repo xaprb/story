@@ -42,10 +42,10 @@ config file's `params` array:
 
 ```
 params:
-   author: "Baron Schwartz"
+   author: "Jane Smith"
 ```
 
-That's exactly what this sample site you're reading right now does: Baron is the
+That's exactly what this sample site you're reading right now does: Jane is the
 author by default, but Elvis is the author of _this_ content you're reading now.
 
 ### Creating Author Profiles
@@ -91,18 +91,15 @@ described above, you can create content that will serve as a fallback across the
 whole site. If Story doesn't find a specific author's profile page, it'll look
 for the default `_index.md` content for the section it's currently rendering.
 The top-level default for the whole site is `content/_index.md`, which this demo
-site uses to provide Baron Schwartz's author information. This information will
+site uses to provide Jane Smith's author information. This information will
 appear on all pages _other than_ the current page, which is authored by Elvis
 Presley. This fallback information from `content/_index.md` looks like the
 following:
 
 ```
-[![Baron Schwartz](/img/baron-square.jpg)](https://www.xaprb.com)
+[![Jane Smith](/img/jane-smith.jpg)](https://www.example.com)
 
-Baron Schwartz is the founder and CTO of [VividCortex](https://vividcortex.com), author of
-several books, and creator of various open-source software. He writes about topics
-such as technology, entrepreneurship, and fitness. [More about
-Baron](https://www.xaprb.com/).
+Jane Smith's biography goes here; markdown is supported.
 ```
 
 This content is a (non-author-specific) fallback for the entire site.

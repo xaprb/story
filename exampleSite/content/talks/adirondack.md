@@ -17,7 +17,7 @@ information like a video of your talk. In this way you can build a portfolio of
 your speaking history.
 <!--more-->
 
-Talks are designed to go together with slides. I (Baron, the author of Story)
+Talks are designed to go together with slides. I (the author of Story)
 create a talk page for every speaking appearance.
 
 You can reuse slides between talks, so multiple talks pages link to the same
