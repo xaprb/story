@@ -2,7 +2,7 @@
 
 Story is a beautiful [Hugo theme](https://gohugo.io) for showcasing your writing
 and presentations. There's a robust [demo site](https://story.xaprb.com/) where you can see its
-many features in action, and learn more about how to use them. You can also see Story in use on a real site by [Baron Schwartz](https://www.xaprb.com/).
+many features in action, and learn more about how to use them.
 
 ![Story screenshot](https://raw.githubusercontent.com/xaprb/story/master/images/screenshot.png)
 
