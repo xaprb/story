@@ -1,8 +1,8 @@
 # Story
 
 Story is a beautiful [Hugo theme](https://gohugo.io) for showcasing your writing
-and presentations. There's a robust [demo site](https://story.xaprb.com/) where you can see its
-many features in action, and learn more about how to use them.
+and presentations. There's a robust demo site (which you can launch and browse with Hugo) where you can see its
+many features in action, and learn more about how to use them. Story is no longer actively maintained. The original author, Baron Schwartz, encourages forking.
 
 ![Story screenshot](https://raw.githubusercontent.com/xaprb/story/master/images/screenshot.png)
 
@@ -20,5 +20,5 @@ It has a lot of features for people who invest effort in their websites and blog
 - Music notation typesetting with [abcjs](https://abcjs.net/).
 - Easy-to-use, backwards-compatible Markdown enhancements such as ways to control image behavior (size, float, etc) with CSS.
 
-This is just a fraction of Story's feature set, see the [demo site](https://story.xaprb.com/) for much more
+This is just a fraction of Story's feature set, see the demo site for much more
 documentation and screenshots.
